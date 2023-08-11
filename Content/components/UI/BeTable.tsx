@@ -3,6 +3,7 @@ import {View, Text, TouchableOpacity} from 'react-native';
 import {useSelector} from 'react-redux';
 import Colors from '../../constants/Colors';
 import {RootState} from '../../redux-store/store';
+import Image from '../../assets/Image';
 
 interface ButtonProps {
   children: React.ReactNode;
@@ -101,7 +102,7 @@ type ShowType =
   | '32'
   | '33';
 
-export function SimpleTenseTable() {
+export function BeTable() {
   const {isDarkTheme} = useSelector((state: RootState) => state.theme);
 
   const [show, setShow] = useState<ShowType>('');
@@ -1699,15 +1700,10 @@ export function SimpleTenseTable() {
         borderRadius: 8,
         padding: 4,
       }}>
-      <Text
-        style={{
-          textAlign: 'center',
-          fontSize: 16,
-          fontWeight: 'bold',
-          color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-        }}>
-        dance
-      </Text>
+      <View style={{flexDirection: 'row', width: '100%', height: 70}}>
+        <Image src="be" resizeMode="center" />
+      </View>
+
       <View style={{flexDirection: 'row', width: '100%'}}>
         <View style={{flex: 1}}>
           <View

@@ -1,6 +1,10 @@
 import {View, Text, StyleSheet, ScrollView} from 'react-native';
 
 import {SimpleTenseTable} from '../components/UI/SimpleTenseTable';
+import {BeTable} from '../components/UI/BeTable';
+import {PronounsTable} from '../components/UI/PronounsTable';
+import {AdjectivesTable} from '../components/UI/AdjectivesTable';
+import {QuestionWords} from '../components/UI/QuestionWords';
 import {useSelector} from 'react-redux';
 import Colors from '../constants/Colors';
 import {RootState} from '../redux-store/store';
@@ -68,16 +72,16 @@ const Title = {
   D: {
     title: 'Lesson 4',
     text: [
-      'Object Pronouns.',
-      "To make our sentences more interesting and a bit more challenging, let's add Object pronouns.",
+      // 'Object Pronouns.',
+      'Possessive adjectives, also known as possessive determiners, are words that indicate ownership or possession of something. They are used before a noun to show that something belongs to someone or something',
     ],
     links: [
-      {
-        id: 1,
-        title: 'Watch Video',
-        link: 'https://youtu.be/ju9wjA9HtSA',
-        description: 'Personal Pronouns',
-      },
+      // {
+      //   id: 1,
+      //   title: 'Watch Video',
+      //   link: 'https://youtu.be/ju9wjA9HtSA',
+      //   description: 'Personal Pronouns',
+      // },
     ],
   },
   E: {
@@ -125,6 +129,21 @@ const Title = {
       },
     ],
   },
+  H: {
+    title: 'Lesson 8',
+    text: [
+      'Object Pronouns.',
+      "To make our sentences more interesting and a bit more challenging, let's add Object pronouns.",
+    ],
+    links: [
+      {
+        id: 1,
+        title: 'Watch Video',
+        link: 'https://youtu.be/ju9wjA9HtSA',
+        description: 'Personal Pronouns',
+      },
+    ],
+  },
 };
 
 function HelpScreen({route}) {
@@ -132,71 +151,11 @@ function HelpScreen({route}) {
 
   const lessons = 'ABCDEFGHIJKLMNOP';
 
-  const Note = () => {
-    return (
-      <>
-        <View style={[styles.note]}>
-          <Text
-            style={[
-              styles.text,
-              {
-                fontWeight: 'bold',
-              },
-              isDarkTheme ? styles.darkThemeColor : styles.lightThemeColor,
-            ]}>
-            Note:
-          </Text>
-        </View>
-        <Text
-          style={[
-            styles.text,
-            isDarkTheme ? styles.darkThemeColor : styles.lightThemeColor,
-          ]}>
-          To erase a mistyped word, click the{' '}
-          <MyIcon
-            color={
-              isDarkTheme
-                ? styles.darkThemeColor.color
-                : styles.lightThemeColor.color
-            }
-            size={30}
-            name="delete"
-          />
-          {'\t\t'}
-          button.
-        </Text>
-        <Text
-          style={[
-            styles.text,
-            isDarkTheme ? styles.darkThemeColor : styles.lightThemeColor,
-          ]}>
-          To open the next lesson, score 4.5 points.
-        </Text>
-        <Text
-          style={[
-            styles.text,
-            isDarkTheme ? styles.darkThemeColor : styles.lightThemeColor,
-          ]}>
-          To view a hint, click on the{' '}
-          <MyIcon
-            color={
-              isDarkTheme
-                ? styles.darkThemeColor.color
-                : styles.lightThemeColor.color
-            }
-            size={30}
-            name="lightbulb-on"
-          />
-          {'\t\t'} button.
-        </Text>
-      </>
-    );
-  };
-
   const renderHelpContent = (lessonId: string) => {
     return (
-      <View key={lessonId} style={[styles.rootContainer]}>
-        <ScrollView>
+      <View key={lessonId} style={[styles.container]}>
+        <ScrollView style={{width: '100%'}}>
+          {/* <View style={{}}> */}
           <Text
             style={[
               styles.title,
@@ -214,11 +173,16 @@ function HelpScreen({route}) {
               {el}
             </Text>
           ))}
+          {/* </View> */}
           <LinkList
             icon={true}
             links={Title[lessonId as keyof typeof Title].links}
           />
           {lessonId === lessons[0] && <SimpleTenseTable />}
+          {lessonId === lessons[2] && <BeTable />}
+          {lessonId === lessons[1] && <PronounsTable />}
+          {lessonId === lessons[1] && <QuestionWords />}
+          {lessonId === lessons[3] && <AdjectivesTable />}
           <Note />
         </ScrollView>
       </View>
@@ -243,6 +207,79 @@ function HelpScreen({route}) {
   );
 }
 
+function Note() {
+  const {isDarkTheme} = useSelector((state: RootState) => state.theme);
+
+  return (
+    <>
+      <View style={[styles.note]}>
+        <Text
+          style={[
+            styles.text,
+            {
+              fontWeight: 'bold',
+            },
+            isDarkTheme ? styles.darkThemeColor : styles.lightThemeColor,
+          ]}>
+          Note:
+        </Text>
+        <Text
+          style={[
+            styles.text,
+            isDarkTheme ? styles.darkThemeColor : styles.lightThemeColor,
+          ]}>
+          To open the next lesson, score 4.5 points.
+        </Text>
+        <View style={[styles.flex]}>
+          <View style={{justifyContent: 'center'}}>
+            <MyIcon
+              color={
+                isDarkTheme
+                  ? styles.darkThemeColor.color
+                  : styles.lightThemeColor.color
+              }
+              size={30}
+              name="delete"
+            />
+          </View>
+
+          <View style={{justifyContent: 'center'}}>
+            <Text
+              style={[
+                styles.text,
+                isDarkTheme ? styles.darkThemeColor : styles.lightThemeColor,
+              ]}>
+              click, to delete a wrong word
+            </Text>
+          </View>
+        </View>
+        <View style={[styles.flex]}>
+          <View style={{justifyContent: 'center'}}>
+            <MyIcon
+              color={
+                isDarkTheme
+                  ? styles.darkThemeColor.color
+                  : styles.lightThemeColor.color
+              }
+              size={30}
+              name="lightbulb-on"
+            />
+          </View>
+          <View style={{justifyContent: 'center'}}>
+            <Text
+              style={[
+                styles.text,
+                isDarkTheme ? styles.darkThemeColor : styles.lightThemeColor,
+              ]}>
+              click, to view a hint
+            </Text>
+          </View>
+        </View>
+      </View>
+    </>
+  );
+}
+
 export default HelpScreen;
 
 const styles = StyleSheet.create({
@@ -250,23 +287,27 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'flex-start',
     alignItems: 'center',
-    paddingLeft: '0.25%',
-    paddingRight: '0.25%',
   },
-  note: {marginTop: 10},
+  container: {
+    flex: 1,
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+  },
+  note: {marginTop: 10, paddingLeft: 5, paddingRight: 5},
+  flex: {flexDirection: 'row'},
   title: {
     fontSize: 20,
     marginVertical: '1.5%',
     marginLeft: 20,
     fontWeight: 'bold',
+    paddingLeft: 5,
+    paddingRight: 5,
   },
   text: {
     fontSize: 18,
     lineHeight: 28,
     textAlign: 'justify',
     marginBottom: '1%',
-    paddingLeft: '1%',
-    paddingRight: '1%',
   },
   darkThemeColor: {
     color: Colors.gray10,
