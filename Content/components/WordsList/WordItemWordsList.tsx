@@ -13,6 +13,7 @@ import {
   Professions,
   Food,
   Family,
+  Interrogatives,
   subjectPronounsIcons,
   objectPronounsIcons,
   possessiveAdjectivesIcons,
@@ -91,6 +92,7 @@ function WordItem({title, score, text, id}: WordItemProps) {
             Object.keys(
               objectPronounsIcons[id as keyof typeof objectPronounsIcons] || {},
             )?.includes(text) ||
+            Object.keys(Interrogatives)?.includes(text) ||
             Object.keys(
               possessiveAdjectivesIcons[
                 id as keyof typeof possessiveAdjectivesIcons

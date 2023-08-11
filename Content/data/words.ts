@@ -391,13 +391,13 @@ const pronouns = {
   you: ['you', 'you', 'your', 'yours', 'yourselves'],
 };
 
-const Interrogatives = {
-  when: '🕕🌇🌃?',
-  what: '🕋?',
-  where: '🌎🌍🌏?',
-  who: '👤?',
-  how: '🔎🚀?',
-  why: '❓',
+export const Interrogatives = {
+  when: 'when',
+  what: 'what',
+  where: 'where',
+  who: 'who',
+  how: 'how',
+  why: 'why',
 };
 
 const a = {
@@ -736,6 +736,27 @@ export const objectPronounsIcons: {
   },
 };
 
+const Transport = {
+  ambulance: 'ambulance.png',
+  bicycle: 'bicycle.png',
+  bus: 'bus.png',
+  car: 'car.png',
+  'delivery truck': 'delivery_truck.png',
+  'fire engine': 'fire_engine.png',
+  minibus: 'minibus.png',
+  'motor scooter': 'motor_scooter.png',
+  motorcycle: 'motorcycle.png',
+  'pickup truck': 'pickup_truck.png',
+  'police car': 'police_car.png',
+  'race car': 'race_car.png',
+  scooter: 'scooter.png',
+  'semi-truck': 'semi-truck.png',
+  suv: 'suv.png',
+  taxi: 'taxi.png',
+  tractor: 'tractor.png',
+  trolleybus: 'trolleybus.png',
+};
+
 export const possessiveAdjectivesIcons: {
   [key: string]: {[key: string]: string};
 } = {
@@ -743,7 +764,7 @@ export const possessiveAdjectivesIcons: {
     my: 'my',
     your: 'your',
     his: 'his',
-    her: 'her',
+    'her ': 'her ',
     our: 'our',
     their: 'their',
     its: 'its',
@@ -1088,6 +1109,24 @@ const SomeNouns = {
   // // cabinet: '🗄️',
 };
 
+const Buildings = {
+  bank: 'bank',
+  casle: 'casle',
+  church: 'church',
+  'convenience store': 'convenience store',
+  'department store': 'department store',
+  factory: 'factory',
+  home: 'home',
+  hospital: 'hospital',
+  hotel: 'hotel',
+  house: 'house',
+  mosque: 'mosque',
+  'post office': 'post office',
+  school: 'school',
+  stadium: 'stadium',
+  synagogue: 'synagogue',
+};
+
 export const Nouns = {
   A: {
     ...SomeNouns,
@@ -1117,18 +1156,7 @@ export const Nouns = {
     ...Creatures.B,
   },
   C: {
-    home: 'home',
-    school: 'school',
-    hotel: 'hotel',
-    hospital: 'hospital',
-    factory: 'factory',
-    church: 'church',
-    mosque: 'mosque',
-    synagogue: 'synagogue',
-    'convenience store': 'convenience store',
-    bank: 'bank',
-    house: 'house',
-    stadium: 'stadium',
+    ...Buildings,
     // elevator: 'elevator',
     // airplane: 'airplane',
     // car: 'car',
@@ -1144,15 +1172,12 @@ export const Nouns = {
     // receipt: 'receipt',
   },
   D: {
-    pen: 'pen',
-    pencil: 'pencil',
     bag: 'bag',
-    book: 'book',
     dress: 'dress',
     letter: 'letter',
+    message: 'message',
     // note: 'note',
     // partner: 'partner',
-    message: 'message',
     // task: ["task", 0, "task"],
     // friend: ["friend", 0, "friend"],
     // notice: ["notice", 0, "notice"],
@@ -1183,7 +1208,8 @@ const allWords = {
       run: 'run',
       read: 'read',
     },
-    Nouns: Nouns.C,
+    // Nouns: Nouns.C,
+    Buildings,
     Preposition: {
       here: '👇',
       there: '👆',

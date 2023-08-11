@@ -19,6 +19,7 @@ import {
   Professions,
   Food,
   Family,
+  Interrogatives,
   subjectPronounsIcons,
   objectPronounsIcons,
   possessiveAdjectivesIcons,
@@ -209,6 +210,7 @@ function WordsStudy({route}) {
           Object.keys(
             Professions[id as keyof typeof Professions] || {},
           )?.includes(newWord) ||
+          Object.keys(Interrogatives)?.includes(newWord) ||
           Object.keys(
             subjectPronounsIcons[id as keyof typeof subjectPronounsIcons] || {},
           )?.includes(newWord) ||
