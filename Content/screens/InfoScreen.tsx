@@ -5,10 +5,13 @@ import {RootState} from '../redux-store/store';
 import Colors from '../constants/Colors';
 import {LinkList} from '../components/LearnMoreLinks';
 import {MyIcon} from '../components/MyIcons/app';
+import {Statistics} from '../components/UI/Statistics';
+import {countProgress} from '../utils/smallFunctions';
 
 function InfoScreen() {
   const {isDarkTheme} = useSelector((state: RootState) => state.theme);
-
+  const newData = '110111'.padEnd(90, '1').padEnd(91, '3').padEnd(100, '2');
+  const progress = countProgress(newData)[0];
   return (
     <View
       style={[
@@ -38,9 +41,9 @@ function InfoScreen() {
             styles.list,
             isDarkTheme ? styles.darkTitle : styles.lightTitle,
           ]}>
-          🦖 - past{'\n'}
-          🙋 - present{'\n'}
-          🤖 - future
+          👶 - past{'\n'}
+          🧑 - present{'\n'}
+          🧓 - future
         </Text>
         <Text
           style={[
@@ -70,26 +73,36 @@ function InfoScreen() {
             styles.text,
             isDarkTheme ? styles.darkTitle : styles.lightTitle,
           ]}>
-          If you answer correctly, the program will praise you. If you happen to
-          make a mistake, don't worry—just keep going.
+          If you answer correctly, the program will praise you.
         </Text>
         <Text
           style={[
             styles.text,
-            styles.cursive,
             isDarkTheme ? styles.darkTitle : styles.lightTitle,
           ]}>
-          If you accidentally select the wrong word, press the{' '}
+          If you happen to make a mistake, don't worry—just keep going.
         </Text>
-        <MyIcon name="delete" color={'red'} size={20} />
-        <Text
-          style={[
-            styles.text,
-            styles.cursive,
-            isDarkTheme ? styles.darkTitle : styles.lightTitle,
-          ]}>
-          button to undo your selection.
-        </Text>
+        <View style={[{flexDirection: 'row', marginLeft: '7%'}]}>
+          <View style={[{justifyContent: 'center'}]}>
+            <MyIcon
+              name="delete"
+              color={
+                isDarkTheme ? styles.darkTitle.color : styles.lightTitle.color
+              }
+              size={32}
+            />
+          </View>
+          <View style={[{justifyContent: 'center', paddingLeft: 3}]}>
+            <Text
+              style={[
+                styles.text,
+                styles.cursive,
+                isDarkTheme ? styles.darkTitle : styles.lightTitle,
+              ]}>
+              click to delete wrong words.
+            </Text>
+          </View>
+        </View>
         <Text
           style={[
             styles.text,
@@ -169,6 +182,37 @@ function InfoScreen() {
           ]}>
           Statistics:
         </Text>
+        <View
+          style={[
+            {
+              flexDirection: 'row',
+              justifyContent: 'flex-end',
+              marginRight: '2%',
+            },
+          ]}>
+          <View style={[{justifyContent: 'center'}]}>
+            <MyIcon
+              name="star-o"
+              color={
+                isDarkTheme ? styles.darkTitle.color : styles.lightTitle.color
+              }
+              size={32}
+            />
+          </View>
+          <View style={[{justifyContent: 'center', paddingLeft: 3}]}>
+            <Text
+              style={[
+                styles.mark,
+                styles.cursive,
+                isDarkTheme ? styles.darkTitle : styles.lightTitle,
+              ]}>
+              {Math.floor(progress / 2) / 10}
+            </Text>
+          </View>
+        </View>
+        <View style={{height: 35}}>
+          <Statistics data={newData} flex={1} />
+        </View>
         <Text
           style={[
             styles.text,
@@ -206,6 +250,12 @@ const styles = StyleSheet.create({
     // fontWeight: 'bold',
     textAlign: 'justify',
     lineHeight: 35,
+  },
+  mark: {
+    fontSize: 25,
+    fontWeight: '100',
+    textAlign: 'justify',
+    // lineHeight: 35,
   },
   list: {
     fontSize: 18,

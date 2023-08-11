@@ -6,7 +6,7 @@ import Tts from 'react-native-tts';
 
 import {WordButton, WordFlex} from '../components/WordsList/WordButton';
 import {ThreeEmojiText} from '../components/UI/ThreeEmojiText';
-import {ProgressLine} from '../components/UI/ProgressLine';
+import {Statistics} from '../components/UI/Statistics';
 import {LessonButton} from '../components/UI/LessonBottomButton';
 import {EmojiCircle} from '../components/UI/EmojiCircle';
 import {Verb} from '../components/MyIcons/Verbs/index';
@@ -528,18 +528,7 @@ function LessonStudyScreen({route, navigation}) {
           </View>
         </View>
       )}
-      <View style={styles.iconBottom}>
-        <ProgressLine data={newData.slice(0, newData.length / 4)} />
-        <ProgressLine
-          data={newData.slice(newData.length / 4, newData.length / 2)}
-        />
-        <ProgressLine
-          data={newData.slice(newData.length / 2, (newData.length / 4) * 3)}
-        />
-        <ProgressLine
-          data={newData.slice((newData.length / 4) * 3, newData.length)}
-        />
-      </View>
+      <Statistics data={newData} flex={0.05} />
       <View
         style={[
           styles.buttomsBottom,
@@ -640,14 +629,6 @@ const styles = StyleSheet.create({
     flex: 0.8,
     textAlign: 'center',
     justifyContent: 'center',
-  },
-
-  iconBottom: {
-    flex: 0.05,
-    textAlign: 'center',
-    justifyContent: 'flex-end',
-    width: '100%',
-    gap: 2,
   },
 
   buttomsBottom: {

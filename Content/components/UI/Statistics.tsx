@@ -3,7 +3,18 @@ import {View} from 'react-native';
 import Colors from '../../constants/Colors';
 import {StyleSheet} from 'react-native';
 
-export const ProgressLine = ({data}: {data: string}) => {
+export const Statistics = ({data, flex}: {data: string; flex: number}) => {
+  return (
+    <View style={[styles.iconBottom, {flex: flex}]}>
+      <ProgressLine data={data.slice(0, data.length / 4)} />
+      <ProgressLine data={data.slice(data.length / 4, data.length / 2)} />
+      <ProgressLine data={data.slice(data.length / 2, (data.length / 4) * 3)} />
+      <ProgressLine data={data.slice((data.length / 4) * 3, data.length)} />
+    </View>
+  );
+};
+
+const ProgressLine = ({data}: {data: string}) => {
   return (
     <View style={styles.line}>
       {data.split('').map((e, i) => (
@@ -37,5 +48,12 @@ const styles = StyleSheet.create({
   lineFill: {
     borderRadius: 4,
     overflow: 'hidden',
+  },
+  iconBottom: {
+    textAlign: 'center',
+    justifyContent: 'flex-end',
+    width: '100%',
+    gap: 2,
+    marginBottom: 2,
   },
 });
