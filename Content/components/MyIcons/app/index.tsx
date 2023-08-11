@@ -5,11 +5,16 @@ import {List} from './List';
 import {Test} from './Test';
 import {Gear} from './Gear';
 import {Info} from './Info';
+import {Star} from './Star';
+import {StarO} from './StarO';
 import {Study} from './Study';
 import {Delete} from './Delete';
 import {Rocket} from './Rocket';
+import {Refresh} from './Refresh';
 import {Youtube} from './Youtube';
 import {OpenBook} from './OpenBook';
+import {ArrowLeft} from './ArrowLeft';
+import {ArrowRight} from './ArrowRight';
 import {FolderGear} from './FolderGear';
 import {ListCheck} from './ListCheck';
 import {RocketLaunch} from './RocketLaunch';
@@ -22,6 +27,8 @@ export interface IconProps {
 
 interface IconMainProps {
   name:
+    | 'star'
+    | 'star-o'
     | 'list'
     | 'list-check'
     | 'rocket'
@@ -34,12 +41,17 @@ interface IconMainProps {
     | 'delete'
     | 'open-book'
     | 'lightbulb-on'
-    | 'folder-gear';
-  color: string;
+    | 'folder-gear'
+    | 'refresh'
+    | 'arrow-left'
+    | 'arrow-right';
+  color?: string;
   size: number;
 }
 
 const iconComponents: {[key: string]: ComponentType<any>} = {
+  star: Star,
+  'star-o': StarO,
   list: List,
   'list-check': ListCheck,
   rocket: Rocket,
@@ -53,6 +65,9 @@ const iconComponents: {[key: string]: ComponentType<any>} = {
   'open-book': OpenBook,
   'lightbulb-on': LightbulbOn,
   'folder-gear': FolderGear,
+  refresh: Refresh,
+  'arrow-left': ArrowLeft,
+  'arrow-right': ArrowRight,
 };
 
 export const MyIcon = ({

@@ -7,10 +7,6 @@ import {RootState} from '../redux-store/store';
 import {LinkList} from '../components/LearnMoreLinks';
 import {MyIcon} from '../components/MyIcons/app';
 
-interface HelpScreenProps {
-  route: {params: {lessonId: string}};
-}
-
 const Title = {
   A: {
     title: 'Lesson 1',
@@ -131,7 +127,7 @@ const Title = {
   },
 };
 
-function HelpScreen({route}: HelpScreenProps) {
+function HelpScreen({route}) {
   const {isDarkTheme} = useSelector((state: RootState) => state.theme);
 
   const lessons = 'ABCDEFGHIJKLMNOP';

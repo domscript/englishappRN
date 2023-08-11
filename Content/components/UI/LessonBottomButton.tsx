@@ -1,5 +1,4 @@
 import {Text, StyleSheet, Pressable, View} from 'react-native';
-import Icon from 'react-native-vector-icons/FontAwesome';
 import {useSelector} from 'react-redux';
 import {MyIcon} from '../MyIcons/app';
 

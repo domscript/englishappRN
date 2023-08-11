@@ -1,7 +1,7 @@
 import React from 'react';
 import {View, Text, StyleSheet, Button, Pressable} from 'react-native';
 import {useSelector, useDispatch} from 'react-redux';
-import Icon from 'react-native-vector-icons/FontAwesome';
+import {MyIcon} from '../components/MyIcons/app';
 import {darkTheme, lightTheme} from '../redux-store/theme';
 import Colors from '../constants/Colors';
 import {RootState} from '../redux-store/store';
@@ -54,8 +54,9 @@ function Theme({dark, onPress}: {dark: boolean; onPress: () => void}) {
             styles.navCont,
             dark ? styles.darkThemeNav : styles.lightThemeNav,
           ]}>
-          <Icon
+          <MyIcon
             name="arrow-left"
+            size={15}
             color={dark ? styles.textLight.color : styles.textDark.color}
           />
           <Text

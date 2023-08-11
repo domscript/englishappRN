@@ -8,7 +8,7 @@ import {
   ACTIONS,
 } from '../redux-store/words';
 import {WordButton} from '../components/WordsList/WordButton';
-import Icon from 'react-native-vector-icons/FontAwesome';
+import {MyIcon} from '../components/MyIcons/app';
 
 import Colors from '../constants/Colors';
 import {RootState} from '../redux-store/store';
@@ -90,7 +90,7 @@ function WordsStudy({route}) {
               : styles.lightBackgroundColor,
           ]}
           onPress={handlePressDelete}>
-          <Icon
+          <MyIcon
             name="refresh"
             size={30}
             color={

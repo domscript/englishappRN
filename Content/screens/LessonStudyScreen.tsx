@@ -1,6 +1,6 @@
 import {useLayoutEffect, useState, useMemo, useEffect} from 'react';
 import {View, Text, StyleSheet, Pressable} from 'react-native';
-import Icon from 'react-native-vector-icons/FontAwesome';
+import {MyIcon} from '../components/MyIcons/app';
 import {useDispatch, useSelector} from 'react-redux';
 import Tts from 'react-native-tts';
 
@@ -207,22 +207,29 @@ function LessonStudyScreen({route, navigation}) {
       headerRight: () => {
         return (
           <View style={{flexDirection: 'row'}}>
-            <Icon
-              name={progress === 100 ? 'star' : 'star-o'}
-              color={
-                isDarkTheme
-                  ? styles.darkThemeColor.color
-                  : styles.lightThemeColor.color
-              }
-              size={22}
-            />
-            <Text
-              style={[
-                {fontSize: 18, paddingLeft: 5, fontWeight: '600'},
-                isDarkTheme ? styles.darkThemeColor : styles.lightThemeColor,
-              ]}>
-              {Math.floor(progress / 2) / 10}
-            </Text>
+            <View style={{justifyContent: 'center'}}>
+              <MyIcon
+                name={progress === 100 ? 'star' : 'star-o'}
+                color={
+                  isDarkTheme
+                    ? styles.darkThemeColor.color
+                    : styles.lightThemeColor.color
+                }
+                size={25}
+              />
+            </View>
+            <View style={{justifyContent: 'center'}}>
+              <Text
+                style={[
+                  {
+                    fontSize: 18,
+                    fontWeight: '100',
+                  },
+                  isDarkTheme ? styles.darkThemeColor : styles.lightThemeColor,
+                ]}>
+                {Math.floor(progress / 2) / 10}
+              </Text>
+            </View>
           </View>
         );
       },
@@ -303,113 +310,115 @@ function LessonStudyScreen({route, navigation}) {
       {componentState === ComponentStates.SHOW_RESULT_GOOD ||
       componentState === ComponentStates.SHOW_RESULT_BAD ? (
         <View style={styles.messageContainer}>
-          <Icon
+          <View
             style={[
               {
                 opacity: 0.2,
-                textAlign: 'center',
                 justifyContent: 'center',
+                alignItems: 'center',
               },
-            ]}
-            name={
-              componentState === ComponentStates.SHOW_RESULT_GOOD
-                ? [
-                    'star-o',
-                    'star-o',
-                    'star-o',
-                    'star-o',
-                    'star-o',
-                    'star-o',
-                    'star-o',
-                    'star-o',
-                    'star-o',
-                    'star-o',
-                    'star-o',
-                    'star-o',
-                    'star-o',
-                    'star-o',
-                    'star-o',
-                    'star-o',
-                    'star-o',
-                    'star-o',
-                    'star-o',
-                    'star-o',
-                    // 'trophy-outline',
-                    // 'bulb-outline',
-                    // 'hammer-outline',
-                    // 'hammer-outline',
-                    // 'color-wand-outline',
-                    // 'bonfire-outline',
-                    // 'thumbs-up-outline',
-                    // 'trending-up-outline',
-                    // 'rocket-outline',
-                    // 'checkbox-outline',
-                    // 'arrow-up-circle-outline',
-                    // 'car-sport-outline',
-                    // 'hammer-outline',
-                    // 'create-outline',
-                    // 'game-controller-outline',
-                    // 'code-slash-outline',
-                    // 'star-outline',
-                    // 'star-outline',
-                    // 'star-outline',
-                    // 'star-outline',
-                  ][greeting]
-                : [
-                    'bar-chart',
-                    'bar-chart',
-                    'bar-chart',
-                    'bar-chart',
-                    'bar-chart',
-                    'bar-chart',
-                    'bar-chart',
-                    'bar-chart',
-                    'bar-chart',
-                    'bar-chart',
-                    'bar-chart',
-                    'bar-chart',
-                    'bar-chart',
-                    'bar-chart',
-                    'bar-chart',
-                    'bar-chart',
-                    'bar-chart',
-                    'bar-chart',
-                    'bar-chart',
-                    'bar-chart',
+            ]}>
+            <MyIcon
+              name={
+                componentState === ComponentStates.SHOW_RESULT_GOOD
+                  ? [
+                      'star-o',
+                      'star-o',
+                      'star-o',
+                      'star-o',
+                      'star-o',
+                      'star-o',
+                      'star-o',
+                      'star-o',
+                      'star-o',
+                      'star-o',
+                      'star-o',
+                      'star-o',
+                      'star-o',
+                      'star-o',
+                      'star-o',
+                      'star-o',
+                      'star-o',
+                      'star-o',
+                      'star-o',
+                      'star-o',
+                      // 'trophy-outline',
+                      // 'bulb-outline',
+                      // 'hammer-outline',
+                      // 'hammer-outline',
+                      // 'color-wand-outline',
+                      // 'bonfire-outline',
+                      // 'thumbs-up-outline',
+                      // 'trending-up-outline',
+                      // 'rocket-outline',
+                      // 'checkbox-outline',
+                      // 'arrow-up-circle-outline',
+                      // 'car-sport-outline',
+                      // 'hammer-outline',
+                      // 'create-outline',
+                      // 'game-controller-outline',
+                      // 'code-slash-outline',
+                      // 'star-outline',
+                      // 'star-outline',
+                      // 'star-outline',
+                      // 'star-outline',
+                    ][greeting]
+                  : [
+                      'rocket',
+                      'rocket',
+                      'rocket',
+                      'rocket',
+                      'rocket',
+                      'rocket',
+                      'rocket',
+                      'rocket',
+                      'rocket',
+                      'rocket',
+                      'rocket',
+                      'rocket',
+                      'rocket',
+                      'rocket',
+                      'rocket',
+                      'rocket',
+                      'rocket',
+                      'rocket',
+                      'rocket',
+                      'rocket',
 
-                    // 'bulb-outline',
-                    // 'walk-outline',
-                    // 'car-sport-outline',
-                    // 'fitness-outline',
-                    // 'rocket-outline',
-                    // 'trending-up-outline',
-                    // 'arrow-forward-circle-outline',
-                    // 'battery-charging-outline',
-                    // 'game-controller-outline',
-                    // 'trending-up-outline',
-                    // 'walk-outline',
-                    // 'compass-outline',
-                    // 'code-slash-outline',
-                    // 'arrow-forward-circle-outline',
-                    // 'fitness-outline',
-                    // 'walk-outline',
-                    // 'color-wand-outline',
-                    // 'rocket-outline',
-                    // 'star-outline',
-                    // 'star-outline',
-                  ][greeting]
-            }
-            size={100}
-            color={
-              componentState === ComponentStates.SHOW_RESULT_GOOD
-                ? isDarkTheme
-                  ? Colors.green90
-                  : Colors.green30
-                : isDarkTheme
-                ? Colors.red80
-                : Colors.red20
-            }
-          />
+                      // 'bulb-outline',
+                      // 'walk-outline',
+                      // 'car-sport-outline',
+                      // 'fitness-outline',
+                      // 'rocket-outline',
+                      // 'trending-up-outline',
+                      // 'arrow-forward-circle-outline',
+                      // 'battery-charging-outline',
+                      // 'game-controller-outline',
+                      // 'trending-up-outline',
+                      // 'walk-outline',
+                      // 'compass-outline',
+                      // 'code-slash-outline',
+                      // 'arrow-forward-circle-outline',
+                      // 'fitness-outline',
+                      // 'walk-outline',
+                      // 'color-wand-outline',
+                      // 'rocket-outline',
+                      // 'star-outline',
+                      // 'star-outline',
+                    ][greeting]
+              }
+              size={150}
+              color={
+                componentState === ComponentStates.SHOW_RESULT_GOOD
+                  ? isDarkTheme
+                    ? Colors.green90
+                    : Colors.green30
+                  : isDarkTheme
+                  ? Colors.red80
+                  : Colors.red20
+              }
+            />
+          </View>
           <Text
             style={[
               styles.message,

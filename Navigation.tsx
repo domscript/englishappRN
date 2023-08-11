@@ -5,13 +5,13 @@ import {
   Text,
   StyleSheet,
   SafeAreaView,
+  Pressable,
 } from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {useSelector} from 'react-redux';
-import Icon from 'react-native-vector-icons/FontAwesome';
 
 import LessonOverview from './Content/screens/LessonOverviewScreen';
 import LessonStudy from './Content/screens/LessonStudyScreen';
@@ -194,7 +194,7 @@ function MainTabBar({state, descriptors, navigation}): JSX.Element {
                     : route.name === 'study'
                     ? 'study'
                     : route.name === 'settings'
-                    ? 'gear'
+                    ? 'folder-gear'
                     : route.name
                 }
                 size={45}
@@ -376,12 +376,9 @@ function MainNav() {
           options={({navigation}) => ({
             title: 'Ok English!',
             headerRight: ({tintColor}) => (
-              <Icon
-                name="gear"
-                size={30}
-                color={tintColor}
-                onPress={() => navigation.navigate('Settings')}
-              />
+              <Pressable onPress={() => navigation.navigate('Settings')}>
+                <MyIcon name="gear" size={30} color={tintColor} />
+              </Pressable>
             ),
           })}
         />

@@ -28,11 +28,7 @@ function SettingsMain() {
         isDarkTheme ? styles.darkThemeContainer : styles.lightThemeContainer,
       ]}>
       <ScreenButton iconName="info-circle" onPress={infoHandler} text="Info" />
-      <ScreenButton
-        iconName="folder-gear"
-        onPress={settingsHandler}
-        text="Settings"
-      />
+      <ScreenButton iconName="gear" onPress={settingsHandler} text="Settings" />
     </View>
   );
 }
@@ -43,7 +39,7 @@ function ScreenButton({
   text,
 }: {
   onPress: () => void; // Specify the type of onPress function
-  iconName: 'info-circle' | 'folder-gear';
+  iconName: 'info-circle' | 'gear';
   text: 'Info' | 'Settings';
 }) {
   const {isDarkTheme} = useSelector((state: RootState) => state.theme);
