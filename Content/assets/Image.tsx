@@ -11,6 +11,35 @@ const NewImage = ({
 }) => {
   let url;
   switch (src) {
+    // Verb be
+    case 'be':
+    case 'am':
+    case 'is':
+    case 'are':
+    case 'was':
+    case 'were':
+      url = require('./be.png');
+      break;
+
+    // Question Words
+    case 'how':
+      url = require('./QuestionWords/how.png');
+      break;
+    case 'what':
+      url = require('./QuestionWords/what.png');
+      break;
+    case 'when':
+      url = require('./QuestionWords/when.png');
+      break;
+    case 'where':
+      url = require('./QuestionWords/where.png');
+      break;
+    case 'who':
+      url = require('./QuestionWords/who.png');
+      break;
+    case 'why':
+      url = require('./QuestionWords/why.png');
+      break;
     //////////////
     //////////////
     //////////////
@@ -337,6 +366,9 @@ const NewImage = ({
     case 'social worker':
       url = require('./Professions/social_worker.png');
       break;
+    case 'student':
+      url = require('./Professions/student.png');
+      break;
     case 'taxi driver':
       url = require('./Professions/taxi_driver.png');
       break;
@@ -385,6 +417,65 @@ const NewImage = ({
     //////////////
     //////////////
 
+    // Transport
+    case 'ambulance':
+      url = require('./Transport/ambulance.png');
+      break;
+    case 'bicycle':
+      url = require('./Transport/bicycle.png');
+      break;
+    case 'bus':
+      url = require('./Transport/bus.png');
+      break;
+    case 'car':
+      url = require('./Transport/car.png');
+      break;
+    case 'delivery truck':
+      url = require('./Transport/delivery_truck.png');
+      break;
+    case 'fire engine':
+      url = require('./Transport/fire_engine.png');
+      break;
+    case 'minibus':
+      url = require('./Transport/minibus.png');
+      break;
+    case 'motor scooter':
+      url = require('./Transport/motor_scooter.png');
+      break;
+    case 'motorcycle':
+      url = require('./Transport/motorcycle.png');
+      break;
+    case 'pickup truck':
+      url = require('./Transport/pickup_truck.png');
+      break;
+    case 'police car':
+      url = require('./Transport/police_car.png');
+      break;
+    case 'race car':
+      url = require('./Transport/race_car.png');
+      break;
+    case 'scooter':
+      url = require('./Transport/scooter.png');
+      break;
+    case 'semi-truck':
+      url = require('./Transport/semi-truck.png');
+      break;
+    case 'suv':
+      url = require('./Transport/suv.png');
+      break;
+    case 'taxi':
+      url = require('./Transport/taxi.png');
+      break;
+    case 'tractor':
+      url = require('./Transport/tractor.png');
+      break;
+    case 'trolleybus':
+      url = require('./Transport/trolleybus.png');
+      break;
+    //////////////
+    //////////////
+    //////////////
+
     // Object_Pronouns
     case 'me':
       url = require('./Pronouns/Object_Pronouns/me.png');
@@ -409,7 +500,7 @@ const NewImage = ({
       break;
 
     // Possessive_Adjectives
-    case 'her':
+    case 'her ':
       url = require('./Pronouns/Possessive_Adjectives/her.png');
       break;
     case 'his':
