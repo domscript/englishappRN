@@ -131,12 +131,12 @@ export function AdjectivesTable() {
     <TextImage name="they" />,
     <TextImage name="their" />,
     <TextImage name="book" text={false} />,
-    <TextImage name="bag" text={false} />,
-    <TextImage name="woman" text={false} />,
-    <TextImage name="student" text={false} />,
-    <TextImage name="car" text={false} />,
-    <TextImage name="apple" text={false} />,
     <TextImage name="phone" text={false} />,
+    <TextImage name="pen" text={false} />,
+    <TextImage name="student" text={false} />,
+    <TextImage name="bone" text={false} />,
+    <TextImage name="apple" text={false} />,
+    <TextImage name="car" text={false} />,
   ];
 
   const examples = [
@@ -294,13 +294,13 @@ export function AdjectivesTable() {
             <Button
               onClick={contractionF}
               active={contraction}
-              style={{flex: 0.02}}>
+              style={{flex: 0.049}}>
               {/* {contraction ? '<>' : '><'} */}
             </Button>
-            <Div active={show[1] === '1'} style={{flex: 0.49}}>
+            <Div active={show[1] === '1'} style={{flex: 0.48}}>
               {'who?'}
             </Div>
-            <Div active={show[1] === '2'} style={{flex: 0.49}}>
+            <Div active={show[1] === '2'} style={{flex: 0.69}}>
               {'whose?'}
             </Div>
           </View>

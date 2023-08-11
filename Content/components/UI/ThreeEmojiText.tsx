@@ -12,17 +12,17 @@ export const ThreeEmojiText = ({
     <View style={styles.container}>
       <View>
         <Text style={{fontSize: 20}}>
-          {'' + `${'🦖' === timeQ ? noteQ : ''}`}
+          {'' + `${'👶' === timeQ ? noteQ : ''}`}
         </Text>
       </View>
       <View>
         <Text style={{fontSize: 20}}>
-          {'     ' + `${'🙋' === timeQ ? noteQ : ''}`}
+          {'     ' + `${'🧑' === timeQ ? noteQ : ''}`}
         </Text>
       </View>
       <View>
         <Text style={{fontSize: 20}}>
-          {'     ' + `${'🤖' === timeQ ? noteQ : ''}`}
+          {'     ' + `${'🧓' === timeQ ? noteQ : ''}`}
         </Text>
       </View>
     </View>

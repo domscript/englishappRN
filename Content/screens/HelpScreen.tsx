@@ -15,7 +15,7 @@ const Title = {
   A: {
     title: 'Lesson 1',
     text: [
-      'In the first lesson, we will learn how to conjugate English verbs in three simple tenses: past 🦖, present 🙋, future 🤖.',
+      'In the first lesson, we will learn how to conjugate English verbs in three simple tenses: past 👶, present 🧑, future 🧓.',
       'In each of the tenses, we will figure out how to build an affirmative ✅, negative ❌ or interrogative ❓ sentence.',
     ],
     links: [

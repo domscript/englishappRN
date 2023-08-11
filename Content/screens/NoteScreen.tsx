@@ -51,13 +51,13 @@ function NoteScreen({route}) {
             </View>
 
             <Div active={show[1] === '1'} style={{flex: 0.317}}>
-              {'past 🦖'}
+              {'past 👶'}
             </Div>
             <Div active={show[1] === '2'} style={{flex: 0.317}}>
-              {'present 🙋'}
+              {'present 🧑'}
             </Div>
             <Div active={show[1] === '3'} style={{flex: 0.317}}>
-              {'future 🤖'}
+              {'future 🧓'}
             </Div>
           </View>
         </View>

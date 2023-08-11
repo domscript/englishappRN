@@ -20,15 +20,15 @@ import {RootState} from '../redux-store/store';
 import Colors from '../constants/Colors';
 
 const tenseNoteIcons = [
-  '🦖✅',
-  '🙋✅',
-  '🤖✅',
-  '🦖❌',
-  '🙋❌',
-  '🤖❌',
-  '🦖❓',
-  '🙋❓',
-  '🤖❓',
+  '👶✅',
+  '🧑✅',
+  '🧓✅',
+  '👶❌',
+  '🧑❌',
+  '🧓❌',
+  '👶❓',
+  '🧑❓',
+  '🧓❓',
 ];
 
 const ComponentStates = {
@@ -252,9 +252,9 @@ function LessonStudyScreen({route, navigation}) {
           <ThreeEmojiText timeQ={timeQ} noteQ={noteQ} />
         </View>
         <View style={styles.time}>
-          <EmojiCircle active={timeQ === '🦖'}>🦖</EmojiCircle>
-          <EmojiCircle active={timeQ === '🙋'}>🙋</EmojiCircle>
-          <EmojiCircle active={timeQ === '🤖'}>🤖</EmojiCircle>
+          <EmojiCircle active={timeQ === '👶'}>👶</EmojiCircle>
+          <EmojiCircle active={timeQ === '🧑'}>🧑</EmojiCircle>
+          <EmojiCircle active={timeQ === '🧓'}>🧓</EmojiCircle>
         </View>
         <View
           style={{
