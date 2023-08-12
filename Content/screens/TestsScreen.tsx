@@ -3,6 +3,7 @@ import {useSelector, useDispatch} from 'react-redux';
 import {RootState} from '../redux-store/store';
 
 import Colors from '../constants/Colors';
+import {roundScore} from '../utils/smallFunctions';
 
 const DATA = [
   {
@@ -86,12 +87,6 @@ const DATA = [
     score: 0,
   },
 ];
-
-function roundScore(score: number) {
-  const [num, des] = score.toString().split('.');
-  if (!des) return num + '.0';
-  return num + '.' + des[0];
-}
 
 export default function Lessons() {
   const {isDarkTheme} = useSelector((state: RootState) => state.theme);

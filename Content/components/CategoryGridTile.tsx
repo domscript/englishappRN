@@ -2,13 +2,7 @@ import {Pressable, View, Text, StyleSheet, Platform} from 'react-native';
 import Colors from '../constants/Colors';
 import {useSelector} from 'react-redux';
 import {RootState} from '../redux-store/store';
-import {countProgress} from '../utils/smallFunctions';
-
-function roundScore(score: number) {
-  const [num, des] = score.toString().split('.');
-  if (!des) return num + '.0';
-  return num + '.' + des[0];
-}
+import {countProgress, roundScore} from '../utils/smallFunctions';
 
 function CategoryGridTile({
   title,
