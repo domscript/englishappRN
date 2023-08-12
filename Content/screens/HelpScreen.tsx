@@ -51,22 +51,16 @@ const Title = {
   C: {
     title: 'Lesson 3',
     text: [
-      'Object Pronouns.',
+      'Verb "to be"',
       "To make our sentences more interesting and a bit more challenging, let's add Object pronouns.",
     ],
     links: [
-      {
-        id: 1,
-        title: 'Watch Video',
-        link: 'https://youtu.be/ju9wjA9HtSA',
-        description: 'Personal Pronouns',
-      },
-      {
-        id: 2,
-        title: 'Watch Video',
-        link: 'https://youtu.be/zj8w-K1s87Q',
-        description: 'Question Words',
-      },
+      // {
+      //   id: 1,
+      //   title: 'Watch Video',
+      //   link: 'https://youtu.be/ju9wjA9HtSA',
+      //   description: 'Personal Pronouns',
+      // },
     ],
   },
   D: {
@@ -223,13 +217,17 @@ function Note() {
           ]}>
           Note:
         </Text>
-        <Text
-          style={[
-            styles.text,
-            isDarkTheme ? styles.darkThemeColor : styles.lightThemeColor,
-          ]}>
-          To open the next lesson, score 4.5 points.
-        </Text>
+        <View style={[styles.flex]}>
+          <View style={{justifyContent: 'center'}}>
+            <Text
+              style={[
+                styles.text,
+                isDarkTheme ? styles.darkThemeColor : styles.lightThemeColor,
+              ]}>
+              To open the next lesson, score 4.5 points;
+            </Text>
+          </View>
+        </View>
         <View style={[styles.flex]}>
           <View style={{justifyContent: 'center'}}>
             <MyIcon
@@ -249,7 +247,7 @@ function Note() {
                 styles.text,
                 isDarkTheme ? styles.darkThemeColor : styles.lightThemeColor,
               ]}>
-              click, to delete a wrong word
+              click, to delete a wrong word;
             </Text>
           </View>
         </View>
@@ -271,7 +269,7 @@ function Note() {
                 styles.text,
                 isDarkTheme ? styles.darkThemeColor : styles.lightThemeColor,
               ]}>
-              click, to view a hint
+              click, to view a hint.
             </Text>
           </View>
         </View>

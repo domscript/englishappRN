@@ -82,7 +82,7 @@ function LessonItem({id, title}) {
   }, [id]);
   let {user1} = useSelector((state: RootState) => state.lessons);
 
-  const newData = user1.split(id)[1].slice(0, 100);
+  const newData = user1.toUpperCase().split(id)[1].slice(0, 100);
 
   const [numberOfOnes] = countProgress(newData);
 

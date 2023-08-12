@@ -18,26 +18,9 @@ interface LinksInt {
   title: string;
   link: string;
   description: string;
-  icon: boolean;
 }
 
-const links = [
-  {
-    id: 1,
-    title: 'The Basics',
-    link: 'https://reactnative.dev/docs/tutorial',
-    description: 'Explains a Hello World for React Native.',
-  },
-  {
-    id: 2,
-    title: 'Follow us on Twitter',
-    link: 'https://twitter.com/reactnative',
-    description:
-      'Stay in touch with the community, join in on Q&As and more by following React Native on Twitter.',
-  },
-];
-
-export const LinkList = ({links}: {links: LinksInt[]}) => {
+export const LinkList = ({links, icon}: {links: LinksInt[]; icon: boolean}) => {
   const {isDarkTheme} = useSelector((state: RootState) => state.theme);
 
   return (
@@ -56,7 +39,7 @@ export const LinkList = ({links}: {links: LinksInt[]}) => {
             accessibilityRole="button"
             onPress={() => openURLInBrowser(link)}
             style={styles.linkContainer}>
-            <MyIcon name="youtube" color={'red'} size={30} />
+            {icon && <MyIcon name="youtube" color={'red'} size={30} />}
             <Text style={styles.link}>{title}</Text>
             <Text
               style={[

@@ -1,5 +1,7 @@
 import {Image, View, StyleSheet} from 'react-native';
 
+// TODO . make plural 'chairs' ...
+
 const NewImage = ({
   src,
   resizeMode,
@@ -47,17 +49,466 @@ const NewImage = ({
     case 'beer':
       url = require('./Drinks/beer.png');
       break;
+    case 'boba tea':
+      url = require('./Drinks/boba_tea.png');
+      break;
+    case 'cocktail':
+      url = require('./Drinks/cocktail.png');
+      break;
+    case 'drink ':
+      url = require('./Drinks/drink.png');
+      break;
+    case 'juice box':
+      url = require('./Drinks/juice_box.png');
+      break;
+    case 'maté':
+      url = require('./Drinks/mate.png');
+      break;
     case 'milk':
       url = require('./Drinks/milk.png');
-      break;
-    case 'wine':
-      url = require('./Drinks/wine.png');
       break;
     case 'tea':
       url = require('./Drinks/tea.png');
       break;
-    case 'juice box':
-      url = require('./Drinks/juice_box.png');
+    case 'tropical drink':
+      url = require('./Drinks/tropical_drink.png');
+      break;
+    case 'wine':
+      url = require('./Drinks/wine.png');
+      break;
+    //////////////
+    //////////////
+    //////////////
+
+    // Food
+    case 'bacon':
+      url = require('./Food/bacon.png');
+      break;
+    case 'beans':
+      url = require('./Food/beans.png');
+      break;
+    case 'bone':
+      url = require('./Food/bone.png');
+      break;
+    case 'burrito':
+      url = require('./Food/burrito.png');
+      break;
+    case 'butter':
+      url = require('./Food/butter.png');
+      break;
+    case 'candy':
+      url = require('./Food/candy.png');
+      break;
+    case 'cheese':
+      url = require('./Food/cheese.png');
+      break;
+    case 'chestnut':
+      url = require('./Food/chestnut.png');
+      break;
+    case 'chocolate bar':
+      url = require('./Food/chocolate_bar.png');
+      break;
+    case 'cooked rice':
+      url = require('./Food/cooked_rice.png');
+      break;
+    case 'curry and rice':
+      url = require('./Food/curry_and_rice.png');
+      break;
+    case 'custard':
+      url = require('./Food/custard.png');
+      break;
+    case 'dango':
+      url = require('./Food/dango.png');
+      break;
+    case 'dumpling':
+      url = require('./Food/dumpling.png');
+      break;
+    case 'egg':
+      url = require('./Food/egg.png');
+      break;
+    case 'falafel':
+      url = require('./Food/falafel.png');
+      break;
+    case 'fondue':
+      url = require('./Food/fondue.png');
+      break;
+    case 'fortune cookie':
+      url = require('./Food/fortune_cookie.png');
+      break;
+    case 'french fries':
+      url = require('./Food/french_fries.png');
+      break;
+    case 'fried shrimp':
+      url = require('./Food/fried_shrimp.png');
+      break;
+    case 'green salad':
+      url = require('./Food/green_salad.png');
+      break;
+    case 'hamburger':
+    case 'hamburgers':
+      url = require('./Food/hamburger.png');
+      break;
+    case 'honey':
+      url = require('./Food/honey_pot.png');
+      break;
+    case 'hot dog':
+      url = require('./Food/hot_dog.png');
+      break;
+    case 'ice cream':
+      url = require('./Food/ice_cream.png');
+      break;
+    case 'ice':
+      url = require('./Food/ice.png');
+      break;
+    case 'lollipop':
+      url = require('./Food/lollipop.png');
+      break;
+    case 'oden':
+      url = require('./Food/oden.png');
+      break;
+    case 'oyster':
+      url = require('./Food/oyster.png');
+      break;
+    case 'peanuts':
+      url = require('./Food/peanuts.png');
+      break;
+    case 'pita sandwich':
+      url = require('./Food/pita_sandwich.png');
+      break;
+    case 'pizza':
+      url = require('./Food/pizza.png');
+      break;
+    case 'popcorn':
+      url = require('./Food/popcorn.png');
+      break;
+    case 'poultry leg':
+      url = require('./Food/poultry_leg.png');
+      break;
+    case 'rice ball':
+      url = require('./Food/rice_ball.png');
+      break;
+    case 'rice cracker':
+      url = require('./Food/rice_cracker.png');
+      break;
+    case 'salt':
+      url = require('./Food/salt.png');
+      break;
+    case 'sandwich':
+      url = require('./Food/sandwich.png');
+      break;
+    case 'shaved ice':
+      url = require('./Food/shaved_ice.png');
+      break;
+    case 'soft ice cream':
+      url = require('./Food/soft_ice_cream.png');
+      break;
+    case 'spaghetti':
+      url = require('./Food/spaghetti.png');
+      break;
+    case 'steak':
+      url = require('./Food/steak.png');
+      break;
+    case 'sushi':
+      url = require('./Food/sushi.png');
+      break;
+    case 'taco':
+      url = require('./Food/taco.png');
+      break;
+    case 'tamale':
+      url = require('./Food/tamale.png');
+      break;
+    //////////////
+    //////////////
+    //////////////
+
+    //////////////
+    //////////////
+    //////////////
+
+    // study subs
+    case 'cooking':
+      url = require('./cooking.png');
+      break;
+
+    // Instruments Mechanisms Tools
+    case 'abacus':
+      url = require('./InstrumentsMechanismsTools/abacus.png');
+      break;
+    case 'alarm clock':
+      url = require('./InstrumentsMechanismsTools/alarm_clock.png');
+      break;
+    case 'anchor':
+      url = require('./InstrumentsMechanismsTools/anchor.png');
+      break;
+    case 'axe':
+      url = require('./InstrumentsMechanismsTools/axe.png');
+      break;
+    case 'boomerang':
+      url = require('./InstrumentsMechanismsTools/boomerang.png');
+      break;
+    case 'broom':
+      url = require('./InstrumentsMechanismsTools/broom.png');
+      break;
+    case 'bucket':
+      url = require('./InstrumentsMechanismsTools/bucket.png');
+      break;
+    case 'compass':
+      url = require('./InstrumentsMechanismsTools/compass.png');
+      break;
+    case 'construction sign':
+      url = require('./InstrumentsMechanismsTools/construction_sign.png');
+      break;
+    case 'dagger':
+      url = require('./InstrumentsMechanismsTools/dagger.png');
+      break;
+    case 'fire extinguisher':
+      url = require('./InstrumentsMechanismsTools/fire_extinguisher.png');
+      break;
+    case 'flashlight':
+      url = require('./InstrumentsMechanismsTools/flashlight.png');
+      break;
+    case 'gear':
+      url = require('./InstrumentsMechanismsTools/gear.png');
+      break;
+    case 'hammer':
+      url = require('./InstrumentsMechanismsTools/hammer.png');
+      break;
+    case 'hand saw':
+      url = require('./InstrumentsMechanismsTools/hand_saw.png');
+      break;
+    case 'hook':
+      url = require('./InstrumentsMechanismsTools/hook.png');
+      break;
+    case 'hourglass':
+      url = require('./InstrumentsMechanismsTools/hourglass.png');
+      break;
+    case 'key':
+      url = require('./InstrumentsMechanismsTools/key.png');
+      break;
+    case 'ladder':
+      url = require('./InstrumentsMechanismsTools/ladder.png');
+      break;
+    case 'magic wand':
+      url = require('./InstrumentsMechanismsTools/magic_wand.png');
+      break;
+    case 'magnifying glass':
+      url = require('./InstrumentsMechanismsTools/magnifying_glass.png');
+      break;
+    case 'microphone':
+      url = require('./InstrumentsMechanismsTools/microphone.png');
+      break;
+    case 'microscope':
+      url = require('./InstrumentsMechanismsTools/microscope.png');
+      break;
+    case 'mirror':
+      url = require('./InstrumentsMechanismsTools/mirror.png');
+      break;
+    case 'paperclip':
+      url = require('./InstrumentsMechanismsTools/paperclip.png');
+      break;
+    case 'pick':
+      url = require('./InstrumentsMechanismsTools/pick.png');
+      break;
+    case 'plunger':
+      url = require('./InstrumentsMechanismsTools/plunger.png');
+      break;
+    case 'safety pin':
+      url = require('./InstrumentsMechanismsTools/safety_pin.png');
+      break;
+    case 'satellite antenna':
+      url = require('./InstrumentsMechanismsTools/satellite_antenna.png');
+      break;
+    case 'scales':
+      url = require('./InstrumentsMechanismsTools/scales.png');
+      break;
+    case 'scissors':
+      url = require('./InstrumentsMechanismsTools/scissors.png');
+      break;
+    case 'screwdriver':
+      url = require('./InstrumentsMechanismsTools/screwdriver.png');
+      break;
+    case 'sewing needle':
+      url = require('./InstrumentsMechanismsTools/sewing_needle.png');
+      break;
+    case 'shield':
+      url = require('./InstrumentsMechanismsTools/shield.png');
+      break;
+    case 'stopwatch':
+      url = require('./InstrumentsMechanismsTools/stopwatch.png');
+      break;
+    case 'straight ruler':
+      url = require('./InstrumentsMechanismsTools/straight_ruler.png');
+      break;
+    case 'sword':
+      url = require('./InstrumentsMechanismsTools/sword.png');
+      break;
+    case 'telescope':
+      url = require('./InstrumentsMechanismsTools/telescope.png');
+      break;
+    case 'test tube':
+      url = require('./InstrumentsMechanismsTools/test_tube.png');
+      break;
+    case 'thread':
+      url = require('./InstrumentsMechanismsTools/thread.png');
+      break;
+    case 'timer clock':
+      url = require('./InstrumentsMechanismsTools/timer_clock.png');
+      break;
+    case 'toolbox':
+      url = require('./InstrumentsMechanismsTools/toolbox.png');
+      break;
+    case 'traffic light':
+      url = require('./InstrumentsMechanismsTools/traffic_light.png');
+      break;
+    case 'triangular ruler':
+      url = require('./InstrumentsMechanismsTools/triangular_ruler.png');
+      break;
+    case 'wrench':
+      url = require('./InstrumentsMechanismsTools/wrench.png');
+      break;
+    case 'yarn':
+      url = require('./InstrumentsMechanismsTools/yarn.png');
+      break;
+    //////////////
+    //////////////
+    //////////////
+
+    // Medical
+    case 'adhesive bandage':
+      url = require('./Medical/adhesive_bandage.png');
+      break;
+    case 'DNA':
+      url = require('./Medical/DNA.png');
+      break;
+    case 'microbe':
+      url = require('./Medical/microbe.png');
+      break;
+    case 'pill':
+      url = require('./Medical/pill.png');
+      break;
+    case 'stethoscope':
+      url = require('./Medical/stethoscope.png');
+      break;
+    case 'syringe':
+      url = require('./Medical/syringe.png');
+      break;
+    case 'thermometer':
+      url = require('./Medical/thermometer.png');
+      break;
+    case 'X-ray':
+      url = require('./Medical/X-ray.png');
+      break;
+    //////////////
+    //////////////
+    //////////////
+
+    // Flora
+    case 'bouquet':
+      url = require('./Flora/bouquet.png');
+      break;
+    case 'cactus':
+      url = require('./Flora/cactus.png');
+      break;
+    case 'Christmas tree':
+      url = require('./Flora/Christmas_tree.png');
+      break;
+    case 'coral':
+      url = require('./Flora/coral.png');
+      break;
+    case 'evergreen tree':
+      url = require('./Flora/evergreen_tree.png');
+      break;
+    case 'flower':
+      url = require('./Flora/flower.png');
+      break;
+    case 'herb':
+      url = require('./Flora/herb.png');
+      break;
+    case 'hibiscus':
+      url = require('./Flora/hibiscus.png');
+      break;
+    case 'lotus':
+      url = require('./Flora/lotus.png');
+      break;
+    case 'mushroom':
+      url = require('./Flora/mushroom.png');
+      break;
+    case 'palm tree':
+      url = require('./Flora/palm_tree.png');
+      break;
+    case 'potted plant':
+      url = require('./Flora/potted_plant.png');
+      break;
+    case 'rose':
+      url = require('./Flora/rose.png');
+      break;
+    case 'seedling':
+      url = require('./Flora/seedling.png');
+      break;
+    case 'sunflower':
+      url = require('./Flora/sunflower.png');
+      break;
+    case 'tree':
+      url = require('./Flora/tree.png');
+      break;
+    case 'tulip':
+      url = require('./Flora/tulip.png');
+      break;
+    //////////////
+    //////////////
+    //////////////
+
+    // Accessories
+    case 'backpack':
+      url = require('./Accessories/backpack.png');
+      break;
+    case 'boxing glove':
+      url = require('./Accessories/boxing_glove.png');
+      break;
+    case 'briefcase':
+      url = require('./Accessories/briefcase.png');
+      break;
+    case 'crown':
+      url = require('./Accessories/crown.png');
+      break;
+    case 'diving mask':
+      url = require('./Accessories/diving_mask.png');
+      break;
+    case 'glasses':
+      url = require('./Accessories/glasses.png');
+      break;
+    case 'goggles':
+      url = require('./Accessories/goggles.png');
+      break;
+    // case 'helmet with white cross':
+    //   url = require('./Accessories/helmet_with_white_cross.png');
+    //   break;
+    case 'luggage':
+      url = require('./Accessories/luggage.png');
+      break;
+    case 'military helmet':
+      url = require('./Accessories/military_helmet.png');
+      break;
+    case 'pouch':
+      url = require('./Accessories/pouch.png');
+      break;
+    case 'purse':
+      url = require('./Accessories/purse.png');
+      break;
+    case 'razor':
+      url = require('./Accessories/razor.png');
+      break;
+    case 'ribbon bow':
+      url = require('./Accessories/ribbon_bow.png');
+      break;
+    case 'ring':
+      url = require('./Accessories/ring.png');
+      break;
+    case 'sunglasses':
+      url = require('./Accessories/sunglasses.png');
+      break;
+    case 'toothbrush':
+      url = require('./Accessories/toothbrush.png');
       break;
     //////////////
     //////////////
@@ -72,6 +523,9 @@ const NewImage = ({
       break;
     case 'church':
       url = require('./Buildings/church.png');
+      break;
+    case 'circus':
+      url = require('./Buildings/circus_tent.png');
       break;
     case 'convenience store':
       url = require('./Buildings/convenience_store.png');
@@ -112,7 +566,133 @@ const NewImage = ({
     //////////////
     //////////////
     //////////////
+    // Flags
+    case 'Argentina':
+      url = require('./Flags/Argentina.png');
+      break;
+    case 'Australia':
+      url = require('./Flags/Australia.png');
+      break;
+    case 'Canada':
+      url = require('./Flags/Canada.png');
+      break;
+    case 'China':
+    case 'Chinese':
+      url = require('./Flags/China.png');
+      break;
+    case 'France':
+    case 'French':
+      url = require('./Flags/France.png');
+      break;
+    case 'Germany':
+    case 'German':
+      url = require('./Flags/Germany.png');
+      break;
+    case 'India':
+      url = require('./Flags/India.png');
+      break;
+    case 'Japan':
+    case 'Japanese':
+      url = require('./Flags/Japan.png');
+      break;
+    case 'Panama':
+      url = require('./Flags/Panama.png');
+      break;
+    case 'South Korea':
+    case 'Korean':
+      url = require('./Flags/South_Korea.png');
+      break;
+    case 'Spain':
+    case 'Spanish':
+      url = require('./Flags/Spain.png');
+      break;
+    case 'Thailand':
+    case 'Thai':
+      url = require('./Flags/Thailand.png');
+      break;
+    case 'the UK':
+    case 'English':
+      url = require('./Flags/the_United_Kingdom.png');
+      break;
+    case 'the USA':
+      url = require('./Flags/the_United_States.png');
+      break;
+    //////////////
+    //////////////
+    //////////////
 
+    // Electronics
+    case 'headphones':
+      url = require('./Electronics/headphones.png');
+      break;
+    case 'laptop':
+      url = require('./Electronics/laptop.png');
+      break;
+    case 'printer':
+      url = require('./Electronics/printer.png');
+      break;
+    case 'smart_phone':
+    case 'phone':
+      url = require('./Electronics/smart_phone.png');
+      break;
+    case 'video camera':
+      url = require('./Electronics/video_camera.png');
+      break;
+    case 'watch':
+      url = require('./Electronics/watch.png');
+      break;
+    //////////////
+    //////////////
+    //////////////
+
+    // Music
+    case 'accordion':
+      url = require('./Music/accordion.png');
+      break;
+    case 'banjo':
+      url = require('./Music/banjo.png');
+      break;
+    case 'drum':
+      url = require('./Music/drum.png');
+      break;
+    case 'guitar':
+      url = require('./Music/guitar.png');
+      break;
+    case 'saxophone':
+      url = require('./Music/saxophone.png');
+      break;
+    case 'trumpet':
+      url = require('./Music/trumpet.png');
+      break;
+    case 'violin':
+      url = require('./Music/violin.png');
+      break;
+    //////////////
+    //////////////
+    //////////////
+
+    // Super
+    case 'id':
+      url = require('./id.png');
+      break;
+    case 'credit card':
+      url = require('./credit_card.png');
+      break;
+    case 'ticket':
+      url = require('./ticket.png');
+      break;
+    case 'toilet':
+      url = require('./toilet.png');
+      break;
+    //////////////
+    //////////////
+    //////////////
+    case 'seat':
+      url = require('./seat.png');
+      break;
+    case 'couch':
+      url = require('./couch.png');
+      break;
     case 'bag':
       url = require('./bag.png');
       break;
@@ -125,20 +705,18 @@ const NewImage = ({
     case 'text':
       url = require('./text.png');
       break;
-    case 'news paper':
-      url = require('./news_paper.png');
+    case 'newspaper':
+      url = require('./newspaper.png');
       break;
     case 'box':
       url = require('./box.png');
       break;
     case 'chair':
+    case 'chairs':
       url = require('./chair.png');
       break;
     case 'door':
       url = require('./door.png');
-      break;
-    case 'dress':
-      url = require('./dress.png');
       break;
     case 'floor':
       url = require('./floor.png');
@@ -176,12 +754,14 @@ const NewImage = ({
 
     // Green Food
     case 'apple':
+    case 'apples':
       url = require('./Green_Food/apple.png');
       break;
     case 'avocado':
       url = require('./Green_Food/avocado.png');
       break;
     case 'banana':
+    case 'bananas':
       url = require('./Green_Food/banana.png');
       break;
     case 'bell pepper':
@@ -194,6 +774,7 @@ const NewImage = ({
       url = require('./Green_Food/broccoli.png');
       break;
     case 'carrot':
+    case 'carrots':
       url = require('./Green_Food/carrot.png');
       break;
     case 'cherries':
@@ -236,33 +817,41 @@ const NewImage = ({
       url = require('./Green_Food/olive.png');
       break;
     case 'onion':
+    case 'onions':
       url = require('./Green_Food/onion.png');
       break;
     case 'peach':
       url = require('./Green_Food/peach.png');
       break;
     case 'pear':
+    case 'pears':
       url = require('./Green_Food/pear.png');
       break;
     case 'pineapple':
+    case 'pineapples':
       url = require('./Green_Food/pineapple.png');
       break;
     case 'potato':
+    case 'potatoes':
       url = require('./Green_Food/potato.png');
       break;
     case 'strawberry':
+    case 'strawberries':
       url = require('./Green_Food/strawberry.png');
       break;
     case 'sweet potato':
       url = require('./Green_Food/sweet_potato.png');
       break;
     case 'tangerine':
+    case 'tangerines':
       url = require('./Green_Food/tangerine.png');
       break;
     case 'tomato':
+    case 'tomatoes':
       url = require('./Green_Food/tomato.png');
       break;
     case 'watermelon':
+    case 'watermelons':
       url = require('./Green_Food/watermelon.png');
       break;
     //////////////
@@ -417,7 +1006,194 @@ const NewImage = ({
     //////////////
     //////////////
 
+    // Pastries
+    case 'bagel':
+      url = require('./Pastries/bagel.png');
+      break;
+    case 'baguette':
+      url = require('./Pastries/baguette.png');
+      break;
+    case 'birthday cake':
+      url = require('./Pastries/birthday_cake.png');
+      break;
+    case 'bread':
+      url = require('./Pastries/bread.png');
+      break;
+    case 'cookie':
+    case 'cookies':
+      url = require('./Pastries/cookie.png');
+      break;
+    case 'croissant':
+      url = require('./Pastries/croissant.png');
+      break;
+    case 'cupcake':
+      url = require('./Pastries/cupcake.png');
+      break;
+    case 'doughnut':
+      url = require('./Pastries/doughnut.png');
+      break;
+    case 'flat bread':
+      url = require('./Pastries/flat_bread.png');
+      break;
+    case 'mooncake':
+      url = require('./Pastries/mooncake.png');
+      break;
+    case 'pancakes':
+      url = require('./Pastries/pancakes.png');
+      break;
+    case 'pie':
+      url = require('./Pastries/pie.png');
+      break;
+    case 'pretzel':
+      url = require('./Pastries/pretzel.png');
+      break;
+    case 'shortcake':
+      url = require('./Pastries/shortcake.png');
+      break;
+    case 'waffle':
+      url = require('./Pastries/waffle.png');
+      break;
+    //////////////
+    //////////////
+    //////////////
+
+    // Clothes
+    case 'ballet shoes':
+      url = require('./Clothes/ballet_shoes.png');
+      break;
+    case 'bikini':
+      url = require('./Clothes/bikini.png');
+      break;
+    case 'billed hat':
+      url = require('./Clothes/billed_hat.png');
+      break;
+    case 'blouse':
+      url = require('./Clothes/blouse.png');
+      break;
+    case 'briefs':
+      url = require('./Clothes/briefs.png');
+      break;
+    case 'coat':
+      url = require('./Clothes/coat.png');
+      break;
+    case 'dress':
+      url = require('./Clothes/dress.png');
+      break;
+    case 'dress shoe':
+      url = require('./Clothes/dress_shoe.png');
+      break;
+    case 'flat shoe':
+      url = require('./Clothes/flat_shoe.png');
+      break;
+    case 'gloves':
+      url = require('./Clothes/gloves.png');
+      break;
+    case 'graduation cap':
+      url = require('./Clothes/graduation_cap.png');
+      break;
+    case 'hat with bow':
+      url = require('./Clothes/hat_with_bow.png');
+      break;
+    case 'heeled boots':
+      url = require('./Clothes/heeled_boots.png');
+      break;
+    case 'heeled sandal':
+      url = require('./Clothes/heeled_sandal.png');
+      break;
+    case 'high-heeled shoe':
+      url = require('./Clothes/high-heeled_shoe.png');
+      break;
+    case 'hiking boot':
+      url = require('./Clothes/hiking_boot.png');
+      break;
+    case 'jeans':
+      url = require('./Clothes/jeans.png');
+      break;
+    case 'kimono':
+      url = require('./Clothes/kimono.png');
+      break;
+    case 'lab coat':
+      url = require('./Clothes/lab_coat.png');
+      break;
+    case 'martial arts uniform':
+      url = require('./Clothes/martial_arts_uniform.png');
+      break;
+    case 'one-piece swimsuit':
+      url = require('./Clothes/one-piece_swimsuit.png');
+      break;
+    case 'polo shirt':
+      url = require('./Clothes/polo_shirt.png');
+      break;
+    case 'running shirt':
+      url = require('./Clothes/running_shirt.png');
+      break;
+    case 'safety vest':
+      url = require('./Clothes/safety_vest.png');
+      break;
+    case 'sandal':
+      url = require('./Clothes/sandal.png');
+      break;
+    case 'sari':
+      url = require('./Clothes/sari.png');
+      break;
+    case 'scarf':
+      url = require('./Clothes/scarf.png');
+      break;
+    case 'shorts':
+      url = require('./Clothes/shorts.png');
+      break;
+    case 'socks':
+      url = require('./Clothes/socks.png');
+      break;
+    case 'tennis shoe':
+      url = require('./Clothes/tennis_shoe.png');
+      break;
+    case 'top hat':
+      url = require('./Clothes/top_hat.png');
+      break;
+    //////////////
+    //////////////
+    //////////////
+
+    // Utensils
+    case 'baby bottle':
+      url = require('./Utensils/baby_bottle.png');
+      break;
+    case 'bowl':
+      url = require('./Utensils/bowl.png');
+      break;
+    case 'chopsticks':
+      url = require('./Utensils/chopsticks.png');
+      break;
+    case 'fork':
+      url = require('./Utensils/fork.png');
+      break;
+    case 'jar':
+      url = require('./Utensils/jar.png');
+      break;
+    case 'knife':
+      url = require('./Utensils/knife.png');
+      break;
+    case 'plate':
+      url = require('./Utensils/plate.png');
+      break;
+    case 'spoon':
+      url = require('./Utensils/spoon.png');
+      break;
+    case 'table knife':
+      url = require('./Utensils/table_knife.png');
+      break;
+    case 'teapot':
+      url = require('./Utensils/teapot.png');
+      break;
+    //////////////
+    //////////////
+    //////////////
+
     // Transport
+    case 'airplane':
+      url = require('./Transport/airplane.png');
+      break;
     case 'ambulance':
       url = require('./Transport/ambulance.png');
       break;
@@ -433,8 +1209,17 @@ const NewImage = ({
     case 'delivery truck':
       url = require('./Transport/delivery_truck.png');
       break;
+    case 'ferry':
+      url = require('./Transport/ferry.png');
+      break;
     case 'fire engine':
       url = require('./Transport/fire_engine.png');
+      break;
+    case 'helicopter':
+      url = require('./Transport/helicopter.png');
+      break;
+    case 'ice skate':
+      url = require('./Transport/ice_skate.png');
       break;
     case 'minibus':
       url = require('./Transport/minibus.png');
@@ -442,8 +1227,14 @@ const NewImage = ({
     case 'motor scooter':
       url = require('./Transport/motor_scooter.png');
       break;
+    case 'motorboat':
+      url = require('./Transport/motorboat.png');
+      break;
     case 'motorcycle':
       url = require('./Transport/motorcycle.png');
+      break;
+    case 'passenger ship':
+      url = require('./Transport/passenger_ship.png');
       break;
     case 'pickup truck':
       url = require('./Transport/pickup_truck.png');
@@ -454,13 +1245,37 @@ const NewImage = ({
     case 'race car':
       url = require('./Transport/race_car.png');
       break;
+    case 'rocket':
+      url = require('./Transport/rocket.png');
+      break;
+    case 'roller skate':
+      url = require('./Transport/roller_skate.png');
+      break;
+    case 'sailboat':
+      url = require('./Transport/sailboat.png');
+      break;
     case 'scooter':
       url = require('./Transport/scooter.png');
       break;
     case 'semi-truck':
       url = require('./Transport/semi-truck.png');
       break;
-    case 'suv':
+    case 'ship':
+      url = require('./Transport/ship.png');
+      break;
+    case 'skateboard':
+      url = require('./Transport/skateboard.png');
+      break;
+    case 'sled':
+      url = require('./Transport/sled.png');
+      break;
+    case 'small airplane':
+      url = require('./Transport/small_airplane.png');
+      break;
+    case 'speedboat':
+      url = require('./Transport/speedboat.png');
+      break;
+    case 'SUV':
       url = require('./Transport/suv.png');
       break;
     case 'taxi':
@@ -471,6 +1286,9 @@ const NewImage = ({
       break;
     case 'trolleybus':
       url = require('./Transport/trolleybus.png');
+      break;
+    case 'UFO':
+      url = require('./Transport/UFO.png');
       break;
     //////////////
     //////////////
@@ -838,6 +1656,15 @@ const NewImage = ({
       break;
     case 'zebra':
       url = require('./Creatures/zebra.png');
+      break;
+    case 'nest':
+      url = require('./Creatures/nest.png');
+      break;
+    case 'paw prints':
+      url = require('./Creatures/paw_prints.png');
+      break;
+    case 'seashell':
+      url = require('./Creatures/seashell.png');
       break;
     default:
       return null;

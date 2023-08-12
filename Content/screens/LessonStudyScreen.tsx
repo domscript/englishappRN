@@ -51,7 +51,7 @@ function LessonStudyScreen({route, navigation}) {
   let {user1} = useSelector((state: RootState) => state.lessons);
 
   const [progress, newData] = useMemo(() => {
-    return countProgress(user1.split(id)[1].slice(0, 100));
+    return countProgress(user1.toUpperCase().split(id)[1].slice(0, 100));
   }, [user1, id]);
   const [stage, setStage] = useState<Stages>(1);
 
@@ -266,9 +266,6 @@ function LessonStudyScreen({route, navigation}) {
             style={{
               justifyContent: 'center',
               borderRadius: 50,
-              // backgroundColor: Colors.greenop,
-              // padding: 4,
-
               width: '16%',
             }}>
             <Image src={qWord[0]} resizeMode="contain" />
@@ -294,7 +291,7 @@ function LessonStudyScreen({route, navigation}) {
             ) : (
               <Image src={qWord[2]} resizeMode="contain" />
             )}
-            {/* <Text style={styles.title2}>{qWord[2]}</Text> */}
+            {/* <Text>{qWord[2]}</Text> */}
           </View>
         </View>
       </Pressable>

@@ -25,6 +25,13 @@ function CategoryGridTile({
     theme: {isDarkTheme},
     lessons: {user1},
   } = useSelector((state: RootState) => state);
+  const isOpen = user1.includes(id);
+
+  const progress =
+    Math.floor(
+      countProgress(user1.toUpperCase().split(id)[1].slice(0, 100))[0] / 2,
+    ) / 10;
+  const roundProgress = roundScore(progress);
 
   return (
     <View
@@ -38,33 +45,28 @@ function CategoryGridTile({
           styles.button,
           pressed ? styles.buttonPressed : null,
         ]}
-        onPress={onPress}>
+        onPress={isOpen ? onPress : () => {}}>
         <View key={title} style={styles.lesson}>
           <View
             style={[
               styles.score,
               {
-                backgroundColor:
-                  Math.floor(
-                    countProgress(user1.split(id)[1].slice(0, 100))[0] / 2,
-                  ) /
-                    10 >=
-                  4.5
-                    ? Colors.green70
-                    : Colors.amber60,
+                backgroundColor: !isOpen
+                  ? Colors.gray60
+                  : progress >= 4.5
+                  ? Colors.green70
+                  : Colors.amber60,
               },
             ]}>
-            <Text
-              style={[
-                styles.title,
-                isDarkTheme ? styles.darkTitle : styles.lightTitle,
-              ]}>
-              {roundScore(
-                Math.floor(
-                  countProgress(user1.split(id)[1].slice(0, 100))[0] / 2,
-                ) / 10,
-              )}
-            </Text>
+            {isOpen && (
+              <Text
+                style={[
+                  styles.title,
+                  isDarkTheme ? styles.darkTitle : styles.lightTitle,
+                ]}>
+                {roundProgress}
+              </Text>
+            )}
           </View>
           <View style={styles.lessonTitle}>
             <Text

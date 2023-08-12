@@ -1,5 +1,8 @@
 import {createSlice} from '@reduxjs/toolkit';
 import {mmkv} from '../../App';
+import {countProgress} from '../utils/smallFunctions';
+
+const STUDY_BREAK_POINT = 5; /// should be 90
 
 const patternString = createPatternString();
 
@@ -22,7 +25,25 @@ const lessonsSlice = createSlice({
   reducers: {
     setLessonData: (state, action) => {
       const {lessonId, action: newAction} = action.payload;
-      const progress = move3Forward(state['user1'], lessonId, newAction);
+      let progress = move3Forward(state['user1'], lessonId, newAction);
+
+      if (
+        countProgress(
+          progress.toUpperCase().split(lessonId)[1].slice(0, 100),
+        )[0] >= STUDY_BREAK_POINT
+      ) {
+        const nextLesson = progress.indexOf(
+          'ABCDEFGHIJKLMNOP'[
+            'ABCDEFGHIJKLMNOP'.indexOf(lessonId) + 1
+          ]?.toLowerCase(),
+        );
+
+        if (nextLesson > 0)
+          progress = `${progress.slice(0, nextLesson)}${progress
+            .slice(nextLesson)[0]
+            .toUpperCase()}${progress.slice(nextLesson + 1)}`;
+      }
+
       state['user1'] = progress;
 
       mmkv.set('lessons', progress);
@@ -83,7 +104,8 @@ function move3Forward(
 }
 
 export function createPatternString() {
-  const lessons = 'ABCDEFGHIJKLMNOP';
+  // const lessons = 'ABCDEFGHIJKLMNOP';
+  const lessons = 'Abcdefghijklmnop';
   let patternString = '';
 
   for (let i = 0; i < lessons.length; i++) {
