@@ -12,9 +12,9 @@ import {EmojiCircle} from '../components/UI/EmojiCircle';
 import {Verb} from '../components/MyIcons/Verbs/index';
 import Image from '../assets/Image';
 
-import {spWord} from '../data/words';
+import {spWord, verbsList} from '../data/words';
 
-import {getRandomInt, countProgress} from '../utils/smallFunctions';
+import {getRandomInt, countProgress, roundScore} from '../utils/smallFunctions';
 import {setLessonData, ACTIONS} from '../redux-store/lessons';
 import {RootState} from '../redux-store/store';
 import Colors from '../constants/Colors';
@@ -126,7 +126,7 @@ function LessonStudyScreen({route, navigation}) {
       });
     }
   }
-  // console.log(124, question, userAnswer);
+  // if (stage === 8) console.log(124, question, userAnswer);
   if (
     question.filter((i: string) => i).length === userAnswer.length &&
     componentState === ComponentStates.IDLE
@@ -227,7 +227,7 @@ function LessonStudyScreen({route, navigation}) {
                   },
                   isDarkTheme ? styles.darkThemeColor : styles.lightThemeColor,
                 ]}>
-                {Math.floor(progress / 2) / 10}
+                {roundScore(Math.floor(progress / 2) / 10)}
               </Text>
             </View>
           </View>
@@ -262,37 +262,46 @@ function LessonStudyScreen({route, navigation}) {
             flex: 0.8,
             flexDirection: 'row',
           }}>
-          <View
-            style={{
-              justifyContent: 'center',
-              borderRadius: 50,
-              width: '16%',
-            }}>
-            <Image src={qWord[0]} resizeMode="contain" />
-            {/* <Text style={styles.title}>{qWord[0]}</Text> */}
-          </View>
-          <View style={styles.verbIcon}>
-            <Verb positive={tenseNoteIndex} stage={stage} verb={qWord[1]} />
-          </View>
-          <View style={{justifyContent: 'center', width: '16%'}}>
-            {spWord.includes(qWord[2]) ? (
-              <>
-                <Image
-                  style={{position: 'relative', bottom: '-44%', right: '-30%'}}
-                  src={qWord[2]}
-                  resizeMode="contain"
-                />
-                <Image
-                  style={{position: 'relative', bottom: '44%'}}
-                  src={qWord[2]}
-                  resizeMode="contain"
-                />
-              </>
-            ) : (
-              <Image src={qWord[2]} resizeMode="contain" />
-            )}
-            {/* <Text>{qWord[2]}</Text> */}
-          </View>
+          {qWord
+            .filter((_: string) => _)
+            .map((el: string) => {
+              if (verbsList.includes(el))
+                return (
+                  <View key={el} style={styles.verbIcon}>
+                    <Verb positive={tenseNoteIndex} stage={stage} verb={el} />
+                  </View>
+                );
+              else
+                return (
+                  <View
+                    key={el}
+                    style={{
+                      justifyContent: 'center',
+                      width: '16%',
+                    }}>
+                    {spWord.includes(el) ? (
+                      <>
+                        <Image
+                          style={{
+                            position: 'relative',
+                            bottom: '-44%',
+                            right: '-30%',
+                          }}
+                          src={el}
+                          resizeMode="contain"
+                        />
+                        <Image
+                          style={{position: 'relative', bottom: '44%'}}
+                          src={el}
+                          resizeMode="contain"
+                        />
+                      </>
+                    ) : (
+                      <Image src={el} resizeMode="contain" />
+                    )}
+                  </View>
+                );
+            })}
         </View>
       </Pressable>
       <View style={styles.output}>

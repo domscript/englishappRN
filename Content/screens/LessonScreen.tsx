@@ -6,11 +6,11 @@ import {useSelector} from 'react-redux';
 
 import Colors from '../constants/Colors';
 
-import {countProgress} from '../utils/smallFunctions';
+import {countProgress, roundScore} from '../utils/smallFunctions';
 import Tts from 'react-native-tts';
 
 import {lessons, test} from '../data/words';
-import {SimpleTenseScheme} from '../utils/calc';
+import {SimpleTenseScheme, SecondLesson} from '../utils/calc';
 import {RootState} from '../redux-store/store';
 
 import {Screens} from '../../Navigation';
@@ -76,7 +76,9 @@ function LessonItem({id, title}) {
   const datass = useMemo(() => {
     const qData = [];
     for (let i = 0; i < 100; ++i) {
-      qData.push(SimpleTenseScheme(lessons[id as keyof typeof lessons]));
+      if (id === 'A') qData.push(SimpleTenseScheme(lessons['A']));
+      else if (id === 'B') qData.push(SecondLesson(lessons['B']));
+      else qData.push(SimpleTenseScheme(lessons[id as keyof typeof lessons]));
     }
     return qData;
   }, [id]);
@@ -135,7 +137,7 @@ function LessonItem({id, title}) {
       ]}>
       <LessonButton
         title={title}
-        progress={progressStudy || '0.0'}
+        progress={roundScore(progressStudy)}
         done={progressStudy >= 4.5}
         study={true}
         onPress={studyHandler}
