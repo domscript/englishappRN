@@ -2,6 +2,9 @@
 // For dictinary 6 words min  in one group
 // For lessons 4 choices min in each verb
 
+// TODO .
+// give;
+
 // love?, hate, need, prefer, want, realise, suppose, mean, believe, remember, belong, contain, consist, seem.
 
 // pronoun: he, she, it, they
@@ -24,6 +27,7 @@ export const verbs = {
   //   value2: "studied",
   //   value3: "studied",
   //   ving: "studying",
+  // qw: ['what', 'where', 'why', 'how']
   // },
   // work: {
   //   value0: "work",
@@ -38,6 +42,8 @@ export const verbs = {
     value2: 'loved',
     value3: 'loved',
     // ving: "loving",
+    pronoun: true,
+    qw: ['what', 'why', 'how'],
   },
   // come: {
   //   value0: "come",
@@ -45,6 +51,8 @@ export const verbs = {
   //   value2: "came",
   //   value3: "come",
   //   ving: "coming",
+  // qw: ['why', 'how', 'when']
+
   // },
   // go: {
   //   value0: "go",
@@ -67,6 +75,8 @@ export const verbs = {
     value2: 'opened',
     value3: 'opened',
     ving: 'opening',
+    pronoun: false,
+    qw: ['what', 'why', 'how', 'when'],
   },
   close: {
     value0: 'close',
@@ -74,6 +84,8 @@ export const verbs = {
     value2: 'closed',
     value3: 'closed',
     ving: 'closing',
+    pronoun: false,
+    qw: ['what', 'why', 'how', 'when'],
   },
   drink: {
     value0: 'drink',
@@ -81,6 +93,8 @@ export const verbs = {
     value2: 'drank',
     value3: 'drunk',
     ving: 'drinking',
+    pronoun: false,
+    qw: ['what', 'where', 'why', 'when'],
   },
   eat: {
     value0: 'eat',
@@ -88,6 +102,8 @@ export const verbs = {
     value2: 'ate',
     value3: 'eaten',
     ving: 'eating',
+    pronoun: false,
+    qw: ['what', 'where', 'why', 'when'],
   },
   // feel: {
   //   value0: "feel",
@@ -116,6 +132,8 @@ export const verbs = {
     value2: 'asked',
     value3: 'asked',
     ving: 'asking',
+    pronoun: true,
+    qw: ['what', 'why', 'how', 'when'],
   },
   // answer: {
   //   value0: "answer",
@@ -123,6 +141,7 @@ export const verbs = {
   //   value2: "answered",
   //   value3: "answered",
   //   ving: "answering",
+  // pronoun: true,
   // },
   // take: {
   //   value0: "take",
@@ -137,6 +156,7 @@ export const verbs = {
   //   value2: "paid",
   //   value3: "paid",
   //   ving: "paying",
+  // pronoun: true,
   // },
   sleep: {
     value0: 'sleep',
@@ -144,6 +164,8 @@ export const verbs = {
     value2: 'slept',
     value3: 'slept',
     ving: 'sleeping',
+    pronoun: false,
+    qw: ['where', 'why', 'how', 'when'],
   },
   // speak: {
   //   value0: "speak",
@@ -158,6 +180,8 @@ export const verbs = {
     value2: 'thought',
     value3: 'thought',
     ving: 'thinking',
+    pronoun: false,
+    qw: ['what', 'why', 'how'],
   },
   // tell: {
   //   value0: "tell",
@@ -165,6 +189,7 @@ export const verbs = {
   //   value2: "told",
   //   value3: "told",
   //   ving: "telling",
+  // pronoun: true,
   // },
   // leave: {
   //   value0: "leave",
@@ -172,6 +197,7 @@ export const verbs = {
   //   value2: "left",
   //   value3: "left",
   //   ving: "leaving",
+  // pronoun: true,
   // },
   // put: {
   //   value0: "put",
@@ -186,6 +212,7 @@ export const verbs = {
   //   value2: "wrote",
   //   value3: "written",
   //   ving: "writing",
+  // pronoun: true,
   // },
   stand: {
     value0: 'stand',
@@ -193,6 +220,8 @@ export const verbs = {
     value2: 'stood',
     value3: 'stood',
     ving: 'standing',
+    pronoun: false,
+    qw: ['where', 'why'],
   },
   run: {
     value0: 'run',
@@ -200,6 +229,8 @@ export const verbs = {
     value2: 'ran',
     value3: 'run',
     ving: 'running',
+    pronoun: false,
+    qw: ['where', 'why'],
   },
   sit: {
     value0: 'sit',
@@ -207,6 +238,8 @@ export const verbs = {
     value2: 'sat',
     value3: 'sat',
     ving: 'sitting',
+    pronoun: false,
+    qw: ['where', 'why'],
   },
   dance: {
     value0: 'dance',
@@ -214,6 +247,8 @@ export const verbs = {
     value2: 'danced',
     value3: 'danced',
     ving: 'dancing',
+    pronoun: false,
+    qw: ['where', 'why', 'how'],
   },
   walk: {
     value0: 'walk',
@@ -221,6 +256,8 @@ export const verbs = {
     value2: 'walked',
     value3: 'walked',
     ving: 'walking',
+    pronoun: false,
+    qw: ['where', 'why'],
   },
 
   read: {
@@ -229,6 +266,8 @@ export const verbs = {
     value2: 'read',
     value3: 'read',
     ving: 'reading',
+    pronoun: false,
+    qw: ['what', 'why'],
   },
   // send: {
   //   value0: "send",
@@ -264,8 +303,9 @@ export const verbs = {
   //   value1: "understands",
   //   value2: "understood",
   //   value3: "understood",
+  // pronoun: true,
   // },
-  // know: { value0: "know", value1: "knows", value2: "knew", value3: "known" },
+  // know: { value0: "know", value1: "knows", value2: "knew", value3: "known",  pronoun: true,},
 
   /// TODO: -ing
   // see: {
@@ -273,17 +313,19 @@ export const verbs = {
   //   value1: "sees",
   //   value2: "saw",
   //   value3: "seen",
+  // pronoun: true,
+
   // },
   // say: { value0: "say", value1: "says", value2: "said", value3: "said" },
-  // buy: { value0: "buy", value1: "buys", value2: "bought", value3: "bought" },
-  // hear: { value0: "hear", value1: "hears", value2: "heard", value3: "heard" },
+  // buy: { value0: "buy", value1: "buys", value2: "bought", value3: "bought",     pronoun: true, },
+  // hear: { value0: "hear", value1: "hears", value2: "heard", value3: "heard",     pronoun: true,},
   // lose: { value0: "lose", value1: "loses", value2: "lost", value3: "lost" },
-  // help: { value0: "help", value1: "helps", value2: "helped", value3: "helped" },
-  // meet: { value0: "meet", value1: "meets", value2: "met", value3: "met" },
+  // help: { value0: "help", value1: "helps", value2: "helped", value3: "helped",     pronoun: true, },
+  // meet: { value0: "meet", value1: "meets", value2: "met", value3: "met",     pronoun: true, },
   // make: { value0: "make", value1: "makes", value2: "made", value3: "made" },
   // get: { value0: "get", value1: "gets", value2: "got", value3: "got" },
-  // find: { value0: "find", value1: "finds", value2: "found", value3: "found" },
-  // show: { value0: "show", value1: "shows", value2: "showed", value3: "shown" },
+  // find: { value0: "find", value1: "finds", value2: "found", value3: "found",   // pronoun: true, },
+  // show: { value0: "show", value1: "shows", value2: "showed", value3: "shown" ,   pronoun: true,},
   // set: { value0: "set", value1: "sets", value2: "set", value3: "set" },
   // grow: { value0: "grow", value1: "grows", value2: "grew", value3: "grown" },
   // hold: { value0: "hold", value1: "holds", value2: "held", value3: "held" },
@@ -292,6 +334,7 @@ export const verbs = {
   //   value1: "forgets",
   //   value2: "forgot",
   //   value3: "forgotten",
+  // pronoun: true,
   // },
   // start: {
   //   value0: "start",
@@ -329,6 +372,7 @@ export const verbs = {
   //   value1: "impresses",
   //   value2: "impressed",
   //   value3: "impressed",
+  // pronoun: true,
   // },
 };
 
@@ -785,6 +829,7 @@ export const subjectPronounsIcons: {
     they: 'they',
     it: 'it',
   },
+  B: {who: 'who'},
 };
 
 export const objectPronounsIcons: {
@@ -1066,6 +1111,7 @@ export const spWord = [
   'bananas',
   'carrots',
   'hamburgers',
+  'strawberries',
   'tomatoes',
   'apples',
   'corn',
@@ -1076,7 +1122,28 @@ export const spWord = [
   'chairs',
 ];
 
-const NounsLs = {
+const abbb = {
+  Argentina: 'Argentina',
+  Australia: 'Australia',
+  Canada: 'Canada',
+  China: 'China',
+  France: 'France',
+  Germany: 'Germany',
+  India: 'India',
+  Japan: 'Japan',
+  Panama: 'Panama',
+  'South Korea': 'South Korea',
+  Spain: 'Spain',
+  Thailand: 'Thailand',
+  'the UK': 'the United Kingdom',
+  'the USA': 'the United States',
+};
+
+interface NounsLessonsInt {
+  [key: string]: [string, number, string, string[]];
+}
+
+const NounsLs: NounsLessonsInt = {
   bananas: ['bananas', 0, 'bananas', ['buy', 'eat']],
   carrot: ['carrots', 0, 'carrots', ['buy', 'eat']],
   hamburgers: ['hamburgers', 0, 'hamburgers', ['buy', 'eat']],
@@ -1096,24 +1163,8 @@ const NounsLs = {
 // melon: 'melon',
 // olive: 'olive',
 // 'sweet potato': 'sweet potato',
-const abbb = {
-  Argentina: 'Argentina',
-  Australia: 'Australia',
-  Canada: 'Canada',
-  China: 'China',
-  France: 'France',
-  Germany: 'Germany',
-  India: 'India',
-  Japan: 'Japan',
-  Panama: 'Panama',
-  'South Korea': 'South Korea',
-  Spain: 'Spain',
-  Thailand: 'Thailand',
-  'the UK': 'the United Kingdom',
-  'the USA': 'the United States',
-};
 
-const NounsL = {
+const NounsL: NounsLessonsInt = {
   door: ['the door', 0, 'door', ['open', 'close']],
   window: ['the window', 0, 'window', ['open', 'close']],
   box: ['a box', 0, 'box', ['open', 'close', 'buy']],
@@ -1183,7 +1234,48 @@ const NounsL = {
   // wall: ['on the wall', 0, 'wall', ['dance', 'sit']],
 };
 
-const wordsL = {
+export interface WordsOneLessonInt {
+  words: {
+    'Subject Pronouns': {
+      [key: string]: [string, number, string];
+    };
+    names: {
+      he: string[];
+      she: string[];
+    };
+    nouns: NounsLessonsInt;
+    verbs: {
+      [key: string]: {
+        value0: string;
+        value1: string;
+        value2: string;
+        value3: string;
+        ving?: string;
+        pronoun: boolean;
+        qw: string[];
+      };
+    };
+  };
+}
+
+const wordsL: {
+  A: WordsOneLessonInt;
+  B: WordsOneLessonInt;
+  C: WordsOneLessonInt;
+  D: WordsOneLessonInt;
+  E: WordsOneLessonInt;
+  F: WordsOneLessonInt;
+  G: WordsOneLessonInt;
+  H: WordsOneLessonInt;
+  I: WordsOneLessonInt;
+  J: WordsOneLessonInt;
+  K: WordsOneLessonInt;
+  L: WordsOneLessonInt;
+  M: WordsOneLessonInt;
+  N: WordsOneLessonInt;
+  O: WordsOneLessonInt;
+  P: WordsOneLessonInt;
+} = {
   A: {
     words: {
       'Subject Pronouns': subjectPronouns,
@@ -1583,9 +1675,12 @@ const allWords = {
 
 export const test = {A: {}, B: {}, C: {}, D: {}};
 
-function calc(words: typeof wordsL | typeof allWords) {
+function calc0(words: typeof wordsL) {
+  return {...words};
+}
+function calc1(words: typeof allWords) {
   return {...words};
 }
 
-export const lessons = calc(wordsL);
-export const words = calc(allWords);
+export const lessons = calc0(wordsL);
+export const words = calc1(allWords);
