@@ -1501,7 +1501,7 @@ const Music = {
 
 const Buildings = {
   bank: 'bank',
-  casle: 'casle',
+  castle: 'castle',
   church: 'church',
   circus: 'circus',
   'convenience store': 'convenience store',
