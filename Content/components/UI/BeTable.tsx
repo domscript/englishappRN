@@ -5,6 +5,9 @@ import Colors from '../../constants/Colors';
 import {RootState} from '../../redux-store/store';
 import Image from '../../assets/Image';
 
+// TODO .
+// Examples
+
 interface ButtonProps {
   children: React.ReactNode;
   onClick: () => void;
@@ -34,15 +37,7 @@ function Button({children, onClick, active = false, style}: ButtonProps) {
         },
         style,
       ]}>
-      <Text
-        style={{
-          color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          fontSize: 11,
-          textAlign: 'center',
-          justifyContent: 'center',
-        }}>
-        {children}
-      </Text>
+      {children}
     </TouchableOpacity>
   );
 }
@@ -110,11 +105,11 @@ export function BeTable() {
   const [ex, setEx] = useState(0);
 
   const showExample = (num: ShowType) => {
-    setShow(num);
-    setEx(prev => {
-      if (prev < 1) return prev + 1;
-      return 0;
-    });
+    // setShow(num);
+    // setEx(prev => {
+    //   if (prev < 1) return prev + 1;
+    //   return 0;
+    // });
   };
 
   const contractionF = () => {
@@ -123,978 +118,168 @@ export function BeTable() {
     setEx(0);
   };
 
-  const data = [
-    <View style={{flexDirection: 'row', width: '50%'}}>
-      <View style={{flex: 0.5}}>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}>
-          I
-        </Text>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}>
-          You
-        </Text>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}>
-          We
-        </Text>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}>
-          They{' '}
-        </Text>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}>
-          He
-        </Text>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}>
-          She
-        </Text>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}>
-          It
-        </Text>
-      </View>
-      <View style={{flex: 0.5}}>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}></Text>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}></Text>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}></Text>
-        <View style={{flexDirection: 'row'}}>
-          <View style={{flex: 0.5}}>
-            <Text style={{fontSize: 16}}>dance</Text>
-          </View>
-          <View style={{flex: 0.5}}>
-            <Text style={{color: 'red', fontSize: 16}}>d</Text>
-          </View>
-        </View>
-      </View>
-    </View>,
-    <View style={{flexDirection: 'row', width: '50%'}}>
-      <View style={{flex: 0.5}}>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}>
-          I
-        </Text>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}>
-          You
-        </Text>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}>
-          We
-        </Text>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}>
-          They{' '}
-        </Text>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}></Text>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}>
-          He
-        </Text>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}>
-          She
-        </Text>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}>
-          It
-        </Text>
-      </View>
-      <View style={{flex: 0.5}}>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}></Text>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}></Text>
-        <Text style={{fontSize: 16}}>dance</Text>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}></Text>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}></Text>
-        <View style={{flexDirection: 'row'}}>
-          <View style={{flex: 0.5}}>
-            <Text style={{fontSize: 16}}>dance</Text>
-          </View>
-          <View style={{flex: 0.5}}>
-            <Text style={{color: 'red', fontSize: 16}}>s</Text>
-          </View>
-        </View>
-      </View>
-    </View>,
-    <View>
-      {contraction ? (
-        <View style={{flexDirection: 'row', width: '50%'}}>
-          <View style={{flex: 0.5}}>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}>
-              I
-            </Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}>
-              You
-            </Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}>
-              We
-            </Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}>
-              They
-            </Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}>
-              He
-            </Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}>
-              She
-            </Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}>
-              It
-            </Text>
-          </View>
-          <View style={{flex: 0.5}}>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}></Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}></Text>
-            <Text style={{color: 'red', fontSize: 16}}>&apos;ll</Text>
-            <Text style={{fontSize: 16}}>dance</Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}></Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}></Text>
-          </View>
-        </View>
-      ) : (
-        <View style={{flexDirection: 'row', width: '50%'}}>
-          <View style={{flex: 0.5}}>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}>
-              I
-            </Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}>
-              You
-            </Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}>
-              We
-            </Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}>
-              They{' '}
-            </Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}>
-              He
-            </Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}>
-              She
-            </Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}>
-              It
-            </Text>
-          </View>
-          <View style={{flex: 0.5}}>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}></Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}></Text>
-            <Text style={{color: 'red', fontSize: 16}}>will</Text>
-            <Text style={{fontSize: 16}}>dance</Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}></Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}></Text>
-          </View>
-        </View>
-      )}
-    </View>,
-    <View>
-      {contraction ? (
-        <View style={{flexDirection: 'row', width: '50%'}}>
-          <View style={{flex: 0.5}}>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}>
-              I
-            </Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}>
-              You
-            </Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}>
-              We
-            </Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}>
-              They{' '}
-            </Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}>
-              He
-            </Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}>
-              She
-            </Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}>
-              It
-            </Text>
-          </View>
-          <View style={{flex: 0.5}}>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}></Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}></Text>
-            <Text style={{color: 'red', fontSize: 16}}>didn&apos;t</Text>
-            <Text style={{fontSize: 16}}>dance</Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}></Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}></Text>
-          </View>
-        </View>
-      ) : (
-        <View style={{flexDirection: 'row', width: '50%'}}>
-          <View style={{flex: 0.5}}>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}>
-              I
-            </Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}>
-              You
-            </Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}>
-              We
-            </Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}>
-              They{' '}
-            </Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}>
-              He
-            </Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}>
-              She
-            </Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}>
-              It
-            </Text>
-          </View>
-          <View style={{flex: 0.5}}>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}></Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}></Text>
-            <Text style={{color: 'red', fontSize: 16}}>did not</Text>
-            <Text style={{fontSize: 16}}>dance</Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}></Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}></Text>
-          </View>
-        </View>
-      )}
-    </View>,
-    <View>
-      {contraction ? (
-        <View style={{flexDirection: 'row', width: '50%'}}>
-          <View style={{flex: 0.5}}>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}>
-              I
-            </Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}>
-              You
-            </Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}>
-              We
-            </Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}>
-              They{' '}
-            </Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}></Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}>
-              He
-            </Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}>
-              She
-            </Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}>
-              It
-            </Text>
-          </View>
-          <View style={{flex: 0.5}}>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}></Text>
-            <Text style={{color: 'red', fontSize: 16}}>don&apos;t</Text>
-            <Text style={{fontSize: 16}}>dance</Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}></Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}></Text>
-            <Text style={{color: 'red', fontSize: 16}}>doesn&apos;t</Text>
-            <Text style={{fontSize: 16}}>dance</Text>
-          </View>
-        </View>
-      ) : (
-        <View style={{flexDirection: 'row', width: '50%'}}>
-          <View style={{flex: 0.5}}>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}>
-              I
-            </Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}>
-              You
-            </Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}>
-              We
-            </Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}>
-              They{' '}
-            </Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}></Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}>
-              He
-            </Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}>
-              She
-            </Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}>
-              It
-            </Text>
-          </View>
-          <View style={{flex: 0.5}}>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}></Text>
-            <Text style={{color: 'red', fontSize: 16}}>do not</Text>
-            <Text style={{fontSize: 16}}>dance</Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}></Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}></Text>
+  const pb = {
+    '1': [
+      {p: ['I', 'He', 'She', 'It'], be: 'was', q: false},
+      {p: ['You', 'We', 'They'], be: 'were', q: false},
+    ],
+    '2': [
+      {p: ['I'], be: 'am', q: false},
+      {p: ['He', 'She', 'It'], be: 'is', q: false},
+      {p: ['You', 'We', 'They'], be: 'are', q: false},
+    ],
+    '22': [
+      {p: ['I'], be: "'m", q: false},
+      {p: ['He', 'She', 'It'], be: "'s", q: false},
+      {p: ['You', 'We', 'They'], be: "'re", q: false},
+    ],
+    '3': [
+      {
+        p: ['I', 'He', 'She', 'It', 'You', 'We', 'They'],
+        be: 'will be',
+        q: false,
+      },
+    ],
+    '33': [
+      {
+        p: ['I', 'He', 'She', 'It', 'You', 'We', 'They'],
+        be: "'ll be",
+        q: false,
+      },
+    ],
+    '4': [
+      {p: ['I', 'He', 'She', 'It'], be: 'was not', q: false},
+      {p: ['You', 'We', 'They'], be: 'were not', q: false},
+    ],
+    '44': [
+      {p: ['I', 'He', 'She', 'It'], be: "wasn't", q: false},
+      {p: ['You', 'We', 'They'], be: "weren't", q: false},
+    ],
+    '5': [
+      {p: ['I'], be: 'am not', q: false},
+      {p: ['He', 'She', 'It'], be: 'is not', q: false},
+      {p: ['You', 'We', 'They'], be: 'are not', q: false},
+    ],
+    '55': [
+      {p: ['I'], be: "'m not", q: false},
+      {p: ['He', 'She', 'It'], be: "'s not", q: false},
+      {p: ['You', 'We', 'They'], be: "'re not", q: false},
+    ],
+    '6': [
+      {
+        p: ['I', 'He', 'She', 'It', 'You', 'We', 'They'],
+        be: 'will not be',
+        q: false,
+      },
+    ],
+    '66': [
+      {
+        p: ['I', 'He', 'She', 'It', 'You', 'We', 'They'],
+        be: "won't be",
+        q: false,
+      },
+    ],
+    '7': [
+      {p: ['I', 'He', 'She', 'It'], be: 'Was', q: true},
+      {p: ['You', 'We', 'They'], be: 'Were', q: true},
+    ],
+    '8': [
+      {p: ['I'], be: 'Am', q: true},
+      {p: ['He', 'She', 'It'], be: 'Is', q: true},
+      {p: ['You', 'We', 'They'], be: 'Are', q: true},
+    ],
+    '9': [
+      {
+        p: ['I', 'He', 'She', 'It', 'You', 'We', 'They'],
+        be: 'Will',
+        be0: 'be',
+        q: true,
+      },
+    ],
+  };
 
-            <Text style={{color: 'red', fontSize: 16}}>does not</Text>
-            <Text style={{fontSize: 16}}>dance</Text>
+  const One = ({
+    data,
+  }: {
+    data: {p: string[]; be: string; be0?: string; q: boolean}[];
+  }) => (
+    <View
+      style={{
+        flex: 1,
+        flexDirection: 'column',
+      }}>
+      {data.map((el, i) => (
+        <>
+          <View
+            key={el.p + el.be + i}
+            style={{
+              flex: 1,
+              flexDirection: 'row',
+              backgroundColor: '#0000000F',
+              borderRadius: 8,
+            }}>
+            {el.q && (
+              <View
+                style={{
+                  flex: 0.4,
+                  justifyContent: 'center',
+                }}>
+                <Text style={{color: 'red', fontSize: 16, textAlign: 'right'}}>
+                  {el.be}
+                </Text>
+              </View>
+            )}
+            <View
+              style={{
+                flex: 0.5,
+                justifyContent: 'center',
+              }}>
+              {el.p.map((e, i) => (
+                <Text
+                  key={i}
+                  style={{
+                    textAlign: 'center',
+                    color: isDarkTheme ? Colors.gray5 : Colors.gray95,
+                  }}>
+                  {e}
+                </Text>
+              ))}
+            </View>
+            {!el.q && (
+              <View
+                style={{
+                  flex: 0.75,
+                  justifyContent: 'center',
+                }}>
+                <Text style={{color: 'red', fontSize: 16}}>{el.be}</Text>
+              </View>
+            )}
+            {el.be0 && (
+              <View
+                style={{
+                  flex: 0.25,
+                  justifyContent: 'center',
+                }}>
+                <Text style={{color: 'red', fontSize: 16}}>{el.be0}</Text>
+              </View>
+            )}
           </View>
-        </View>
-      )}
-    </View>,
-    <View>
-      {contraction ? (
-        <View style={{flexDirection: 'row', width: '50%'}}>
-          <View style={{flex: 0.5}}>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}>
-              I
-            </Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}>
-              You
-            </Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}>
-              We
-            </Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}>
-              They{' '}
-            </Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}>
-              He
-            </Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}>
-              She
-            </Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}>
-              It
-            </Text>
-          </View>
-          <View style={{flex: 0.5}}>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}></Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}></Text>
-            <Text style={{color: 'red', fontSize: 16}}>won&apos;t</Text>
-            <Text style={{fontSize: 16}}>dance</Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}></Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}></Text>
-          </View>
-        </View>
-      ) : (
-        <View style={{flexDirection: 'row', width: '50%'}}>
-          <View style={{flex: 0.5}}>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}>
-              I
-            </Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}>
-              You
-            </Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}>
-              We
-            </Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}>
-              They{' '}
-            </Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}>
-              He
-            </Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}>
-              She
-            </Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}>
-              It
-            </Text>
-          </View>
-          <View style={{flex: 0.5}}>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}></Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}></Text>
-            <Text style={{color: 'red', fontSize: 16}}>will not</Text>
-            <Text style={{fontSize: 16}}>dance</Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}></Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}></Text>
-          </View>
-        </View>
-      )}
-    </View>,
-    <View style={{flexDirection: 'row', width: '50%'}}>
-      <View style={{flex: 0.2}}>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}></Text>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}></Text>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}></Text>
-        <Text style={{color: 'red', fontSize: 16}}>Did</Text>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}></Text>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}></Text>
-      </View>
-      <View style={{flex: 0.4}}>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}>
-          I
-        </Text>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}>
-          You
-        </Text>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}>
-          We
-        </Text>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}>
-          They{' '}
-        </Text>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}>
-          He
-        </Text>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}>
-          She
-        </Text>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}>
-          It
-        </Text>
-      </View>
-      <View style={{flex: 0.4}}>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}></Text>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}></Text>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}></Text>
-        <Text style={{fontSize: 16}}>dance?</Text>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}></Text>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}></Text>
-      </View>
-    </View>,
-    <View style={{flexDirection: 'row', width: '50%'}}>
-      <View style={{flex: 0.2}}>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}></Text>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}></Text>
-        <Text style={{color: 'red', fontSize: 16}}>Do</Text>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}></Text>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}></Text>
-        <Text style={{color: 'red', fontSize: 16}}>Does</Text>
-      </View>
-      <View style={{flex: 0.4}}>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}>
-          I
-        </Text>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}>
-          You
-        </Text>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}>
-          We
-        </Text>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}>
-          They{' '}
-        </Text>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}></Text>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}>
-          He
-        </Text>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}>
-          She
-        </Text>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}>
-          It
-        </Text>
-      </View>
-      <View style={{flex: 0.4}}>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}></Text>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}></Text>
-        <Text style={{fontSize: 16}}>dance?</Text>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}></Text>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}></Text>
-      </View>
-    </View>,
-    <View style={{flexDirection: 'row', width: '50%'}}>
-      <View style={{flex: 0.2}}>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}></Text>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}></Text>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}></Text>
-        <Text style={{color: 'red', fontSize: 16}}>Will</Text>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}></Text>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}></Text>
-      </View>
-      <View style={{flex: 0.4}}>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}>
-          I
-        </Text>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}>
-          You
-        </Text>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}>
-          We
-        </Text>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}>
-          They{' '}
-        </Text>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}>
-          He
-        </Text>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}>
-          She
-        </Text>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}>
-          It
-        </Text>
-      </View>
-      <View style={{flex: 0.4}}>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}></Text>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}></Text>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}></Text>
-        <Text style={{fontSize: 16}}>dance?</Text>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}></Text>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}></Text>
-      </View>
-    </View>,
+          {i < data.length - 1 && <View style={{height: 6}}></View>}
+        </>
+      ))}
+    </View>
+  );
+
+  const data = [
+    <One data={pb['1']} />,
+    <>{contraction ? <One data={pb['22']} /> : <One data={pb['2']} />}</>,
+    <>{contraction ? <One data={pb['33']} /> : <One data={pb['3']} />}</>,
+    <>{contraction ? <One data={pb['44']} /> : <One data={pb['4']} />}</>,
+    <>{contraction ? <One data={pb['55']} /> : <One data={pb['5']} />}</>,
+    <>{contraction ? <One data={pb['66']} /> : <One data={pb['6']} />}</>,
+    <One data={pb['7']} />,
+    <One data={pb['8']} />,
+    <One data={pb['9']} />,
   ];
 
   const examples = [
@@ -1716,16 +901,24 @@ export function BeTable() {
               onClick={contractionF}
               active={contraction}
               style={{flex: 0.04}}>
-              {contraction ? '<>' : '><'}
+              <Text
+                style={{
+                  color: isDarkTheme ? Colors.gray5 : Colors.gray95,
+                  fontSize: 11,
+                  textAlign: 'center',
+                  justifyContent: 'center',
+                }}>
+                {contraction ? '<>' : '><'}
+              </Text>
             </Button>
             <Div active={show[1] === '1'} style={{flex: 0.317}}>
-              {'past 🦖'}
+              {'past 👶'}
             </Div>
             <Div active={show[1] === '2'} style={{flex: 0.317}}>
-              {'present 🙋'}
+              {'present 🧑'}
             </Div>
             <Div active={show[1] === '3'} style={{flex: 0.317}}>
-              {'future 🤖'}
+              {'future 🧓'}
             </Div>
           </View>
         </View>
