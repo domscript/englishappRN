@@ -43,6 +43,12 @@ const NewImage = ({
     case 'yoube':
       url = require('./be/yoube.png');
       break;
+    case 'here':
+      url = require('./be/here.png');
+      break;
+    case 'there':
+      url = require('./be/there.png');
+      break;
 
     // Question Words
     case 'how':
