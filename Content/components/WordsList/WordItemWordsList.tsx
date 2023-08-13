@@ -7,17 +7,7 @@ import Colors from '../../constants/Colors';
 import Progress2 from '../MyIcons/Progress2';
 
 import {Verb} from '../MyIcons/Verbs/index';
-import {
-  verbsList,
-  Nouns,
-  Professions,
-  Food,
-  Family,
-  Interrogatives,
-  subjectPronounsIcons,
-  objectPronounsIcons,
-  possessiveAdjectivesIcons,
-} from '../../data/words';
+import {verbsList} from '../../data/words';
 import {RootState} from '../../redux-store/store';
 import Tts from 'react-native-tts';
 
@@ -85,43 +75,13 @@ function WordItem({title, score, text, id}: WordItemProps) {
                 <Verb positive={1} stage={stage} verb={text} />
               </View>
             </>
-          ) : Object.keys(
-              subjectPronounsIcons[id as keyof typeof subjectPronounsIcons] ||
-                {},
-            )?.includes(text) ||
-            Object.keys(
-              objectPronounsIcons[id as keyof typeof objectPronounsIcons] || {},
-            )?.includes(text) ||
-            Object.keys(Interrogatives)?.includes(text) ||
-            Object.keys(
-              possessiveAdjectivesIcons[
-                id as keyof typeof possessiveAdjectivesIcons
-              ] || {},
-            )?.includes(text) ||
-            Object.keys(
-              Professions[id as keyof typeof Professions] || {},
-            )?.includes(text) ||
-            Object.keys(Food[id as keyof typeof Food] || {})?.includes(text) ||
-            Object.keys(Nouns[id as keyof typeof Nouns])?.includes(text) ||
-            Object.keys(Family[id as keyof typeof Family] || {})?.includes(
-              text,
-            ) ? (
+          ) : (
             <>
               <View style={styles.empty}></View>
               <View style={[styles.lessonTitleI]}>
                 <Image src={text} resizeMode="center" />
               </View>
             </>
-          ) : (
-            <View style={styles.lessonTitleR}>
-              <Text
-                style={[
-                  styles.text,
-                  isDarkTheme ? styles.darkTheme : styles.lightTheme,
-                ]}>
-                {text}
-              </Text>
-            </View>
           )}
         </View>
       </Pressable>
