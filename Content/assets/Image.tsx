@@ -20,7 +20,28 @@ const NewImage = ({
     case 'are':
     case 'was':
     case 'were':
-      url = require('./be.png');
+      url = require('./be/be.png');
+      break;
+    case 'hebe':
+      url = require('./be/hebe.png');
+      break;
+    case 'ibe':
+      url = require('./be/ibe.png');
+      break;
+    case 'itbe':
+      url = require('./be/itbe.png');
+      break;
+    case 'shebe':
+      url = require('./be/shebe.png');
+      break;
+    case 'theybe':
+      url = require('./be/theybe.png');
+      break;
+    case 'webe':
+      url = require('./be/webe.png');
+      break;
+    case 'yoube':
+      url = require('./be/yoube.png');
       break;
 
     // Question Words
