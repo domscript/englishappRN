@@ -49,6 +49,20 @@ const NewImage = ({
     case 'there':
       url = require('./be/there.png');
       break;
+    /////////
+    // Prepositions
+    case 'at':
+      url = require('./Prepositions/at.png');
+      break;
+    case 'in':
+      url = require('./Prepositions/in.png');
+      break;
+    case 'on':
+      url = require('./Prepositions/on.png');
+      break;
+    case 'out':
+      url = require('./Prepositions/out.png');
+      break;
 
     // Question Words
     case 'how':
@@ -897,6 +911,9 @@ const NewImage = ({
       break;
     case 'astronaut':
       url = require('./Professions/astronaut.png');
+      break;
+    case 'baker':
+      url = require('./Professions/baker.png');
       break;
     case 'builder':
       url = require('./Professions/builder.png');
