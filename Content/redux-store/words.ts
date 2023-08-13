@@ -1,9 +1,6 @@
 import {createSlice} from '@reduxjs/toolkit';
 import {mmkv} from '../../App';
 
-import {verbs} from '../data/words';
-import {irregularVerbs} from '../data/words';
-
 import {words} from '../data/words';
 
 type WordsType = typeof words;
@@ -40,16 +37,6 @@ for (const [key, value] of allWords.entries()) {
     }
   }
 }
-
-const verbs1Lesson1: {[key: string]: [string, number, string]} = {};
-const verbs2IrrLesson1: {[key: string]: [string, number, string]} = {};
-
-Object.values(verbs).map(({value0, value2}) => {
-  if (irregularVerbs.includes(value0))
-    verbs2IrrLesson1[value2] = [value2, 0, value0];
-
-  verbs1Lesson1[value0] = [value0, 0, value0];
-});
 
 type WordsState = {
   [lessonId: string]: {
