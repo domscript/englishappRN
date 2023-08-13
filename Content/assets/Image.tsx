@@ -63,6 +63,9 @@ const NewImage = ({
     case 'out':
       url = require('./Prepositions/out.png');
       break;
+    case 'to':
+      url = require('./Prepositions/to.png');
+      break;
 
     // Question Words
     case 'how':

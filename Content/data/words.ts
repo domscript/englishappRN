@@ -1848,11 +1848,11 @@ const allWords = {
     Preposition: {
       here: 'here',
       there: 'there',
+      to: 'to',
       at: 'at',
       in: 'in',
       out: 'out',
       on: 'on',
-      // to: ["to", 0, "to"],
     },
   },
   D: {
