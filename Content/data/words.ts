@@ -20,7 +20,8 @@
 // determiner: the, a, this, some
 
 // check
-export const verbs = {
+// hide, install, move, repair, sell, wash, swim, let, wait, expect, yell, spend, reply, suggest, listen, fall, decide, join
+const verbsA = {
   // study: {
   //   value0: "study",
   //   value1: "studies",
@@ -276,6 +277,55 @@ export const verbs = {
   //   value3: "sent",
   //   ving: "sending",
   // },
+  // talk: {
+  //   value0: "talk",
+  //   value1: "",
+  //   value2: "",
+  //   value3: "",
+  //   ving: "talking",
+  // },
+  // have: {
+  //   value0: "have",
+  //   value1: "",
+  //   value2: "",
+  //   value3: "",
+  //   ving: "",
+  // },
+  // play: {
+  //   value0: "play",
+  //   value1: "",
+  //   value2: "",
+  //   value3: "",
+  //   ving: "",
+  // },
+  // cook: {
+  //   value0: "cook",
+  //   value1: "",
+  //   value2: "",
+  //   value3: "",
+  //   ving: "",
+  // },
+  // bake: {
+  //   value0: "bake",
+  //   value1: "",
+  //   value2: "",
+  //   value3: "",
+  //   ving: "",
+  // },
+  // stop: {
+  //   value0: "stop",
+  //   value1: "",
+  //   value2: "",
+  //   value3: "",
+  //   ving: "",
+  // },
+  // seek: {
+  //   value0: "seek",
+  //   value1: "",
+  //   value2: "",
+  //   value3: "",
+  //   ving: "",
+  // },
   // look: {
   //   value0: "look",
   //   value1: "looks",
@@ -314,7 +364,13 @@ export const verbs = {
   //   value2: "saw",
   //   value3: "seen",
   // pronoun: true,
-
+  // },
+  // watch: {
+  //   value0: "watch",
+  //   value1: "",
+  //   value2: "",
+  //   value3: "",
+  // pronoun: false,
   // },
   // say: { value0: "say", value1: "says", value2: "said", value3: "said" },
   // buy: { value0: "buy", value1: "buys", value2: "bought", value3: "bought",     pronoun: true, },
@@ -376,6 +432,27 @@ export const verbs = {
   // },
 };
 
+const verbsC = {
+  like: {
+    value0: 'like',
+    value1: 'likes',
+    value2: 'liked',
+    value3: 'liked',
+    pronoun: true,
+    qw: ['what', 'why', 'how'],
+  },
+  want: {
+    value0: 'want',
+    value1: 'wants',
+    value2: 'wanted',
+    value3: 'wanted',
+    pronoun: true,
+    qw: ['what', 'why', 'how'],
+  },
+};
+
+const verbs = {...verbsA, ...verbsC};
+
 export const verbsList = Object.keys(verbs);
 
 export const irregularVerbs = [
@@ -420,7 +497,7 @@ export const irregularVerbs = [
 const verbs1Lesson1: {[key: string]: string} = {};
 const verbs2IrrLesson1: {[key: string]: string} = {};
 
-Object.values(verbs).map(({value0, value2}) => {
+Object.values(verbsA).map(({value0, value2}) => {
   if (irregularVerbs.includes(value0)) verbs2IrrLesson1[value2] = value0;
 
   verbs1Lesson1[value0] = value0;
@@ -448,23 +525,160 @@ export const Interrogatives = {
   why: 'why',
 };
 
-const a = {
-  like: 'like',
-  want: 'want',
+const a = {};
+
+const Adjectives = {
+  good: {
+    absolute: 'good',
+    comparative: 'better',
+    superlative: 'best',
+  },
+
+  bad: {
+    absolute: 'bad',
+    comparative: 'worse',
+    superlative: 'worst',
+  },
+  little: {
+    absolute: 'little',
+    comparative: 'less',
+    superlative: 'least',
+  },
+  far: {
+    absolute: 'far',
+    comparative: 'farther',
+    superlative: 'farthest',
+  },
+  beautiful: {
+    absolute: 'beautiful',
+    comparative: 'more beautiful',
+    superlative: 'most beautiful',
+  },
+  big: {
+    absolute: 'big',
+    comparative: 'bigger',
+    superlative: 'biggest',
+  },
+  busy: {
+    absolute: 'busy',
+    comparative: 'busier',
+    superlative: 'busiest',
+  },
+  cheap: {
+    absolute: 'cheap',
+    comparative: 'cheaper',
+    superlative: 'cheapest',
+  },
+  easy: {
+    absolute: 'easy',
+    comparative: 'easier',
+    superlative: 'easiest',
+  },
+  expensive: {
+    absolute: 'expensive',
+    comparative: 'more expensive',
+    superlative: 'most expensive',
+  },
+  fast: {
+    absolute: 'fast',
+    comparative: 'faster',
+    superlative: 'fastest',
+  },
+  tall: {
+    absolute: 'tall',
+    comparative: 'taller',
+    superlative: 'tallest',
+  },
+  hot: {
+    absolute: 'hot',
+    comparative: 'hotter',
+    superlative: 'hottest',
+  },
+  large: {
+    absolute: 'large',
+    comparative: 'larger',
+    superlative: 'largest',
+  },
+  long: {
+    absolute: 'long',
+    comparative: 'longer',
+    superlative: 'longest',
+  },
+  new: {
+    absolute: 'new',
+    comparative: 'newer',
+    superlative: 'newest',
+  },
+  old: {
+    absolute: 'old',
+    comparative: 'older',
+    superlative: 'oldest',
+  },
+  slow: {
+    absolute: 'slow',
+    comparative: 'slower',
+    superlative: 'slowest',
+  },
+  small: {
+    absolute: 'small',
+    comparative: 'smaller',
+    superlative: 'smallest',
+  },
+  young: {
+    absolute: 'young',
+    comparative: 'younger',
+    superlative: 'youngest',
+  },
+  poor: {
+    absolute: 'poor',
+    comparative: 'poorer',
+    superlative: 'poorest',
+  },
+  boring: {
+    absolute: 'boring',
+    comparative: 'more boring',
+    superlative: 'most boring',
+  },
+  cheerful: {
+    absolute: 'cheerful',
+    comparative: 'more cheerful',
+    superlative: 'most cheerful',
+  },
+  slim: {
+    absolute: 'slim',
+    comparative: 'slimmer',
+    superlative: 'slimmest',
+  },
+  short: {
+    absolute: 'short',
+    comparative: 'shorter',
+    superlative: 'shortest',
+  },
+  fresh: {
+    absolute: 'fresh',
+    comparative: 'fresher',
+    superlative: 'freshest',
+  },
+  tasty: {
+    absolute: 'tasty',
+    comparative: 'tastier',
+    superlative: 'tastiest',
+  },
 };
 
 export const Professions = {
   D: {
     accountant: 'accountant', // "Auditor"
     actor: 'actor',
-    artist: 'artist',
+    artist: 'artist', // // Artist/Painter/Sculptor
     // assistant: 'assistant',
     astronaut: 'astronaut',
+    baker: 'baker',
     builder: 'builder', // construction worker/laborer,
     cardiologist: 'cardiologist',
     // cashier: 'cashier',
     cleaner: 'cleaner',
-    cook: 'cook',
+    cook: 'cook', // Chef
     // consultant: 'consultant',
     dentist: 'dentist',
     designer: 'designer',
@@ -479,7 +693,7 @@ export const Professions = {
     interpreter: 'interpreter',
     historian: 'historian',
     judge: 'judge',
-    // lawyer: 'lawyer',
+    // lawyer: 'lawyer', Lawyer/Attorney
     // manager: 'manager',
     mechanic: 'mechanic',
     musician: 'musician',
@@ -494,14 +708,14 @@ export const Professions = {
     receptionist: 'receptionist',
     // 'retail salesperson': 'retail salesperson',
     // 'sales manager': "sales manager",
-    scientist: 'scientist',
+    scientist: 'scientist', // Researcher
     singer: 'singer',
     'social worker': 'social worker',
     'taxi driver': 'taxi driver',
     'truck driver': 'truck driver',
     welder: 'welder',
-    teacher: 'teacher',
-    writer: 'writer',
+    teacher: 'teacher', // Professor
+    writer: 'writer', // Author
 
     // Data Scientist
     // Artificial Intelligence/Machine Learning Engineer
@@ -517,6 +731,24 @@ export const Professions = {
     // 'Administrative Assistant': 'Administrative Assistant',
     // 'Marketing Manager': 'Marketing Manager',
     // 'Financial Advisor/Planner': 'Financial Advisor/Planner',
+
+    // Knight
+    // Blacksmith
+    //
+    // Journalist/Reporter
+    // Spy/Secret Agent
+    // Soldier/Military Personnel
+    // Businessperson/Entrepreneur
+    // Athlete/Sports Professional
+    // Architect
+    // Politician/Government Official
+    // Psychologist/Psychiatrist
+    // Paramedic/EMT
+    // Fashion Designer
+    // Photographer
+    // Waiter/Waitress
+    // Bartender
+    // Librarian
   },
 };
 
@@ -1284,7 +1516,7 @@ const wordsL: {
         ...NounsLs,
         ...NounsL,
       },
-      verbs: verbs,
+      verbs: verbsA,
     },
   },
   B: {
@@ -1295,7 +1527,7 @@ const wordsL: {
         ...NounsLs,
         ...NounsL,
       },
-      verbs: verbs,
+      verbs: verbsA,
     },
   },
   C: {
@@ -1306,7 +1538,7 @@ const wordsL: {
         ...NounsLs,
         ...NounsL,
       },
-      verbs: verbs,
+      verbs: verbsC,
     },
   },
   D: {
@@ -1317,7 +1549,7 @@ const wordsL: {
         ...NounsLs,
         ...NounsL,
       },
-      verbs: verbs,
+      verbs: verbsA,
     },
   },
   E: {
@@ -1328,7 +1560,7 @@ const wordsL: {
         ...NounsLs,
         ...NounsL,
       },
-      verbs: verbs,
+      verbs: verbsA,
     },
   },
   F: {
@@ -1339,7 +1571,7 @@ const wordsL: {
         ...NounsLs,
         ...NounsL,
       },
-      verbs: verbs,
+      verbs: verbsA,
     },
   },
   G: {
@@ -1350,7 +1582,7 @@ const wordsL: {
         ...NounsLs,
         ...NounsL,
       },
-      verbs: verbs,
+      verbs: verbsA,
     },
   },
   H: {
@@ -1361,7 +1593,7 @@ const wordsL: {
         ...NounsLs,
         ...NounsL,
       },
-      verbs: verbs,
+      verbs: verbsA,
     },
   },
   I: {
@@ -1372,7 +1604,7 @@ const wordsL: {
         ...NounsLs,
         ...NounsL,
       },
-      verbs: verbs,
+      verbs: verbsA,
     },
   },
   J: {
@@ -1383,7 +1615,7 @@ const wordsL: {
         ...NounsLs,
         ...NounsL,
       },
-      verbs: verbs,
+      verbs: verbsA,
     },
   },
   K: {
@@ -1394,7 +1626,7 @@ const wordsL: {
         ...NounsLs,
         ...NounsL,
       },
-      verbs: verbs,
+      verbs: verbsA,
     },
   },
   L: {
@@ -1405,7 +1637,7 @@ const wordsL: {
         ...NounsLs,
         ...NounsL,
       },
-      verbs: verbs,
+      verbs: verbsA,
     },
   },
   M: {
@@ -1416,7 +1648,7 @@ const wordsL: {
         ...NounsLs,
         ...NounsL,
       },
-      verbs: verbs,
+      verbs: verbsA,
     },
   },
   N: {
@@ -1427,7 +1659,7 @@ const wordsL: {
         ...NounsLs,
         ...NounsL,
       },
-      verbs: verbs,
+      verbs: verbsA,
     },
   },
   O: {
@@ -1438,7 +1670,7 @@ const wordsL: {
         ...NounsLs,
         ...NounsL,
       },
-      verbs: verbs,
+      verbs: verbsA,
     },
   },
   P: {
@@ -1449,7 +1681,7 @@ const wordsL: {
         ...NounsLs,
         ...NounsL,
       },
-      verbs: verbs,
+      verbs: verbsA,
     },
   },
 };
@@ -1604,7 +1836,7 @@ const allWords = {
   },
   C: {
     'Verbs (v1)': {
-      like: '👍',
+      like: 'like',
       want: 'want',
       think: 'think',
       walk: 'walk',
@@ -1614,12 +1846,12 @@ const allWords = {
     // Nouns: Nouns.C,
     Buildings,
     Preposition: {
-      here: '👇',
-      there: '👆',
-      at: '@',
-      in: '📥',
-      out: '📤',
-      on: '📲',
+      here: 'here',
+      there: 'there',
+      at: 'at',
+      in: 'in',
+      out: 'out',
+      on: 'on',
       // to: ["to", 0, "to"],
     },
   },
