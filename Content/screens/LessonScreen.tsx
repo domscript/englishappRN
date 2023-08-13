@@ -10,7 +10,7 @@ import {countProgress, roundScore} from '../utils/smallFunctions';
 import Tts from 'react-native-tts';
 
 import {lessons, test} from '../data/words';
-import {SimpleTenseScheme, SecondLesson} from '../utils/calc';
+import {SimpleTenseScheme, SecondLesson, ThirdLesson} from '../utils/calc';
 import {RootState} from '../redux-store/store';
 
 import {Screens} from '../../Navigation';
@@ -78,6 +78,7 @@ function LessonItem({id, title}) {
     for (let i = 0; i < 100; ++i) {
       if (id === 'A') qData.push(SimpleTenseScheme(lessons['A']));
       else if (id === 'B') qData.push(SecondLesson(lessons['B']));
+      else if (id === 'C') qData.push(ThirdLesson(lessons['C']));
       else qData.push(SimpleTenseScheme(lessons[id as keyof typeof lessons]));
     }
     return qData;
