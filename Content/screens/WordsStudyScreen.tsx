@@ -13,17 +13,7 @@ import {MyIcon} from '../components/MyIcons/app';
 import Colors from '../constants/Colors';
 import {RootState} from '../redux-store/store';
 
-import {
-  verbsList,
-  Nouns,
-  Professions,
-  Food,
-  Family,
-  Interrogatives,
-  subjectPronounsIcons,
-  objectPronounsIcons,
-  possessiveAdjectivesIcons,
-} from '../data/words';
+import {verbsList} from '../data/words';
 
 import {Verb, Stages} from '../components/MyIcons/Verbs/index';
 import Image from '../assets/Image';
@@ -204,31 +194,11 @@ function WordsStudy({route}) {
         }}>
         {verbsList.includes(newWord) ? (
           <Verb positive={1} stage={stage0} verb={newWord} />
-        ) : Object.keys(Nouns[id as keyof typeof Nouns] || {}).includes(
-            newWord,
-          ) ||
-          Object.keys(
-            Professions[id as keyof typeof Professions] || {},
-          )?.includes(newWord) ||
-          Object.keys(Interrogatives)?.includes(newWord) ||
-          Object.keys(
-            subjectPronounsIcons[id as keyof typeof subjectPronounsIcons] || {},
-          )?.includes(newWord) ||
-          Object.keys(
-            objectPronounsIcons[id as keyof typeof objectPronounsIcons] || {},
-          )?.includes(newWord) ||
-          Object.keys(
-            possessiveAdjectivesIcons[
-              id as keyof typeof possessiveAdjectivesIcons
-            ] || {},
-          )?.includes(newWord) ||
-          Object.keys(Food[id as keyof typeof Food] || {})?.includes(newWord) ||
-          Object.keys(Family[id as keyof typeof Family] || {})?.includes(
-            newWord,
-          ) ? (
-          <Image src={newWord} resizeMode="contain" />
         ) : (
-          <Text style={styles.title}>{newWord}</Text>
+          <>
+            <Image src={newWord} resizeMode="contain" />
+            {/* <Text>{newWord}</Text> */}
+          </>
         )}
       </Pressable>
       {Buttons}
