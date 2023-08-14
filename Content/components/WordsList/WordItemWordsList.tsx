@@ -30,7 +30,7 @@ function WordItem({title, score, text, id}: WordItemProps) {
   function pressHandler() {
     if (isPressed) return;
     Tts.stop();
-    Tts.speak(title);
+    Tts.speak(title === 'read ' ? 'red' : title);
     setIsPressed(true);
 
     setTimeout(() => {

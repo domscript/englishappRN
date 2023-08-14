@@ -264,8 +264,8 @@ const verbsA = {
   read: {
     value0: 'read',
     value1: 'reads',
-    value2: 'read',
-    value3: 'read',
+    value2: 'read ',
+    value3: 'read ',
     ving: 'reading',
     pronoun: false,
     qw: ['what', 'why'],
@@ -1088,12 +1088,12 @@ export const objectPronounsIcons: {
 } = {
   B: {
     me: 'me',
-    you: 'you',
+    'you ': 'you ',
     him: 'him',
     her: 'her',
     us: 'us',
     them: 'them',
-    it: 'it',
+    'it ': 'it ',
   },
 };
 

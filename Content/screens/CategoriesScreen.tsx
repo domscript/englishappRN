@@ -24,6 +24,7 @@ function CategoriesScreen({navigation}) {
       }
       navigation.navigate('LessonOverview', {
         categoryId: item.id,
+        LessonTitle: item.title,
       });
     }
 

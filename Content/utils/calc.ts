@@ -220,16 +220,23 @@ export const SecondLesson = (words: WordsOneLessonInt) => {
     'it',
   ];
 
-  type ObjectPronounsType = 'me' | 'you' | 'him' | 'her' | 'us' | 'them' | 'it';
+  type ObjectPronounsType =
+    | 'me'
+    | 'you '
+    | 'him'
+    | 'her'
+    | 'us'
+    | 'them'
+    | 'it ';
 
   const ObjectPronouns: ObjectPronounsType[] = [
     'me',
-    'you',
+    'you ',
     'him',
     'her',
     'us',
     'them',
-    'it',
+    'it ',
   ];
 
   const QuestionWords: QuestionWordsType[] = [
@@ -509,16 +516,23 @@ export const ThirdLesson = (words: WordsOneLessonInt) => {
     'it',
   ];
 
-  type ObjectPronounsType = 'me' | 'you' | 'him' | 'her' | 'us' | 'them' | 'it';
+  type ObjectPronounsType =
+    | 'me'
+    | 'you '
+    | 'him'
+    | 'her'
+    | 'us'
+    | 'them'
+    | 'it ';
 
   const ObjectPronouns: ObjectPronounsType[] = [
     'me',
-    'you',
+    'you ',
     'him',
     'her',
     'us',
     'them',
-    'it',
+    'it ',
   ];
 
   const QuestionWords: QuestionWordsType[] = [
@@ -662,8 +676,8 @@ export const ThirdLesson = (words: WordsOneLessonInt) => {
     'be',
   ];
   // const beVerbs1 = ['am', 'is', 'are', 'were', 'was', "wasn't", 'am not', "weren't" , "isn't", "aren't", 'will', "won't be", 'be']
-  // const tenseNoteIndex = Math.floor(Math.random() * 9);
-  const tenseNoteIndex = 8;
+  const tenseNoteIndex = Math.floor(Math.random() * 9);
+  // const tenseNoteIndex = 8;
   const bbb = ['here', 'there', 'nowhere', 'anywhere'];
   bbb.sort(() => Math.random() - 0.5);
   let data: string[] = [];
