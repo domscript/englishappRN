@@ -1,13 +1,21 @@
-import {View, Text, StyleSheet, Pressable} from 'react-native';
+import {
+  View,
+  Text,
+  StyleSheet,
+  Pressable,
+  useWindowDimensions,
+} from 'react-native';
 import Image from '../assets/Image';
 import Colors from '../constants/Colors';
 import {useSelector} from 'react-redux';
 import Tts from 'react-native-tts';
 import {useEffect, useState} from 'react';
+import {RootState} from '../redux-store/store';
 
 export function Intro() {
   const {isDarkTheme} = useSelector((state: RootState) => state.theme);
   const [isClicked, setIsClicked] = useState(false);
+  const {height, width} = useWindowDimensions();
 
   function tellI() {
     if (isClicked) return;
@@ -23,7 +31,7 @@ export function Intro() {
   }, [isClicked]);
 
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, {height: height - 90}]}>
       <View style={styles.img}>
         <Image src="i" resizeMode="contain" />
       </View>
@@ -75,8 +83,32 @@ export function Intro() {
           style={[
             styles.text,
             isDarkTheme ? styles.colorDarkTheme : styles.colorLightTheme,
+          ]}>
+          I have a dog: Max,{'\n'}
+          check his ID too:
+        </Text>
+      </View>
+      <View style={[styles.img]}>
+        <View
+          style={{
+            flex: 1,
+            flexDirection: 'row',
+          }}>
+          <View style={styles.img}>
+            <Image src="it" resizeMode="contain" />
+          </View>
+          <View style={styles.img}>
+            <Image src="its" resizeMode="contain" />
+          </View>
+        </View>
+      </View>
+      <View style={{justifyContent: 'center'}}>
+        <Text
+          style={[
+            styles.text,
+            isDarkTheme ? styles.colorDarkTheme : styles.colorLightTheme,
             {
-              marginBottom: 10,
+              marginBottom: 5,
             },
           ]}>
           Play here for me!
@@ -88,15 +120,13 @@ export function Intro() {
 
 const styles = StyleSheet.create({
   container: {
-    // backgroundColor: 'green',
     justifyContent: 'center',
-    height: 500,
-    // alignContent: 'center',
+    height: 800,
   },
   img: {
     flex: 1,
     // backgroundColor: 'gray',
-    height: 100,
+    height: 120,
   },
   title: {
     fontSize: 40,
