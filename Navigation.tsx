@@ -384,8 +384,8 @@ function MainNav() {
         <Stack.Screen
           name="LessonOverview"
           component={LessonOverview}
-          options={({navigation}) => ({
-            title: 'Ok English!',
+          options={({route, navigation}) => ({
+            title: route.params?.LessonTitle || 'Ok English',
             headerRight: ({tintColor}) => (
               <Pressable onPress={() => navigation.navigate('Settings')}>
                 <MyIcon name="gear" size={30} color={tintColor} />
