@@ -24,53 +24,11 @@ interface LessonButtonProps {
   study: boolean;
 }
 
-const LessonButton = ({
-  title,
-  progress,
-  onPress,
-  text,
-  done,
-  study,
-}: LessonButtonProps) => {
-  const {isDarkTheme} = useSelector((state: RootState) => state.theme);
-
-  return (
-    <Pressable
-      android_ripple={{color: '#ccc'}}
-      style={({pressed}) => (pressed ? styles.buttonPressed : null)}
-      onPress={onPress}>
-      <View key={title} style={styles.lesson}>
-        <View
-          style={[
-            styles.score,
-            study && {
-              backgroundColor: done ? Colors.green70 : Colors.amber60,
-            },
-          ]}>
-          <Text
-            style={[
-              study ? styles.text : styles.titleHelp,
-              isDarkTheme ? styles.darkTitle : styles.lightTitle,
-            ]}>
-            {progress}
-          </Text>
-        </View>
-        <View style={styles.lessonTitle}>
-          <Text
-            style={[
-              styles.title,
-              isDarkTheme ? styles.textDarkTheme : styles.textLightTheme,
-            ]}>
-            {text}
-          </Text>
-        </View>
-      </View>
-    </Pressable>
-  );
-};
-
 function LessonItem({id, title}) {
-  const {isDarkTheme} = useSelector((state: RootState) => state.theme);
+  const {
+    theme: {isDarkTheme},
+    sounds: {isSound},
+  } = useSelector((state: RootState) => state);
   const navigation = useNavigation();
 
   const datass = useMemo(() => {
@@ -101,30 +59,38 @@ function LessonItem({id, title}) {
   }
 
   function studyHandler() {
-    Tts.stop();
-    Tts.speak('study');
+    if (isSound) {
+      Tts.stop();
+      Tts.speak('study');
+    }
     navigation.navigate(Screens.NavigatorScreens.Study.name, {
       lessonId: id,
       randomData: datass,
     });
   }
   function wordsHandler() {
-    Tts.stop();
-    Tts.speak('words');
+    if (isSound) {
+      Tts.stop();
+      Tts.speak('words');
+    }
     navigation.navigate(Screens.NavigatorScreens.NewWords.name, {
       lessonId: id,
     });
   }
   function wordsHandler2() {
-    Tts.stop();
-    Tts.speak('verbs');
+    if (isSound) {
+      Tts.stop();
+      Tts.speak('verbs');
+    }
     navigation.navigate(Screens.NavigatorScreens.NewWords.name, {
       lessonId: id + 'X',
     });
   }
   function helpHandler() {
-    Tts.stop();
-    Tts.speak('help');
+    if (isSound) {
+      Tts.stop();
+      Tts.speak('help');
+    }
     navigation.navigate(Screens.NavigatorScreens.Help.name, {
       lessonId: id,
     });
@@ -180,6 +146,51 @@ function LessonItem({id, title}) {
 }
 
 export default LessonItem;
+
+function LessonButton({
+  title,
+  progress,
+  onPress,
+  text,
+  done,
+  study,
+}: LessonButtonProps) {
+  const {isDarkTheme} = useSelector((state: RootState) => state.theme);
+
+  return (
+    <Pressable
+      android_ripple={{color: '#ccc'}}
+      style={({pressed}) => (pressed ? styles.buttonPressed : null)}
+      onPress={onPress}>
+      <View key={title} style={styles.lesson}>
+        <View
+          style={[
+            styles.score,
+            study && {
+              backgroundColor: done ? Colors.green70 : Colors.amber60,
+            },
+          ]}>
+          <Text
+            style={[
+              study ? styles.text : styles.titleHelp,
+              isDarkTheme ? styles.darkTitle : styles.lightTitle,
+            ]}>
+            {progress}
+          </Text>
+        </View>
+        <View style={styles.lessonTitle}>
+          <Text
+            style={[
+              styles.title,
+              isDarkTheme ? styles.textDarkTheme : styles.textLightTheme,
+            ]}>
+            {text}
+          </Text>
+        </View>
+      </View>
+    </Pressable>
+  );
+}
 
 const styles = StyleSheet.create({
   lessonItem: {

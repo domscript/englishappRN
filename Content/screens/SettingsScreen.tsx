@@ -3,11 +3,18 @@ import {View, Text, StyleSheet, Button, Pressable} from 'react-native';
 import {useSelector, useDispatch} from 'react-redux';
 import {MyIcon} from '../components/MyIcons/app';
 import {darkTheme, lightTheme} from '../redux-store/theme';
+import {easyGame, normalGame} from '../redux-store/help';
 import Colors from '../constants/Colors';
 import {RootState} from '../redux-store/store';
+import SwitchButton from '../components/UI/SwitchButton';
+import {setSounds} from '../redux-store/sounds';
 
 function SettingsScreen() {
-  const {isDarkTheme} = useSelector((state: RootState) => state.theme);
+  const {
+    theme: {isDarkTheme},
+    // help: {isEasy},
+  } = useSelector((state: RootState) => state);
+
   const dispatch = useDispatch();
 
   const handleThemeLight = () => {
@@ -15,6 +22,20 @@ function SettingsScreen() {
   };
   const handleThemeDark = () => {
     dispatch(darkTheme());
+  };
+
+  const handleEasyLevel = () => {
+    dispatch(easyGame());
+  };
+  const handleNormalLevel = () => {
+    dispatch(normalGame());
+  };
+
+  const onValueChange0 = () => {
+    dispatch(setSounds());
+  };
+  const onValueChange1 = () => {
+    console.log('TODO');
   };
 
   return (
@@ -31,15 +52,48 @@ function SettingsScreen() {
         <Theme dark={true} onPress={handleThemeLight} />
         <Theme dark={false} onPress={handleThemeDark} />
       </View>
+      <View
+        style={[
+          styles.levelOuterContainer,
+          isDarkTheme ? styles.darkTheme : styles.lightTheme,
+        ]}>
+        <Level help={true} onPress={handleEasyLevel} />
+        <Level help={false} onPress={handleNormalLevel} />
+      </View>
+      <View
+        style={[
+          styles.switchOuterContainer,
+          isDarkTheme ? styles.darkTheme : styles.lightTheme,
+        ]}>
+        <SwitchButton
+          label="Sounds"
+          onValueChange={onValueChange0}
+          initialValue={true}
+        />
+      </View>
+      <View
+        style={[
+          styles.switchOuterContainer,
+          isDarkTheme ? styles.darkTheme : styles.lightTheme,
+        ]}>
+        {/* <SwitchButton
+          label="Sound Answer"
+          onValueChange={onValueChange1}
+          initialValue={true}
+        /> */}
+      </View>
     </View>
   );
 }
 
 function Theme({dark, onPress}: {dark: boolean; onPress: () => void}) {
+  const {isDarkTheme} = useSelector((state: RootState) => state.theme);
+
   return (
     <View
       style={[
         styles.themeContainer,
+        {flex: dark !== isDarkTheme ? 0.54 : 0.44},
         dark ? styles.darkTheme : styles.lightTheme,
       ]}>
       <Pressable
@@ -89,6 +143,95 @@ function Theme({dark, onPress}: {dark: boolean; onPress: () => void}) {
   );
 }
 
+function Level({help, onPress}: {help: boolean; onPress: () => void}) {
+  const {
+    theme: {isDarkTheme},
+    help: {isEasy},
+  } = useSelector((state: RootState) => state);
+
+  return (
+    <View
+      style={[
+        styles.themeContainer,
+        {flex: isEasy === help ? 0.54 : 0.44},
+        isDarkTheme
+          ? isEasy === help
+            ? styles.darkThemeActive
+            : styles.darkThemeNotActive
+          : isEasy === help
+          ? styles.lightThemeActive
+          : styles.lightThemeNotActive,
+      ]}>
+      <Pressable
+        onPress={onPress}
+        style={({pressed}) => [
+          styles.button,
+          isDarkTheme
+            ? isEasy === help
+              ? styles.buttonDarkActive
+              : styles.buttonDark
+            : isEasy === help
+            ? styles.buttonLightActive
+            : styles.buttonLight,
+
+          pressed && styles.buttonPressed,
+        ]}>
+        <View
+          style={[
+            styles.navCont,
+            isDarkTheme
+              ? isEasy === help
+                ? styles.lightThemeNavLevel
+                : styles.lightThemeNav
+              : styles.darkThemeNav,
+          ]}>
+          <MyIcon
+            name="study"
+            size={25}
+            color={isDarkTheme ? styles.textDark.color : styles.textLight.color}
+          />
+          <Text
+            style={[
+              {paddingLeft: 10},
+              styles.buttonText,
+              isDarkTheme ? styles.textDark : styles.textLight,
+            ]}>
+            Level {help ? 'Easy' : 'Normal'}
+          </Text>
+        </View>
+        <MyIcon
+          name={help ? 'star-o' : 'rocket-launch'}
+          size={25}
+          color={isDarkTheme ? styles.textDark.color : styles.textLight.color}
+        />
+        <Text
+          style={[
+            styles.buttonText,
+            isDarkTheme ? styles.textDark : styles.textLight,
+          ]}>
+          {help ? 'I         will' : 'Will        i'}
+        </Text>
+        <Text
+          style={[
+            styles.buttonText,
+            isDarkTheme ? styles.textDark : styles.textLight,
+          ]}>
+          {help ? 'take      a star' : 'ever      fly'}
+        </Text>
+        <View style={[styles.helpInfo]}>
+          <Text
+            style={[
+              styles.buttonText,
+              isDarkTheme ? styles.textDark : styles.textLight,
+            ]}>
+            {help ? 'DElETE NOTE HELP' : 'DELETE         HELP'}
+          </Text>
+        </View>
+      </Pressable>
+    </View>
+  );
+}
+
 export default SettingsScreen;
 
 const styles = StyleSheet.create({
@@ -100,7 +243,19 @@ const styles = StyleSheet.create({
     paddingTop: 10,
   },
   themeOuterContainer: {
-    flex: 1,
+    flex: 0.18,
+    alignItems: 'flex-start',
+    flexDirection: 'row',
+    paddingTop: 5,
+  },
+  levelOuterContainer: {
+    flex: 0.24,
+    alignItems: 'flex-start',
+    flexDirection: 'row',
+    paddingTop: 5,
+  },
+  switchOuterContainer: {
+    flex: 0.1,
     alignItems: 'flex-start',
     flexDirection: 'row',
     paddingTop: 5,
@@ -110,21 +265,37 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   themeContainer: {
-    flex: 0.45,
+    flex: 0.49,
     borderRadius: 5,
     alignContent: 'center',
   },
   themeInfo: {
     padding: 20,
   },
+  helpInfo: {
+    paddingTop: 5,
+  },
   lightTheme: {
     backgroundColor: Colors.gray5,
+  },
+  lightThemeActive: {
+    backgroundColor: Colors.green30,
+  },
+  lightThemeNotActive: {
+    backgroundColor: Colors.green20,
   },
   darkTheme: {
     backgroundColor: Colors.gray80,
   },
+  darkThemeActive: {
+    backgroundColor: Colors.green60,
+  },
+  darkThemeNotActive: {
+    backgroundColor: Colors.gray70,
+  },
   lightThemeNav: {width: '100%', backgroundColor: Colors.gray85},
   darkThemeNav: {width: '100%', backgroundColor: Colors.green20},
+  lightThemeNavLevel: {width: '100%', backgroundColor: Colors.green80},
   text: {
     fontSize: 18,
     fontWeight: 'bold',
@@ -149,6 +320,12 @@ const styles = StyleSheet.create({
   },
   buttonDark: {
     backgroundColor: Colors.gray80,
+  },
+  buttonLightActive: {
+    backgroundColor: Colors.green10,
+  },
+  buttonDarkActive: {
+    backgroundColor: Colors.green90,
   },
   buttonPressed: {
     opacity: 0.9,

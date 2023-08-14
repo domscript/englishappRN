@@ -44,7 +44,12 @@ const ComponentStates = {
 type Stages = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8;
 
 function LessonStudyScreen({route, navigation}) {
-  const {isDarkTheme} = useSelector((state: RootState) => state.theme);
+  const {
+    theme: {isDarkTheme},
+    sounds: {isSound},
+    help: {isEasy},
+  } = useSelector((state: RootState) => state);
+
   const id = route.params.lessonId;
   const lessonData = route.params.randomData;
   const dispatch = useDispatch();
@@ -94,8 +99,10 @@ function LessonStudyScreen({route, navigation}) {
         setComponentState(ComponentStates.IDLE);
       }
     }, 500);
-    Tts.stop();
-    Tts.speak(testData0[index]);
+    if (isSound) {
+      Tts.stop();
+      Tts.speak(testData0[index]);
+    }
 
     if (index >= 0 && index < 4) {
       setTestData0(prevtestData0 => {
@@ -135,6 +142,11 @@ function LessonStudyScreen({route, navigation}) {
       question.join(' ').trim() === userAnswer.join(' ').trim() &&
       componentState !== ComponentStates.PRESSED
     ) {
+      // TODO .
+      if (false) {
+        Tts.stop();
+        Tts.speak(question.join(' '));
+      }
       setComponentState(ComponentStates.SHOW_RESULT_GOOD);
       setTimeout(() => {
         dispatch(
@@ -165,8 +177,10 @@ function LessonStudyScreen({route, navigation}) {
 
   function deleteHandler() {
     if (!restoreData.length) return;
-    Tts.stop();
-    Tts.speak('delete');
+    if (isSound) {
+      Tts.stop();
+      Tts.speak('delete');
+    }
 
     setTestData0(prevtestData0 => {
       const [_, userAnswer, restoreData] = prevtestData0;
@@ -177,16 +191,21 @@ function LessonStudyScreen({route, navigation}) {
   }
 
   function noteHandler() {
-    Tts.stop();
-    Tts.speak('note');
+    if (!isEasy) return;
+    if (isSound) {
+      Tts.stop();
+      Tts.speak('note');
+    }
     navigation.navigate('Note', {
       lessonId: id,
       note: [test.note, test.tenseNoteIndex, test.verb],
     });
   }
   function helpHandler() {
-    Tts.stop();
-    Tts.speak('help');
+    if (isSound) {
+      Tts.stop();
+      Tts.speak('help');
+    }
     navigation.navigate('Help', {
       lessonId: id,
     });
@@ -245,8 +264,10 @@ function LessonStudyScreen({route, navigation}) {
       <Pressable
         style={styles.listContainer}
         onPress={() => {
-          Tts.stop();
-          Tts.speak(question.join(' '));
+          if (isEasy) {
+            Tts.stop();
+            Tts.speak(question.join(' '));
+          }
         }}>
         <View style={styles.question}>
           <ThreeEmojiText timeQ={timeQ} noteQ={noteQ} />
@@ -550,11 +571,13 @@ function LessonStudyScreen({route, navigation}) {
           />
         </View>
         <View style={styles.buttonBottom}>
-          <LessonButton
-            title={'NOTE'}
-            onPress={noteHandler}
-            iconName="lightbulb-on"
-          />
+          {isEasy && (
+            <LessonButton
+              title={'NOTE'}
+              onPress={noteHandler}
+              iconName="lightbulb-on"
+            />
+          )}
         </View>
         <View style={styles.buttonBottom}>
           <LessonButton

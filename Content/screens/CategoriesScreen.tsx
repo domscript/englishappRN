@@ -11,12 +11,17 @@ import Tts from 'react-native-tts';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 
 function CategoriesScreen({navigation}) {
-  const {isDarkTheme} = useSelector((state: RootState) => state.theme);
+  const {
+    theme: {isDarkTheme},
+    sounds: {isSound},
+  } = useSelector((state: RootState) => state);
 
   const renderCategoryItem = ({item}: {item: Lesson}) => {
     function pressHandler() {
-      Tts.stop();
-      Tts.speak(item.title);
+      if (isSound) {
+        Tts.stop();
+        Tts.speak(item.title);
+      }
       navigation.navigate('LessonOverview', {
         categoryId: item.id,
       });

@@ -23,7 +23,10 @@ import Tts from 'react-native-tts';
 function WordsStudy({route}) {
   const {id} = route.params;
 
-  const {isDarkTheme} = useSelector((state: RootState) => state.theme);
+  const {
+    theme: {isDarkTheme},
+    sounds: {isSound},
+  } = useSelector((state: RootState) => state);
   const dispatch = useDispatch();
   const [stage0, setStage] = useState<Stages>(1);
 
@@ -103,8 +106,10 @@ function WordsStudy({route}) {
 
   const handlePress = (wordId: number) => {
     if (!isAnswerCorrect && !areButtonsDisabled) {
-      Tts.stop();
-      Tts.speak(dataNew[wordId]);
+      if (isSound) {
+        Tts.stop();
+        Tts.speak(dataNew[wordId]);
+      }
       if (word === dataNew[wordId]) {
         setIsAnswerCorrect(true);
         setPressedButtonIndex(wordId);
@@ -189,8 +194,10 @@ function WordsStudy({route}) {
       <Pressable
         style={styles.listContainer}
         onPress={() => {
-          Tts.stop();
-          Tts.speak(word);
+          if (isSound) {
+            Tts.stop();
+            Tts.speak(word);
+          }
         }}>
         {verbsList.includes(newWord) ? (
           <Verb positive={1} stage={stage0} verb={newWord} />

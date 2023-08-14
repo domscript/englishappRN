@@ -3,12 +3,16 @@ import {configureStore} from '@reduxjs/toolkit';
 import themeReducer from './theme';
 import wordsReducer from './words';
 import lessonsReducer from './lessons';
+import soundReduser from './sounds';
+import helpReduser from './help';
 
 export const store = configureStore({
   reducer: {
     theme: themeReducer,
     words: wordsReducer,
     lessons: lessonsReducer,
+    sounds: soundReduser,
+    help: helpReduser,
   },
 });
 

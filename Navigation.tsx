@@ -70,13 +70,14 @@ export const Screens = {
         // ... specify tab options
       },
     },
-    {
-      name: 'test',
-      component: Tests,
-      options: {
-        // ... specify tab options
-      },
-    },
+    // TODO .
+    // {
+    //   name: 'test',
+    //   component: Tests,
+    //   options: {
+    //     // ... specify tab options
+    //   },
+    // },
     {
       name: 'settings',
       component: SettingsMain,
@@ -149,7 +150,10 @@ export const Screens = {
 };
 
 function MainTabBar({state, descriptors, navigation}): JSX.Element {
-  const {isDarkTheme} = useSelector((state: RootState) => state.theme);
+  const {
+    theme: {isDarkTheme},
+    sounds: {isSound},
+  } = useSelector((state: RootState) => state);
 
   return (
     <View style={{flexDirection: 'row'}}>
@@ -159,8 +163,10 @@ function MainTabBar({state, descriptors, navigation}): JSX.Element {
         const isFocused = state.index === index;
 
         const onPress = () => {
-          Tts.stop();
-          Tts.speak(route.key.slice(0, route.key.indexOf('-')));
+          if (isSound) {
+            Tts.stop();
+            Tts.speak(route.key.slice(0, route.key.indexOf('-')));
+          }
 
           const event = navigation.emit({
             type: 'tabPress',
@@ -232,7 +238,10 @@ function MainTabs() {
 }
 
 function StudyWordsTabBar({state, descriptors, navigation}) {
-  const {isDarkTheme} = useSelector((state: RootState) => state.theme);
+  const {
+    theme: {isDarkTheme},
+    sounds: {isSound},
+  } = useSelector((state: RootState) => state);
 
   return (
     <View style={{flexDirection: 'row'}}>
@@ -249,8 +258,10 @@ function StudyWordsTabBar({state, descriptors, navigation}) {
         const isFocused = state.index === index;
 
         const onPress = () => {
-          Tts.stop();
-          Tts.speak(route.name);
+          if (isSound) {
+            Tts.stop();
+            Tts.speak(route.name);
+          }
           const event = navigation.emit({
             type: 'tabPress',
             target: route.key,
