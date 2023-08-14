@@ -6,12 +6,16 @@ import {Test} from './Test';
 import {Gear} from './Gear';
 import {Info} from './Info';
 import {Star} from './Star';
+import {Sound} from './Sound';
 import {StarO} from './StarO';
 import {Study} from './Study';
+import {Level2} from './Level2';
+import {LevelF} from './LevelF';
 import {Delete} from './Delete';
 import {Rocket} from './Rocket';
 import {Refresh} from './Refresh';
 import {Youtube} from './Youtube';
+import {SoundOff} from './SoundOff';
 import {OpenBook} from './OpenBook';
 import {ArrowLeft} from './ArrowLeft';
 import {ArrowRight} from './ArrowRight';
@@ -44,7 +48,11 @@ interface IconMainProps {
     | 'folder-gear'
     | 'refresh'
     | 'arrow-left'
-    | 'arrow-right';
+    | 'arrow-right'
+    | 'sound'
+    | 'sound-off'
+    | 'level-2'
+    | 'level-f';
   color?: string;
   size: number;
 }
@@ -68,6 +76,10 @@ const iconComponents: {[key: string]: ComponentType<any>} = {
   refresh: Refresh,
   'arrow-left': ArrowLeft,
   'arrow-right': ArrowRight,
+  sound: Sound,
+  'level-2': Level2,
+  'level-f': LevelF,
+  'sound-off': SoundOff,
 };
 
 export const MyIcon = ({
