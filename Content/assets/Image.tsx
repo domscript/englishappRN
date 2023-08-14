@@ -1373,7 +1373,7 @@ const NewImage = ({
     case 'me':
       url = require('./Pronouns/Object_Pronouns/me.png');
       break;
-    case 'you':
+    case 'you ':
       url = require('./Pronouns/Object_Pronouns/you.png');
       break;
     case 'him':
@@ -1382,7 +1382,7 @@ const NewImage = ({
     case 'her':
       url = require('./Pronouns/Object_Pronouns/her.png');
       break;
-    case 'it':
+    case 'it ':
       url = require('./Pronouns/Object_Pronouns/it.png');
       break;
     case 'us':
