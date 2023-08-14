@@ -2,6 +2,7 @@ import {createSlice} from '@reduxjs/toolkit';
 import {mmkv} from '../../App';
 import {countProgress} from '../utils/smallFunctions';
 
+// TODO .
 const STUDY_BREAK_POINT = 5; /// should be 90
 
 const patternString = createPatternString();
