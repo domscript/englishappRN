@@ -513,7 +513,7 @@ const pronouns = {
   we: ['we', 'us', 'our', 'ours', 'ourself'],
   they: ['they', 'them', 'their', 'theirs', 'themselves'],
   // TODO .
-  you: ['you', 'you', 'your', 'yours', 'yourselves'],
+  // you: ['you', 'you', 'your', 'yours', 'yourselves'],
 };
 
 export const Interrogatives = {
@@ -668,17 +668,17 @@ const Adjectives = {
 
 export const Professions = {
   D: {
-    accountant: 'accountant', // "Auditor"
+    accountant: 'accountant',
     actor: 'actor',
     artist: 'artist', // // Artist/Painter/Sculptor
     // assistant: 'assistant',
     astronaut: 'astronaut',
     baker: 'baker',
-    builder: 'builder', // construction worker/laborer,
+    builder: 'builder', // construction worker,
     cardiologist: 'cardiologist',
     // cashier: 'cashier',
     cleaner: 'cleaner',
-    cook: 'cook', // Chef
+    cook: 'cook',
     // consultant: 'consultant',
     dentist: 'dentist',
     designer: 'designer',
@@ -693,11 +693,11 @@ export const Professions = {
     interpreter: 'interpreter',
     historian: 'historian',
     judge: 'judge',
-    // lawyer: 'lawyer', Lawyer/Attorney
+    lawyer: 'lawyer',
     // manager: 'manager',
     mechanic: 'mechanic',
     musician: 'musician',
-    // nurse: 'nurse',
+    nurse: 'nurse',
     nutritionist: 'nutritionist',
     'office clerk': 'office clerk',
     orthopedist: 'orthopedist',
@@ -708,14 +708,14 @@ export const Professions = {
     receptionist: 'receptionist',
     // 'retail salesperson': 'retail salesperson',
     // 'sales manager': "sales manager",
-    scientist: 'scientist', // Researcher
+    scientist: 'scientist',
     singer: 'singer',
     'social worker': 'social worker',
     'taxi driver': 'taxi driver',
     'truck driver': 'truck driver',
     welder: 'welder',
-    teacher: 'teacher', // Professor
-    writer: 'writer', // Author
+    teacher: 'teacher',
+    writer: 'writer',
 
     // Data Scientist
     // Artificial Intelligence/Machine Learning Engineer
@@ -749,6 +749,25 @@ export const Professions = {
     // Waiter/Waitress
     // Bartender
     // Librarian
+  },
+  E: {
+    author: 'author',
+    auditor: 'auditor',
+    attorney: 'attorney',
+    chef: 'chef',
+    'construction electrician': 'construction electrician',
+    'construction engineer': 'construction engineer',
+    'firefighter inspector': 'firefighter inspector',
+    laborer: 'laborer',
+    professor: 'professor',
+    researcher: 'researcher',
+    'safety inspector': 'safety inspector',
+
+    // White: Site managers, engineers, or supervisors.
+    // Yellow: General laborers or earth-moving operators.
+    // Blue: Electricians or other technical personnel.
+    // Green: Safety inspectors or new workers.
+    // Red: Firefighters or medical personnel.
   },
 };
 

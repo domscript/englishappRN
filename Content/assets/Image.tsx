@@ -524,9 +524,9 @@ const NewImage = ({
     case 'goggles':
       url = require('./Accessories/goggles.png');
       break;
-    // case 'helmet with white cross':
-    //   url = require('./Accessories/helmet_with_white_cross.png');
-    //   break;
+    case 'helmet':
+      url = require('./Accessories/helmet.png');
+      break;
     case 'luggage':
       url = require('./Accessories/luggage.png');
       break;
@@ -904,6 +904,7 @@ const NewImage = ({
 
     // Professions
     case 'accountant':
+    case 'auditor':
       url = require('./Professions/accountant.png');
       break;
     case 'actor':
@@ -919,6 +920,7 @@ const NewImage = ({
       url = require('./Professions/baker.png');
       break;
     case 'builder':
+    case 'laborer':
       url = require('./Professions/builder.png');
       break;
     case 'cardiologist':
@@ -927,7 +929,23 @@ const NewImage = ({
     case 'cleaner':
       url = require('./Professions/cleaner.png');
       break;
+    case 'cleaner':
+      url = require('./Professions/cleaner.png');
+      break;
+    case 'construction electrician':
+      url = require('./Professions/construction_electrician.png');
+      break;
+    case 'construction engineer':
+      url = require('./Professions/construction_engineer.png');
+      break;
+    case 'firefighter inspector':
+      url = require('./Professions/firefighter_inspector.png');
+      break;
+    case 'safety inspector':
+      url = require('./Professions/safety_inspector.png');
+      break;
     case 'cook':
+    case 'chef':
       url = require('./Professions/cook.png');
       break;
     case 'dentist':
@@ -976,6 +994,9 @@ const NewImage = ({
     case 'musician':
       url = require('./Professions/musician.png');
       break;
+    case 'nurse':
+      url = require('./Professions/nurse.png');
+      break;
     case 'nutritionist':
       url = require('./Professions/nutritionist.png');
       break;
@@ -998,6 +1019,7 @@ const NewImage = ({
       url = require('./Professions/receptionist.png');
       break;
     case 'scientist':
+    case 'researcher':
       url = require('./Professions/scientist.png');
       break;
     case 'singer':
@@ -1013,6 +1035,7 @@ const NewImage = ({
       url = require('./Professions/taxi_driver.png');
       break;
     case 'teacher':
+    case 'professor':
       url = require('./Professions/teacher.png');
       break;
     case 'technologist':
@@ -1025,6 +1048,7 @@ const NewImage = ({
       url = require('./Professions/welder.png');
       break;
     case 'writer':
+    case 'author':
       url = require('./Professions/writer.png');
       break;
     //////////////
@@ -1722,6 +1746,7 @@ const NewImage = ({
     /////////////////
     /////////////////
 
+    // TODO .
     // diff nouns
     case 'artist palette':
       url = require('./Nouns/artist_palette.png');
@@ -1785,6 +1810,9 @@ const NewImage = ({
       break;
     case 'fountain':
       url = require('./Nouns/fountain.png');
+      break;
+    case 'helmet with white cross':
+      url = require('./Nouns/helmet_with_white_cross.png');
       break;
     case 'hole':
       url = require('./Nouns/hole.png');
