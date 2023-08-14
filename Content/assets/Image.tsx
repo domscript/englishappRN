@@ -966,6 +966,10 @@ const NewImage = ({
     case 'judge':
       url = require('./Professions/judge.png');
       break;
+    case 'lawyer':
+    case 'attorney':
+      url = require('./Professions/lawyer.png');
+      break;
     case 'mechanic':
       url = require('./Professions/mechanic.png');
       break;
