@@ -1713,7 +1713,184 @@ const NewImage = ({
     case 'seashell':
       url = require('./Creatures/seashell.png');
       break;
+    /////////////////
+    /////////////////
+    /////////////////
+    /////////////////
+
+    // diff nouns
+    case 'artist palette':
+      url = require('./Nouns/artist_palette.png');
+      break;
+    case 'balloon':
+      url = require('./Nouns/balloon.png');
+      break;
+    case 'basket':
+      url = require('./Nouns/basket.png');
+      break;
+    case 'bathtub':
+      url = require('./Nouns/bathtub.png');
+      break;
+    case 'bookmark':
+      url = require('./Nouns/bookmark.png');
+      break;
+    case 'bubbles':
+      url = require('./Nouns/bubbles.png');
+      break;
+    case 'bus stop':
+      url = require('./Nouns/bus_stop.png');
+      break;
+    case 'calendar':
+      url = require('./Nouns/calendar.png');
+      break;
+    case 'camping':
+      url = require('./Nouns/camping.png');
+      break;
+    case 'candle':
+      url = require('./Nouns/candle.png');
+      break;
+    case 'clipboard':
+      url = require('./Nouns/clipboard.png');
+      break;
+    case 'cloud':
+      url = require('./Nouns/cloud.png');
+      break;
+    case 'coin':
+      url = require('./Nouns/coin.png');
+      break;
+    case 'comet':
+      url = require('./Nouns/comet.png');
+      break;
+    case 'crayon':
+      url = require('./Nouns/crayon.png');
+      break;
+    case 'desert':
+      url = require('./Nouns/desert.png');
+      break;
+    case 'droplet':
+      url = require('./Nouns/droplet.png');
+      break;
+    case 'Earht':
+      url = require('./Nouns/Earht.png');
+      break;
+    case 'envelope':
+      url = require('./Nouns/envelope.png');
+      break;
+    case 'fire':
+      url = require('./Nouns/fire.png');
+      break;
+    case 'fountain':
+      url = require('./Nouns/fountain.png');
+      break;
+    case 'hole':
+      url = require('./Nouns/hole.png');
+      break;
+    case 'kite':
+      url = require('./Nouns/kite.png');
+      break;
+    case 'label tag':
+      url = require('./Nouns/label_tag.png');
+      break;
+    case 'ledger':
+      url = require('./Nouns/ledger.png');
+      break;
+    case 'medal':
+      url = require('./Nouns/medal.png');
+      break;
+    case 'memo':
+      url = require('./Nouns/memo.png');
+      break;
+    case 'military medal':
+      url = require('./Nouns/military_medal.png');
+      break;
+    case 'Moon':
+      url = require('./Nouns/Moon.png');
+      break;
+    case 'mountain':
+      url = require('./Nouns/mountain.png');
+      break;
+    case 'nesting dolls':
+      url = require('./Nouns/nesting_dolls.png');
+      break;
+    case 'paintbrush':
+      url = require('./Nouns/paintbrush.png');
+      break;
+    case 'performing arts':
+      url = require('./Nouns/performing_arts.png');
+      break;
+    case 'playground slide':
+      url = require('./Nouns/playground_slide.png');
+      break;
+    case 'present':
+      url = require('./Nouns/present.png');
+      break;
+    case 'pushpin':
+      url = require('./Nouns/pushpin.png');
+      break;
+    case 'rainbow':
+      url = require('./Nouns/rainbow.png');
+      break;
+    case 'receipt':
+      url = require('./Nouns/receipt.png');
+      break;
+    case 'rock':
+      url = require('./Nouns/rock.png');
+      break;
+    case 'shower':
+      url = require('./Nouns/shower.png');
+      break;
+    case 'sign':
+      url = require('./Nouns/sign.png');
+      break;
+    case 'snowflake':
+      url = require('./Nouns/snowflake.png');
+      break;
+    case 'snowman':
+      url = require('./Nouns/snowman.png');
+      break;
+    case 'soap':
+      url = require('./Nouns/soap.png');
+      break;
+    case 'sponge':
+      url = require('./Nouns/sponge.png');
+      break;
+    case 'Sun':
+      url = require('./Nouns/Sun.png');
+      break;
+    case 'teddy bear':
+    case 'toy':
+      url = require('./Nouns/teddy_bear.png');
+      break;
+    case 'tent':
+      url = require('./Nouns/tent.png');
+      break;
+    case 'tornado':
+      url = require('./Nouns/tornado.png');
+      break;
+    case 'trophy':
+      url = require('./Nouns/trophy.png');
+      break;
+    case 'volcano':
+      url = require('./Nouns/volcano.png');
+      break;
+    case 'wastebasket':
+      url = require('./Nouns/wastebasket.png');
+      break;
+    case 'wave':
+      url = require('./Nouns/wave.png');
+      break;
+    case 'wood':
+      url = require('./Nouns/wood.png');
+      break;
+    case 'world map':
+      url = require('./Nouns/world_map.png');
+      break;
+    /////////////////
+    /////////////////
+    /////////////////
+    /////////////////
     default:
+      console.log('default');
       return null;
   }
   return (
