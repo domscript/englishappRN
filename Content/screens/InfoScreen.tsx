@@ -220,7 +220,7 @@ function InfoScreen() {
             styles.text,
             isDarkTheme ? styles.darkTitle : styles.lightTitle,
           ]}>
-          The program records the results of the last hundred answers for each
+          The program records the results of the last 100 answers for each
           lesson.
         </Text>
         {/* <LinkList
