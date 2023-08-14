@@ -192,18 +192,30 @@ function Level({help, onPress}: {help: boolean; onPress: () => void}) {
           />
           <Text
             style={[
-              {paddingLeft: 10},
+              {paddingHorizontal: 2},
               styles.buttonText,
               isDarkTheme ? styles.textDark : styles.textLight,
             ]}>
             Level {help ? 'Easy' : 'Normal'}
           </Text>
+          <MyIcon
+            name={help ? 'level-2' : 'level-f'}
+            size={25}
+            color={isDarkTheme ? styles.textDark.color : styles.textLight.color}
+          />
         </View>
-        <MyIcon
-          name={help ? 'star-o' : 'rocket-launch'}
-          size={25}
-          color={isDarkTheme ? styles.textDark.color : styles.textLight.color}
-        />
+        <View style={{flexDirection: 'row'}}>
+          <MyIcon
+            name={help ? 'star-o' : 'rocket-launch'}
+            size={35}
+            color={isDarkTheme ? styles.textDark.color : styles.textLight.color}
+          />
+          <MyIcon
+            name={help ? 'sound' : 'sound-off'}
+            size={12}
+            color={isDarkTheme ? styles.textDark.color : styles.textLight.color}
+          />
+        </View>
         <Text
           style={[
             styles.buttonText,
@@ -216,7 +228,7 @@ function Level({help, onPress}: {help: boolean; onPress: () => void}) {
             styles.buttonText,
             isDarkTheme ? styles.textDark : styles.textLight,
           ]}>
-          {help ? 'take      a star' : 'ever      fly'}
+          {help ? 'take      a star' : 'ever        fly'}
         </Text>
         <View style={[styles.helpInfo]}>
           <Text
