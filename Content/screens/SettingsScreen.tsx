@@ -7,7 +7,7 @@ import {easyGame, normalGame} from '../redux-store/help';
 import Colors from '../constants/Colors';
 import {RootState} from '../redux-store/store';
 import SwitchButton from '../components/UI/SwitchButton';
-import {setSounds} from '../redux-store/sounds';
+import {turnSounds, turnoffSounds} from '../redux-store/sounds';
 
 function SettingsScreen() {
   const {
@@ -31,8 +31,11 @@ function SettingsScreen() {
     dispatch(normalGame());
   };
 
-  const onValueChange0 = () => {
-    dispatch(setSounds());
+  const handleSoundsOn = () => {
+    dispatch(turnSounds());
+  };
+  const handleSoundsOff = () => {
+    dispatch(turnoffSounds());
   };
   const onValueChange1 = () => {
     console.log('TODO');
@@ -62,14 +65,22 @@ function SettingsScreen() {
       </View>
       <View
         style={[
+          styles.levelOuterContainer,
+          isDarkTheme ? styles.darkTheme : styles.lightTheme,
+        ]}>
+        <Sounds sound={false} onPress={handleSoundsOff} />
+        <Sounds sound={true} onPress={handleSoundsOn} />
+      </View>
+      <View
+        style={[
           styles.switchOuterContainer,
           isDarkTheme ? styles.darkTheme : styles.lightTheme,
         ]}>
-        <SwitchButton
+        {/* <SwitchButton
           label="Sounds"
           onValueChange={onValueChange0}
           initialValue={true}
-        />
+        /> */}
       </View>
       <View
         style={[
@@ -236,8 +247,125 @@ function Level({help, onPress}: {help: boolean; onPress: () => void}) {
               styles.buttonText,
               isDarkTheme ? styles.textDark : styles.textLight,
             ]}>
-            {help ? 'DElETE NOTE HELP' : 'DELETE         HELP'}
+            {help ? 'DELETE NOTE HELP' : 'DELETE         HELP'}
           </Text>
+        </View>
+      </Pressable>
+    </View>
+  );
+}
+
+function Sounds({sound, onPress}: {sound: boolean; onPress: () => void}) {
+  const {
+    theme: {isDarkTheme},
+    sounds: {isSound},
+  } = useSelector((state: RootState) => state);
+
+  return (
+    <View
+      style={[
+        styles.themeContainer,
+        {flex: isSound === sound ? 0.54 : 0.44},
+        isDarkTheme
+          ? isSound === sound
+            ? styles.darkThemeActive
+            : styles.darkThemeNotActive
+          : isSound === sound
+          ? styles.lightThemeActive
+          : styles.lightThemeNotActive,
+      ]}>
+      <Pressable
+        onPress={onPress}
+        style={({pressed}) => [
+          styles.button,
+          isDarkTheme
+            ? isSound === sound
+              ? styles.buttonDarkActive
+              : styles.buttonDark
+            : isSound === sound
+            ? styles.buttonLightActive
+            : styles.buttonLight,
+
+          pressed && styles.buttonPressed,
+        ]}>
+        <View
+          style={[
+            styles.navCont,
+            isDarkTheme
+              ? isSound === sound
+                ? styles.lightThemeNavLevel
+                : styles.lightThemeNav
+              : styles.darkThemeNav,
+          ]}>
+          <MyIcon
+            name="study"
+            size={25}
+            color={isDarkTheme ? styles.textDark.color : styles.textLight.color}
+          />
+          <Text
+            style={[
+              {paddingHorizontal: 2},
+              styles.buttonText,
+              isDarkTheme ? styles.textDark : styles.textLight,
+            ]}>
+            Sounds {sound ? 'on' : 'off'}
+          </Text>
+          <MyIcon
+            name={sound ? 'sound' : 'sound-off'}
+            size={25}
+            color={isDarkTheme ? styles.textDark.color : styles.textLight.color}
+          />
+        </View>
+        <MyIcon
+          name={sound ? 'star-o' : 'rocket-launch'}
+          size={35}
+          color={isDarkTheme ? styles.textDark.color : styles.textLight.color}
+        />
+        <View style={{flexDirection: 'row'}}>
+          <MyIcon
+            name={sound ? 'sound' : 'sound-off'}
+            size={12}
+            color={isDarkTheme ? styles.textDark.color : styles.textLight.color}
+          />
+          <Text
+            style={[
+              styles.buttonText,
+              isDarkTheme ? styles.textDark : styles.textLight,
+            ]}>
+            {sound ? 'I         will' : 'Will        i'}
+          </Text>
+        </View>
+        <View style={{flexDirection: 'row'}}>
+          <MyIcon
+            name={sound ? 'sound' : 'sound-off'}
+            size={12}
+            color={isDarkTheme ? styles.textDark.color : styles.textLight.color}
+          />
+          <Text
+            style={[
+              styles.buttonText,
+              isDarkTheme ? styles.textDark : styles.textLight,
+            ]}>
+            {sound ? 'take      a star' : 'ever        fly'}
+          </Text>
+        </View>
+        <View style={[styles.helpInfo]}>
+          <View style={{flexDirection: 'row'}}>
+            <MyIcon
+              name={sound ? 'sound' : 'sound-off'}
+              size={12}
+              color={
+                isDarkTheme ? styles.textDark.color : styles.textLight.color
+              }
+            />
+            <Text
+              style={[
+                styles.buttonText,
+                isDarkTheme ? styles.textDark : styles.textLight,
+              ]}>
+              {sound ? 'DELETE NOTE HELP' : 'DELETE NOTE HELP'}
+            </Text>
+          </View>
         </View>
       </Pressable>
     </View>
@@ -343,7 +471,7 @@ const styles = StyleSheet.create({
     opacity: 0.9,
   },
   buttonText: {
-    fontSize: 16,
+    fontSize: 14,
     fontWeight: 'bold',
   },
 });

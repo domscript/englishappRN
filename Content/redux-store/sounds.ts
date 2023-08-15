@@ -7,25 +7,25 @@ if (!mmkv.contains('sounds')) {
 }
 
 const initialState: {isSound: boolean} = {
-  isSound: mmkv.getBoolean('sounds') || true,
+  isSound: mmkv.getBoolean('sounds') === false ? false : true,
 };
 
 const soundSlice = createSlice({
   name: 'sounds',
   initialState: initialState,
   reducers: {
-    setSounds: state => {
-      const sounds = !state.isSound;
+    turnSounds: state => {
+      const sounds = true;
       state.isSound = sounds;
 
       mmkv.set('sounds', sounds);
     },
-    // lightsound: state => {
-    //   const sounds = false;
-    //   state.isSound = sounds;
+    turnoffSounds: state => {
+      const sounds = false;
+      state.isSound = sounds;
 
-    //   // mmkv.set('sounds', sounds);
-    // },
+      mmkv.set('sounds', sounds);
+    },
   },
 });
 
@@ -33,6 +33,6 @@ export const toggleSounds = (state: RootState) => {
   return state.sounds;
 };
 
-export const {setSounds} = soundSlice.actions;
+export const {turnSounds, turnoffSounds} = soundSlice.actions;
 
 export default soundSlice.reducer;

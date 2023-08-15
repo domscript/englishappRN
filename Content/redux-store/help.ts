@@ -7,7 +7,7 @@ if (!mmkv.contains('help')) {
 }
 
 const initialState: {isEasy: boolean} = {
-  isEasy: mmkv.getBoolean('help') || true,
+  isEasy: mmkv.getBoolean('help') === false ? false : true,
 };
 
 const helpSlice = createSlice({

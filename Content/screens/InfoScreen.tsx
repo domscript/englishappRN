@@ -22,7 +22,7 @@ function InfoScreen() {
         },
       ]}>
       <ScrollView>
-        <Intro />
+        {/* <Intro endText="Play here for me!" /> */}
         <Text
           style={[
             styles.title,
