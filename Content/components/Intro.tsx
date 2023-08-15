@@ -11,8 +11,13 @@ import {useSelector} from 'react-redux';
 import Tts from 'react-native-tts';
 import {useEffect, useState} from 'react';
 import {RootState} from '../redux-store/store';
+import {MyIcon} from '../components/MyIcons/app';
 
-export function Intro() {
+interface IntroProps {
+  onPress: () => void;
+}
+
+export function Intro({onPress}: IntroProps) {
   const {isDarkTheme} = useSelector((state: RootState) => state.theme);
   const [isClicked, setIsClicked] = useState(false);
   const {height, width} = useWindowDimensions();
@@ -31,7 +36,7 @@ export function Intro() {
   }, [isClicked]);
 
   return (
-    <View style={[styles.container, {height: height - 90}]}>
+    <View style={[styles.container, {height: height}]}>
       <View style={styles.img}>
         <Image src="i" resizeMode="contain" />
       </View>
@@ -85,7 +90,7 @@ export function Intro() {
             isDarkTheme ? styles.colorDarkTheme : styles.colorLightTheme,
           ]}>
           I have a dog: Max,{'\n'}
-          check his ID too:
+          He has an ID too:
         </Text>
       </View>
       <View style={[styles.img]}>
@@ -94,26 +99,33 @@ export function Intro() {
             flex: 1,
             flexDirection: 'row',
           }}>
-          <View style={styles.img}>
+          <View style={styles.img0}>
             <Image src="it" resizeMode="contain" />
           </View>
-          <View style={styles.img}>
+          <View style={styles.img0}>
             <Image src="its" resizeMode="contain" />
           </View>
         </View>
       </View>
-      <View style={{justifyContent: 'center'}}>
+      <Pressable
+        onPress={onPress}
+        style={[
+          styles.button,
+          {backgroundColor: isDarkTheme ? Colors.gray70 : Colors.gray30},
+        ]}>
         <Text
           style={[
-            styles.text,
-            isDarkTheme ? styles.colorDarkTheme : styles.colorLightTheme,
-            {
-              marginBottom: 5,
-            },
+            {color: isDarkTheme ? Colors.gray5 : Colors.gray95},
+            styles.buttonText,
           ]}>
-          Play here for me!
+          Start
         </Text>
-      </View>
+        <MyIcon
+          name="rocket-launch"
+          size={40}
+          color={isDarkTheme ? Colors.green60 : Colors.green5}
+        />
+      </Pressable>
     </View>
   );
 }
@@ -121,12 +133,14 @@ export function Intro() {
 const styles = StyleSheet.create({
   container: {
     justifyContent: 'center',
-    height: 800,
+    maxHeight: 800,
   },
   img: {
     flex: 1,
-    // backgroundColor: 'gray',
     height: 120,
+  },
+  img0: {
+    flex: 1,
   },
   title: {
     fontSize: 40,
@@ -143,4 +157,16 @@ const styles = StyleSheet.create({
   },
   colorDarkTheme: {color: Colors.gray5},
   colorLightTheme: {color: Colors.gray95},
+  button: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginHorizontal: '20%',
+    marginVertical: 5,
+    borderRadius: 10,
+  },
+  buttonText: {
+    fontSize: 30,
+    paddingHorizontal: 10,
+  },
 });

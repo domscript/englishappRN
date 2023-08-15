@@ -7,6 +7,7 @@ import {CATEGORIES} from '../data/dummy-data';
 import {RootState} from '../redux-store/store';
 import {Lesson} from '../models/Lesson';
 import Tts from 'react-native-tts';
+import {ModalScreen} from './ModalScreen';
 
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 
@@ -40,6 +41,7 @@ function CategoriesScreen({navigation}) {
 
   return (
     <>
+      <ModalScreen />
       <FlatList
         data={CATEGORIES}
         style={isDarkTheme ? styles.darkTheme : styles.lightTheme}
