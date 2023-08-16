@@ -5614,6 +5614,11 @@ react-native-tts@^4.1.0:
   resolved "https://registry.yarnpkg.com/react-native-tts/-/react-native-tts-4.1.0.tgz#05fa34492bec234bcd64f6ed2bf122c4667d141a"
   integrity sha512-tvf3lQ6u9MqztUie37qoPw5YQPqi0ql1lPhDsBBs/RRA6A/H1J9X9H/qb1A0Hx0ZpjavrEdtVSqQQ2JDZvZCTQ==
 
+react-native-webp-format@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/react-native-webp-format/-/react-native-webp-format-1.2.0.tgz#6c7cbed4cdc8247711c7d7f656d0d4f739836c82"
+  integrity sha512-tUL/AbM6QwUsxsGutJ1bN4RW8JdD2w5Mpj+An4DvYKkm0bKHbODj7U7gI1+8X68GqJWOy+Ps2cbVmgNpSDfRPQ==
+
 react-native@0.72.3:
   version "0.72.3"
   resolved "https://registry.yarnpkg.com/react-native/-/react-native-0.72.3.tgz#f8d85ec81c9f3592d091ec8e9ac1694956a72765"

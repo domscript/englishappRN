@@ -38,16 +38,36 @@ export function Intro({onPress}: IntroProps) {
   return (
     <View style={[styles.container, {height: height}]}>
       <View style={styles.img}>
-        <Image src="i" resizeMode="contain" />
+        <Image src="slightly_smiling-face" resizeMode="contain" />
       </View>
+      <View
+        style={{
+          flex: 0.25,
+          height: 60,
+        }}>
+        <View
+          style={{
+            flex: 1,
+            flexDirection: 'row',
+          }}>
+          <View style={styles.img0}>
+            <Text
+              style={[
+                styles.title,
+                {textAlign: 'right'},
+                isDarkTheme ? styles.colorDarkTheme : styles.colorLightTheme,
+              ]}>
+              Hello,{' '}
+            </Text>
+          </View>
+          <View style={{flex: 0.25}}>
+            <Image src="waving-hand" resizeMode="center" />
+          </View>
+          <View style={{flex: 0.5}}></View>
+        </View>
+      </View>
+
       <View style={{justifyContent: 'center'}}>
-        <Text
-          style={[
-            styles.title,
-            isDarkTheme ? styles.colorDarkTheme : styles.colorLightTheme,
-          ]}>
-          Hello, 👋
-        </Text>
         <View
           style={{
             flexDirection: 'row',
@@ -100,7 +120,7 @@ export function Intro({onPress}: IntroProps) {
             flexDirection: 'row',
           }}>
           <View style={styles.img0}>
-            <Image src="it" resizeMode="contain" />
+            <Image src="dog_face_active" resizeMode="contain" />
           </View>
           <View style={styles.img0}>
             <Image src="its" resizeMode="contain" />
@@ -141,6 +161,7 @@ const styles = StyleSheet.create({
   },
   img0: {
     flex: 1,
+    justifyContent: 'center',
   },
   title: {
     fontSize: 40,

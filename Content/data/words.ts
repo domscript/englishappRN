@@ -1763,10 +1763,12 @@ const Buildings = {
   hotel: 'hotel',
   house: 'house',
   mosque: 'mosque',
+  museum: 'museum',
   'post office': 'post office',
   school: 'school',
   stadium: 'stadium',
   synagogue: 'synagogue',
+  theater: 'theater',
 };
 
 export const Nouns = {

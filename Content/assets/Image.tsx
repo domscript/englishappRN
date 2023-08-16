@@ -13,6 +13,15 @@ const NewImage = ({
 }) => {
   let url;
   switch (src) {
+    case 'dog_face_active':
+      url = require('./dog_face_active.webp');
+      break;
+    case 'slightly_smiling-face':
+      url = require('./slightly_smiling-face.webp');
+      break;
+    case 'waving-hand':
+      url = require('./waving-hand.webp');
+      break;
     // Verb be
     case 'be':
     case 'am':
@@ -595,6 +604,9 @@ const NewImage = ({
     case 'mosque':
       url = require('./Buildings/mosque.png');
       break;
+    case 'museum':
+      url = require('./Buildings/museum.png');
+      break;
     case 'post office':
       url = require('./Buildings/post_office.png');
       break;
@@ -606,6 +618,9 @@ const NewImage = ({
       break;
     case 'synagogue':
       url = require('./Buildings/synagogue.png');
+      break;
+    case 'theater':
+      url = require('./Buildings/theater.png');
       break;
     //////////////
     //////////////
@@ -720,7 +735,7 @@ const NewImage = ({
       url = require('./id.png');
       break;
     case 'credit card':
-      url = require('./credit_card.png');
+      url = require('./credit_card.webp');
       break;
     case 'ticket':
       url = require('./ticket.png');
