@@ -597,22 +597,22 @@ const NewImage = ({
     //////////////
 
     // Events
-    case 'carnaval':
+    case 'Carnaval':
       url = require('./Events/carnaval.png');
       break;
-    case 'concert':
+    case 'Concert':
       url = require('./Events/concert.png');
       break;
-    case 'exhibition':
+    case 'Exhibition':
       url = require('./Events/exhibition.png');
       break;
     case 'Fashion Show':
       url = require('./Events/fashion_show.png');
       break;
-    case 'meeting':
+    case 'Meeting':
       url = require('./Events/meeting.png');
       break;
-    case 'presentation':
+    case 'Presentation':
       url = require('./Events/presentation.png');
       break;
     //////////////

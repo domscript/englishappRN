@@ -1783,12 +1783,12 @@ const Places = {
 };
 
 const Events = {
-  carnaval: 'carnaval',
-  concert: 'concert',
-  exhibition: 'exhibition',
+  Carnaval: 'Carnaval',
+  Concert: 'Concert',
+  Exhibition: 'Exhibition',
   'Fashion Show': 'Fashion Show',
-  meeting: 'meeting',
-  presentation: 'presentation',
+  Meeting: 'Meeting',
+  Presentation: 'Presentation',
 };
 
 export const Nouns = {
