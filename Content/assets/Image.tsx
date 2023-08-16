@@ -567,6 +567,58 @@ const NewImage = ({
     //////////////
     //////////////
 
+    // Places
+    case 'basement':
+      url = require('./Places/basement.png');
+      break;
+    case 'bedroom':
+      url = require('./Places/bedroom.png');
+      break;
+    case 'cinema':
+      url = require('./Places/cinema.png');
+      break;
+    case 'home':
+      url = require('./Places/home.png');
+      break;
+    case 'kitchen':
+      url = require('./Places/kitchen.png');
+      break;
+    case 'office':
+      url = require('./Places/office.png');
+      break;
+    case 'room':
+      url = require('./Places/room.png');
+      break;
+    case 'work':
+      url = require('./Places/work.png');
+      break;
+    //////////////
+    //////////////
+    //////////////
+
+    // Events
+    case 'carnaval':
+      url = require('./Events/carnaval.png');
+      break;
+    case 'concert':
+      url = require('./Events/concert.png');
+      break;
+    case 'exhibition':
+      url = require('./Events/exhibition.png');
+      break;
+    case 'Fashion Show':
+      url = require('./Events/fashion_show.png');
+      break;
+    case 'meeting':
+      url = require('./Events/meeting.png');
+      break;
+    case 'presentation':
+      url = require('./Events/presentation.png');
+      break;
+    //////////////
+    //////////////
+    //////////////
+
     // Buildings
     case 'bank':
       url = require('./Buildings/bank.png');
@@ -588,9 +640,6 @@ const NewImage = ({
       break;
     case 'factory':
       url = require('./Buildings/factory.png');
-      break;
-    case 'home':
-      url = require('./Buildings/home.png');
       break;
     case 'hospital':
       url = require('./Buildings/hospital.png');

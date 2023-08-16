@@ -1758,7 +1758,7 @@ const Buildings = {
   'convenience store': 'convenience store',
   'department store': 'department store',
   factory: 'factory',
-  home: 'home',
+  // home: 'home',
   hospital: 'hospital',
   hotel: 'hotel',
   house: 'house',
@@ -1769,6 +1769,26 @@ const Buildings = {
   stadium: 'stadium',
   synagogue: 'synagogue',
   theater: 'theater',
+};
+
+const Places = {
+  basement: 'basement',
+  bedroom: 'bedroom',
+  cinema: 'cinema',
+  home: 'home',
+  kitchen: 'kitchen',
+  office: 'office',
+  room: 'room',
+  work: 'work',
+};
+
+const Events = {
+  carnaval: 'carnaval',
+  concert: 'concert',
+  exhibition: 'exhibition',
+  'Fashion Show': 'Fashion Show',
+  meeting: 'meeting',
+  presentation: 'presentation',
 };
 
 export const Nouns = {
@@ -1864,6 +1884,8 @@ const allWords = {
       run: 'run',
       read: 'read',
     },
+    Places,
+    Events,
     // Nouns: Nouns.C,
     Buildings,
     Preposition: {
