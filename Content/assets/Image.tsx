@@ -17,6 +17,7 @@ const NewImage = ({
       url = require('./dog_face_active.webp');
       break;
     case 'slightly_smiling-face':
+    case 'i':
       url = require('./slightly_smiling-face.webp');
       break;
     case 'waving-hand':
