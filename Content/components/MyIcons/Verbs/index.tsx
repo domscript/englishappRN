@@ -16,6 +16,8 @@ import Ask from './Ask';
 import Read from './Read';
 import Want from './Want';
 import Like from './Like';
+import Study from './Study';
+import Jump from './Jump';
 
 export type Stages = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8;
 
@@ -47,6 +49,8 @@ const verbComponents: {[key: string]: ComponentType<any>} = {
   read: Read,
   want: Want,
   like: Like,
+  study: Study,
+  jump: Jump,
 };
 
 export const Verb = ({positive, stage, verb}: VerbMainProps) => {

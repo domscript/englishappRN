@@ -22,14 +22,15 @@
 // check
 // hide, install, move, repair, sell, wash, swim, let, wait, expect, yell, spend, reply, suggest, listen, fall, decide, join
 const verbsA = {
-  // study: {
-  //   value0: "study",
-  //   value1: "studies",
-  //   value2: "studied",
-  //   value3: "studied",
-  //   ving: "studying",
-  // qw: ['what', 'where', 'why', 'how']
-  // },
+  study: {
+    value0: 'study',
+    value1: 'studies',
+    value2: 'studied',
+    value3: 'studied',
+    ving: 'studying',
+    pronoun: false,
+    qw: ['what', 'where', 'why', 'how'],
+  },
   // work: {
   //   value0: "work",
   //   value1: "works",
@@ -135,6 +136,15 @@ const verbsA = {
     ving: 'asking',
     pronoun: true,
     qw: ['what', 'why', 'how', 'when'],
+  },
+  jump: {
+    value0: 'jump',
+    value1: 'jumps',
+    value2: 'jumped',
+    value3: 'jumped',
+    ving: 'jumping',
+    pronoun: false,
+    qw: ['why', 'how', 'when', 'where'],
   },
   // answer: {
   //   value0: "answer",
@@ -449,6 +459,11 @@ const verbsC = {
     pronoun: true,
     qw: ['what', 'why', 'how'],
   },
+};
+
+// check, lose, see, take, forget, put, bring, help, find
+const D = {
+  love: verbsA.love,
 };
 
 const verbs = {...verbsA, ...verbsC};
@@ -884,186 +899,97 @@ const Drinks = {
   wine: 'wine',
 };
 
-export const Creatures = {
+const Creatures = {
   B: {
     ant: 'ant',
-
     badger: 'badger',
-
     bat: 'bat',
-
     bear: 'bear',
-
     beaver: 'beaver',
-
     bee: 'bee',
-
     beetle: 'beetle',
-
     bison: 'bison',
-
     blowfish: 'blowfish',
-
     bug: 'bug',
-
     butterfly: 'butterfly',
-
     camel: 'camel',
-
     cat: 'cat',
-
     chick: 'chick',
-
     chipmunk: 'chipmunk',
-
     cockroach: 'cockroach',
-
     cow: 'cow',
-
     crab: 'crab',
-
     cricket: 'cricket',
-
     crocodile: 'crocodile',
-
     deer: 'deer',
-
     dinosaur: 'dinosaur',
-
     'dodo bird': 'dodo bird',
-
     dog: 'dog',
-
     dolphin: 'dolphin',
-
     dove: 'dove',
-
     dragon: 'dragon',
-
     duck: 'duck',
-
     eagle: 'eagle',
-
     elephant: 'elephant',
-
     fish: 'fish',
-
     flamingo: 'flamingo',
-
     fly: 'fly',
-
     fox: 'fox',
-
     giraffe: 'giraffe',
-
     goat: 'goat',
-
     gorilla: 'gorilla',
-
     hedgehog: 'hedgehog',
-
     hippo: 'hippo',
-
     horse: 'horse',
-
     kangaroo: 'kangaroo',
-
     ladybug: 'ladybug',
-
     leopard: 'leopard',
-
     lion: 'lion',
-
     lizard: 'lizard',
-
     llama: 'llama',
-
     lobster: 'lobster',
-
     mammoth: 'mammoth',
-
     mouse: 'mouse',
-
     octopus: 'octopus',
-
     orangutan: 'orangutan',
-
     otter: 'otter',
-
     owl: 'owl',
-
     ox: 'ox',
-
     panda: 'panda',
-
     parrot: 'parrot',
-
     peacock: 'peacock',
-
     penguin: 'penguin',
-
     pig: 'pig',
-
     'polar bear': 'polar bear',
-
     poodle: 'poodle',
-
     rabbit: 'rabbit',
-
     raccoon: 'raccoon',
-
     ram: 'ram',
-
     rat: 'rat',
-
     rhino: 'rhino',
-
     rooster: 'rooster',
-
     scorpion: 'scorpion',
-
     seal: 'seal',
-
     shark: 'shark',
-
     sheep: 'sheep',
-
     shrimp: 'shrimp',
-
     skunk: 'skunk',
-
     sloth: 'sloth',
-
     snail: 'snail',
-
     snake: 'snake',
-
     spider: 'spider',
-
     squid: 'squid',
-
     swan: 'swan',
-
     'T-Rex': 'T-Rex',
-
     tiger: 'tiger',
-
     'tropical fish': 'tropical fish',
-
     turkey: 'turkey',
-
     turtle: 'turtle',
-
     'two-hump camel': 'two-hump camel',
-
     'water buffalo': 'water buffalo',
-
     whale: 'whale',
-
     wolf: 'wolf',
-
     worm: 'worm',
-
     zebra: 'zebra',
   },
 };
@@ -1373,7 +1299,7 @@ export const spWord = [
   'chairs',
 ];
 
-const abbb = {
+const Flags = {
   Argentina: 'Argentina',
   Australia: 'Australia',
   Canada: 'Canada',
@@ -1478,11 +1404,11 @@ const NounsL: NounsLessonsInt = {
   broccoli: ['broccoli', 0, 'broccoli', ['buy', 'eat']],
   chair: ['on the chair', 0, 'chair', ['dance', 'sit', 'stand']],
   chairs: ['on chairs', 0, 'chair', ['sleep']],
-  table: ['on the table', 0, 'table', ['dance', 'sit', 'sleep', 'stand']], //
+  table: ['on the table', 0, 'table', ['dance', 'sit', 'sleep', 'stand']],
   // cabinet: ['cabinet', 0, 'cabinet', ['open', 'close']],
-  floor: ['on the floor', 0, 'floor', ['dance', 'sit', 'sleep', 'stand']], // 'sleep'
+  floor: ['on the floor', 0, 'floor', ['dance', 'sit', 'sleep', 'stand']],
   bed: ['on the bed', 0, 'bed', ['dance', 'sit', 'sleep', 'stand']],
-  // wall: ['on the wall', 0, 'wall', ['dance', 'sit']],
+  // wall: ['on the wall', 0, 'wall', ['paint', 'lean']],
 };
 
 export interface WordsOneLessonInt {
