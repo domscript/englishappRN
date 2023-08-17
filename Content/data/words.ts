@@ -388,7 +388,14 @@ const verbsA = {
   // buy: { value0: "buy", value1: "buys", value2: "bought", value3: "bought",     pronoun: true, },
   // hear: { value0: "hear", value1: "hears", value2: "heard", value3: "heard",     pronoun: true,},
   // lose: { value0: "lose", value1: "loses", value2: "lost", value3: "lost" },
-  // help: { value0: "help", value1: "helps", value2: "helped", value3: "helped",     pronoun: true, },
+  help: {
+    value0: 'help',
+    value1: 'helps',
+    value2: 'helped',
+    value3: 'helped',
+    pronoun: true,
+    qw: ['what', 'why', 'when'],
+  },
   // meet: { value0: "meet", value1: "meets", value2: "met", value3: "met",     pronoun: true, },
   // make: { value0: "make", value1: "makes", value2: "made", value3: "made" },
   // get: { value0: "get", value1: "gets", value2: "got", value3: "got" },
@@ -466,12 +473,13 @@ const verbsC = {
   },
 };
 
-// check, lose, see, take, put, help, find
+// check, lose, see, take, put, find
 const D = {
   love: verbsA.love,
   bring: verbsA.bring,
   forget: verbsA.forget,
   give: verbsA.give,
+  help: verbsA.help,
 };
 
 const verbs = {...verbsA, ...verbsC};
