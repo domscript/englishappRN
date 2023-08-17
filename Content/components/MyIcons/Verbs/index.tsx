@@ -18,6 +18,9 @@ import Want from './Want';
 import Like from './Like';
 import Study from './Study';
 import Jump from './Jump';
+import Give from './Give';
+import Bring from './Bring';
+import Forget from './Forget';
 
 export type Stages = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8;
 
@@ -51,6 +54,9 @@ const verbComponents: {[key: string]: ComponentType<any>} = {
   like: Like,
   study: Study,
   jump: Jump,
+  give: Give,
+  bring: Bring,
+  forget: Forget,
 };
 
 export const Verb = ({positive, stage, verb}: VerbMainProps) => {

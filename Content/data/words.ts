@@ -121,13 +121,15 @@ const verbsA = {
   //   value3: "flown",
   //   ving: "flying",
   // },
-  // give: {
-  //   value0: "give",
-  //   value1: "gives",
-  //   value2: "gave",
-  //   value3: "given",
-  //   ving: "giving",
-  // },
+  give: {
+    value0: 'give',
+    value1: 'gives',
+    value2: 'gave',
+    value3: 'given',
+    ving: 'giving',
+    pronoun: true,
+    qw: ['what', 'why', 'when'],
+  },
   ask: {
     value0: 'ask',
     value1: 'asks',
@@ -395,13 +397,14 @@ const verbsA = {
   // set: { value0: "set", value1: "sets", value2: "set", value3: "set" },
   // grow: { value0: "grow", value1: "grows", value2: "grew", value3: "grown" },
   // hold: { value0: "hold", value1: "holds", value2: "held", value3: "held" },
-  // forget: {
-  //   value0: "forget",
-  //   value1: "forgets",
-  //   value2: "forgot",
-  //   value3: "forgotten",
-  // pronoun: true,
-  // },
+  forget: {
+    value0: 'forget',
+    value1: 'forgets',
+    value2: 'forgot',
+    value3: 'forgotten',
+    pronoun: true,
+    qw: ['what', 'why'],
+  },
   // start: {
   //   value0: "start",
   //   value1: "starts",
@@ -420,12 +423,14 @@ const verbsA = {
   //   value2: "traveled",
   //   value3: "traveled",
   // },
-  // bring: {
-  //   value0: "bring",
-  //   value1: "brings",
-  //   value2: "brought",
-  //   value3: "brought",
-  // },
+  bring: {
+    value0: 'bring',
+    value1: 'brings',
+    value2: 'brought',
+    value3: 'brought',
+    pronoun: false,
+    qw: ['when', 'what', 'why'],
+  },
   // begin: {
   //   value0: "begin",
   //   value1: "begins",
@@ -461,9 +466,12 @@ const verbsC = {
   },
 };
 
-// check, lose, see, take, forget, put, bring, help, find
+// check, lose, see, take, put, help, find
 const D = {
   love: verbsA.love,
+  bring: verbsA.bring,
+  forget: verbsA.forget,
+  give: verbsA.give,
 };
 
 const verbs = {...verbsA, ...verbsC};
@@ -478,6 +486,7 @@ export const irregularVerbs = [
   'sit',
   'read',
   'eat',
+  'give',
 
   'write',
   'speak',
@@ -485,7 +494,6 @@ export const irregularVerbs = [
   'grow',
   'fly',
   'buy',
-  'give',
   'come',
   'hear',
   'tell',
