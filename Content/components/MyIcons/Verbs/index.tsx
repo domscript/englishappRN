@@ -22,6 +22,8 @@ import Give from './Give';
 import Bring from './Bring';
 import Forget from './Forget';
 import Help from './Help';
+import Pay from './Pay';
+import Lose from './Lose';
 
 export type Stages = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8;
 
@@ -59,6 +61,8 @@ const verbComponents: {[key: string]: ComponentType<any>} = {
   bring: Bring,
   forget: Forget,
   help: Help,
+  pay: Pay,
+  lose: Lose,
 };
 
 export const Verb = ({positive, stage, verb}: VerbMainProps) => {

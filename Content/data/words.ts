@@ -163,14 +163,15 @@ const verbsA = {
   //   value3: "taken",
   //   ving: "taking",
   // },
-  // pay: {
-  //   value0: "pay",
-  //   value1: "pays",
-  //   value2: "paid",
-  //   value3: "paid",
-  //   ving: "paying",
-  // pronoun: true,
-  // },
+  pay: {
+    value0: 'pay',
+    value1: 'pays',
+    value2: 'paid',
+    value3: 'paid',
+    ving: 'paying',
+    pronoun: true,
+    qw: ['why', 'when'],
+  },
   sleep: {
     value0: 'sleep',
     value1: 'sleeps',
@@ -387,7 +388,14 @@ const verbsA = {
   // say: { value0: "say", value1: "says", value2: "said", value3: "said" },
   // buy: { value0: "buy", value1: "buys", value2: "bought", value3: "bought",     pronoun: true, },
   // hear: { value0: "hear", value1: "hears", value2: "heard", value3: "heard",     pronoun: true,},
-  // lose: { value0: "lose", value1: "loses", value2: "lost", value3: "lost" },
+  lose: {
+    value0: 'lose',
+    value1: 'loses',
+    value2: 'lost',
+    value3: 'lost',
+    pronoun: true,
+    qw: ['what', 'where', 'why', 'when'],
+  },
   help: {
     value0: 'help',
     value1: 'helps',
@@ -473,13 +481,14 @@ const verbsC = {
   },
 };
 
-// check, lose, see, take, put, find
+// check, see, take, put, find
 const D = {
   love: verbsA.love,
   bring: verbsA.bring,
   forget: verbsA.forget,
   give: verbsA.give,
   help: verbsA.help,
+  lose: verbsA.lose,
 };
 
 const verbs = {...verbsA, ...verbsC};
@@ -495,10 +504,13 @@ export const irregularVerbs = [
   'read',
   'eat',
   'give',
+  'pay',
+  'forget',
+  'bring',
+  'lose',
 
   'write',
   'speak',
-  'pay',
   'grow',
   'fly',
   'buy',
@@ -511,17 +523,14 @@ export const irregularVerbs = [
 
   'make',
   'see',
-  'lose',
   'find',
   'meet',
 
   'go',
   'know',
   'feel',
-  'forget',
   'get',
   'leave',
-  'bring',
   'begin',
 ];
 
