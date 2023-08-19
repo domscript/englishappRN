@@ -101,7 +101,13 @@ function LessonStudyScreen({route, navigation}) {
     }, 500);
     if (isSound) {
       Tts.stop();
-      Tts.speak(testData0[index] === 'read ' ? 'red' : testData0[index]);
+      Tts.speak(
+        testData0[index] === 'read '
+          ? 'red'
+          : testData0[index] === 'id'
+          ? 'I D'
+          : testData0[index],
+      );
     }
 
     if (index >= 0 && index < 4) {
@@ -133,7 +139,7 @@ function LessonStudyScreen({route, navigation}) {
       });
     }
   }
-  if (stage === 8) console.log(124, question, userAnswer, testData0);
+  // if (stage === 8) console.log(124, question, userAnswer, testData0);
   if (
     question.filter((i: string) => i).length === userAnswer.length &&
     componentState === ComponentStates.IDLE

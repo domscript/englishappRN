@@ -108,7 +108,13 @@ function WordsStudy({route}) {
     if (!isAnswerCorrect && !areButtonsDisabled) {
       if (isSound) {
         Tts.stop();
-        Tts.speak(dataNew[wordId] === 'read ' ? 'red' : word);
+        Tts.speak(
+          dataNew[wordId] === 'read '
+            ? 'red'
+            : dataNew[wordId] === 'id'
+            ? 'I D'
+            : word,
+        );
       }
       if (word === dataNew[wordId]) {
         setIsAnswerCorrect(true);
@@ -196,7 +202,7 @@ function WordsStudy({route}) {
         onPress={() => {
           if (isSound) {
             Tts.stop();
-            Tts.speak(word === 'read ' ? 'red' : word);
+            Tts.speak(word === 'read ' ? 'red' : word === 'id' ? 'I D' : word);
           }
         }}>
         {verbsList.includes(newWord) ? (
