@@ -1515,6 +1515,9 @@ const NewImage = ({
     case 'father':
       url = require('./Family/father.png');
       break;
+    case 'family':
+      url = require('./Family/family.png');
+      break;
     case 'grandfather':
       url = require('./Family/grandfather.png');
       break;
