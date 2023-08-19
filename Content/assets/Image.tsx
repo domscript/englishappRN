@@ -130,6 +130,18 @@ const NewImage = ({
     case 'wine':
       url = require('./Drinks/wine.png');
       break;
+    case 'glass of hot chocolate':
+      url = require('./Drinks/glass_of_hot_chocolate.png');
+      break;
+    case 'glass of juice':
+      url = require('./Drinks/glass_of_juice.png');
+      break;
+    case 'glass of milk':
+      url = require('./Drinks/glass_of_milk.png');
+      break;
+    case 'glass of water':
+      url = require('./Drinks/glass_of_water.png');
+      break;
     //////////////
     //////////////
     //////////////
@@ -786,6 +798,9 @@ const NewImage = ({
       break;
     case 'credit card':
       url = require('./credit_card.webp');
+      break;
+    case 'money':
+      url = require('./money.png');
       break;
     case 'ticket':
       url = require('./ticket.png');
