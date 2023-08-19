@@ -489,13 +489,13 @@ const verbsC = {
 };
 
 // check, see, take, put, find
-const D = {
-  love: verbsA.love,
-  bring: verbsA.bring,
-  forget: verbsA.forget,
-  give: verbsA.give,
-  help: verbsA.help,
-  lose: verbsA.lose,
+const verbsD = {
+  love: {...verbsA.love, tense: [1, 2]},
+  bring: {...verbsA.bring, tense: [0, 2]},
+  forget: {...verbsA.forget, tense: [0, 5]},
+  give: {...verbsA.give, tense: [8]},
+  help: {...verbsA.help, tense: [0, 2, 8]},
+  lose: {...verbsA.lose, tense: [0, 5]},
 };
 
 const verbs = {...verbsA, ...verbsC};
@@ -571,8 +571,6 @@ export const Interrogatives = {
   how: 'how',
   why: 'why',
 };
-
-const a = {};
 
 const Adjectives = {
   good: {
@@ -820,6 +818,7 @@ const Professions = {
 
 const Family = {
   D: {
+    family: 'family',
     mother: 'mother',
     father: 'father',
     daughter: 'daughter',
@@ -1041,7 +1040,7 @@ export const subjectPronounsIcons: {
   B: {who: 'who'},
 };
 
-export const objectPronounsIcons: {
+const objectPronounsIcons: {
   [key: string]: {[key: string]: string};
 } = {
   B: {
@@ -1451,6 +1450,39 @@ const NounsL: NounsLessonsInt = {
   // wall: ['on the wall', 0, 'wall', ['paint', 'lean']],
 };
 
+['love', 'bring', 'forget', 'give', 'help', 'lose'];
+// check, see, take, put, find
+
+const NounsLD: NounsLessonsInt = {
+  id: ['id', 0, 'id', ['bring', 'lose', 'forget']],
+  book: ['book', 0, 'book', ['bring', 'lose', 'forget']],
+  umbrella: ['umbrella', 0, 'umbrella', ['give', 'lose', 'forget']],
+  folder: ['folder', 0, 'folder', ['bring', 'give', 'lose', 'forget']],
+  pen: ['pen', 0, 'pen', ['bring', 'give', 'lose', 'forget']],
+  pencil: ['pencil', 0, 'pencil', ['bring', 'give', 'lose', 'forget']],
+  car: ['car', 0, 'car', ['give', 'love']],
+  cat: ['cat', 0, 'cat', ['love']],
+  dog: ['dog', 0, 'dog', ['love']],
+  chair: ['chair', 0, 'chair', ['give']],
+  chairs: ['chairs', 0, 'chair', ['give']],
+  mother: ['mother', 0, 'mother', ['love', 'help']],
+  family: ['family', 0, 'family', ['love', 'help']],
+  father: ['father', 0, 'father', ['love', 'help']],
+  daughter: ['daughter', 0, 'daughter', ['love', 'help']],
+  son: ['son', 0, 'son', ['love', 'help']],
+  children: ['children', 0, 'children', ['love', 'help']],
+  parents: ['parents', 0, 'parents', ['love', 'help']],
+  wife: ['wife', 0, 'wife', ['love', 'help']],
+  husband: ['husband', 0, 'husband', ['love', 'help']],
+  sister: ['sister', 0, 'sister', ['love', 'help']],
+  brother: ['brother', 0, 'brother', ['love', 'help']],
+  grandmother: ['grandmother', 0, 'grandmother', ['love', 'help']],
+  grandfather: ['grandfather', 0, 'grandfather', ['love', 'help']],
+
+  // table: ['table', 0, 'table', ['give',]],
+  // bed: ['on the bed', 0, 'bed', ['dance', 'sit', 'sleep', 'stand']],
+};
+
 export interface WordsOneLessonInt {
   words: {
     'Subject Pronouns': {
@@ -1468,6 +1500,7 @@ export interface WordsOneLessonInt {
         value2: string;
         value3: string;
         ving?: string;
+        tense?: number[];
         pronoun: boolean;
         qw: string[];
       };
@@ -1531,10 +1564,9 @@ const wordsL: {
       'Subject Pronouns': subjectPronouns,
       names: fNames,
       nouns: {
-        ...NounsLs,
-        ...NounsL,
+        ...NounsLD,
       },
-      verbs: verbsA,
+      verbs: verbsD,
     },
   },
   E: {
