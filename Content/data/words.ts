@@ -386,7 +386,14 @@ const verbsA = {
   // pronoun: false,
   // },
   // say: { value0: "say", value1: "says", value2: "said", value3: "said" },
-  // buy: { value0: "buy", value1: "buys", value2: "bought", value3: "bought",     pronoun: true, },
+  buy: {
+    value0: 'buy',
+    value1: 'buys',
+    value2: 'bought',
+    value3: 'bought',
+    pronoun: true,
+    qw: ['what', 'where', 'why', 'when'],
+  },
   // hear: { value0: "hear", value1: "hears", value2: "heard", value3: "heard",     pronoun: true,},
   lose: {
     value0: 'lose',
@@ -508,12 +515,12 @@ export const irregularVerbs = [
   'forget',
   'bring',
   'lose',
+  'buy',
 
   'write',
   'speak',
   'grow',
   'fly',
-  'buy',
   'come',
   'hear',
   'tell',
@@ -706,7 +713,7 @@ const Adjectives = {
   },
 };
 
-export const Professions = {
+const Professions = {
   D: {
     accountant: 'accountant',
     actor: 'actor',
@@ -811,7 +818,7 @@ export const Professions = {
   },
 };
 
-export const Family = {
+const Family = {
   D: {
     mother: 'mother',
     father: 'father',
@@ -828,7 +835,7 @@ export const Family = {
   },
 };
 
-export const Food = {
+const Food = {
   A: {
     apple: 'apple',
     avocado: 'avocado',
@@ -1337,8 +1344,8 @@ const Flags = {
   'South Korea': 'South Korea',
   Spain: 'Spain',
   Thailand: 'Thailand',
-  'the UK': 'the United Kingdom',
-  'the USA': 'the United States',
+  'the UK': 'the UK',
+  'the USA': 'the USA',
 };
 
 interface NounsLessonsInt {
@@ -1376,9 +1383,17 @@ const NounsL: NounsLessonsInt = {
   newspaper: ['newspaper', 0, 'newspaper', ['open', 'close', 'buy', 'read']],
   umbrella: ['an umbrella', 0, 'umbrella', ['open', 'close', 'buy']],
   folder: ['a folder', 0, 'folder', ['open', 'close', 'buy']],
-  milk: ['a glass of milk', 0, 'milk', ['drink', 'buy']],
-  wine: ['a glass of wine', 0, 'wine', ['drink']],
-  beer: ['a mug of beer', 0, 'beer', ['drink']],
+  milk: ['a glass of milk', 0, 'glass of milk', ['drink', 'buy']],
+  // 'hot chocolate': [
+  //   'a glass of hot chocolate',
+  //   0,
+  //   'glass of hot chocolate',
+  //   ['drink'],
+  // ],
+  // juice: ['a glass of juice', 0, 'glass of juice', ['drink']],
+  water: ['a glass of water', 0, 'glass of water', ['drink']],
+  // wine: ['a glass of wine', 0, 'wine', ['drink']],
+  // beer: ['a mug of beer', 0, 'beer', ['drink']],
   tea: ['a cup of tea', 0, 'tea', ['drink']],
   'juice box': ['a box of juice', 0, 'juice box', ['drink', 'buy']],
   hamburger: ['a hamburger', 0, 'hamburger', ['buy', 'eat']],
@@ -1394,7 +1409,7 @@ const NounsL: NounsLessonsInt = {
   korean: ['Korean', 0, 'Korean', ['study', 'teach']],
   german: ['German', 0, 'German', ['study', 'teach']],
   japanese: ['Japanese', 0, 'Japanese', ['study', 'teach']],
-  // car: ['a car', 0, 'car', ['buy']],
+  car: ['a car', 0, 'car', ['buy']],
   // bicycle: ['a bicycle', 0, 'bicycle', ['buy']],
   // cat: ['a cat', 0, 'cat', ['buy']],
   // duck: ['a duck', 0, 'duck', ['buy']],
@@ -1408,7 +1423,7 @@ const NounsL: NounsLessonsInt = {
   // circus: ['a circus', 0, 'circus', ['buy']],
   pen: ['a pen', 0, 'pen', ['buy']],
   pencil: ['a pencil', 0, 'pencil', ['buy']],
-  bacon: ['bacon', 0, 'bacon', ['buy', 'eat']],
+  // bacon: ['bacon', 0, 'bacon', ['buy', 'eat']],
 
   'bell pepper': ['a bell pepper', 0, 'bell pepper', ['buy', 'eat']],
   carrot: ['a carrot', 0, 'carrot', ['buy', 'eat']],
@@ -1657,29 +1672,37 @@ const wordsL: {
 };
 
 const SomeNouns = {
-  door: 'door',
-  bed: 'bed',
+  id: 'id',
+  'credit card': 'credit card',
+  money: 'money',
+  ticket: 'ticket',
+  water: 'droplet',
+  tea: 'tea',
+  juice: 'juice box',
+  milk: 'milk',
   box: 'box',
   book: 'book',
+  message: 'message',
+  text: 'text',
+  newspaper: 'newspaper',
   umbrella: 'umbrella',
   pen: 'pen',
   pencil: 'pencil',
   folder: 'folder',
-  window: 'window',
   chair: 'chair',
   table: 'table',
+  seat: 'seat',
+  couch: 'couch',
+  bed: 'bed',
+  door: 'door',
+  window: 'window',
   floor: 'floor',
   wall: 'wall',
   cooking: 'cooking',
-
-  id: 'id',
-  'credit card': 'credit card',
-  ticket: 'ticket',
+  hamburger: 'hamburger',
+  cookie: 'cookie',
+  car: 'car',
   toilet: 'toilet',
-  seat: 'seat',
-  couch: 'couch',
-
-  // // cabinet: '🗄️',
 };
 
 const Electronics = {
@@ -1751,10 +1774,10 @@ export const Nouns = {
     'rocket science': 'rocket science',
     programming: 'programming',
     ///
-    english: 'english',
-    spanish: 'spanish',
-    french: 'french',
-    chinese: 'chinese',
+    // english: 'english',
+    // spanish: 'spanish',
+    // french: 'french',
+    // chinese: 'chinese',
     ///
     // car: 'car',
     // bicycle: 'bicycle',
@@ -1816,6 +1839,7 @@ const allWords = {
     'Subject Pronouns': subjectPronounsIcons.A,
     'Verbs (v1)': verbs1Lesson1,
     Nouns: Nouns.A,
+    Flags,
     Food: Food.A,
   },
   AX: {
