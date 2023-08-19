@@ -805,6 +805,12 @@ const NewImage = ({
     case 'ticket':
       url = require('./ticket.png');
       break;
+    case 'man':
+      url = require('./man.png');
+      break;
+    case 'woman':
+      url = require('./woman.png');
+      break;
     case 'toilet':
       url = require('./toilet.png');
       break;

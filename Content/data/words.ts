@@ -1702,6 +1702,8 @@ const SomeNouns = {
   hamburger: 'hamburger',
   cookie: 'cookie',
   car: 'car',
+  man: 'man',
+  woman: 'woman',
   toilet: 'toilet',
 };
 
