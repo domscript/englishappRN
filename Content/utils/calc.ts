@@ -1,6 +1,100 @@
 import {getRandomInt, shuffleArray} from './smallFunctions';
 import {WordsOneLessonInt} from '../data/words';
 
+interface BeInterface {
+  i: string[];
+  you: string[];
+  he: string[];
+  she: string[];
+  we: string[];
+  they: string[];
+  it: string[];
+}
+
+const BeScheme: BeInterface[] = [
+  {
+    i: ['i', 'was'],
+    you: ['you', 'were'],
+    he: ['he', 'was'],
+    she: ['she', 'was'],
+    we: ['we', 'were'],
+    they: ['they', 'were'],
+    it: ['it', 'was'],
+  },
+  {
+    i: ['i', 'am'],
+    you: ['you', 'are'],
+    he: ['he', 'is'],
+    she: ['she', 'is'],
+    we: ['we', 'are'],
+    they: ['they', 'are'],
+    it: ['it', 'is'],
+  },
+  {
+    i: ['i', 'will be'],
+    you: ['you', 'will be'],
+    he: ['he', 'will be'],
+    she: ['she', 'will be'],
+    we: ['we', 'will be'],
+    they: ['they', 'will be'],
+    it: ['it', 'will be'],
+  },
+  {
+    i: ['i', "wasn't"],
+    you: ['you', "weren't"],
+    he: ['he', "wasn't"],
+    she: ['she', "wasn't"],
+    we: ['we', "weren't"],
+    they: ['they', "weren't"],
+    it: ['it', "wasn't"],
+  },
+  {
+    i: ['i', 'am not'],
+    you: ['you', "aren't"],
+    he: ['he', "isn't"],
+    she: ['she', "isn't"],
+    we: ['we', "aren't"],
+    they: ['they', "aren't"],
+    it: ['it', "isn't"],
+  },
+  {
+    i: ['i', "won't be"],
+    you: ['you', "won't be"],
+    he: ['he', "won't be"],
+    she: ['she', "won't be"],
+    we: ['we', "won't be"],
+    they: ['they', "won't be"],
+    it: ['it', "won't be"],
+  },
+  {
+    i: ['was', 'i'],
+    you: ['were', 'you'],
+    he: ['was', 'he'],
+    she: ['was', 'she'],
+    we: ['were', 'we'],
+    they: ['were', 'they'],
+    it: ['was', 'it'],
+  },
+  {
+    i: ['am', 'i'],
+    you: ['are', 'you'],
+    he: ['is', 'he'],
+    she: ['is', 'she'],
+    we: ['are', 'we'],
+    they: ['are', 'they'],
+    it: ['is', 'it'],
+  },
+  {
+    i: ['will', 'i', 'be'],
+    you: ['will', 'you', 'be'],
+    he: ['will', 'he', 'be'],
+    she: ['will', 'she', 'be'],
+    we: ['will', 'we', 'be'],
+    they: ['will', 'they', 'be'],
+    it: ['will', 'it', 'be'],
+  },
+];
+
 export const SimpleTenseScheme = (words: WordsOneLessonInt) => {
   const {verbs, nouns} = words.words;
 
@@ -500,7 +594,10 @@ export const SecondLesson = (words: WordsOneLessonInt) => {
   };
 };
 
-export const ThirdLesson = (words: WordsOneLessonInt) => {
+export const ThirdLesson = (
+  words: WordsOneLessonInt,
+  beScheme: BeInterface[] = BeScheme,
+) => {
   const {verbs, nouns} = words.words;
 
   type SubjectPronounsType = 'i' | 'you' | 'he' | 'she' | 'we' | 'they' | 'it';
@@ -567,98 +664,6 @@ export const ThirdLesson = (words: WordsOneLessonInt) => {
     .splice(0, 3)
     .concat(subject)
     .sort(() => Math.random() - 0.5);
-
-  const beScheme: {
-    i: string[];
-    you: string[];
-    he: string[];
-    she: string[];
-    we: string[];
-    they: string[];
-    it: string[];
-  }[] = [
-    {
-      i: ['i', 'was'],
-      you: ['you', 'were'],
-      he: ['he', 'was'],
-      she: ['she', 'was'],
-      we: ['we', 'were'],
-      they: ['they', 'were'],
-      it: ['it', 'was'],
-    },
-    {
-      i: ['i', 'am'],
-      you: ['you', 'are'],
-      he: ['he', 'is'],
-      she: ['she', 'is'],
-      we: ['we', 'are'],
-      they: ['they', 'are'],
-      it: ['it', 'is'],
-    },
-    {
-      i: ['i', 'will be'],
-      you: ['you', 'will be'],
-      he: ['he', 'will be'],
-      she: ['she', 'will be'],
-      we: ['we', 'will be'],
-      they: ['they', 'will be'],
-      it: ['it', 'will be'],
-    },
-    {
-      i: ['i', "wasn't"],
-      you: ['you', "weren't"],
-      he: ['he', "wasn't"],
-      she: ['she', "wasn't"],
-      we: ['we', "weren't"],
-      they: ['they', "weren't"],
-      it: ['it', "wasn't"],
-    },
-    {
-      i: ['i', 'am not'],
-      you: ['you', "aren't"],
-      he: ['he', "isn't"],
-      she: ['she', "isn't"],
-      we: ['we', "aren't"],
-      they: ['they', "aren't"],
-      it: ['it', "isn't"],
-    },
-    {
-      i: ['i', "won't be"],
-      you: ['you', "won't be"],
-      he: ['he', "won't be"],
-      she: ['she', "won't be"],
-      we: ['we', "won't be"],
-      they: ['they', "won't be"],
-      it: ['it', "won't be"],
-    },
-    {
-      i: ['was', 'i'],
-      you: ['were', 'you'],
-      he: ['was', 'he'],
-      she: ['was', 'she'],
-      we: ['were', 'we'],
-      they: ['were', 'they'],
-      it: ['was', 'it'],
-    },
-    {
-      i: ['am', 'i'],
-      you: ['are', 'you'],
-      he: ['is', 'he'],
-      she: ['is', 'she'],
-      we: ['are', 'we'],
-      they: ['are', 'they'],
-      it: ['is', 'it'],
-    },
-    {
-      i: ['will', 'i', 'be'],
-      you: ['will', 'you', 'be'],
-      he: ['will', 'he', 'be'],
-      she: ['will', 'she', 'be'],
-      we: ['will', 'we', 'be'],
-      they: ['will', 'they', 'be'],
-      it: ['will', 'it', 'be'],
-    },
-  ];
 
   const beVerbs0 = [
     'am',
@@ -859,8 +864,11 @@ export const ThirdLesson = (words: WordsOneLessonInt) => {
   };
 };
 
-export const FourthLesson = (words: WordsOneLessonInt) => {
-  const {verbs, nouns} = words.words;
+export const FourthLesson = (
+  words: WordsOneLessonInt,
+  beScheme: BeInterface[] = BeScheme,
+) => {
+  const {verbs, nouns, professions} = words.words;
 
   const allLessonVerbs = Object.keys(verbs);
 
