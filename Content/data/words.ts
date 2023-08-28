@@ -491,10 +491,10 @@ const verbsC = {
 // check, see, take, put, find
 const verbsD = {
   love: {...verbsA.love, tense: [1, 2]},
-  bring: {...verbsA.bring, tense: [0, 2]},
+  bring: {...verbsA.bring, tense: [0, 2, 6, 8]},
   forget: {...verbsA.forget, tense: [0, 5]},
   give: {...verbsA.give, tense: [8]},
-  help: {...verbsA.help, tense: [0, 2, 8]},
+  help: {...verbsA.help, tense: [0, 2, 6, 8]},
   lose: {...verbsA.lose, tense: [0, 5]},
 };
 
@@ -1375,6 +1375,7 @@ const NounsLs: NounsLessonsInt = {
 const NounsL: NounsLessonsInt = {
   door: ['the door', 0, 'door', ['open', 'close']],
   window: ['the window', 0, 'window', ['open', 'close']],
+  bag: ['a bag', 0, 'bag', ['open', 'close', 'buy']],
   box: ['a box', 0, 'box', ['open', 'close', 'buy']],
   book: ['a book', 0, 'book', ['open', 'close', 'buy', 'read']],
   message: ['a message', 0, 'message', ['read']],
@@ -1457,6 +1458,7 @@ const NounsLD: NounsLessonsInt = {
   id: ['id', 0, 'id', ['bring', 'lose', 'forget']],
   book: ['book', 0, 'book', ['bring', 'lose', 'forget']],
   umbrella: ['umbrella', 0, 'umbrella', ['give', 'lose', 'forget']],
+  bag: ['bag', 0, 'bag', ['lose', 'forget']],
   folder: ['folder', 0, 'folder', ['bring', 'give', 'lose', 'forget']],
   pen: ['pen', 0, 'pen', ['bring', 'give', 'lose', 'forget']],
   pencil: ['pencil', 0, 'pencil', ['bring', 'give', 'lose', 'forget']],
@@ -1505,6 +1507,7 @@ export interface WordsOneLessonInt {
         qw: string[];
       };
     };
+    professions?: {[key: string]: string};
   };
 }
 
@@ -1566,6 +1569,7 @@ const wordsL: {
       nouns: {
         ...NounsLD,
       },
+      professions: Professions.D,
       verbs: verbsD,
     },
   },
@@ -1712,6 +1716,7 @@ const SomeNouns = {
   tea: 'tea',
   juice: 'juice box',
   milk: 'milk',
+  bag: 'bag',
   box: 'box',
   book: 'book',
   message: 'message',
@@ -1873,11 +1878,15 @@ const allWords = {
     'Subject Pronouns': subjectPronounsIcons.A,
     'Verbs (v1)': verbs1Lesson1,
     Nouns: Nouns.A,
-    Flags,
-    Food: Food.A,
   },
   AX: {
     'Verbs (v2)': verbs2IrrLesson1,
+  },
+  AXX: {
+    Food: {...Food.A, ...Food2},
+  },
+  AXXX: {
+    Flags,
   },
   B: {
     'Object Pronouns': objectPronounsIcons.B,
