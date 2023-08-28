@@ -680,7 +680,7 @@ export const ThirdLesson = (
     "won't be",
     'be',
   ];
-  // const beVerbs1 = ['am', 'is', 'are', 'were', 'was', "wasn't", 'am not', "weren't" , "isn't", "aren't", 'will', "won't be", 'be']
+
   const tenseNoteIndex = Math.floor(Math.random() * 9);
   // const tenseNoteIndex = 8;
   const bbb = ['here', 'there', 'nowhere', 'anywhere'];
