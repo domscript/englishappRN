@@ -10,10 +10,10 @@ import SwitchButton from '../components/UI/SwitchButton';
 import {turnSounds, turnoffSounds} from '../redux-store/sounds';
 
 function SettingsScreen() {
-  const {
-    theme: {isDarkTheme},
-    // help: {isEasy},
-  } = useSelector((state: RootState) => state);
+  const {isDarkTheme} = useSelector((state: RootState) => ({
+    isDarkTheme: state.theme.isDarkTheme,
+    // isEasy: state.help.isEasy,
+  }));
 
   const dispatch = useDispatch();
 
@@ -155,10 +155,10 @@ function Theme({dark, onPress}: {dark: boolean; onPress: () => void}) {
 }
 
 function Level({help, onPress}: {help: boolean; onPress: () => void}) {
-  const {
-    theme: {isDarkTheme},
-    help: {isEasy},
-  } = useSelector((state: RootState) => state);
+  const {isDarkTheme, isEasy} = useSelector((state: RootState) => ({
+    isDarkTheme: state.theme.isDarkTheme,
+    isEasy: state.help.isEasy,
+  }));
 
   return (
     <View
@@ -256,10 +256,10 @@ function Level({help, onPress}: {help: boolean; onPress: () => void}) {
 }
 
 function Sounds({sound, onPress}: {sound: boolean; onPress: () => void}) {
-  const {
-    theme: {isDarkTheme},
-    sounds: {isSound},
-  } = useSelector((state: RootState) => state);
+  const {isDarkTheme, isSound} = useSelector((state: RootState) => ({
+    isDarkTheme: state.theme.isDarkTheme,
+    isSound: state.sounds.isSound,
+  }));
 
   return (
     <View

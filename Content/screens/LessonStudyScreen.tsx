@@ -44,11 +44,11 @@ const ComponentStates = {
 type Stages = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8;
 
 function LessonStudyScreen({route, navigation}) {
-  const {
-    theme: {isDarkTheme},
-    sounds: {isSound},
-    help: {isEasy},
-  } = useSelector((state: RootState) => state);
+  const {isDarkTheme, isSound, isEasy} = useSelector((state: RootState) => ({
+    isDarkTheme: state.theme.isDarkTheme,
+    isSound: state.sounds.isSound,
+    isEasy: state.help.isEasy,
+  }));
 
   const id = route.params.lessonId;
   const lessonData = route.params.randomData;

@@ -23,10 +23,10 @@ import Tts from 'react-native-tts';
 function WordsStudy({route}) {
   const {id} = route.params;
 
-  const {
-    theme: {isDarkTheme},
-    sounds: {isSound},
-  } = useSelector((state: RootState) => state);
+  const {isDarkTheme, isSound} = useSelector((state: RootState) => ({
+    isDarkTheme: state.theme.isDarkTheme,
+    isSound: state.sounds.isSound,
+  }));
   const dispatch = useDispatch();
   const [stage0, setStage] = useState<Stages>(1);
 

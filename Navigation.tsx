@@ -150,10 +150,10 @@ export const Screens = {
 };
 
 function MainTabBar({state, descriptors, navigation}): JSX.Element {
-  const {
-    theme: {isDarkTheme},
-    sounds: {isSound},
-  } = useSelector((state: RootState) => state);
+  const {isDarkTheme, isSound} = useSelector((state: RootState) => ({
+    isDarkTheme: state.theme.isDarkTheme,
+    isSound: state.sounds.isSound,
+  }));
 
   return (
     <View style={{flexDirection: 'row'}}>
@@ -238,10 +238,10 @@ function MainTabs() {
 }
 
 function StudyWordsTabBar({state, descriptors, navigation}) {
-  const {
-    theme: {isDarkTheme},
-    sounds: {isSound},
-  } = useSelector((state: RootState) => state);
+  const {isDarkTheme, isSound} = useSelector((state: RootState) => ({
+    isDarkTheme: state.theme.isDarkTheme,
+    isSound: state.sounds.isSound,
+  }));
 
   return (
     <View style={{flexDirection: 'row'}}>

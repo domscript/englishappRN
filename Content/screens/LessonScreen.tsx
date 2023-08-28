@@ -30,10 +30,10 @@ interface LessonButtonProps {
 }
 
 function LessonItem({id, title}) {
-  const {
-    theme: {isDarkTheme},
-    sounds: {isSound},
-  } = useSelector((state: RootState) => state);
+  const {isDarkTheme, isSound} = useSelector((state: RootState) => ({
+    isDarkTheme: state.theme.isDarkTheme,
+    isSound: state.sounds.isSound,
+  }));
   const navigation = useNavigation();
 
   const datass = useMemo(() => {

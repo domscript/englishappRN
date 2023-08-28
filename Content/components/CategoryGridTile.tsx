@@ -15,10 +15,10 @@ function CategoryGridTile({
   id: string;
   onPress: () => void;
 }) {
-  const {
-    theme: {isDarkTheme},
-    lessons: {user1},
-  } = useSelector((state: RootState) => state);
+  const {isDarkTheme, user1} = useSelector((state: RootState) => ({
+    isDarkTheme: state.theme.isDarkTheme,
+    user1: state.lessons.user1,
+  }));
   const isOpen = user1.includes(id);
 
   const progress =
