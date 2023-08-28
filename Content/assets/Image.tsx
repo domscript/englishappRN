@@ -215,6 +215,7 @@ const NewImage = ({
       url = require('./Food/hamburger.png');
       break;
     case 'honey':
+    case 'honey pot':
       url = require('./Food/honey_pot.png');
       break;
     case 'hot dog':
