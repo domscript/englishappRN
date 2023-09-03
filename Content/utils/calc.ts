@@ -95,28 +95,21 @@ const BeScheme: BeInterface[] = [
   },
 ];
 
-export const SimpleTenseScheme = (words: WordsOneLessonInt) => {
-  const {verbs, nouns} = words.words;
+type SubjectPronounsType = 'i' | 'you' | 'he' | 'she' | 'we' | 'they' | 'it';
 
-  const allLessonVerbs = Object.keys(verbs);
-
-  const verb = allLessonVerbs[getRandomInt(0, allLessonVerbs.length - 1)];
-
-  type SubjectPronounsType = 'i' | 'you' | 'he' | 'she' | 'we' | 'they' | 'it';
-
-  const subjectPronouns: SubjectPronounsType[] = [
-    'i',
-    'you',
-    'he',
-    'she',
-    'we',
-    'they',
-    'it',
-  ];
-
-  const subject = subjectPronouns[getRandomInt(0, subjectPronouns.length - 1)];
-
-  const aLLscheme: {
+const aLLscheme = (
+  verbs: {
+    [key: string]: {
+      value0: string;
+      value1: string;
+      value2: string;
+      value3: string;
+    };
+  },
+  subject: SubjectPronounsType,
+  verb: string,
+) => {
+  const scheme: {
     i: string[];
     you: string[];
     he: string[];
@@ -208,6 +201,28 @@ export const SimpleTenseScheme = (words: WordsOneLessonInt) => {
     },
   ];
 
+  return scheme.map(el => el[subject]);
+};
+
+export const SimpleTenseScheme = (words: WordsOneLessonInt) => {
+  const {verbs, nouns} = words.words;
+
+  const allLessonVerbs = Object.keys(verbs);
+
+  const verb = allLessonVerbs[getRandomInt(0, allLessonVerbs.length - 1)];
+
+  const subjectPronouns: SubjectPronounsType[] = [
+    'i',
+    'you',
+    'he',
+    'she',
+    'we',
+    'they',
+    'it',
+  ];
+
+  const subject = subjectPronouns[getRandomInt(0, subjectPronouns.length - 1)];
+
   let nounsN: [string, string][] = [];
 
   try {
@@ -233,7 +248,9 @@ export const SimpleTenseScheme = (words: WordsOneLessonInt) => {
 
   const tenseNoteIndex = Math.floor(Math.random() * 9);
 
-  const correctVerb = aLLscheme[tenseNoteIndex][subject].map(el =>
+  const note = aLLscheme(verbs, subject, verb);
+
+  const correctVerb = note[tenseNoteIndex].map(el =>
     el === '' ? subject : el,
   );
 
@@ -289,7 +306,7 @@ export const SimpleTenseScheme = (words: WordsOneLessonInt) => {
     testData: data,
     subject,
     verb,
-    note: aLLscheme.map(el => el[subject]),
+    note,
     qWord: [subject, verb, abc[1]],
   };
 };
@@ -301,7 +318,6 @@ export const SecondLesson = (words: WordsOneLessonInt) => {
 
   const verb = allLessonVerbs[getRandomInt(0, allLessonVerbs.length - 1)];
 
-  type SubjectPronounsType = 'i' | 'you' | 'he' | 'she' | 'we' | 'they' | 'it';
   type QuestionWordsType = 'when' | 'what' | 'where' | 'who' | 'how' | 'why';
 
   const subjectPronouns: SubjectPronounsType[] = [
@@ -358,98 +374,6 @@ export const SecondLesson = (words: WordsOneLessonInt) => {
 
   const subject = subjectPronouns[getRandomInt(0, subjectPronouns.length - 1)];
 
-  const aLLscheme: {
-    i: string[];
-    you: string[];
-    he: string[];
-    she: string[];
-    we: string[];
-    they: string[];
-    it: string[];
-  }[] = [
-    {
-      i: ['i', verbs[verb].value2],
-      you: ['you', verbs[verb].value2],
-      he: ['he', verbs[verb].value2],
-      she: ['she', verbs[verb].value2],
-      we: ['we', verbs[verb].value2],
-      they: ['they', verbs[verb].value2],
-      it: ['it', verbs[verb].value2],
-    },
-    {
-      i: ['i', verbs[verb].value0],
-      you: ['you', verbs[verb].value0],
-      he: ['he', verbs[verb].value1],
-      she: ['she', verbs[verb].value1],
-      we: ['we', verbs[verb].value0],
-      they: ['they', verbs[verb].value0],
-      it: ['it', verbs[verb].value1],
-    },
-    {
-      i: ['i', 'will', verbs[verb].value0],
-      you: ['you', 'will', verbs[verb].value0],
-      he: ['he', 'will', verbs[verb].value0],
-      she: ['she', 'will', verbs[verb].value0],
-      we: ['we', 'will', verbs[verb].value0],
-      they: ['they', 'will', verbs[verb].value0],
-      it: ['it', 'will', verbs[verb].value0],
-    },
-    {
-      i: ['i', "didn't", verbs[verb].value0],
-      you: ['you', "didn't", verbs[verb].value0],
-      he: ['he', "didn't", verbs[verb].value0],
-      she: ['she', "didn't", verbs[verb].value0],
-      we: ['we', "didn't", verbs[verb].value0],
-      they: ['they', "didn't", verbs[verb].value0],
-      it: ['it', "didn't", verbs[verb].value0],
-    },
-    {
-      i: ['i', "don't", verbs[verb].value0],
-      you: ['you', "don't", verbs[verb].value0],
-      he: ['he', "doesn't", verbs[verb].value0],
-      she: ['she', "doesn't", verbs[verb].value0],
-      we: ['we', "don't", verbs[verb].value0],
-      they: ['they', "don't", verbs[verb].value0],
-      it: ['it', "doesn't", verbs[verb].value0],
-    },
-    {
-      i: ['i', "won't", verbs[verb].value0],
-      you: ['you', "won't", verbs[verb].value0],
-      he: ['he', "won't", verbs[verb].value0],
-      she: ['she', "won't", verbs[verb].value0],
-      we: ['we', "won't", verbs[verb].value0],
-      they: ['they', "won't", verbs[verb].value0],
-      it: ['it', "won't", verbs[verb].value0],
-    },
-    {
-      i: ['did', 'i', verbs[verb].value0],
-      you: ['did', 'you', verbs[verb].value0],
-      he: ['did', 'he', verbs[verb].value0],
-      she: ['did', 'she', verbs[verb].value0],
-      we: ['did', 'we', verbs[verb].value0],
-      they: ['did', 'they', verbs[verb].value0],
-      it: ['did', 'it', verbs[verb].value0],
-    },
-    {
-      i: ['do', 'i', verbs[verb].value0],
-      you: ['do', 'you', verbs[verb].value0],
-      he: ['does', 'he', verbs[verb].value0],
-      she: ['does', 'she', verbs[verb].value0],
-      we: ['do', 'we', verbs[verb].value0],
-      they: ['do', 'they', verbs[verb].value0],
-      it: ['does', 'it', verbs[verb].value0],
-    },
-    {
-      i: ['will', 'i', verbs[verb].value0],
-      you: ['will', 'you', verbs[verb].value0],
-      he: ['will', 'he', verbs[verb].value0],
-      she: ['will', 'she', verbs[verb].value0],
-      we: ['will', 'we', verbs[verb].value0],
-      they: ['will', 'they', verbs[verb].value0],
-      it: ['will', 'it', verbs[verb].value0],
-    },
-  ];
-
   let nounsN: [string, string][] = [];
 
   try {
@@ -475,7 +399,9 @@ export const SecondLesson = (words: WordsOneLessonInt) => {
 
   const tenseNoteIndex = Math.floor(Math.random() * 9);
 
-  const correctVerb = aLLscheme[tenseNoteIndex][subject].map(el =>
+  const note = aLLscheme(verbs, subject, verb);
+
+  const correctVerb = note[tenseNoteIndex].map(el =>
     el === '' ? subject : el,
   );
 
@@ -589,7 +515,7 @@ export const SecondLesson = (words: WordsOneLessonInt) => {
     testData: data,
     subject,
     verb,
-    note: aLLscheme.map(el => el[subject]),
+    note,
     qWord,
   };
 };
@@ -890,29 +816,29 @@ export const FourthLesson = (
     'you',
     'he',
     'she',
-    // 'we',
-    // 'they',
-    // 'it',
+    'we',
+    'they',
+    'it',
   ];
 
-  type ObjectPronounsType =
-    | 'me'
-    | 'you '
-    | 'him'
-    | 'her'
-    | 'us'
-    | 'them'
-    | 'it ';
+  // type ObjectPronounsType =
+  //   | 'me'
+  //   | 'you '
+  //   | 'him'
+  //   | 'her'
+  //   | 'us'
+  //   | 'them'
+  //   | 'it ';
 
-  const ObjectPronouns: ObjectPronounsType[] = [
-    'me',
-    'you ',
-    'him',
-    'her',
-    'us',
-    'them',
-    'it ',
-  ];
+  // const ObjectPronouns: ObjectPronounsType[] = [
+  //   'me',
+  //   'you ',
+  //   'him',
+  //   'her',
+  //   'us',
+  //   'them',
+  //   'it ',
+  // ];
 
   const PossessiveAdjectives: PossessiveAdjectivesType[] = [
     'my',
@@ -970,98 +896,6 @@ export const FourthLesson = (
   PossessiveAdjectivesExtraWords.push(PossessiveAdg);
   PossessiveAdjectivesExtraWords.sort(() => Math.random() - 0.5);
 
-  const aLLscheme: {
-    i: string[];
-    you: string[];
-    he: string[];
-    she: string[];
-    we: string[];
-    they: string[];
-    it: string[];
-  }[] = [
-    {
-      i: ['i', verbs[verb].value2],
-      you: ['you', verbs[verb].value2],
-      he: ['he', verbs[verb].value2],
-      she: ['she', verbs[verb].value2],
-      we: ['we', verbs[verb].value2],
-      they: ['they', verbs[verb].value2],
-      it: ['it', verbs[verb].value2],
-    },
-    {
-      i: ['i', verbs[verb].value0],
-      you: ['you', verbs[verb].value0],
-      he: ['he', verbs[verb].value1],
-      she: ['she', verbs[verb].value1],
-      we: ['we', verbs[verb].value0],
-      they: ['they', verbs[verb].value0],
-      it: ['it', verbs[verb].value1],
-    },
-    {
-      i: ['i', 'will', verbs[verb].value0],
-      you: ['you', 'will', verbs[verb].value0],
-      he: ['he', 'will', verbs[verb].value0],
-      she: ['she', 'will', verbs[verb].value0],
-      we: ['we', 'will', verbs[verb].value0],
-      they: ['they', 'will', verbs[verb].value0],
-      it: ['it', 'will', verbs[verb].value0],
-    },
-    {
-      i: ['i', "didn't", verbs[verb].value0],
-      you: ['you', "didn't", verbs[verb].value0],
-      he: ['he', "didn't", verbs[verb].value0],
-      she: ['she', "didn't", verbs[verb].value0],
-      we: ['we', "didn't", verbs[verb].value0],
-      they: ['they', "didn't", verbs[verb].value0],
-      it: ['it', "didn't", verbs[verb].value0],
-    },
-    {
-      i: ['i', "don't", verbs[verb].value0],
-      you: ['you', "don't", verbs[verb].value0],
-      he: ['he', "doesn't", verbs[verb].value0],
-      she: ['she', "doesn't", verbs[verb].value0],
-      we: ['we', "don't", verbs[verb].value0],
-      they: ['they', "don't", verbs[verb].value0],
-      it: ['it', "doesn't", verbs[verb].value0],
-    },
-    {
-      i: ['i', "won't", verbs[verb].value0],
-      you: ['you', "won't", verbs[verb].value0],
-      he: ['he', "won't", verbs[verb].value0],
-      she: ['she', "won't", verbs[verb].value0],
-      we: ['we', "won't", verbs[verb].value0],
-      they: ['they', "won't", verbs[verb].value0],
-      it: ['it', "won't", verbs[verb].value0],
-    },
-    {
-      i: ['did', 'i', verbs[verb].value0],
-      you: ['did', 'you', verbs[verb].value0],
-      he: ['did', 'he', verbs[verb].value0],
-      she: ['did', 'she', verbs[verb].value0],
-      we: ['did', 'we', verbs[verb].value0],
-      they: ['did', 'they', verbs[verb].value0],
-      it: ['did', 'it', verbs[verb].value0],
-    },
-    {
-      i: ['do', 'i', verbs[verb].value0],
-      you: ['do', 'you', verbs[verb].value0],
-      he: ['does', 'he', verbs[verb].value0],
-      she: ['does', 'she', verbs[verb].value0],
-      we: ['do', 'we', verbs[verb].value0],
-      they: ['do', 'they', verbs[verb].value0],
-      it: ['does', 'it', verbs[verb].value0],
-    },
-    {
-      i: ['will', 'i', verbs[verb].value0],
-      you: ['will', 'you', verbs[verb].value0],
-      he: ['will', 'he', verbs[verb].value0],
-      she: ['will', 'she', verbs[verb].value0],
-      we: ['will', 'we', verbs[verb].value0],
-      they: ['will', 'they', verbs[verb].value0],
-      it: ['will', 'it', verbs[verb].value0],
-    },
-  ];
-
   let nounsN: [string, string][] = [];
 
   try {
@@ -1090,7 +924,9 @@ export const FourthLesson = (
   let tenseNoteIndex = 0;
   if (tense) tenseNoteIndex = tense[Math.floor(Math.random() * tense.length)];
 
-  const correctVerb = aLLscheme[tenseNoteIndex][subject].map(el =>
+  const note = aLLscheme(verbs, subject, verb);
+
+  const correctVerb = note[tenseNoteIndex].map(el =>
     el === '' ? subject : el,
   );
 
@@ -1133,31 +969,53 @@ export const FourthLesson = (
 
   const nouns0 = nounsN.map(el => el[0]).sort();
   const {pronoun, qw} = verbs[verb];
-  console.log(nouns0);
+  // console.log(nouns0);
   let data: string[] = [];
   let objP: string | undefined = undefined;
 
-  // if (Math.random() > 0.5 && !pronoun)
-  //   data = [...fourDoBe, ...subjectExtraWords, ...threeVerbs, ...nouns0];
-  // else if (!pronoun)
-  //   data = [...subjectExtraWords, ...fourDoBe, ...threeVerbs, ...nouns0];
-  // else {
-  data = [
-    ...subjectExtraWords,
-    ...fourDoBe,
-    ...threeVerbs,
-    ...PossessiveAdjectivesExtraWords,
-    ...nouns0,
-  ];
+  let prof = 'teacher';
+  let qWord: string[] = [];
+  let question: string[] = [];
+
   objP = PossessiveAdg;
-  // }
 
-  const abc = nounsN.length > 0 ? nounsN[0] : ['', ''];
+  if (Math.random() > 0.01 && professions) {
+    //   data = [...fourDoBe, ...subjectExtraWords, ...threeVerbs, ...nouns0];
+    // else if (!pronoun)
+    //   data = [...subjectExtraWords, ...fourDoBe, ...threeVerbs, ...nouns0];
 
-  let question = [...correctVerb, objP, abc[0]];
+    const prof_4 = Object.values(professions)
+      .sort(() => Math.random() - 0.5)
+      .slice(4);
 
-  let qWord = [subject, verb, objP, abc[1]];
+    prof = prof_4[0];
 
+    data = [
+      ...subjectExtraWords,
+      ...fourDoBe,
+      ...threeVerbs,
+      ...PossessiveAdjectivesExtraWords,
+      ...[...prof_4].sort(() => Math.random() - 0.5),
+    ];
+
+    const verb = beScheme[tenseNoteIndex][subject];
+
+    question = [...verb, objP, prof];
+    qWord = [...verb, objP, prof];
+  } else {
+    const abc = nounsN.length > 0 ? nounsN[0] : ['', ''];
+
+    data = [
+      ...subjectExtraWords,
+      ...fourDoBe,
+      ...threeVerbs,
+      ...PossessiveAdjectivesExtraWords,
+      ...nouns0,
+    ];
+    question = [...correctVerb, objP, abc[0]];
+    qWord = [subject, verb, objP, abc[1]];
+  }
+  console.log(question);
   // if (tenseNoteIndex >= 6) {
   //   const Qword = qw[getRandomInt(0, qw.length - 1)];
 
@@ -1212,7 +1070,7 @@ export const FourthLesson = (
     testData: data,
     subject,
     verb,
-    note: aLLscheme.map(el => el[subject]),
+    note,
     qWord,
   };
 };
