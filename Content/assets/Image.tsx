@@ -294,7 +294,7 @@ const NewImage = ({
 
     // study subs
     case 'cooking':
-      url = require('./cooking.png');
+      url = require('./cooking.webp');
       break;
 
     // Instruments Mechanisms Tools
@@ -822,16 +822,16 @@ const NewImage = ({
       url = require('./seat.png');
       break;
     case 'couch':
-      url = require('./couch.png');
+      url = require('./couch.webp');
       break;
     case 'bag':
       url = require('./bag.png');
       break;
     case 'bed':
-      url = require('./bed.png');
+      url = require('./bed.webp');
       break;
     case 'book':
-      url = require('./book.png');
+      url = require('./book.webp');
       break;
     case 'text':
       url = require('./text.png');
@@ -840,7 +840,7 @@ const NewImage = ({
       url = require('./newspaper.png');
       break;
     case 'box':
-      url = require('./box.png');
+      url = require('./box.webp');
       break;
     case 'chair':
     case 'chairs':
