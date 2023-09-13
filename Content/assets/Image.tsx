@@ -30,117 +30,117 @@ const NewImage = ({
     case 'are':
     case 'was':
     case 'were':
-      url = require('./be/be.png');
+      url = require('./be/be.webp');
       break;
     case 'hebe':
-      url = require('./be/hebe.png');
+      url = require('./be/hebe.webp');
       break;
     case 'ibe':
-      url = require('./be/ibe.png');
+      url = require('./be/ibe.webp');
       break;
     case 'itbe':
-      url = require('./be/itbe.png');
+      url = require('./be/itbe.webp');
       break;
     case 'shebe':
-      url = require('./be/shebe.png');
+      url = require('./be/shebe.webp');
       break;
     case 'theybe':
-      url = require('./be/theybe.png');
+      url = require('./be/theybe.webp');
       break;
     case 'webe':
-      url = require('./be/webe.png');
+      url = require('./be/webe.webp');
       break;
     case 'yoube':
-      url = require('./be/yoube.png');
+      url = require('./be/yoube.webp');
       break;
     case 'here':
-      url = require('./be/here.png');
+      url = require('./be/here.webp');
       break;
     case 'there':
-      url = require('./be/there.png');
+      url = require('./be/there.webp');
       break;
     /////////
     // Prepositions
     case 'at':
-      url = require('./Prepositions/at.png');
+      url = require('./Prepositions/at.webp');
       break;
     case 'in':
-      url = require('./Prepositions/in.png');
+      url = require('./Prepositions/in.webp');
       break;
     case 'on':
-      url = require('./Prepositions/on.png');
+      url = require('./Prepositions/on.webp');
       break;
     case 'out':
-      url = require('./Prepositions/out.png');
+      url = require('./Prepositions/out.webp');
       break;
     case 'to':
-      url = require('./Prepositions/to.png');
+      url = require('./Prepositions/to.webp');
       break;
 
     // Question Words
     case 'how':
-      url = require('./QuestionWords/how.png');
+      url = require('./QuestionWords/how.webp');
       break;
     case 'what':
-      url = require('./QuestionWords/what.png');
+      url = require('./QuestionWords/what.webp');
       break;
     case 'when':
-      url = require('./QuestionWords/when.png');
+      url = require('./QuestionWords/when.webp');
       break;
     case 'where':
-      url = require('./QuestionWords/where.png');
+      url = require('./QuestionWords/where.webp');
       break;
     case 'who':
-      url = require('./QuestionWords/who.png');
+      url = require('./QuestionWords/who.webp');
       break;
     case 'why':
-      url = require('./QuestionWords/why.png');
+      url = require('./QuestionWords/why.webp');
       break;
     //////////////
     //////////////
     //////////////
     // Drinks
     case 'beer':
-      url = require('./Drinks/beer.png');
+      url = require('./Drinks/beer.webp');
       break;
     case 'boba tea':
-      url = require('./Drinks/boba_tea.png');
+      url = require('./Drinks/boba_tea.webp');
       break;
     case 'cocktail':
-      url = require('./Drinks/cocktail.png');
+      url = require('./Drinks/cocktail.webp');
       break;
     case 'drink ':
-      url = require('./Drinks/drink.png');
+      url = require('./Drinks/drink.webp');
       break;
     case 'juice box':
-      url = require('./Drinks/juice_box.png');
+      url = require('./Drinks/juice_box.webp');
       break;
     case 'maté':
-      url = require('./Drinks/mate.png');
+      url = require('./Drinks/mate.webp');
       break;
     case 'milk':
-      url = require('./Drinks/milk.png');
+      url = require('./Drinks/milk.webp');
       break;
     case 'tea':
-      url = require('./Drinks/tea.png');
+      url = require('./Drinks/tea.webp');
       break;
     case 'tropical drink':
-      url = require('./Drinks/tropical_drink.png');
+      url = require('./Drinks/tropical_drink.webp');
       break;
     case 'wine':
-      url = require('./Drinks/wine.png');
+      url = require('./Drinks/wine.webp');
       break;
     case 'glass of hot chocolate':
-      url = require('./Drinks/glass_of_hot_chocolate.png');
+      url = require('./Drinks/glass_of_hot_chocolate.webp');
       break;
     case 'glass of juice':
-      url = require('./Drinks/glass_of_juice.png');
+      url = require('./Drinks/glass_of_juice.webp');
       break;
     case 'glass of milk':
-      url = require('./Drinks/glass_of_milk.png');
+      url = require('./Drinks/glass_of_milk.webp');
       break;
     case 'glass of water':
-      url = require('./Drinks/glass_of_water.png');
+      url = require('./Drinks/glass_of_water.webp');
       break;
     //////////////
     //////////////
@@ -148,141 +148,141 @@ const NewImage = ({
 
     // Food
     case 'bacon':
-      url = require('./Food/bacon.png');
+      url = require('./Food/bacon.webp');
       break;
     case 'beans':
-      url = require('./Food/beans.png');
+      url = require('./Food/beans.webp');
       break;
     case 'bone':
-      url = require('./Food/bone.png');
+      url = require('./Food/bone.webp');
       break;
     case 'burrito':
-      url = require('./Food/burrito.png');
+      url = require('./Food/burrito.webp');
       break;
     case 'butter':
-      url = require('./Food/butter.png');
+      url = require('./Food/butter.webp');
       break;
     case 'candy':
-      url = require('./Food/candy.png');
+      url = require('./Food/candy.webp');
       break;
     case 'cheese':
-      url = require('./Food/cheese.png');
+      url = require('./Food/cheese.webp');
       break;
     case 'chestnut':
-      url = require('./Food/chestnut.png');
+      url = require('./Food/chestnut.webp');
       break;
     case 'chocolate bar':
-      url = require('./Food/chocolate_bar.png');
+      url = require('./Food/chocolate_bar.webp');
       break;
     case 'cooked rice':
-      url = require('./Food/cooked_rice.png');
+      url = require('./Food/cooked_rice.webp');
       break;
     case 'curry and rice':
-      url = require('./Food/curry_and_rice.png');
+      url = require('./Food/curry_and_rice.webp');
       break;
     case 'custard':
-      url = require('./Food/custard.png');
+      url = require('./Food/custard.webp');
       break;
     case 'dango':
-      url = require('./Food/dango.png');
+      url = require('./Food/dango.webp');
       break;
     case 'dumpling':
-      url = require('./Food/dumpling.png');
+      url = require('./Food/dumpling.webp');
       break;
     case 'egg':
-      url = require('./Food/egg.png');
+      url = require('./Food/egg.webp');
       break;
     case 'falafel':
-      url = require('./Food/falafel.png');
+      url = require('./Food/falafel.webp');
       break;
     case 'fondue':
-      url = require('./Food/fondue.png');
+      url = require('./Food/fondue.webp');
       break;
     case 'fortune cookie':
-      url = require('./Food/fortune_cookie.png');
+      url = require('./Food/fortune_cookie.webp');
       break;
     case 'french fries':
-      url = require('./Food/french_fries.png');
+      url = require('./Food/french_fries.webp');
       break;
     case 'fried shrimp':
-      url = require('./Food/fried_shrimp.png');
+      url = require('./Food/fried_shrimp.webp');
       break;
     case 'green salad':
-      url = require('./Food/green_salad.png');
+      url = require('./Food/green_salad.webp');
       break;
     case 'hamburger':
     case 'hamburgers':
-      url = require('./Food/hamburger.png');
+      url = require('./Food/hamburger.webp');
       break;
     case 'honey':
     case 'honey pot':
-      url = require('./Food/honey_pot.png');
+      url = require('./Food/honey_pot.webp');
       break;
     case 'hot dog':
-      url = require('./Food/hot_dog.png');
+      url = require('./Food/hot_dog.webp');
       break;
     case 'ice cream':
-      url = require('./Food/ice_cream.png');
+      url = require('./Food/ice_cream.webp');
       break;
     case 'ice':
-      url = require('./Food/ice.png');
+      url = require('./Food/ice.webp');
       break;
     case 'lollipop':
-      url = require('./Food/lollipop.png');
+      url = require('./Food/lollipop.webp');
       break;
     case 'oden':
-      url = require('./Food/oden.png');
+      url = require('./Food/oden.webp');
       break;
     case 'oyster':
-      url = require('./Food/oyster.png');
+      url = require('./Food/oyster.webp');
       break;
     case 'peanuts':
-      url = require('./Food/peanuts.png');
+      url = require('./Food/peanuts.webp');
       break;
     case 'pita sandwich':
-      url = require('./Food/pita_sandwich.png');
+      url = require('./Food/pita_sandwich.webp');
       break;
     case 'pizza':
-      url = require('./Food/pizza.png');
+      url = require('./Food/pizza.webp');
       break;
     case 'popcorn':
-      url = require('./Food/popcorn.png');
+      url = require('./Food/popcorn.webp');
       break;
     case 'poultry leg':
-      url = require('./Food/poultry_leg.png');
+      url = require('./Food/poultry_leg.webp');
       break;
     case 'rice ball':
-      url = require('./Food/rice_ball.png');
+      url = require('./Food/rice_ball.webp');
       break;
     case 'rice cracker':
-      url = require('./Food/rice_cracker.png');
+      url = require('./Food/rice_cracker.webp');
       break;
     case 'salt':
-      url = require('./Food/salt.png');
+      url = require('./Food/salt.webp');
       break;
     case 'sandwich':
-      url = require('./Food/sandwich.png');
+      url = require('./Food/sandwich.webp');
       break;
     case 'shaved ice':
-      url = require('./Food/shaved_ice.png');
+      url = require('./Food/shaved_ice.webp');
       break;
     case 'soft ice cream':
-      url = require('./Food/soft_ice_cream.png');
+      url = require('./Food/soft_ice_cream.webp');
       break;
     case 'spaghetti':
-      url = require('./Food/spaghetti.png');
+      url = require('./Food/spaghetti.webp');
       break;
     case 'steak':
-      url = require('./Food/steak.png');
+      url = require('./Food/steak.webp');
       break;
     case 'sushi':
-      url = require('./Food/sushi.png');
+      url = require('./Food/sushi.webp');
       break;
     case 'taco':
-      url = require('./Food/taco.png');
+      url = require('./Food/taco.webp');
       break;
     case 'tamale':
-      url = require('./Food/tamale.png');
+      url = require('./Food/tamale.webp');
       break;
     //////////////
     //////////////
@@ -299,142 +299,142 @@ const NewImage = ({
 
     // Instruments Mechanisms Tools
     case 'abacus':
-      url = require('./InstrumentsMechanismsTools/abacus.png');
+      url = require('./InstrumentsMechanismsTools/abacus.webp');
       break;
     case 'alarm clock':
-      url = require('./InstrumentsMechanismsTools/alarm_clock.png');
+      url = require('./InstrumentsMechanismsTools/alarm_clock.webp');
       break;
     case 'anchor':
-      url = require('./InstrumentsMechanismsTools/anchor.png');
+      url = require('./InstrumentsMechanismsTools/anchor.webp');
       break;
     case 'axe':
-      url = require('./InstrumentsMechanismsTools/axe.png');
+      url = require('./InstrumentsMechanismsTools/axe.webp');
       break;
     case 'boomerang':
-      url = require('./InstrumentsMechanismsTools/boomerang.png');
+      url = require('./InstrumentsMechanismsTools/boomerang.webp');
       break;
     case 'broom':
-      url = require('./InstrumentsMechanismsTools/broom.png');
+      url = require('./InstrumentsMechanismsTools/broom.webp');
       break;
     case 'bucket':
-      url = require('./InstrumentsMechanismsTools/bucket.png');
+      url = require('./InstrumentsMechanismsTools/bucket.webp');
       break;
     case 'compass':
-      url = require('./InstrumentsMechanismsTools/compass.png');
+      url = require('./InstrumentsMechanismsTools/compass.webp');
       break;
     case 'construction sign':
-      url = require('./InstrumentsMechanismsTools/construction_sign.png');
+      url = require('./InstrumentsMechanismsTools/construction_sign.webp');
       break;
     case 'dagger':
-      url = require('./InstrumentsMechanismsTools/dagger.png');
+      url = require('./InstrumentsMechanismsTools/dagger.webp');
       break;
     case 'fire extinguisher':
-      url = require('./InstrumentsMechanismsTools/fire_extinguisher.png');
+      url = require('./InstrumentsMechanismsTools/fire_extinguisher.webp');
       break;
     case 'flashlight':
-      url = require('./InstrumentsMechanismsTools/flashlight.png');
+      url = require('./InstrumentsMechanismsTools/flashlight.webp');
       break;
     case 'gear':
-      url = require('./InstrumentsMechanismsTools/gear.png');
+      url = require('./InstrumentsMechanismsTools/gear.webp');
       break;
     case 'hammer':
-      url = require('./InstrumentsMechanismsTools/hammer.png');
+      url = require('./InstrumentsMechanismsTools/hammer.webp');
       break;
     case 'hand saw':
-      url = require('./InstrumentsMechanismsTools/hand_saw.png');
+      url = require('./InstrumentsMechanismsTools/hand_saw.webp');
       break;
     case 'hook':
-      url = require('./InstrumentsMechanismsTools/hook.png');
+      url = require('./InstrumentsMechanismsTools/hook.webp');
       break;
     case 'hourglass':
-      url = require('./InstrumentsMechanismsTools/hourglass.png');
+      url = require('./InstrumentsMechanismsTools/hourglass.webp');
       break;
     case 'key':
-      url = require('./InstrumentsMechanismsTools/key.png');
+      url = require('./InstrumentsMechanismsTools/key.webp');
       break;
     case 'ladder':
-      url = require('./InstrumentsMechanismsTools/ladder.png');
+      url = require('./InstrumentsMechanismsTools/ladder.webp');
       break;
     case 'magic wand':
-      url = require('./InstrumentsMechanismsTools/magic_wand.png');
+      url = require('./InstrumentsMechanismsTools/magic_wand.webp');
       break;
     case 'magnifying glass':
-      url = require('./InstrumentsMechanismsTools/magnifying_glass.png');
+      url = require('./InstrumentsMechanismsTools/magnifying_glass.webp');
       break;
     case 'microphone':
-      url = require('./InstrumentsMechanismsTools/microphone.png');
+      url = require('./InstrumentsMechanismsTools/microphone.webp');
       break;
     case 'microscope':
-      url = require('./InstrumentsMechanismsTools/microscope.png');
+      url = require('./InstrumentsMechanismsTools/microscope.webp');
       break;
     case 'mirror':
-      url = require('./InstrumentsMechanismsTools/mirror.png');
+      url = require('./InstrumentsMechanismsTools/mirror.webp');
       break;
     case 'paperclip':
-      url = require('./InstrumentsMechanismsTools/paperclip.png');
+      url = require('./InstrumentsMechanismsTools/paperclip.webp');
       break;
     case 'pick':
-      url = require('./InstrumentsMechanismsTools/pick.png');
+      url = require('./InstrumentsMechanismsTools/pick.webp');
       break;
     case 'plunger':
-      url = require('./InstrumentsMechanismsTools/plunger.png');
+      url = require('./InstrumentsMechanismsTools/plunger.webp');
       break;
     case 'safety pin':
-      url = require('./InstrumentsMechanismsTools/safety_pin.png');
+      url = require('./InstrumentsMechanismsTools/safety_pin.webp');
       break;
     case 'satellite antenna':
-      url = require('./InstrumentsMechanismsTools/satellite_antenna.png');
+      url = require('./InstrumentsMechanismsTools/satellite_antenna.webp');
       break;
     case 'scales':
-      url = require('./InstrumentsMechanismsTools/scales.png');
+      url = require('./InstrumentsMechanismsTools/scales.webp');
       break;
     case 'scissors':
-      url = require('./InstrumentsMechanismsTools/scissors.png');
+      url = require('./InstrumentsMechanismsTools/scissors.webp');
       break;
     case 'screwdriver':
-      url = require('./InstrumentsMechanismsTools/screwdriver.png');
+      url = require('./InstrumentsMechanismsTools/screwdriver.webp');
       break;
     case 'sewing needle':
-      url = require('./InstrumentsMechanismsTools/sewing_needle.png');
+      url = require('./InstrumentsMechanismsTools/sewing_needle.webp');
       break;
     case 'shield':
-      url = require('./InstrumentsMechanismsTools/shield.png');
+      url = require('./InstrumentsMechanismsTools/shield.webp');
       break;
     case 'stopwatch':
-      url = require('./InstrumentsMechanismsTools/stopwatch.png');
+      url = require('./InstrumentsMechanismsTools/stopwatch.webp');
       break;
     case 'straight ruler':
-      url = require('./InstrumentsMechanismsTools/straight_ruler.png');
+      url = require('./InstrumentsMechanismsTools/straight_ruler.webp');
       break;
     case 'sword':
-      url = require('./InstrumentsMechanismsTools/sword.png');
+      url = require('./InstrumentsMechanismsTools/sword.webp');
       break;
     case 'telescope':
-      url = require('./InstrumentsMechanismsTools/telescope.png');
+      url = require('./InstrumentsMechanismsTools/telescope.webp');
       break;
     case 'test tube':
-      url = require('./InstrumentsMechanismsTools/test_tube.png');
+      url = require('./InstrumentsMechanismsTools/test_tube.webp');
       break;
     case 'thread':
-      url = require('./InstrumentsMechanismsTools/thread.png');
+      url = require('./InstrumentsMechanismsTools/thread.webp');
       break;
     case 'timer clock':
-      url = require('./InstrumentsMechanismsTools/timer_clock.png');
+      url = require('./InstrumentsMechanismsTools/timer_clock.webp');
       break;
     case 'toolbox':
-      url = require('./InstrumentsMechanismsTools/toolbox.png');
+      url = require('./InstrumentsMechanismsTools/toolbox.webp');
       break;
     case 'traffic light':
-      url = require('./InstrumentsMechanismsTools/traffic_light.png');
+      url = require('./InstrumentsMechanismsTools/traffic_light.webp');
       break;
     case 'triangular ruler':
-      url = require('./InstrumentsMechanismsTools/triangular_ruler.png');
+      url = require('./InstrumentsMechanismsTools/triangular_ruler.webp');
       break;
     case 'wrench':
-      url = require('./InstrumentsMechanismsTools/wrench.png');
+      url = require('./InstrumentsMechanismsTools/wrench.webp');
       break;
     case 'yarn':
-      url = require('./InstrumentsMechanismsTools/yarn.png');
+      url = require('./InstrumentsMechanismsTools/yarn.webp');
       break;
     //////////////
     //////////////
@@ -442,28 +442,28 @@ const NewImage = ({
 
     // Medical
     case 'adhesive bandage':
-      url = require('./Medical/adhesive_bandage.png');
+      url = require('./Medical/adhesive_bandage.webp');
       break;
     case 'DNA':
-      url = require('./Medical/DNA.png');
+      url = require('./Medical/DNA.webp');
       break;
     case 'microbe':
-      url = require('./Medical/microbe.png');
+      url = require('./Medical/microbe.webp');
       break;
     case 'pill':
-      url = require('./Medical/pill.png');
+      url = require('./Medical/pill.webp');
       break;
     case 'stethoscope':
-      url = require('./Medical/stethoscope.png');
+      url = require('./Medical/stethoscope.webp');
       break;
     case 'syringe':
-      url = require('./Medical/syringe.png');
+      url = require('./Medical/syringe.webp');
       break;
     case 'thermometer':
-      url = require('./Medical/thermometer.png');
+      url = require('./Medical/thermometer.webp');
       break;
     case 'X-ray':
-      url = require('./Medical/X-ray.png');
+      url = require('./Medical/X-ray.webp');
       break;
     //////////////
     //////////////
@@ -471,55 +471,55 @@ const NewImage = ({
 
     // Flora
     case 'bouquet':
-      url = require('./Flora/bouquet.png');
+      url = require('./Flora/bouquet.webp');
       break;
     case 'cactus':
-      url = require('./Flora/cactus.png');
+      url = require('./Flora/cactus.webp');
       break;
     case 'Christmas tree':
-      url = require('./Flora/Christmas_tree.png');
+      url = require('./Flora/Christmas_tree.webp');
       break;
     case 'coral':
-      url = require('./Flora/coral.png');
+      url = require('./Flora/coral.webp');
       break;
     case 'evergreen tree':
-      url = require('./Flora/evergreen_tree.png');
+      url = require('./Flora/evergreen_tree.webp');
       break;
     case 'flower':
-      url = require('./Flora/flower.png');
+      url = require('./Flora/flower.webp');
       break;
     case 'herb':
-      url = require('./Flora/herb.png');
+      url = require('./Flora/herb.webp');
       break;
     case 'hibiscus':
-      url = require('./Flora/hibiscus.png');
+      url = require('./Flora/hibiscus.webp');
       break;
     case 'lotus':
-      url = require('./Flora/lotus.png');
+      url = require('./Flora/lotus.webp');
       break;
     case 'mushroom':
-      url = require('./Flora/mushroom.png');
+      url = require('./Flora/mushroom.webp');
       break;
     case 'palm tree':
-      url = require('./Flora/palm_tree.png');
+      url = require('./Flora/palm_tree.webp');
       break;
     case 'potted plant':
-      url = require('./Flora/potted_plant.png');
+      url = require('./Flora/potted_plant.webp');
       break;
     case 'rose':
-      url = require('./Flora/rose.png');
+      url = require('./Flora/rose.webp');
       break;
     case 'seedling':
-      url = require('./Flora/seedling.png');
+      url = require('./Flora/seedling.webp');
       break;
     case 'sunflower':
-      url = require('./Flora/sunflower.png');
+      url = require('./Flora/sunflower.webp');
       break;
     case 'tree':
-      url = require('./Flora/tree.png');
+      url = require('./Flora/tree.webp');
       break;
     case 'tulip':
-      url = require('./Flora/tulip.png');
+      url = require('./Flora/tulip.webp');
       break;
     //////////////
     //////////////
@@ -527,55 +527,55 @@ const NewImage = ({
 
     // Accessories
     case 'backpack':
-      url = require('./Accessories/backpack.png');
+      url = require('./Accessories/backpack.webp');
       break;
     case 'boxing glove':
-      url = require('./Accessories/boxing_glove.png');
+      url = require('./Accessories/boxing_glove.webp');
       break;
     case 'briefcase':
-      url = require('./Accessories/briefcase.png');
+      url = require('./Accessories/briefcase.webp');
       break;
     case 'crown':
-      url = require('./Accessories/crown.png');
+      url = require('./Accessories/crown.webp');
       break;
     case 'diving mask':
-      url = require('./Accessories/diving_mask.png');
+      url = require('./Accessories/diving_mask.webp');
       break;
     case 'glasses':
-      url = require('./Accessories/glasses.png');
+      url = require('./Accessories/glasses.webp');
       break;
     case 'goggles':
-      url = require('./Accessories/goggles.png');
+      url = require('./Accessories/goggles.webp');
       break;
     case 'helmet':
-      url = require('./Accessories/helmet.png');
+      url = require('./Accessories/helmet.webp');
       break;
     case 'luggage':
-      url = require('./Accessories/luggage.png');
+      url = require('./Accessories/luggage.webp');
       break;
     case 'military helmet':
-      url = require('./Accessories/military_helmet.png');
+      url = require('./Accessories/military_helmet.webp');
       break;
     case 'pouch':
-      url = require('./Accessories/pouch.png');
+      url = require('./Accessories/pouch.webp');
       break;
     case 'purse':
-      url = require('./Accessories/purse.png');
+      url = require('./Accessories/purse.webp');
       break;
     case 'razor':
-      url = require('./Accessories/razor.png');
+      url = require('./Accessories/razor.webp');
       break;
     case 'ribbon bow':
-      url = require('./Accessories/ribbon_bow.png');
+      url = require('./Accessories/ribbon_bow.webp');
       break;
     case 'ring':
-      url = require('./Accessories/ring.png');
+      url = require('./Accessories/ring.webp');
       break;
     case 'sunglasses':
-      url = require('./Accessories/sunglasses.png');
+      url = require('./Accessories/sunglasses.webp');
       break;
     case 'toothbrush':
-      url = require('./Accessories/toothbrush.png');
+      url = require('./Accessories/toothbrush.webp');
       break;
     //////////////
     //////////////
@@ -583,28 +583,28 @@ const NewImage = ({
 
     // Places
     case 'basement':
-      url = require('./Places/basement.png');
+      url = require('./Places/basement.webp');
       break;
     case 'bedroom':
-      url = require('./Places/bedroom.png');
+      url = require('./Places/bedroom.webp');
       break;
     case 'cinema':
-      url = require('./Places/cinema.png');
+      url = require('./Places/cinema.webp');
       break;
     case 'home':
-      url = require('./Places/home.png');
+      url = require('./Places/home.webp');
       break;
     case 'kitchen':
-      url = require('./Places/kitchen.png');
+      url = require('./Places/kitchen.webp');
       break;
     case 'office':
-      url = require('./Places/office.png');
+      url = require('./Places/office.webp');
       break;
     case 'room':
-      url = require('./Places/room.png');
+      url = require('./Places/room.webp');
       break;
     case 'work':
-      url = require('./Places/work.png');
+      url = require('./Places/work.webp');
       break;
     //////////////
     //////////////
@@ -612,22 +612,22 @@ const NewImage = ({
 
     // Events
     case 'Carnaval':
-      url = require('./Events/carnaval.png');
+      url = require('./Events/carnaval.webp');
       break;
     case 'Concert':
-      url = require('./Events/concert.png');
+      url = require('./Events/concert.webp');
       break;
     case 'Exhibition':
-      url = require('./Events/exhibition.png');
+      url = require('./Events/exhibition.webp');
       break;
     case 'Fashion Show':
-      url = require('./Events/fashion_show.png');
+      url = require('./Events/fashion_show.webp');
       break;
     case 'Meeting':
-      url = require('./Events/meeting.png');
+      url = require('./Events/meeting.webp');
       break;
     case 'Presentation':
-      url = require('./Events/presentation.png');
+      url = require('./Events/presentation.webp');
       break;
     //////////////
     //////////////
@@ -635,109 +635,109 @@ const NewImage = ({
 
     // Buildings
     case 'bank':
-      url = require('./Buildings/bank.png');
+      url = require('./Buildings/bank.webp');
       break;
     case 'castle':
-      url = require('./Buildings/castle.png');
+      url = require('./Buildings/castle.webp');
       break;
     case 'church':
-      url = require('./Buildings/church.png');
+      url = require('./Buildings/church.webp');
       break;
     case 'circus':
-      url = require('./Buildings/circus_tent.png');
+      url = require('./Buildings/circus_tent.webp');
       break;
     case 'convenience store':
-      url = require('./Buildings/convenience_store.png');
+      url = require('./Buildings/convenience_store.webp');
       break;
     case 'department store':
-      url = require('./Buildings/department_store.png');
+      url = require('./Buildings/department_store.webp');
       break;
     case 'factory':
-      url = require('./Buildings/factory.png');
+      url = require('./Buildings/factory.webp');
       break;
     case 'hospital':
-      url = require('./Buildings/hospital.png');
+      url = require('./Buildings/hospital.webp');
       break;
     case 'hotel':
-      url = require('./Buildings/hotel.png');
+      url = require('./Buildings/hotel.webp');
       break;
     case 'house':
-      url = require('./Buildings/house.png');
+      url = require('./Buildings/house.webp');
       break;
     case 'mosque':
-      url = require('./Buildings/mosque.png');
+      url = require('./Buildings/mosque.webp');
       break;
     case 'museum':
-      url = require('./Buildings/museum.png');
+      url = require('./Buildings/museum.webp');
       break;
     case 'post office':
-      url = require('./Buildings/post_office.png');
+      url = require('./Buildings/post_office.webp');
       break;
     case 'school':
-      url = require('./Buildings/school.png');
+      url = require('./Buildings/school.webp');
       break;
     case 'stadium':
-      url = require('./Buildings/stadium.png');
+      url = require('./Buildings/stadium.webp');
       break;
     case 'synagogue':
-      url = require('./Buildings/synagogue.png');
+      url = require('./Buildings/synagogue.webp');
       break;
     case 'theater':
-      url = require('./Buildings/theater.png');
+      url = require('./Buildings/theater.webp');
       break;
     //////////////
     //////////////
     //////////////
     // Flags
     case 'Argentina':
-      url = require('./Flags/Argentina.png');
+      url = require('./Flags/Argentina.webp');
       break;
     case 'Australia':
-      url = require('./Flags/Australia.png');
+      url = require('./Flags/Australia.webp');
       break;
     case 'Canada':
-      url = require('./Flags/Canada.png');
+      url = require('./Flags/Canada.webp');
       break;
     case 'China':
     case 'Chinese':
-      url = require('./Flags/China.png');
+      url = require('./Flags/China.webp');
       break;
     case 'France':
     case 'French':
-      url = require('./Flags/France.png');
+      url = require('./Flags/France.webp');
       break;
     case 'Germany':
     case 'German':
-      url = require('./Flags/Germany.png');
+      url = require('./Flags/Germany.webp');
       break;
     case 'India':
-      url = require('./Flags/India.png');
+      url = require('./Flags/India.webp');
       break;
     case 'Japan':
     case 'Japanese':
-      url = require('./Flags/Japan.png');
+      url = require('./Flags/Japan.webp');
       break;
     case 'Panama':
-      url = require('./Flags/Panama.png');
+      url = require('./Flags/Panama.webp');
       break;
     case 'South Korea':
     case 'Korean':
-      url = require('./Flags/South_Korea.png');
+      url = require('./Flags/South_Korea.webp');
       break;
     case 'Spain':
     case 'Spanish':
-      url = require('./Flags/Spain.png');
+      url = require('./Flags/Spain.webp');
       break;
     case 'Thailand':
     case 'Thai':
-      url = require('./Flags/Thailand.png');
+      url = require('./Flags/Thailand.webp');
       break;
     case 'the UK':
     case 'English':
-      url = require('./Flags/the_United_Kingdom.png');
+      url = require('./Flags/the_United_Kingdom.webp');
       break;
     case 'the USA':
-      url = require('./Flags/the_United_States.png');
+      url = require('./Flags/the_United_States.webp');
       break;
     //////////////
     //////////////
@@ -745,23 +745,23 @@ const NewImage = ({
 
     // Electronics
     case 'headphones':
-      url = require('./Electronics/headphones.png');
+      url = require('./Electronics/headphones.webp');
       break;
     case 'laptop':
-      url = require('./Electronics/laptop.png');
+      url = require('./Electronics/laptop.webp');
       break;
     case 'printer':
-      url = require('./Electronics/printer.png');
+      url = require('./Electronics/printer.webp');
       break;
     case 'smart_phone':
     case 'phone':
-      url = require('./Electronics/smart_phone.png');
+      url = require('./Electronics/smart_phone.webp');
       break;
     case 'video camera':
-      url = require('./Electronics/video_camera.png');
+      url = require('./Electronics/video_camera.webp');
       break;
     case 'watch':
-      url = require('./Electronics/watch.png');
+      url = require('./Electronics/watch.webp');
       break;
     //////////////
     //////////////
@@ -769,25 +769,25 @@ const NewImage = ({
 
     // Music
     case 'accordion':
-      url = require('./Music/accordion.png');
+      url = require('./Music/accordion.webp');
       break;
     case 'banjo':
-      url = require('./Music/banjo.png');
+      url = require('./Music/banjo.webp');
       break;
     case 'drum':
-      url = require('./Music/drum.png');
+      url = require('./Music/drum.webp');
       break;
     case 'guitar':
-      url = require('./Music/guitar.png');
+      url = require('./Music/guitar.webp');
       break;
     case 'saxophone':
-      url = require('./Music/saxophone.png');
+      url = require('./Music/saxophone.webp');
       break;
     case 'trumpet':
-      url = require('./Music/trumpet.png');
+      url = require('./Music/trumpet.webp');
       break;
     case 'violin':
-      url = require('./Music/violin.png');
+      url = require('./Music/violin.webp');
       break;
     //////////////
     //////////////
@@ -795,37 +795,37 @@ const NewImage = ({
 
     // Super
     case 'id':
-      url = require('./id.png');
+      url = require('./id.webp');
       break;
     case 'credit card':
       url = require('./credit_card.webp');
       break;
     case 'money':
-      url = require('./money.png');
+      url = require('./money.webp');
       break;
     case 'ticket':
-      url = require('./ticket.png');
+      url = require('./ticket.webp');
       break;
     case 'man':
-      url = require('./man.png');
+      url = require('./man.webp');
       break;
     case 'woman':
-      url = require('./woman.png');
+      url = require('./woman.webp');
       break;
     case 'toilet':
-      url = require('./toilet.png');
+      url = require('./toilet.webp');
       break;
     //////////////
     //////////////
     //////////////
     case 'seat':
-      url = require('./seat.png');
+      url = require('./seat.webp');
       break;
     case 'couch':
       url = require('./couch.webp');
       break;
     case 'bag':
-      url = require('./bag.png');
+      url = require('./bag.webp');
       break;
     case 'bed':
       url = require('./bed.webp');
@@ -834,50 +834,50 @@ const NewImage = ({
       url = require('./book.webp');
       break;
     case 'text':
-      url = require('./text.png');
+      url = require('./text.webp');
       break;
     case 'newspaper':
-      url = require('./newspaper.png');
+      url = require('./newspaper.webp');
       break;
     case 'box':
       url = require('./box.webp');
       break;
     case 'chair':
     case 'chairs':
-      url = require('./chair.png');
+      url = require('./chair.webp');
       break;
     case 'door':
-      url = require('./door.png');
+      url = require('./door.webp');
       break;
     case 'floor':
-      url = require('./floor.png');
+      url = require('./floor.webp');
       break;
     case 'folder':
-      url = require('./folder.png');
+      url = require('./folder.webp');
       break;
     case 'letter':
-      url = require('./letter.png');
+      url = require('./letter.webp');
       break;
     case 'message':
-      url = require('./message.png');
+      url = require('./message.webp');
       break;
     case 'pen':
-      url = require('./pen.png');
+      url = require('./pen.webp');
       break;
     case 'pencil':
-      url = require('./pencil.png');
+      url = require('./pencil.webp');
       break;
     case 'table':
-      url = require('./table.png');
+      url = require('./table.webp');
       break;
     case 'umbrella':
-      url = require('./umbrella.png');
+      url = require('./umbrella.webp');
       break;
     case 'wall':
-      url = require('./wall.png');
+      url = require('./wall.webp');
       break;
     case 'window':
-      url = require('./window.png');
+      url = require('./window.webp');
       break;
     //////////////
     //////////////
@@ -886,104 +886,104 @@ const NewImage = ({
     // Green Food
     case 'apple':
     case 'apples':
-      url = require('./Green_Food/apple.png');
+      url = require('./Green_Food/apple.webp');
       break;
     case 'avocado':
-      url = require('./Green_Food/avocado.png');
+      url = require('./Green_Food/avocado.webp');
       break;
     case 'banana':
     case 'bananas':
-      url = require('./Green_Food/banana.png');
+      url = require('./Green_Food/banana.webp');
       break;
     case 'bell pepper':
-      url = require('./Green_Food/bell_pepper.png');
+      url = require('./Green_Food/bell_pepper.webp');
       break;
     case 'blueberries':
-      url = require('./Green_Food/blueberries.png');
+      url = require('./Green_Food/blueberries.webp');
       break;
     case 'broccoli':
-      url = require('./Green_Food/broccoli.png');
+      url = require('./Green_Food/broccoli.webp');
       break;
     case 'carrot':
     case 'carrots':
-      url = require('./Green_Food/carrot.png');
+      url = require('./Green_Food/carrot.webp');
       break;
     case 'cherries':
-      url = require('./Green_Food/cherries.png');
+      url = require('./Green_Food/cherries.webp');
       break;
     case 'coconut':
-      url = require('./Green_Food/coconut.png');
+      url = require('./Green_Food/coconut.webp');
       break;
     case 'eggplant':
-      url = require('./Green_Food/eggplant.png');
+      url = require('./Green_Food/eggplant.webp');
       break;
     case 'corn':
-      url = require('./Green_Food/corn.png');
+      url = require('./Green_Food/corn.webp');
       break;
     case 'cucumber':
-      url = require('./Green_Food/cucumber.png');
+      url = require('./Green_Food/cucumber.webp');
       break;
     case 'garlic':
-      url = require('./Green_Food/garlic.png');
+      url = require('./Green_Food/garlic.webp');
       break;
     case 'grapes':
-      url = require('./Green_Food/grapes.png');
+      url = require('./Green_Food/grapes.webp');
       break;
     case 'hot pepper':
-      url = require('./Green_Food/hot_pepper.png');
+      url = require('./Green_Food/hot_pepper.webp');
       break;
     case 'kiwi':
-      url = require('./Green_Food/kiwi.png');
+      url = require('./Green_Food/kiwi.webp');
       break;
     case 'lemon':
-      url = require('./Green_Food/lemon.png');
+      url = require('./Green_Food/lemon.webp');
       break;
     case 'mango':
-      url = require('./Green_Food/mango.png');
+      url = require('./Green_Food/mango.webp');
       break;
     case 'melon':
-      url = require('./Green_Food/melon.png');
+      url = require('./Green_Food/melon.webp');
       break;
     case 'olive':
-      url = require('./Green_Food/olive.png');
+      url = require('./Green_Food/olive.webp');
       break;
     case 'onion':
     case 'onions':
-      url = require('./Green_Food/onion.png');
+      url = require('./Green_Food/onion.webp');
       break;
     case 'peach':
-      url = require('./Green_Food/peach.png');
+      url = require('./Green_Food/peach.webp');
       break;
     case 'pear':
     case 'pears':
-      url = require('./Green_Food/pear.png');
+      url = require('./Green_Food/pear.webp');
       break;
     case 'pineapple':
     case 'pineapples':
-      url = require('./Green_Food/pineapple.png');
+      url = require('./Green_Food/pineapple.webp');
       break;
     case 'potato':
     case 'potatoes':
-      url = require('./Green_Food/potato.png');
+      url = require('./Green_Food/potato.webp');
       break;
     case 'strawberry':
     case 'strawberries':
-      url = require('./Green_Food/strawberry.png');
+      url = require('./Green_Food/strawberry.webp');
       break;
     case 'sweet potato':
-      url = require('./Green_Food/sweet_potato.png');
+      url = require('./Green_Food/sweet_potato.webp');
       break;
     case 'tangerine':
     case 'tangerines':
-      url = require('./Green_Food/tangerine.png');
+      url = require('./Green_Food/tangerine.webp');
       break;
     case 'tomato':
     case 'tomatoes':
-      url = require('./Green_Food/tomato.png');
+      url = require('./Green_Food/tomato.webp');
       break;
     case 'watermelon':
     case 'watermelons':
-      url = require('./Green_Food/watermelon.png');
+      url = require('./Green_Food/watermelon.webp');
       break;
     //////////////
     //////////////
@@ -992,151 +992,151 @@ const NewImage = ({
     // Professions
     case 'accountant':
     case 'auditor':
-      url = require('./Professions/accountant.png');
+      url = require('./Professions/accountant.webp');
       break;
     case 'actor':
-      url = require('./Professions/actor.png');
+      url = require('./Professions/actor.webp');
       break;
     case 'artist':
-      url = require('./Professions/artist.png');
+      url = require('./Professions/artist.webp');
       break;
     case 'astronaut':
-      url = require('./Professions/astronaut.png');
+      url = require('./Professions/astronaut.webp');
       break;
     case 'baker':
-      url = require('./Professions/baker.png');
+      url = require('./Professions/baker.webp');
       break;
     case 'builder':
     case 'laborer':
-      url = require('./Professions/builder.png');
+      url = require('./Professions/builder.webp');
       break;
     case 'cardiologist':
-      url = require('./Professions/cardiologist.png');
+      url = require('./Professions/cardiologist.webp');
       break;
     case 'cleaner':
-      url = require('./Professions/cleaner.png');
+      url = require('./Professions/cleaner.webp');
       break;
     case 'cleaner':
-      url = require('./Professions/cleaner.png');
+      url = require('./Professions/cleaner.webp');
       break;
     case 'construction electrician':
-      url = require('./Professions/construction_electrician.png');
+      url = require('./Professions/construction_electrician.webp');
       break;
     case 'construction engineer':
-      url = require('./Professions/construction_engineer.png');
+      url = require('./Professions/construction_engineer.webp');
       break;
     case 'firefighter inspector':
-      url = require('./Professions/firefighter_inspector.png');
+      url = require('./Professions/firefighter_inspector.webp');
       break;
     case 'safety inspector':
-      url = require('./Professions/safety_inspector.png');
+      url = require('./Professions/safety_inspector.webp');
       break;
     case 'cook':
     case 'chef':
-      url = require('./Professions/cook.png');
+      url = require('./Professions/cook.webp');
       break;
     case 'dentist':
-      url = require('./Professions/dentist.png');
+      url = require('./Professions/dentist.webp');
       break;
     case 'designer':
-      url = require('./Professions/designer.png');
+      url = require('./Professions/designer.webp');
       break;
     case 'detective':
-      url = require('./Professions/detective.png');
+      url = require('./Professions/detective.webp');
       break;
     case 'doctor':
-      url = require('./Professions/doctor.png');
+      url = require('./Professions/doctor.webp');
       break;
     case 'driver':
-      url = require('./Professions/driver.png');
+      url = require('./Professions/driver.webp');
       break;
     case 'engineer':
-      url = require('./Professions/engineer.png');
+      url = require('./Professions/engineer.webp');
       break;
     case 'farmer':
-      url = require('./Professions/farmer.png');
+      url = require('./Professions/farmer.webp');
       break;
     case 'firefighter':
-      url = require('./Professions/firefighter.png');
+      url = require('./Professions/firefighter.webp');
       break;
     case 'historian':
-      url = require('./Professions/historian.png');
+      url = require('./Professions/historian.webp');
       break;
     case 'guide':
-      url = require('./Professions/guide.png');
+      url = require('./Professions/guide.webp');
       break;
     case 'interpreter':
-      url = require('./Professions/interpreter.png');
+      url = require('./Professions/interpreter.webp');
       break;
     case 'judge':
-      url = require('./Professions/judge.png');
+      url = require('./Professions/judge.webp');
       break;
     case 'lawyer':
     case 'attorney':
-      url = require('./Professions/lawyer.png');
+      url = require('./Professions/lawyer.webp');
       break;
     case 'mechanic':
-      url = require('./Professions/mechanic.png');
+      url = require('./Professions/mechanic.webp');
       break;
     case 'musician':
-      url = require('./Professions/musician.png');
+      url = require('./Professions/musician.webp');
       break;
     case 'nurse':
-      url = require('./Professions/nurse.png');
+      url = require('./Professions/nurse.webp');
       break;
     case 'nutritionist':
-      url = require('./Professions/nutritionist.png');
+      url = require('./Professions/nutritionist.webp');
       break;
     case 'office clerk':
-      url = require('./Professions/office_clerk.png');
+      url = require('./Professions/office_clerk.webp');
       break;
     case 'orthopedist':
-      url = require('./Professions/orthopedist.png');
+      url = require('./Professions/orthopedist.webp');
       break;
     case 'pilot':
-      url = require('./Professions/pilot.png');
+      url = require('./Professions/pilot.webp');
       break;
     case 'police officer':
-      url = require('./Professions/police_officer.png');
+      url = require('./Professions/police_officer.webp');
       break;
     case 'programmer':
-      url = require('./Professions/programmer.png');
+      url = require('./Professions/programmer.webp');
       break;
     case 'receptionist':
-      url = require('./Professions/receptionist.png');
+      url = require('./Professions/receptionist.webp');
       break;
     case 'scientist':
     case 'researcher':
-      url = require('./Professions/scientist.png');
+      url = require('./Professions/scientist.webp');
       break;
     case 'singer':
-      url = require('./Professions/singer.png');
+      url = require('./Professions/singer.webp');
       break;
     case 'social worker':
-      url = require('./Professions/social_worker.png');
+      url = require('./Professions/social_worker.webp');
       break;
     case 'student':
-      url = require('./Professions/student.png');
+      url = require('./Professions/student.webp');
       break;
     case 'taxi driver':
-      url = require('./Professions/taxi_driver.png');
+      url = require('./Professions/taxi_driver.webp');
       break;
     case 'teacher':
     case 'professor':
-      url = require('./Professions/teacher.png');
+      url = require('./Professions/teacher.webp');
       break;
     case 'technologist':
-      url = require('./Professions/technologist.png');
+      url = require('./Professions/technologist.webp');
       break;
     case 'truck driver':
-      url = require('./Professions/truck_driver.png');
+      url = require('./Professions/truck_driver.webp');
       break;
     case 'welder':
-      url = require('./Professions/welder.png');
+      url = require('./Professions/welder.webp');
       break;
     case 'writer':
     case 'author':
-      url = require('./Professions/writer.png');
+      url = require('./Professions/writer.webp');
       break;
     //////////////
     //////////////
@@ -1144,25 +1144,25 @@ const NewImage = ({
 
     // Subject_Pronouns
     case 'he':
-      url = require('./Pronouns/Subject_Pronouns/he.png');
+      url = require('./Pronouns/Subject_Pronouns/he.webp');
       break;
     case 'i':
-      url = require('./Pronouns/Subject_Pronouns/i.png');
+      url = require('./Pronouns/Subject_Pronouns/i.webp');
       break;
     case 'it':
-      url = require('./Pronouns/Subject_Pronouns/it.png');
+      url = require('./Pronouns/Subject_Pronouns/it.webp');
       break;
     case 'she':
-      url = require('./Pronouns/Subject_Pronouns/she.png');
+      url = require('./Pronouns/Subject_Pronouns/she.webp');
       break;
     case 'they':
-      url = require('./Pronouns/Subject_Pronouns/they.png');
+      url = require('./Pronouns/Subject_Pronouns/they.webp');
       break;
     case 'we':
-      url = require('./Pronouns/Subject_Pronouns/we.png');
+      url = require('./Pronouns/Subject_Pronouns/we.webp');
       break;
     case 'you':
-      url = require('./Pronouns/Subject_Pronouns/you.png');
+      url = require('./Pronouns/Subject_Pronouns/you.webp');
       break;
     //////////////
     //////////////
@@ -1170,50 +1170,50 @@ const NewImage = ({
 
     // Pastries
     case 'bagel':
-      url = require('./Pastries/bagel.png');
+      url = require('./Pastries/bagel.webp');
       break;
     case 'baguette':
-      url = require('./Pastries/baguette.png');
+      url = require('./Pastries/baguette.webp');
       break;
     case 'birthday cake':
-      url = require('./Pastries/birthday_cake.png');
+      url = require('./Pastries/birthday_cake.webp');
       break;
     case 'bread':
-      url = require('./Pastries/bread.png');
+      url = require('./Pastries/bread.webp');
       break;
     case 'cookie':
     case 'cookies':
-      url = require('./Pastries/cookie.png');
+      url = require('./Pastries/cookie.webp');
       break;
     case 'croissant':
-      url = require('./Pastries/croissant.png');
+      url = require('./Pastries/croissant.webp');
       break;
     case 'cupcake':
-      url = require('./Pastries/cupcake.png');
+      url = require('./Pastries/cupcake.webp');
       break;
     case 'doughnut':
-      url = require('./Pastries/doughnut.png');
+      url = require('./Pastries/doughnut.webp');
       break;
     case 'flat bread':
-      url = require('./Pastries/flat_bread.png');
+      url = require('./Pastries/flat_bread.webp');
       break;
     case 'mooncake':
-      url = require('./Pastries/mooncake.png');
+      url = require('./Pastries/mooncake.webp');
       break;
     case 'pancakes':
-      url = require('./Pastries/pancakes.png');
+      url = require('./Pastries/pancakes.webp');
       break;
     case 'pie':
-      url = require('./Pastries/pie.png');
+      url = require('./Pastries/pie.webp');
       break;
     case 'pretzel':
-      url = require('./Pastries/pretzel.png');
+      url = require('./Pastries/pretzel.webp');
       break;
     case 'shortcake':
-      url = require('./Pastries/shortcake.png');
+      url = require('./Pastries/shortcake.webp');
       break;
     case 'waffle':
-      url = require('./Pastries/waffle.png');
+      url = require('./Pastries/waffle.webp');
       break;
     //////////////
     //////////////
@@ -1221,97 +1221,97 @@ const NewImage = ({
 
     // Clothes
     case 'ballet shoes':
-      url = require('./Clothes/ballet_shoes.png');
+      url = require('./Clothes/ballet_shoes.webp');
       break;
     case 'bikini':
-      url = require('./Clothes/bikini.png');
+      url = require('./Clothes/bikini.webp');
       break;
     case 'billed hat':
-      url = require('./Clothes/billed_hat.png');
+      url = require('./Clothes/billed_hat.webp');
       break;
     case 'blouse':
-      url = require('./Clothes/blouse.png');
+      url = require('./Clothes/blouse.webp');
       break;
     case 'briefs':
-      url = require('./Clothes/briefs.png');
+      url = require('./Clothes/briefs.webp');
       break;
     case 'coat':
-      url = require('./Clothes/coat.png');
+      url = require('./Clothes/coat.webp');
       break;
     case 'dress':
-      url = require('./Clothes/dress.png');
+      url = require('./Clothes/dress.webp');
       break;
     case 'dress shoe':
-      url = require('./Clothes/dress_shoe.png');
+      url = require('./Clothes/dress_shoe.webp');
       break;
     case 'flat shoe':
-      url = require('./Clothes/flat_shoe.png');
+      url = require('./Clothes/flat_shoe.webp');
       break;
     case 'gloves':
-      url = require('./Clothes/gloves.png');
+      url = require('./Clothes/gloves.webp');
       break;
     case 'graduation cap':
-      url = require('./Clothes/graduation_cap.png');
+      url = require('./Clothes/graduation_cap.webp');
       break;
     case 'hat with bow':
-      url = require('./Clothes/hat_with_bow.png');
+      url = require('./Clothes/hat_with_bow.webp');
       break;
     case 'heeled boots':
-      url = require('./Clothes/heeled_boots.png');
+      url = require('./Clothes/heeled_boots.webp');
       break;
     case 'heeled sandal':
-      url = require('./Clothes/heeled_sandal.png');
+      url = require('./Clothes/heeled_sandal.webp');
       break;
     case 'high-heeled shoe':
-      url = require('./Clothes/high-heeled_shoe.png');
+      url = require('./Clothes/high-heeled_shoe.webp');
       break;
     case 'hiking boot':
-      url = require('./Clothes/hiking_boot.png');
+      url = require('./Clothes/hiking_boot.webp');
       break;
     case 'jeans':
-      url = require('./Clothes/jeans.png');
+      url = require('./Clothes/jeans.webp');
       break;
     case 'kimono':
-      url = require('./Clothes/kimono.png');
+      url = require('./Clothes/kimono.webp');
       break;
     case 'lab coat':
-      url = require('./Clothes/lab_coat.png');
+      url = require('./Clothes/lab_coat.webp');
       break;
     case 'martial arts uniform':
-      url = require('./Clothes/martial_arts_uniform.png');
+      url = require('./Clothes/martial_arts_uniform.webp');
       break;
     case 'one-piece swimsuit':
-      url = require('./Clothes/one-piece_swimsuit.png');
+      url = require('./Clothes/one-piece_swimsuit.webp');
       break;
     case 'polo shirt':
-      url = require('./Clothes/polo_shirt.png');
+      url = require('./Clothes/polo_shirt.webp');
       break;
     case 'running shirt':
-      url = require('./Clothes/running_shirt.png');
+      url = require('./Clothes/running_shirt.webp');
       break;
     case 'safety vest':
-      url = require('./Clothes/safety_vest.png');
+      url = require('./Clothes/safety_vest.webp');
       break;
     case 'sandal':
-      url = require('./Clothes/sandal.png');
+      url = require('./Clothes/sandal.webp');
       break;
     case 'sari':
-      url = require('./Clothes/sari.png');
+      url = require('./Clothes/sari.webp');
       break;
     case 'scarf':
-      url = require('./Clothes/scarf.png');
+      url = require('./Clothes/scarf.webp');
       break;
     case 'shorts':
-      url = require('./Clothes/shorts.png');
+      url = require('./Clothes/shorts.webp');
       break;
     case 'socks':
-      url = require('./Clothes/socks.png');
+      url = require('./Clothes/socks.webp');
       break;
     case 'tennis shoe':
-      url = require('./Clothes/tennis_shoe.png');
+      url = require('./Clothes/tennis_shoe.webp');
       break;
     case 'top hat':
-      url = require('./Clothes/top_hat.png');
+      url = require('./Clothes/top_hat.webp');
       break;
     //////////////
     //////////////
@@ -1319,34 +1319,34 @@ const NewImage = ({
 
     // Utensils
     case 'baby bottle':
-      url = require('./Utensils/baby_bottle.png');
+      url = require('./Utensils/baby_bottle.webp');
       break;
     case 'bowl':
-      url = require('./Utensils/bowl.png');
+      url = require('./Utensils/bowl.webp');
       break;
     case 'chopsticks':
-      url = require('./Utensils/chopsticks.png');
+      url = require('./Utensils/chopsticks.webp');
       break;
     case 'fork':
-      url = require('./Utensils/fork.png');
+      url = require('./Utensils/fork.webp');
       break;
     case 'jar':
-      url = require('./Utensils/jar.png');
+      url = require('./Utensils/jar.webp');
       break;
     case 'knife':
-      url = require('./Utensils/knife.png');
+      url = require('./Utensils/knife.webp');
       break;
     case 'plate':
-      url = require('./Utensils/plate.png');
+      url = require('./Utensils/plate.webp');
       break;
     case 'spoon':
-      url = require('./Utensils/spoon.png');
+      url = require('./Utensils/spoon.webp');
       break;
     case 'table knife':
-      url = require('./Utensils/table_knife.png');
+      url = require('./Utensils/table_knife.webp');
       break;
     case 'teapot':
-      url = require('./Utensils/teapot.png');
+      url = require('./Utensils/teapot.webp');
       break;
     //////////////
     //////////////
@@ -1354,103 +1354,103 @@ const NewImage = ({
 
     // Transport
     case 'airplane':
-      url = require('./Transport/airplane.png');
+      url = require('./Transport/airplane.webp');
       break;
     case 'ambulance':
-      url = require('./Transport/ambulance.png');
+      url = require('./Transport/ambulance.webp');
       break;
     case 'bicycle':
-      url = require('./Transport/bicycle.png');
+      url = require('./Transport/bicycle.webp');
       break;
     case 'bus':
-      url = require('./Transport/bus.png');
+      url = require('./Transport/bus.webp');
       break;
     case 'car':
-      url = require('./Transport/car.png');
+      url = require('./Transport/car.webp');
       break;
     case 'delivery truck':
-      url = require('./Transport/delivery_truck.png');
+      url = require('./Transport/delivery_truck.webp');
       break;
     case 'ferry':
-      url = require('./Transport/ferry.png');
+      url = require('./Transport/ferry.webp');
       break;
     case 'fire engine':
-      url = require('./Transport/fire_engine.png');
+      url = require('./Transport/fire_engine.webp');
       break;
     case 'helicopter':
-      url = require('./Transport/helicopter.png');
+      url = require('./Transport/helicopter.webp');
       break;
     case 'ice skate':
-      url = require('./Transport/ice_skate.png');
+      url = require('./Transport/ice_skate.webp');
       break;
     case 'minibus':
-      url = require('./Transport/minibus.png');
+      url = require('./Transport/minibus.webp');
       break;
     case 'motor scooter':
-      url = require('./Transport/motor_scooter.png');
+      url = require('./Transport/motor_scooter.webp');
       break;
     case 'motorboat':
-      url = require('./Transport/motorboat.png');
+      url = require('./Transport/motorboat.webp');
       break;
     case 'motorcycle':
-      url = require('./Transport/motorcycle.png');
+      url = require('./Transport/motorcycle.webp');
       break;
     case 'passenger ship':
-      url = require('./Transport/passenger_ship.png');
+      url = require('./Transport/passenger_ship.webp');
       break;
     case 'pickup truck':
-      url = require('./Transport/pickup_truck.png');
+      url = require('./Transport/pickup_truck.webp');
       break;
     case 'police car':
-      url = require('./Transport/police_car.png');
+      url = require('./Transport/police_car.webp');
       break;
     case 'race car':
-      url = require('./Transport/race_car.png');
+      url = require('./Transport/race_car.webp');
       break;
     case 'rocket':
-      url = require('./Transport/rocket.png');
+      url = require('./Transport/rocket.webp');
       break;
     case 'roller skate':
-      url = require('./Transport/roller_skate.png');
+      url = require('./Transport/roller_skate.webp');
       break;
     case 'sailboat':
-      url = require('./Transport/sailboat.png');
+      url = require('./Transport/sailboat.webp');
       break;
     case 'scooter':
-      url = require('./Transport/scooter.png');
+      url = require('./Transport/scooter.webp');
       break;
     case 'semi-truck':
-      url = require('./Transport/semi-truck.png');
+      url = require('./Transport/semi-truck.webp');
       break;
     case 'ship':
-      url = require('./Transport/ship.png');
+      url = require('./Transport/ship.webp');
       break;
     case 'skateboard':
-      url = require('./Transport/skateboard.png');
+      url = require('./Transport/skateboard.webp');
       break;
     case 'sled':
-      url = require('./Transport/sled.png');
+      url = require('./Transport/sled.webp');
       break;
     case 'small airplane':
-      url = require('./Transport/small_airplane.png');
+      url = require('./Transport/small_airplane.webp');
       break;
     case 'speedboat':
-      url = require('./Transport/speedboat.png');
+      url = require('./Transport/speedboat.webp');
       break;
     case 'SUV':
-      url = require('./Transport/suv.png');
+      url = require('./Transport/suv.webp');
       break;
     case 'taxi':
-      url = require('./Transport/taxi.png');
+      url = require('./Transport/taxi.webp');
       break;
     case 'tractor':
-      url = require('./Transport/tractor.png');
+      url = require('./Transport/tractor.webp');
       break;
     case 'trolleybus':
-      url = require('./Transport/trolleybus.png');
+      url = require('./Transport/trolleybus.webp');
       break;
     case 'UFO':
-      url = require('./Transport/UFO.png');
+      url = require('./Transport/UFO.webp');
       break;
     //////////////
     //////////////
@@ -1458,48 +1458,48 @@ const NewImage = ({
 
     // Object_Pronouns
     case 'me':
-      url = require('./Pronouns/Object_Pronouns/me.png');
+      url = require('./Pronouns/Object_Pronouns/me.webp');
       break;
     case 'you ':
-      url = require('./Pronouns/Object_Pronouns/you.png');
+      url = require('./Pronouns/Object_Pronouns/you.webp');
       break;
     case 'him':
-      url = require('./Pronouns/Object_Pronouns/him.png');
+      url = require('./Pronouns/Object_Pronouns/him.webp');
       break;
     case 'her':
-      url = require('./Pronouns/Object_Pronouns/her.png');
+      url = require('./Pronouns/Object_Pronouns/her.webp');
       break;
     case 'it ':
-      url = require('./Pronouns/Object_Pronouns/it.png');
+      url = require('./Pronouns/Object_Pronouns/it.webp');
       break;
     case 'us':
-      url = require('./Pronouns/Object_Pronouns/us.png');
+      url = require('./Pronouns/Object_Pronouns/us.webp');
       break;
     case 'them':
-      url = require('./Pronouns/Object_Pronouns/them.png');
+      url = require('./Pronouns/Object_Pronouns/them.webp');
       break;
 
     // Possessive_Adjectives
     case 'her ':
-      url = require('./Pronouns/Possessive_Adjectives/her.png');
+      url = require('./Pronouns/Possessive_Adjectives/her.webp');
       break;
     case 'his':
-      url = require('./Pronouns/Possessive_Adjectives/his.png');
+      url = require('./Pronouns/Possessive_Adjectives/his.webp');
       break;
     case 'its':
-      url = require('./Pronouns/Possessive_Adjectives/its.png');
+      url = require('./Pronouns/Possessive_Adjectives/its.webp');
       break;
     case 'my':
-      url = require('./Pronouns/Possessive_Adjectives/my.png');
+      url = require('./Pronouns/Possessive_Adjectives/my.webp');
       break;
     case 'our':
-      url = require('./Pronouns/Possessive_Adjectives/our.png');
+      url = require('./Pronouns/Possessive_Adjectives/our.webp');
       break;
     case 'their':
-      url = require('./Pronouns/Possessive_Adjectives/their.png');
+      url = require('./Pronouns/Possessive_Adjectives/their.webp');
       break;
     case 'your':
-      url = require('./Pronouns/Possessive_Adjectives/your.png');
+      url = require('./Pronouns/Possessive_Adjectives/your.webp');
       break;
 
     //////////////
@@ -1508,43 +1508,43 @@ const NewImage = ({
 
     // Family
     case 'children':
-      url = require('./Family/children.png');
+      url = require('./Family/children.webp');
       break;
     case 'daughter':
-      url = require('./Family/daughter.png');
+      url = require('./Family/daughter.webp');
       break;
     case 'father':
-      url = require('./Family/father.png');
+      url = require('./Family/father.webp');
       break;
     case 'family':
-      url = require('./Family/family.png');
+      url = require('./Family/family.webp');
       break;
     case 'grandfather':
-      url = require('./Family/grandfather.png');
+      url = require('./Family/grandfather.webp');
       break;
     case 'grandmother':
-      url = require('./Family/grandmother.png');
+      url = require('./Family/grandmother.webp');
       break;
     case 'husband':
-      url = require('./Family/husband.png');
+      url = require('./Family/husband.webp');
       break;
     case 'mother':
-      url = require('./Family/mother.png');
+      url = require('./Family/mother.webp');
       break;
     case 'parents':
-      url = require('./Family/parents.png');
+      url = require('./Family/parents.webp');
       break;
     case 'sister':
-      url = require('./Family/sister.png');
+      url = require('./Family/sister.webp');
       break;
     case 'brother':
-      url = require('./Family/brother.png');
+      url = require('./Family/brother.webp');
       break;
     case 'son':
-      url = require('./Family/son.png');
+      url = require('./Family/son.webp');
       break;
     case 'wife':
-      url = require('./Family/wife.png');
+      url = require('./Family/wife.webp');
       break;
 
     //////////////
@@ -1553,283 +1553,283 @@ const NewImage = ({
 
     // Creatures
     case 'ant':
-      url = require('./Creatures/ant.png');
+      url = require('./Creatures/ant.webp');
       break;
     case 'badger':
-      url = require('./Creatures/badger.png');
+      url = require('./Creatures/badger.webp');
       break;
     case 'bat':
-      url = require('./Creatures/bat.png');
+      url = require('./Creatures/bat.webp');
       break;
     case 'bear':
-      url = require('./Creatures/bear.png');
+      url = require('./Creatures/bear.webp');
       break;
     case 'beaver':
-      url = require('./Creatures/beaver.png');
+      url = require('./Creatures/beaver.webp');
       break;
     case 'bee':
-      url = require('./Creatures/bee.png');
+      url = require('./Creatures/bee.webp');
       break;
     case 'beetle':
-      url = require('./Creatures/beetle.png');
+      url = require('./Creatures/beetle.webp');
       break;
     case 'bison':
-      url = require('./Creatures/bison.png');
+      url = require('./Creatures/bison.webp');
       break;
     case 'blowfish':
-      url = require('./Creatures/blowfish.png');
+      url = require('./Creatures/blowfish.webp');
       break;
     case 'bug':
-      url = require('./Creatures/bug.png');
+      url = require('./Creatures/bug.webp');
       break;
     case 'butterfly':
-      url = require('./Creatures/butterfly.png');
+      url = require('./Creatures/butterfly.webp');
       break;
     case 'camel':
-      url = require('./Creatures/camel.png');
+      url = require('./Creatures/camel.webp');
       break;
     case 'cat':
-      url = require('./Creatures/cat.png');
+      url = require('./Creatures/cat.webp');
       break;
     case 'chick':
-      url = require('./Creatures/chick.png');
+      url = require('./Creatures/chick.webp');
       break;
     case 'chipmunk':
-      url = require('./Creatures/chipmunk.png');
+      url = require('./Creatures/chipmunk.webp');
       break;
     case 'cockroach':
-      url = require('./Creatures/cockroach.png');
+      url = require('./Creatures/cockroach.webp');
       break;
     case 'cow':
-      url = require('./Creatures/cow.png');
+      url = require('./Creatures/cow.webp');
       break;
     case 'crab':
-      url = require('./Creatures/crab.png');
+      url = require('./Creatures/crab.webp');
       break;
     case 'cricket':
-      url = require('./Creatures/cricket.png');
+      url = require('./Creatures/cricket.webp');
       break;
     case 'crocodile':
-      url = require('./Creatures/crocodile.png');
+      url = require('./Creatures/crocodile.webp');
       break;
     case 'deer':
-      url = require('./Creatures/deer.png');
+      url = require('./Creatures/deer.webp');
       break;
     case 'dinosaur':
-      url = require('./Creatures/dinosaur.png');
+      url = require('./Creatures/dinosaur.webp');
       break;
     case 'dodo bird':
-      url = require('./Creatures/dodo_bird.png');
+      url = require('./Creatures/dodo_bird.webp');
       break;
     case 'dog':
-      url = require('./Creatures/dog.png');
+      url = require('./Creatures/dog.webp');
       break;
     case 'dolphin':
-      url = require('./Creatures/dolphin.png');
+      url = require('./Creatures/dolphin.webp');
       break;
     case 'dove':
-      url = require('./Creatures/dove.png');
+      url = require('./Creatures/dove.webp');
       break;
     case 'dragon':
-      url = require('./Creatures/dragon.png');
+      url = require('./Creatures/dragon.webp');
       break;
     case 'duck':
-      url = require('./Creatures/duck.png');
+      url = require('./Creatures/duck.webp');
       break;
     case 'eagle':
-      url = require('./Creatures/eagle.png');
+      url = require('./Creatures/eagle.webp');
       break;
     case 'elephant':
-      url = require('./Creatures/elephant.png');
+      url = require('./Creatures/elephant.webp');
       break;
     case 'fish':
-      url = require('./Creatures/fish.png');
+      url = require('./Creatures/fish.webp');
       break;
     case 'flamingo':
-      url = require('./Creatures/flamingo.png');
+      url = require('./Creatures/flamingo.webp');
       break;
     case 'fly':
-      url = require('./Creatures/fly.png');
+      url = require('./Creatures/fly.webp');
       break;
     case 'fox':
-      url = require('./Creatures/fox.png');
+      url = require('./Creatures/fox.webp');
       break;
     case 'giraffe':
-      url = require('./Creatures/giraffe.png');
+      url = require('./Creatures/giraffe.webp');
       break;
     case 'goat':
-      url = require('./Creatures/goat.png');
+      url = require('./Creatures/goat.webp');
       break;
     case 'gorilla':
-      url = require('./Creatures/gorilla.png');
+      url = require('./Creatures/gorilla.webp');
       break;
     case 'hedgehog':
-      url = require('./Creatures/hedgehog.png');
+      url = require('./Creatures/hedgehog.webp');
       break;
     case 'hippo':
-      url = require('./Creatures/hippo.png');
+      url = require('./Creatures/hippo.webp');
       break;
     case 'horse':
-      url = require('./Creatures/horse.png');
+      url = require('./Creatures/horse.webp');
       break;
     case 'kangaroo':
-      url = require('./Creatures/kangaroo.png');
+      url = require('./Creatures/kangaroo.webp');
       break;
     case 'ladybug':
-      url = require('./Creatures/ladybug.png');
+      url = require('./Creatures/ladybug.webp');
       break;
     case 'leopard':
-      url = require('./Creatures/leopard.png');
+      url = require('./Creatures/leopard.webp');
       break;
     case 'lion':
-      url = require('./Creatures/lion.png');
+      url = require('./Creatures/lion.webp');
       break;
     case 'lizard':
-      url = require('./Creatures/lizard.png');
+      url = require('./Creatures/lizard.webp');
       break;
     case 'llama':
-      url = require('./Creatures/llama.png');
+      url = require('./Creatures/llama.webp');
       break;
     case 'lobster':
-      url = require('./Creatures/lobster.png');
+      url = require('./Creatures/lobster.webp');
       break;
     case 'mammoth':
-      url = require('./Creatures/mammoth.png');
+      url = require('./Creatures/mammoth.webp');
       break;
     case 'mouse':
-      url = require('./Creatures/mouse.png');
+      url = require('./Creatures/mouse.webp');
       break;
     case 'octopus':
-      url = require('./Creatures/octopus.png');
+      url = require('./Creatures/octopus.webp');
       break;
     case 'orangutan':
-      url = require('./Creatures/orangutan.png');
+      url = require('./Creatures/orangutan.webp');
       break;
     case 'otter':
-      url = require('./Creatures/otter.png');
+      url = require('./Creatures/otter.webp');
       break;
     case 'owl':
-      url = require('./Creatures/owl.png');
+      url = require('./Creatures/owl.webp');
       break;
     case 'ox':
-      url = require('./Creatures/ox.png');
+      url = require('./Creatures/ox.webp');
       break;
     case 'panda':
-      url = require('./Creatures/panda.png');
+      url = require('./Creatures/panda.webp');
       break;
     case 'parrot':
-      url = require('./Creatures/parrot.png');
+      url = require('./Creatures/parrot.webp');
       break;
     case 'peacock':
-      url = require('./Creatures/peacock.png');
+      url = require('./Creatures/peacock.webp');
       break;
     case 'penguin':
-      url = require('./Creatures/penguin.png');
+      url = require('./Creatures/penguin.webp');
       break;
     case 'pig':
-      url = require('./Creatures/pig.png');
+      url = require('./Creatures/pig.webp');
       break;
     case 'polar bear':
-      url = require('./Creatures/polar_bear.png');
+      url = require('./Creatures/polar_bear.webp');
       break;
     case 'poodle':
-      url = require('./Creatures/poodle.png');
+      url = require('./Creatures/poodle.webp');
       break;
     case 'rabbit':
-      url = require('./Creatures/rabbit.png');
+      url = require('./Creatures/rabbit.webp');
       break;
     case 'raccoon':
-      url = require('./Creatures/raccoon.png');
+      url = require('./Creatures/raccoon.webp');
       break;
     case 'ram':
-      url = require('./Creatures/ram.png');
+      url = require('./Creatures/ram.webp');
       break;
     case 'rat':
-      url = require('./Creatures/rat.png');
+      url = require('./Creatures/rat.webp');
       break;
     case 'rhino':
-      url = require('./Creatures/rhino.png');
+      url = require('./Creatures/rhino.webp');
       break;
     case 'rooster':
-      url = require('./Creatures/rooster.png');
+      url = require('./Creatures/rooster.webp');
       break;
     case 'scorpion':
-      url = require('./Creatures/scorpion.png');
+      url = require('./Creatures/scorpion.webp');
       break;
     case 'seal':
-      url = require('./Creatures/seal.png');
+      url = require('./Creatures/seal.webp');
       break;
     case 'shark':
-      url = require('./Creatures/shark.png');
+      url = require('./Creatures/shark.webp');
       break;
     case 'sheep':
-      url = require('./Creatures/sheep.png');
+      url = require('./Creatures/sheep.webp');
       break;
     case 'shrimp':
-      url = require('./Creatures/shrimp.png');
+      url = require('./Creatures/shrimp.webp');
       break;
     case 'skunk':
-      url = require('./Creatures/skunk.png');
+      url = require('./Creatures/skunk.webp');
       break;
     case 'sloth':
-      url = require('./Creatures/sloth.png');
+      url = require('./Creatures/sloth.webp');
       break;
     case 'snail':
-      url = require('./Creatures/snail.png');
+      url = require('./Creatures/snail.webp');
       break;
     case 'snake':
-      url = require('./Creatures/snake.png');
+      url = require('./Creatures/snake.webp');
       break;
     case 'spider':
-      url = require('./Creatures/spider.png');
+      url = require('./Creatures/spider.webp');
       break;
     case 'squid':
-      url = require('./Creatures/squid.png');
+      url = require('./Creatures/squid.webp');
       break;
     case 'swan':
-      url = require('./Creatures/swan.png');
+      url = require('./Creatures/swan.webp');
       break;
     case 'T-Rex':
-      url = require('./Creatures/T-Rex.png');
+      url = require('./Creatures/T-Rex.webp');
       break;
     case 'tiger':
-      url = require('./Creatures/tiger.png');
+      url = require('./Creatures/tiger.webp');
       break;
     case 'tropical fish':
-      url = require('./Creatures/tropical_fish.png');
+      url = require('./Creatures/tropical_fish.webp');
       break;
     case 'turkey':
-      url = require('./Creatures/turkey.png');
+      url = require('./Creatures/turkey.webp');
       break;
     case 'turtle':
-      url = require('./Creatures/turtle.png');
+      url = require('./Creatures/turtle.webp');
       break;
     case 'two-hump camel':
-      url = require('./Creatures/two-hump_camel.png');
+      url = require('./Creatures/two-hump_camel.webp');
       break;
     case 'water buffalo':
-      url = require('./Creatures/water_buffalo.png');
+      url = require('./Creatures/water_buffalo.webp');
       break;
     case 'whale':
-      url = require('./Creatures/whale.png');
+      url = require('./Creatures/whale.webp');
       break;
     case 'wolf':
-      url = require('./Creatures/wolf.png');
+      url = require('./Creatures/wolf.webp');
       break;
     case 'worm':
-      url = require('./Creatures/worm.png');
+      url = require('./Creatures/worm.webp');
       break;
     case 'zebra':
-      url = require('./Creatures/zebra.png');
+      url = require('./Creatures/zebra.webp');
       break;
     case 'nest':
-      url = require('./Creatures/nest.png');
+      url = require('./Creatures/nest.webp');
       break;
     case 'paw prints':
-      url = require('./Creatures/paw_prints.png');
+      url = require('./Creatures/paw_prints.webp');
       break;
     case 'seashell':
-      url = require('./Creatures/seashell.png');
+      url = require('./Creatures/seashell.webp');
       break;
     /////////////////
     /////////////////
@@ -1839,173 +1839,173 @@ const NewImage = ({
     // TODO .
     // diff nouns
     case 'artist palette':
-      url = require('./Nouns/artist_palette.png');
+      url = require('./Nouns/artist_palette.webp');
       break;
     case 'balloon':
-      url = require('./Nouns/balloon.png');
+      url = require('./Nouns/balloon.webp');
       break;
     case 'basket':
-      url = require('./Nouns/basket.png');
+      url = require('./Nouns/basket.webp');
       break;
     case 'bathtub':
-      url = require('./Nouns/bathtub.png');
+      url = require('./Nouns/bathtub.webp');
       break;
     case 'bookmark':
-      url = require('./Nouns/bookmark.png');
+      url = require('./Nouns/bookmark.webp');
       break;
     case 'bubbles':
-      url = require('./Nouns/bubbles.png');
+      url = require('./Nouns/bubbles.webp');
       break;
     case 'bus stop':
-      url = require('./Nouns/bus_stop.png');
+      url = require('./Nouns/bus_stop.webp');
       break;
     case 'calendar':
-      url = require('./Nouns/calendar.png');
+      url = require('./Nouns/calendar.webp');
       break;
     case 'camping':
-      url = require('./Nouns/camping.png');
+      url = require('./Nouns/camping.webp');
       break;
     case 'candle':
-      url = require('./Nouns/candle.png');
+      url = require('./Nouns/candle.webp');
       break;
     case 'clipboard':
-      url = require('./Nouns/clipboard.png');
+      url = require('./Nouns/clipboard.webp');
       break;
     case 'cloud':
-      url = require('./Nouns/cloud.png');
+      url = require('./Nouns/cloud.webp');
       break;
     case 'coin':
-      url = require('./Nouns/coin.png');
+      url = require('./Nouns/coin.webp');
       break;
     case 'comet':
-      url = require('./Nouns/comet.png');
+      url = require('./Nouns/comet.webp');
       break;
     case 'crayon':
-      url = require('./Nouns/crayon.png');
+      url = require('./Nouns/crayon.webp');
       break;
     case 'desert':
-      url = require('./Nouns/desert.png');
+      url = require('./Nouns/desert.webp');
       break;
     case 'droplet':
-      url = require('./Nouns/droplet.png');
+      url = require('./Nouns/droplet.webp');
       break;
     case 'Earht':
-      url = require('./Nouns/Earht.png');
+      url = require('./Nouns/Earht.webp');
       break;
     case 'envelope':
-      url = require('./Nouns/envelope.png');
+      url = require('./Nouns/envelope.webp');
       break;
     case 'fire':
-      url = require('./Nouns/fire.png');
+      url = require('./Nouns/fire.webp');
       break;
     case 'fountain':
-      url = require('./Nouns/fountain.png');
+      url = require('./Nouns/fountain.webp');
       break;
     case 'helmet with white cross':
-      url = require('./Nouns/helmet_with_white_cross.png');
+      url = require('./Nouns/helmet_with_white_cross.webp');
       break;
     case 'hole':
-      url = require('./Nouns/hole.png');
+      url = require('./Nouns/hole.webp');
       break;
     case 'kite':
-      url = require('./Nouns/kite.png');
+      url = require('./Nouns/kite.webp');
       break;
     case 'label tag':
-      url = require('./Nouns/label_tag.png');
+      url = require('./Nouns/label_tag.webp');
       break;
     case 'ledger':
-      url = require('./Nouns/ledger.png');
+      url = require('./Nouns/ledger.webp');
       break;
     case 'medal':
-      url = require('./Nouns/medal.png');
+      url = require('./Nouns/medal.webp');
       break;
     case 'memo':
-      url = require('./Nouns/memo.png');
+      url = require('./Nouns/memo.webp');
       break;
     case 'military medal':
-      url = require('./Nouns/military_medal.png');
+      url = require('./Nouns/military_medal.webp');
       break;
     case 'Moon':
-      url = require('./Nouns/Moon.png');
+      url = require('./Nouns/Moon.webp');
       break;
     case 'mountain':
-      url = require('./Nouns/mountain.png');
+      url = require('./Nouns/mountain.webp');
       break;
     case 'nesting dolls':
-      url = require('./Nouns/nesting_dolls.png');
+      url = require('./Nouns/nesting_dolls.webp');
       break;
     case 'paintbrush':
-      url = require('./Nouns/paintbrush.png');
+      url = require('./Nouns/paintbrush.webp');
       break;
     case 'performing arts':
-      url = require('./Nouns/performing_arts.png');
+      url = require('./Nouns/performing_arts.webp');
       break;
     case 'playground slide':
-      url = require('./Nouns/playground_slide.png');
+      url = require('./Nouns/playground_slide.webp');
       break;
     case 'present':
-      url = require('./Nouns/present.png');
+      url = require('./Nouns/present.webp');
       break;
     case 'pushpin':
-      url = require('./Nouns/pushpin.png');
+      url = require('./Nouns/pushpin.webp');
       break;
     case 'rainbow':
-      url = require('./Nouns/rainbow.png');
+      url = require('./Nouns/rainbow.webp');
       break;
     case 'receipt':
-      url = require('./Nouns/receipt.png');
+      url = require('./Nouns/receipt.webp');
       break;
     case 'rock':
-      url = require('./Nouns/rock.png');
+      url = require('./Nouns/rock.webp');
       break;
     case 'shower':
-      url = require('./Nouns/shower.png');
+      url = require('./Nouns/shower.webp');
       break;
     case 'sign':
-      url = require('./Nouns/sign.png');
+      url = require('./Nouns/sign.webp');
       break;
     case 'snowflake':
-      url = require('./Nouns/snowflake.png');
+      url = require('./Nouns/snowflake.webp');
       break;
     case 'snowman':
-      url = require('./Nouns/snowman.png');
+      url = require('./Nouns/snowman.webp');
       break;
     case 'soap':
-      url = require('./Nouns/soap.png');
+      url = require('./Nouns/soap.webp');
       break;
     case 'sponge':
-      url = require('./Nouns/sponge.png');
+      url = require('./Nouns/sponge.webp');
       break;
     case 'Sun':
-      url = require('./Nouns/Sun.png');
+      url = require('./Nouns/Sun.webp');
       break;
     case 'teddy bear':
     case 'toy':
-      url = require('./Nouns/teddy_bear.png');
+      url = require('./Nouns/teddy_bear.webp');
       break;
     case 'tent':
-      url = require('./Nouns/tent.png');
+      url = require('./Nouns/tent.webp');
       break;
     case 'tornado':
-      url = require('./Nouns/tornado.png');
+      url = require('./Nouns/tornado.webp');
       break;
     case 'trophy':
-      url = require('./Nouns/trophy.png');
+      url = require('./Nouns/trophy.webp');
       break;
     case 'volcano':
-      url = require('./Nouns/volcano.png');
+      url = require('./Nouns/volcano.webp');
       break;
     case 'wastebasket':
-      url = require('./Nouns/wastebasket.png');
+      url = require('./Nouns/wastebasket.webp');
       break;
     case 'wave':
-      url = require('./Nouns/wave.png');
+      url = require('./Nouns/wave.webp');
       break;
     case 'wood':
-      url = require('./Nouns/wood.png');
+      url = require('./Nouns/wood.webp');
       break;
     case 'world map':
-      url = require('./Nouns/world_map.png');
+      url = require('./Nouns/world_map.webp');
       break;
     /////////////////
     /////////////////
