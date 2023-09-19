@@ -3,9 +3,14 @@ import {View, Text, StyleSheet} from 'react-native';
 import React from 'react';
 
 import {useSelector} from 'react-redux';
+import Svg, {Circle, Line, Path, G, Ellipse} from 'react-native-svg';
 
 import Colors from '../constants/Colors';
 import {RootState} from '../redux-store/store';
+import {BoyFace} from '../components/MyIcons/SVG/BoyFace';
+import {ManFace} from '../components/MyIcons/SVG/ManFace';
+import {OldFace} from '../components/MyIcons/SVG/OldFace';
+import {VerbForms} from '../components/MyIcons/SVG/VerbForms';
 
 function NoteScreen({route}) {
   const [note, tenseNoteIndex, verb] = route.params.note;
@@ -51,13 +56,13 @@ function NoteScreen({route}) {
             </View>
 
             <Div active={show[1] === '1'} style={{flex: 0.317}}>
-              {'past 👶'}
+              {'past'}
             </Div>
             <Div active={show[1] === '2'} style={{flex: 0.317}}>
-              {'present 🧑'}
+              {'present'}
             </Div>
             <Div active={show[1] === '3'} style={{flex: 0.317}}>
-              {'future 🧓'}
+              {'future'}
             </Div>
           </View>
         </View>
@@ -72,7 +77,7 @@ function NoteScreen({route}) {
               marginTop: 8,
             }}>
             <Div active={show[0] === '1'} style={{flex: 0.049}}>
-              {'✅'}
+              {'0'}
             </Div>
             <Button active={show === '11'} style={{flex: 0.317}}>
               {data[0]}
@@ -96,7 +101,7 @@ function NoteScreen({route}) {
               marginTop: 8,
             }}>
             <Div active={show[0] === '2'} style={{flex: 0.049}}>
-              {'❌'}
+              {'3'}
             </Div>
             <Button active={show === '21'} style={{flex: 0.317}}>
               {data[3]}
@@ -120,7 +125,7 @@ function NoteScreen({route}) {
               marginTop: 8,
             }}>
             <Div active={show[0] === '3'} style={{flex: 0.049}}>
-              {'❓'}
+              {'6'}
             </Div>
             <Button active={show === '31'} style={{flex: 0.317}}>
               {data[6]}
@@ -195,27 +200,55 @@ function Div({children, active = false, style}: DivProps) {
     <View
       style={[
         {
+          flex: 2,
           borderRadius: 8,
-          overflow: 'hidden',
+          // overflow: 'hidden',
+          justifyContent: 'center',
           flexDirection: 'column',
           backgroundColor: active
             ? isDarkTheme
-              ? Colors.gray50
-              : Colors.gray30
+              ? Colors.green60
+              : Colors.green20
             : isDarkTheme
             ? Colors.gray60
             : Colors.gray10,
         },
         style,
       ]}>
-      <Text
+      <View
         style={{
           flex: 1,
-          textAlign: 'center',
-          color: isDarkTheme ? Colors.gray5 : Colors.gray95,
+          flexDirection: 'row',
+          width: '100%',
+          alignItems: 'center',
+          justifyContent: 'center',
         }}>
-        {children}
-      </Text>
+        {(['past', 'present', 'future'].includes(children) && (
+          <>
+            <Text
+              style={{
+                textAlign: 'center',
+                fontSize: 16,
+                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
+              }}>
+              {children + ' '}
+            </Text>
+            <Svg width="35" height="35">
+              {children === 'past' ? (
+                <BoyFace />
+              ) : children === 'present' ? (
+                <ManFace />
+              ) : children === 'future' ? (
+                <OldFace />
+              ) : null}
+            </Svg>
+          </>
+        )) || (
+          <Svg width="20" height="20">
+            <VerbForms tense={Number(children)} />
+          </Svg>
+        )}
+      </View>
     </View>
   );
 }
