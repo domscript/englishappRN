@@ -9,6 +9,12 @@ import {Statistics} from '../components/UI/Statistics';
 import {countProgress} from '../utils/smallFunctions';
 import {Intro} from '../components/Intro';
 
+import Svg, {Circle, Line, Path, G, Ellipse} from 'react-native-svg';
+import {BoyFace} from '../components/MyIcons/SVG/BoyFace';
+import {ManFace} from '../components/MyIcons/SVG/ManFace';
+import {OldFace} from '../components/MyIcons/SVG/OldFace';
+import {VerbForms} from '../components/MyIcons/SVG/VerbForms';
+
 function InfoScreen() {
   const {isDarkTheme} = useSelector((state: RootState) => state.theme);
   const newData = '110111'.padEnd(90, '1').padEnd(91, '3').padEnd(100, '2');
@@ -38,15 +44,28 @@ function InfoScreen() {
           The program presents you with simple expressions in images in one of
           three tenses:
         </Text>
-        <Text
-          style={[
-            styles.list,
-            isDarkTheme ? styles.darkTitle : styles.lightTitle,
-          ]}>
-          👶 - past{'\n'}
-          🧑 - present{'\n'}
-          🧓 - future
-        </Text>
+        {['past', 'present', 'future'].map((el, i) => (
+          <View key={i} style={{flexDirection: 'row', marginLeft: '7%'}}>
+            <Svg width="35" height="38" translateX={i || 5}>
+              {el === 'past' ? (
+                <BoyFace />
+              ) : el === 'present' ? (
+                <ManFace />
+              ) : el === 'future' ? (
+                <OldFace />
+              ) : null}
+            </Svg>
+
+            <Text
+              style={[
+                styles.list,
+                isDarkTheme ? styles.darkTitle : styles.lightTitle,
+                {marginLeft: 0},
+              ]}>
+              - {el}
+            </Text>
+          </View>
+        ))}
         <Text
           style={[
             styles.text,
@@ -54,14 +73,29 @@ function InfoScreen() {
           ]}>
           and in one of three forms:
         </Text>
-        <Text
-          style={[
-            styles.list,
-            isDarkTheme ? styles.darkTitle : styles.lightTitle,
-          ]}>
-          ✅ - affirmative (yes){'\n'}❌ - negative (no){'\n'}❓ - interrogative
-          (question){'\n'}
-        </Text>
+        {['affirmative (yes)', 'negative (no)', 'interrogative (question)'].map(
+          (el, i) => (
+            <View
+              key={i}
+              style={{
+                flexDirection: 'row',
+                marginLeft: '8%',
+              }}>
+              <Svg width="25" height="25" translateY={8}>
+                <VerbForms tense={i * 3} />
+              </Svg>
+
+              <Text
+                style={[
+                  styles.list,
+                  isDarkTheme ? styles.darkTitle : styles.lightTitle,
+                  {marginLeft: 0},
+                ]}>
+                - {el}
+              </Text>
+            </View>
+          ),
+        )}
         <Text
           style={[
             styles.text,

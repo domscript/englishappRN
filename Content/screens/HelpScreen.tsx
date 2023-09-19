@@ -11,12 +11,18 @@ import {RootState} from '../redux-store/store';
 import {LinkList} from '../components/LearnMoreLinks';
 import {MyIcon} from '../components/MyIcons/app';
 
+import Svg from 'react-native-svg';
+import {BoyFace} from '../components/MyIcons/SVG/BoyFace';
+import {ManFace} from '../components/MyIcons/SVG/ManFace';
+import {OldFace} from '../components/MyIcons/SVG/OldFace';
+import {VerbForms} from '../components/MyIcons/SVG/VerbForms';
+
 const Title = {
   A: {
     title: 'Lesson 1',
     text: [
-      'In the first lesson, we will learn how to conjugate English verbs in three simple tenses: past 👶, present 🧑, future 🧓.',
-      'In each of the tenses, we will figure out how to build an affirmative ✅, negative ❌ or interrogative ❓ sentence.',
+      'In the first lesson, we will learn how to conjugate English verbs in three simple tenses:',
+      'In each of the tenses, we will figure out how to build sentences:',
     ],
     links: [
       {
@@ -158,16 +164,77 @@ function HelpScreen({route}) {
             {Title[lessonId as keyof typeof Title].title}
           </Text>
           {Title[lessonId as keyof typeof Title].text.map((el, i) => (
-            <Text
-              style={[
-                styles.text,
-                isDarkTheme ? styles.darkThemeColor : styles.lightThemeColor,
-              ]}>
-              {'\t\t\t'}
-              {el}
-            </Text>
+            <>
+              <Text
+                style={[
+                  styles.text,
+                  isDarkTheme ? styles.darkThemeColor : styles.lightThemeColor,
+                ]}>
+                {'\t\t\t'}
+                {el}
+              </Text>
+              {lessonId === lessons[0] &&
+                i === 0 &&
+                ['past', 'present', 'future'].map((el, i) => (
+                  <View
+                    key={i}
+                    style={{flexDirection: 'row', marginLeft: '7%'}}>
+                    <Svg width="35" height="38" translateX={i || 5}>
+                      {el === 'past' ? (
+                        <BoyFace />
+                      ) : el === 'present' ? (
+                        <ManFace />
+                      ) : el === 'future' ? (
+                        <OldFace />
+                      ) : null}
+                    </Svg>
+
+                    <Text
+                      style={[
+                        styles.list,
+                        isDarkTheme
+                          ? styles.darkThemeColor
+                          : styles.lightThemeColor,
+                        {marginLeft: 0},
+                      ]}>
+                      - {el}
+                    </Text>
+                  </View>
+                ))}
+              {lessonId === lessons[0] &&
+                i === 1 &&
+                [
+                  'affirmative (yes)',
+                  'negative (no)',
+                  'interrogative (question)',
+                ].map((el, i) => (
+                  <View
+                    key={i}
+                    style={{
+                      flexDirection: 'row',
+                      marginLeft: '8%',
+                    }}>
+                    {lessonId === lessons[0] && (
+                      <>
+                        <Svg width="25" height="25" translateY={8}>
+                          <VerbForms tense={i * 3} />
+                        </Svg>
+                        <Text
+                          style={[
+                            styles.list,
+                            isDarkTheme
+                              ? styles.darkThemeColor
+                              : styles.lightThemeColor,
+                            {marginLeft: 0},
+                          ]}>
+                          - {el}
+                        </Text>
+                      </>
+                    )}
+                  </View>
+                ))}
+            </>
           ))}
-          {/* </View> */}
           <LinkList
             icon={true}
             links={Title[lessonId as keyof typeof Title].links}
@@ -306,6 +373,12 @@ const styles = StyleSheet.create({
     lineHeight: 28,
     textAlign: 'justify',
     marginBottom: '1%',
+  },
+  list: {
+    fontSize: 18,
+    textAlign: 'justify',
+    lineHeight: 35,
+    marginLeft: '7%',
   },
   darkThemeColor: {
     color: Colors.gray10,
