@@ -4,6 +4,12 @@ import {useSelector} from 'react-redux';
 import Colors from '../../constants/Colors';
 import {RootState} from '../../redux-store/store';
 
+import Svg, {Circle, Line, Path, G, Ellipse} from 'react-native-svg';
+import {BoyFace} from '../MyIcons/SVG/BoyFace';
+import {ManFace} from '../MyIcons/SVG/ManFace';
+import {OldFace} from '../MyIcons/SVG/OldFace';
+import {VerbForms} from '../MyIcons/SVG/VerbForms';
+
 interface ButtonProps {
   children: React.ReactNode;
   onClick: () => void;
@@ -74,16 +80,39 @@ function Div({children, active = false, style}: DivProps) {
         },
         style,
       ]}>
-      <View>
-        <Text
-          style={{
-            flex: 1,
-            textAlign: 'center',
-            fontSize: 16,
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}>
-          {children}
-        </Text>
+      <View
+        style={{
+          flex: 1,
+          flexDirection: 'row',
+          width: '100%',
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}>
+        {(['past', 'present', 'future'].includes(children) && (
+          <>
+            <Text
+              style={{
+                textAlign: 'center',
+                fontSize: 16,
+                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
+              }}>
+              {children + ' '}
+            </Text>
+            <Svg width="35" height="35">
+              {children === 'past' ? (
+                <BoyFace />
+              ) : children === 'present' ? (
+                <ManFace />
+              ) : children === 'future' ? (
+                <OldFace />
+              ) : null}
+            </Svg>
+          </>
+        )) || (
+          <Svg width="20" height="20">
+            <VerbForms tense={Number(children)} />
+          </Svg>
+        )}
       </View>
     </View>
   );
@@ -1723,13 +1752,13 @@ export function SimpleTenseTable() {
               {contraction ? '<>' : '><'}
             </Button>
             <Div active={show[1] === '1'} style={{flex: 0.317}}>
-              {'past 👶'}
+              {'past'}
             </Div>
             <Div active={show[1] === '2'} style={{flex: 0.317}}>
-              {'present 🧑'}
+              {'present'}
             </Div>
             <Div active={show[1] === '3'} style={{flex: 0.317}}>
-              {'future 🧓'}
+              {'future'}
             </Div>
           </View>
         </View>
@@ -1743,7 +1772,7 @@ export function SimpleTenseTable() {
               marginTop: 8,
             }}>
             <Div active={show[0] === '1'} style={{flex: 0.049}}>
-              {'✅'}
+              {'0'}
             </Div>
             <Button
               onClick={() => showExample('11')}
@@ -1775,7 +1804,7 @@ export function SimpleTenseTable() {
               marginTop: 8,
             }}>
             <Div active={show[0] === '2'} style={{flex: 0.049}}>
-              {'❌'}
+              {'3'}
             </Div>
             <Button
               onClick={() => showExample('21')}
@@ -1808,7 +1837,7 @@ export function SimpleTenseTable() {
               marginTop: 8,
             }}>
             <Div active={show[0] === '3'} style={{flex: 0.049}}>
-              {'❓'}
+              {'6'}
             </Div>
             <Button
               onClick={() => showExample('31')}
