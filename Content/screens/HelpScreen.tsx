@@ -177,7 +177,7 @@ function HelpScreen({route}) {
                 i === 0 &&
                 ['past', 'present', 'future'].map((el, i) => (
                   <View
-                    key={i}
+                    key={i + el}
                     style={{flexDirection: 'row', marginLeft: '7%'}}>
                     <Svg width="35" height="38" translateX={i || 5}>
                       {el === 'past' ? (
@@ -209,7 +209,7 @@ function HelpScreen({route}) {
                   'interrogative (question)',
                 ].map((el, i) => (
                   <View
-                    key={i}
+                    key={i + el}
                     style={{
                       flexDirection: 'row',
                       marginLeft: '8%',
