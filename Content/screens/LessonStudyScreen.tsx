@@ -19,6 +19,8 @@ import {setLessonData, ACTIONS} from '../redux-store/lessons';
 import {RootState} from '../redux-store/store';
 import Colors from '../constants/Colors';
 
+import TimeLine from '../components/UI/TimeLine';
+
 const tenseNoteIcons = [
   '👶✅',
   '🧑✅',
@@ -74,8 +76,6 @@ function LessonStudyScreen({route, navigation}) {
   const [[testData0, userAnswer, restoreData], setTestData0] = useState<
     [any, string[], string[][]]
   >([test.testData, [], []]);
-
-  const [timeQ, noteQ] = tenseNoteIcons[tenseNoteIndex];
 
   if (componentState === ComponentStates.UPDATEDATA) {
     setData(getRandomInt(0, 19));
@@ -261,6 +261,11 @@ function LessonStudyScreen({route, navigation}) {
     });
   }, [navigation, progress]);
 
+  const Timeline = useMemo(() => {
+    // This computation will only run when 'tenseNoteIndex' changes.
+    return <TimeLine tense={tenseNoteIndex} />;
+  }, [tenseNoteIndex]);
+
   return (
     <View
       style={[
@@ -276,17 +281,20 @@ function LessonStudyScreen({route, navigation}) {
           }
         }}>
         <View style={styles.question}>
-          <ThreeEmojiText timeQ={timeQ} noteQ={noteQ} />
+          {/* <ThreeEmojiText timeQ={timeQ} noteQ={noteQ} />
         </View>
         <View style={styles.time}>
           <EmojiCircle active={timeQ === '👶'}>👶</EmojiCircle>
           <EmojiCircle active={timeQ === '🧑'}>🧑</EmojiCircle>
-          <EmojiCircle active={timeQ === '🧓'}>🧓</EmojiCircle>
+          <EmojiCircle active={timeQ === '🧓'}>🧓</EmojiCircle> */}
+          {Timeline}
         </View>
         <View
           style={{
             justifyContent: 'center',
-            flex: 0.8,
+            marginTop: 5,
+            flex: 0.75,
+            backgroundColor: '#3332',
             flexDirection: 'row',
           }}>
           {qWord
@@ -636,7 +644,7 @@ const styles = StyleSheet.create({
   },
   question: {
     textAlign: 'left',
-    flex: 0.2,
+    flex: 0.25,
     flexDirection: 'row',
   },
   time: {
