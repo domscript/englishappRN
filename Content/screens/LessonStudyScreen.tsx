@@ -1,14 +1,12 @@
-import {useLayoutEffect, useState, useMemo, useEffect} from 'react';
+import {useLayoutEffect, useState, useMemo} from 'react';
 import {View, Text, StyleSheet, Pressable} from 'react-native';
 import {MyIcon} from '../components/MyIcons/app';
 import {useDispatch, useSelector} from 'react-redux';
 import Tts from 'react-native-tts';
 
 import {WordButton, WordFlex} from '../components/WordsList/WordButton';
-import {ThreeEmojiText} from '../components/UI/ThreeEmojiText';
 import {Statistics} from '../components/UI/Statistics';
 import {LessonButton} from '../components/UI/LessonBottomButton';
-import {EmojiCircle} from '../components/UI/EmojiCircle';
 import {Verb} from '../components/MyIcons/Verbs/index';
 import Image from '../assets/Image';
 
@@ -21,18 +19,6 @@ import Colors from '../constants/Colors';
 
 import TimeLine from '../components/UI/TimeLine';
 
-const tenseNoteIcons = [
-  '👶✅',
-  '🧑✅',
-  '🧓✅',
-  '👶❌',
-  '🧑❌',
-  '🧓❌',
-  '👶❓',
-  '🧑❓',
-  '🧓❓',
-];
-
 const ComponentStates = {
   IDLE: 'idle',
   PRESSED: 'pressed',
@@ -42,8 +28,6 @@ const ComponentStates = {
 
   UPDATEDATA: 'updateData',
 };
-
-type Stages = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8;
 
 function LessonStudyScreen({route, navigation}) {
   const {isDarkTheme, isSound, isEasy} = useSelector((state: RootState) => ({
@@ -60,7 +44,6 @@ function LessonStudyScreen({route, navigation}) {
   const [progress, newData] = useMemo(() => {
     return countProgress(user1.toUpperCase().split(id)[1].slice(0, 100));
   }, [user1, id]);
-  const [stage, setStage] = useState<Stages>(1);
 
   const test =
     lessonData[
@@ -139,7 +122,7 @@ function LessonStudyScreen({route, navigation}) {
       });
     }
   }
-  // if (stage === 8) console.log(124, question, userAnswer, testData0);
+  // console.log(139, question, userAnswer, testData0);
   if (
     question.filter((i: string) => i).length === userAnswer.length &&
     componentState === ComponentStates.IDLE
@@ -217,16 +200,6 @@ function LessonStudyScreen({route, navigation}) {
     });
   }
 
-  useEffect(() => {
-    const timeoutId = setTimeout(() => {
-      setStage(prevStage => {
-        if (stage < 8) return (prevStage + 1) as Stages;
-        return 1 as Stages;
-      });
-    }, 125);
-    return () => clearTimeout(timeoutId);
-  }, [stage]);
-
   useLayoutEffect(() => {
     navigation.setOptions({
       headerRight: () => {
@@ -303,7 +276,7 @@ function LessonStudyScreen({route, navigation}) {
               if (verbsList.includes(el))
                 return (
                   <View key={el} style={styles.verbIcon}>
-                    <Verb positive={tenseNoteIndex} stage={stage} verb={el} />
+                    <Verb positive={tenseNoteIndex} verb={el} />
                   </View>
                 );
               else

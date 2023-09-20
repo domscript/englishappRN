@@ -1,4 +1,4 @@
-import React, {ComponentType} from 'react';
+import React, {ComponentType, useState, useEffect} from 'react';
 
 import Run from './Run';
 import Walk from './Walk';
@@ -35,7 +35,6 @@ export interface VerbProps {
 
 interface VerbMainProps {
   positive: number;
-  stage: Stages;
   verb: string;
 }
 
@@ -67,8 +66,20 @@ const verbComponents: {[key: string]: ComponentType<any>} = {
   buy: Buy,
 };
 
-export const Verb = ({positive, stage, verb}: VerbMainProps) => {
+export const Verb = ({positive, verb}: VerbMainProps) => {
+  const [stage, setStage] = useState<Stages>(1);
+
   const VerbComponent = verbComponents[verb];
+
+  useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      setStage(prevStage => {
+        if (stage < 8) return (prevStage + 1) as Stages;
+        return 1 as Stages;
+      });
+    }, 125);
+    return () => clearTimeout(timeoutId);
+  }, [stage]);
 
   if (!VerbComponent) {
     return null; // Handle unknown verbs if needed

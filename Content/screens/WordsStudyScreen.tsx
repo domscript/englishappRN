@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import {StyleSheet, Text, View, Pressable} from 'react-native';
 import {useDispatch, useSelector} from 'react-redux';
 import Progress from '../components/MyIcons/Progress';
@@ -15,7 +15,7 @@ import {RootState} from '../redux-store/store';
 
 import {verbsList} from '../data/words';
 
-import {Verb, Stages} from '../components/MyIcons/Verbs/index';
+import {Verb} from '../components/MyIcons/Verbs/index';
 import Image from '../assets/Image';
 
 import Tts from 'react-native-tts';
@@ -28,7 +28,6 @@ function WordsStudy({route}) {
     isSound: state.sounds.isSound,
   }));
   const dispatch = useDispatch();
-  const [stage0, setStage] = useState<Stages>(1);
 
   const [isAnswerCorrect, setIsAnswerCorrect] = useState<boolean | null>(null);
   const [pressedButtonIndex, setPressedButtonIndex] = useState<number | null>(
@@ -47,16 +46,6 @@ function WordsStudy({route}) {
       }),
     );
   };
-
-  useEffect(() => {
-    const timeoutId = setTimeout(() => {
-      setStage(prevStage => {
-        if (stage0 < 8) return (prevStage + 1) as Stages;
-        return 1 as Stages;
-      });
-    }, 150);
-    return () => clearTimeout(timeoutId);
-  }, [stage0]);
 
   if (progress === 100) {
     return (
@@ -206,7 +195,7 @@ function WordsStudy({route}) {
           }
         }}>
         {verbsList.includes(newWord) ? (
-          <Verb positive={1} stage={stage0} verb={newWord} />
+          <Verb positive={1} verb={newWord} />
         ) : (
           <>
             <Image src={newWord} resizeMode="contain" />

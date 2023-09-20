@@ -1,6 +1,6 @@
 import {View, Pressable, Text, StyleSheet} from 'react-native';
 import {useSelector} from 'react-redux';
-import {useState, useEffect} from 'react';
+import {useState} from 'react';
 
 import Colors from '../../constants/Colors';
 
@@ -20,12 +20,9 @@ interface WordItemProps {
   id: string;
 }
 
-type Stages = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8;
-
 function WordItem({title, score, text, id}: WordItemProps) {
   const {isDarkTheme} = useSelector((state: RootState) => state.theme);
   const [isPressed, setIsPressed] = useState(false);
-  const [stage, setStage] = useState<Stages>(1);
 
   function pressHandler() {
     if (isPressed) return;
@@ -37,16 +34,6 @@ function WordItem({title, score, text, id}: WordItemProps) {
       setIsPressed(false);
     }, 1000);
   }
-
-  useEffect(() => {
-    const timeoutId = setTimeout(() => {
-      setStage(prevStage => {
-        if (stage < 8) return (prevStage + 1) as Stages;
-        return 1 as Stages;
-      });
-    }, 200);
-    return () => clearTimeout(timeoutId);
-  }, [stage]);
 
   return (
     <View style={styles.container}>
@@ -72,7 +59,7 @@ function WordItem({title, score, text, id}: WordItemProps) {
             <>
               <View style={styles.empty}></View>
               <View style={[styles.lessonTitleV]}>
-                <Verb positive={1} stage={stage} verb={text} />
+                <Verb positive={1} verb={text} />
               </View>
             </>
           ) : (
