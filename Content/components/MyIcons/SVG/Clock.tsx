@@ -1,6 +1,13 @@
+import React, {useEffect, useState} from 'react';
 import {Path, G, Ellipse} from 'react-native-svg';
 
-export const Clock = ({date}: {date: Date}) => {
+export const Clock = () => {
+  const [date, setDate] = useState(new Date());
+
+  setTimeout(() => {
+    setDate(new Date());
+  }, 1000);
+
   return (
     <>
       <Path
