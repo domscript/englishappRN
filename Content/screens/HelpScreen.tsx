@@ -155,7 +155,6 @@ function HelpScreen({route}) {
     return (
       <View key={lessonId} style={[styles.container]}>
         <ScrollView style={{width: '100%'}}>
-          {/* <View style={{}}> */}
           <Text
             style={[
               styles.title,
@@ -166,6 +165,7 @@ function HelpScreen({route}) {
           {Title[lessonId as keyof typeof Title].text.map((el, i) => (
             <>
               <Text
+                key={el}
                 style={[
                   styles.text,
                   isDarkTheme ? styles.darkThemeColor : styles.lightThemeColor,
