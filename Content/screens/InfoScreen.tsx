@@ -144,10 +144,10 @@ function InfoScreen() {
             styles.text,
             isDarkTheme ? styles.darkTitle : styles.lightTitle,
           ]}>
-          The program generates random phrases using words from the dictionary.
-          This continues until you decide you've had enough. Each lesson is
-          effectively infinite. When you feel you've done enough for the day,
-          you can end it.
+          The program generates random phrases using words from the dictionary
+          and conveys them through images. This continues until you decide
+          you've had enough. Each lesson is effectively infinite. When you feel
+          you've done enough for the day, you can end it.
         </Text>
         <Text
           style={[
