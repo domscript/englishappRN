@@ -1,6 +1,12 @@
 import {getRandomInt, shuffleArray} from './smallFunctions';
 import {WordsOneLessonInt} from '../data/words';
 
+interface VerbConjugation {
+  value0: string;
+  value1: string;
+  value2: string;
+  value3: string;
+}
 interface BeInterface {
   i: string[];
   you: string[];
@@ -10,6 +16,19 @@ interface BeInterface {
   they: string[];
   it: string[];
 }
+
+/*
+  BeScheme, aLLscheme
+  👶✅,
+  🧑✅,
+  🧓✅,
+  👶❌,
+  🧑❌,
+  🧓❌,
+  👶❓,
+  🧑❓,
+  🧓❓,
+*/
 
 const BeScheme: BeInterface[] = [
   {
@@ -97,18 +116,7 @@ const BeScheme: BeInterface[] = [
 
 type SubjectPronounsType = 'i' | 'you' | 'he' | 'she' | 'we' | 'they' | 'it';
 
-const aLLscheme = (
-  verbs: {
-    [key: string]: {
-      value0: string;
-      value1: string;
-      value2: string;
-      value3: string;
-    };
-  },
-  subject: SubjectPronounsType,
-  verb: string,
-) => {
+const aLLscheme = (verbs: VerbConjugation, subject: SubjectPronounsType) => {
   const scheme: {
     i: string[];
     you: string[];
@@ -119,85 +127,85 @@ const aLLscheme = (
     it: string[];
   }[] = [
     {
-      i: ['i', verbs[verb].value2],
-      you: ['you', verbs[verb].value2],
-      he: ['he', verbs[verb].value2],
-      she: ['she', verbs[verb].value2],
-      we: ['we', verbs[verb].value2],
-      they: ['they', verbs[verb].value2],
-      it: ['it', verbs[verb].value2],
+      i: ['i', verbs.value2],
+      you: ['you', verbs.value2],
+      he: ['he', verbs.value2],
+      she: ['she', verbs.value2],
+      we: ['we', verbs.value2],
+      they: ['they', verbs.value2],
+      it: ['it', verbs.value2],
     },
     {
-      i: ['i', verbs[verb].value0],
-      you: ['you', verbs[verb].value0],
-      he: ['he', verbs[verb].value1],
-      she: ['she', verbs[verb].value1],
-      we: ['we', verbs[verb].value0],
-      they: ['they', verbs[verb].value0],
-      it: ['it', verbs[verb].value1],
+      i: ['i', verbs.value0],
+      you: ['you', verbs.value0],
+      he: ['he', verbs.value1],
+      she: ['she', verbs.value1],
+      we: ['we', verbs.value0],
+      they: ['they', verbs.value0],
+      it: ['it', verbs.value1],
     },
     {
-      i: ['i', 'will', verbs[verb].value0],
-      you: ['you', 'will', verbs[verb].value0],
-      he: ['he', 'will', verbs[verb].value0],
-      she: ['she', 'will', verbs[verb].value0],
-      we: ['we', 'will', verbs[verb].value0],
-      they: ['they', 'will', verbs[verb].value0],
-      it: ['it', 'will', verbs[verb].value0],
+      i: ['i', 'will', verbs.value0],
+      you: ['you', 'will', verbs.value0],
+      he: ['he', 'will', verbs.value0],
+      she: ['she', 'will', verbs.value0],
+      we: ['we', 'will', verbs.value0],
+      they: ['they', 'will', verbs.value0],
+      it: ['it', 'will', verbs.value0],
     },
     {
-      i: ['i', "didn't", verbs[verb].value0],
-      you: ['you', "didn't", verbs[verb].value0],
-      he: ['he', "didn't", verbs[verb].value0],
-      she: ['she', "didn't", verbs[verb].value0],
-      we: ['we', "didn't", verbs[verb].value0],
-      they: ['they', "didn't", verbs[verb].value0],
-      it: ['it', "didn't", verbs[verb].value0],
+      i: ['i', "didn't", verbs.value0],
+      you: ['you', "didn't", verbs.value0],
+      he: ['he', "didn't", verbs.value0],
+      she: ['she', "didn't", verbs.value0],
+      we: ['we', "didn't", verbs.value0],
+      they: ['they', "didn't", verbs.value0],
+      it: ['it', "didn't", verbs.value0],
     },
     {
-      i: ['i', "don't", verbs[verb].value0],
-      you: ['you', "don't", verbs[verb].value0],
-      he: ['he', "doesn't", verbs[verb].value0],
-      she: ['she', "doesn't", verbs[verb].value0],
-      we: ['we', "don't", verbs[verb].value0],
-      they: ['they', "don't", verbs[verb].value0],
-      it: ['it', "doesn't", verbs[verb].value0],
+      i: ['i', "don't", verbs.value0],
+      you: ['you', "don't", verbs.value0],
+      he: ['he', "doesn't", verbs.value0],
+      she: ['she', "doesn't", verbs.value0],
+      we: ['we', "don't", verbs.value0],
+      they: ['they', "don't", verbs.value0],
+      it: ['it', "doesn't", verbs.value0],
     },
     {
-      i: ['i', "won't", verbs[verb].value0],
-      you: ['you', "won't", verbs[verb].value0],
-      he: ['he', "won't", verbs[verb].value0],
-      she: ['she', "won't", verbs[verb].value0],
-      we: ['we', "won't", verbs[verb].value0],
-      they: ['they', "won't", verbs[verb].value0],
-      it: ['it', "won't", verbs[verb].value0],
+      i: ['i', "won't", verbs.value0],
+      you: ['you', "won't", verbs.value0],
+      he: ['he', "won't", verbs.value0],
+      she: ['she', "won't", verbs.value0],
+      we: ['we', "won't", verbs.value0],
+      they: ['they', "won't", verbs.value0],
+      it: ['it', "won't", verbs.value0],
     },
     {
-      i: ['did', 'i', verbs[verb].value0],
-      you: ['did', 'you', verbs[verb].value0],
-      he: ['did', 'he', verbs[verb].value0],
-      she: ['did', 'she', verbs[verb].value0],
-      we: ['did', 'we', verbs[verb].value0],
-      they: ['did', 'they', verbs[verb].value0],
-      it: ['did', 'it', verbs[verb].value0],
+      i: ['did', 'i', verbs.value0],
+      you: ['did', 'you', verbs.value0],
+      he: ['did', 'he', verbs.value0],
+      she: ['did', 'she', verbs.value0],
+      we: ['did', 'we', verbs.value0],
+      they: ['did', 'they', verbs.value0],
+      it: ['did', 'it', verbs.value0],
     },
     {
-      i: ['do', 'i', verbs[verb].value0],
-      you: ['do', 'you', verbs[verb].value0],
-      he: ['does', 'he', verbs[verb].value0],
-      she: ['does', 'she', verbs[verb].value0],
-      we: ['do', 'we', verbs[verb].value0],
-      they: ['do', 'they', verbs[verb].value0],
-      it: ['does', 'it', verbs[verb].value0],
+      i: ['do', 'i', verbs.value0],
+      you: ['do', 'you', verbs.value0],
+      he: ['does', 'he', verbs.value0],
+      she: ['does', 'she', verbs.value0],
+      we: ['do', 'we', verbs.value0],
+      they: ['do', 'they', verbs.value0],
+      it: ['does', 'it', verbs.value0],
     },
     {
-      i: ['will', 'i', verbs[verb].value0],
-      you: ['will', 'you', verbs[verb].value0],
-      he: ['will', 'he', verbs[verb].value0],
-      she: ['will', 'she', verbs[verb].value0],
-      we: ['will', 'we', verbs[verb].value0],
-      they: ['will', 'they', verbs[verb].value0],
-      it: ['will', 'it', verbs[verb].value0],
+      i: ['will', 'i', verbs.value0],
+      you: ['will', 'you', verbs.value0],
+      he: ['will', 'he', verbs.value0],
+      she: ['will', 'she', verbs.value0],
+      we: ['will', 'we', verbs.value0],
+      they: ['will', 'they', verbs.value0],
+      it: ['will', 'it', verbs.value0],
     },
   ];
 
@@ -248,7 +256,7 @@ export const SimpleTenseScheme = (words: WordsOneLessonInt) => {
 
   const tenseNoteIndex = Math.floor(Math.random() * 9);
 
-  const note = aLLscheme(verbs, subject, verb);
+  const note = aLLscheme(verbs[verb], subject);
 
   const correctVerb = note[tenseNoteIndex].map(el =>
     el === '' ? subject : el,
@@ -399,7 +407,7 @@ export const SecondLesson = (words: WordsOneLessonInt) => {
 
   const tenseNoteIndex = Math.floor(Math.random() * 9);
 
-  const note = aLLscheme(verbs, subject, verb);
+  const note = aLLscheme(verbs[verb], subject);
 
   const correctVerb = note[tenseNoteIndex].map(el =>
     el === '' ? subject : el,
@@ -821,25 +829,6 @@ export const FourthLesson = (
     'it',
   ];
 
-  // type ObjectPronounsType =
-  //   | 'me'
-  //   | 'you '
-  //   | 'him'
-  //   | 'her'
-  //   | 'us'
-  //   | 'them'
-  //   | 'it ';
-
-  // const ObjectPronouns: ObjectPronounsType[] = [
-  //   'me',
-  //   'you ',
-  //   'him',
-  //   'her',
-  //   'us',
-  //   'them',
-  //   'it ',
-  // ];
-
   const PossessiveAdjectives: PossessiveAdjectivesType[] = [
     'my',
     'your',
@@ -924,7 +913,7 @@ export const FourthLesson = (
   let tenseNoteIndex = 0;
   if (tense) tenseNoteIndex = tense[Math.floor(Math.random() * tense.length)];
 
-  const note = aLLscheme(verbs, subject, verb);
+  const note = aLLscheme(verbs[verb], subject);
 
   const correctVerb = note[tenseNoteIndex].map(el =>
     el === '' ? subject : el,
