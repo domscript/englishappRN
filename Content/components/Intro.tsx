@@ -22,6 +22,21 @@ export function Intro({onPress}: IntroProps) {
   const [isClicked, setIsClicked] = useState(false);
   const {height, width} = useWindowDimensions();
 
+  // TODO . need to check
+  // Initialize TTS and speak 'hello' on component mount
+  useEffect(() => {
+    Tts.getInitStatus().then(
+      () => {
+        Tts.speak('hello');
+      },
+      err => {
+        if (err.code === 'no_engine') {
+          Tts.requestInstallEngine();
+        }
+      },
+    );
+  }, []);
+
   function tellI() {
     if (isClicked) return;
     setIsClicked(true);
