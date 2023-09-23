@@ -78,7 +78,7 @@ export const Verb = React.memo(({positive, verb}: VerbMainProps) => {
         if (stage < 8) return (prevStage + 1) as Stages;
         return 1 as Stages;
       });
-    }, 1250);
+    }, 125);
     return () => clearTimeout(timeoutId);
   }, [stage]);
 
