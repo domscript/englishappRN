@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {StyleSheet, Text, View, Pressable} from 'react-native';
+import {StyleSheet, Text, View, Pressable, Modal} from 'react-native';
 import {useDispatch, useSelector} from 'react-redux';
 import Progress from '../components/MyIcons/Progress';
 import {
@@ -16,6 +16,8 @@ import {RootState} from '../redux-store/store';
 import {verbsList} from '../data/words';
 
 import {Verb} from '../components/MyIcons/Verbs/index';
+import {VerbForms} from '../components/MyIcons/SVG/VerbForms';
+import {Svg} from 'react-native-svg';
 import Image from '../assets/Image';
 
 import Tts from 'react-native-tts';
@@ -27,6 +29,7 @@ function WordsStudy({route}) {
     isDarkTheme: state.theme.isDarkTheme,
     isSound: state.sounds.isSound,
   }));
+  const [isModalVisible, setIsModalVisible] = useState(false);
   const dispatch = useDispatch();
 
   const [isAnswerCorrect, setIsAnswerCorrect] = useState<boolean | null>(null);
@@ -39,7 +42,17 @@ function WordsStudy({route}) {
     (state: RootState) => state.words[id],
   );
 
+  const hideModal = () => {
+    setIsModalVisible(false);
+  };
+
   const handlePressDelete = () => {
+    setIsModalVisible(true);
+  };
+
+  const deleteProgress = () => {
+    setIsModalVisible(false);
+
     dispatch(
       clearWordsProgress({
         lessonId: id,
@@ -83,6 +96,72 @@ function WordsStudy({route}) {
             }
           />
         </Pressable>
+        <Modal
+          animationType="fade" // You can customize the animation type as needed
+          transparent={true} // Make the modal background transparent or not
+          visible={isModalVisible} // Show/hide the modal based on the state
+          onRequestClose={hideModal} // Handle modal close event (Android back button)
+        >
+          <View
+            style={[
+              styles.modalContainer,
+              isDarkTheme
+                ? styles.darkBackgroundColor
+                : styles.lightBackgroundColor,
+            ]}>
+            <View
+              style={{
+                flex: 0.5,
+                justifyContent: 'flex-end',
+              }}>
+              <Text
+                style={[
+                  styles.deleteText,
+                  isDarkTheme ? styles.darkThemeColor : styles.lightThemeColor,
+                ]}>
+                Delete progress?
+              </Text>
+            </View>
+
+            <View
+              style={{
+                width: '90%',
+                flex: 0.5,
+              }}>
+              <Image src="delete" resizeMode="contain" />
+            </View>
+
+            <View
+              style={{
+                width: '90%',
+                flexDirection: 'row',
+                marginTop: 10,
+                justifyContent: 'space-evenly',
+                flex: 0.5,
+              }}>
+              <Pressable
+                onPress={hideModal}
+                style={[
+                  styles.refreshButton,
+                  {width: 70, height: 50, alignItems: 'center'},
+                ]}>
+                <Svg width="100%" height="100%" viewBox="0 0 20 20">
+                  <VerbForms tense={3} />
+                </Svg>
+              </Pressable>
+              <Pressable
+                onPress={deleteProgress}
+                style={[
+                  styles.refreshButton,
+                  {width: 70, height: 50, alignItems: 'center'},
+                ]}>
+                <Svg width="100%" height="100%" viewBox="0 0 20 20">
+                  <VerbForms tense={1} />
+                </Svg>
+              </Pressable>
+            </View>
+          </View>
+        </Modal>
       </View>
     );
   }
@@ -312,4 +391,14 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   lineFill: {backgroundColor: Colors.amber50},
+  deleteText: {
+    fontSize: 40,
+    textAlign: 'center',
+    fontWeight: '100',
+  },
+  modalContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
 });

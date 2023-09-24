@@ -2011,6 +2011,9 @@ const NewImage = ({
     /////////////////
     /////////////////
     /////////////////
+    case 'delete':
+      url = require('./delete.webp');
+      break;
     default:
       console.log('default');
       return null;
