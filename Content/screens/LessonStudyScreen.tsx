@@ -279,6 +279,7 @@ function LessonStudyScreen({route, navigation}) {
                     <Verb positive={tenseNoteIndex} verb={el} />
                   </View>
                 );
+              // else return null;
               else
                 return (
                   <View
