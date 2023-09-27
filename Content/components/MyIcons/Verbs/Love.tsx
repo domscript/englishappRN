@@ -1,33 +1,15 @@
-import Svg, {
-  Circle,
-  Ellipse,
-  G,
-  Text,
-  TSpan,
-  TextPath,
-  Path,
-  Polygon,
-  Polyline,
-  Line,
-  Rect,
-  Use,
-  Image,
-  Symbol,
-  Defs,
-  LinearGradient,
-  RadialGradient,
-  Stop,
-  ClipPath,
-  Pattern,
-  Mask,
-} from 'react-native-svg';
-
+import Svg, {Circle, Path} from 'react-native-svg';
 import React from 'react';
 import {View, StyleSheet} from 'react-native';
+
 import Colors from '../../../constants/Colors';
+
 import {VerbProps} from './index';
 
-export const Love = ({positive, stage}: VerbProps) => {
+export const Love = ({positive, frame}: VerbProps) => {
+  const stages = 8;
+  const stage = frame % stages;
+
   return (
     <View
       style={[
@@ -45,22 +27,20 @@ export const Love = ({positive, stage}: VerbProps) => {
             ? Colors.amber50
             : Colors.red50
         }>
-        <G opacity="0.5">
-          <Circle id="background" cx="300" cy="300" r="300" />
-        </G>
-        {stage > 5 && (
+        <Circle id="background" opacity="0.5" cx="300" cy="300" r="300" />
+        {stage > 4 && (
           <Path
             d="M404 303C421 250 364 210 298 272C288 232 246 190 217 234C182 289 246 306 289 401C334 337 384 363 404 303Z"
             fill="#FFA9A9"
           />
         )}
-        {stage > 3 && (
+        {stage > 2 && (
           <Path
             d="M501 250C535 146 422 64 289 188C270 109 185 24 128 113C57 223 184 258 271 448C360 319 461 371 501 250Z"
             fill="#FFA9A9"
           />
         )}
-        {stage < 2 && (
+        {stage < 1 && (
           <Path
             d="M572 246C621 99 461 -15 275 159C248 47 130 -71 49 53C-51 207 129 256 250 523C375 342 516 415 572 246Z"
             fill="#FFA9A9"

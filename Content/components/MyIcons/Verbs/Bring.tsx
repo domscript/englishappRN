@@ -1,34 +1,15 @@
-import Svg, {
-  Circle,
-  Ellipse,
-  G,
-  Text,
-  TSpan,
-  TextPath,
-  Path,
-  Polygon,
-  Polyline,
-  Line,
-  Rect,
-  Use,
-  Image,
-  Symbol,
-  Defs,
-  LinearGradient,
-  RadialGradient,
-  Stop,
-  ClipPath,
-  Pattern,
-  Mask,
-} from 'react-native-svg';
-
+import Svg, {Circle, G, Path} from 'react-native-svg';
 import React from 'react';
 import {View, StyleSheet} from 'react-native';
+
 import Colors from '../../../constants/Colors';
 
 import {VerbProps} from './index';
 
-export const Bring = ({positive, stage}: VerbProps) => {
+export const Bring = ({positive, frame}: VerbProps) => {
+  const stages = 8;
+  const stage = frame % stages;
+
   return (
     <View
       style={[
@@ -46,9 +27,7 @@ export const Bring = ({positive, stage}: VerbProps) => {
             ? Colors.amber50
             : Colors.red50
         }>
-        <G opacity="0.5">
-          <Circle id="background" cx="300" cy="300" r="300" />
-        </G>
+        <Circle id="background" opacity="0.5" cx="300" cy="300" r="300" />
         {/* {stage === 8 && (
             <G id="bring-8">
               <Path
@@ -104,7 +83,7 @@ export const Bring = ({positive, stage}: VerbProps) => {
             />
           </G>
         )} */}
-        {stage >= 6 && (
+        {stage >= 5 && (
           <G id="bring-6">
             <Path
               id="body_6"
@@ -133,7 +112,7 @@ export const Bring = ({positive, stage}: VerbProps) => {
             />
           </G>
         )}
-        {stage === 5 && (
+        {stage === 4 && (
           <G id="bring-5">
             <Path
               id="body_5"
@@ -162,7 +141,7 @@ export const Bring = ({positive, stage}: VerbProps) => {
             />
           </G>
         )}
-        {stage === 4 && (
+        {stage === 3 && (
           <G id="bring-4">
             <Path
               id="body_4"
@@ -191,7 +170,7 @@ export const Bring = ({positive, stage}: VerbProps) => {
             />
           </G>
         )}
-        {stage === 3 && (
+        {stage === 2 && (
           <G id="bring-3">
             <Path
               id="body_3"
@@ -220,7 +199,7 @@ export const Bring = ({positive, stage}: VerbProps) => {
             />
           </G>
         )}
-        {stage === 2 && (
+        {stage === 1 && (
           <G id="bring-2">
             <Path
               id="body-2"
@@ -249,7 +228,7 @@ export const Bring = ({positive, stage}: VerbProps) => {
             />
           </G>
         )}
-        {stage === 1 && (
+        {stage === 0 && (
           <G id="bring-1">
             <Path
               id="body_1"

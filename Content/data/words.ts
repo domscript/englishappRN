@@ -273,7 +273,15 @@ const verbsA = {
     pronoun: false,
     qw: ['where', 'why'],
   },
-
+  fall: {
+    value0: 'fall',
+    value1: 'falls',
+    value2: 'fell',
+    value3: 'fallen',
+    ving: 'falling',
+    pronoun: false,
+    qw: ['where', 'why'],
+  },
   read: {
     value0: 'read',
     value1: 'reads',
@@ -417,7 +425,14 @@ const verbsA = {
   // find: { value0: "find", value1: "finds", value2: "found", value3: "found",   // pronoun: true, },
   // show: { value0: "show", value1: "shows", value2: "showed", value3: "shown" ,   pronoun: true,},
   // set: { value0: "set", value1: "sets", value2: "set", value3: "set" },
-  // grow: { value0: "grow", value1: "grows", value2: "grew", value3: "grown" },
+  grow: {
+    value0: 'grow',
+    value1: 'grows',
+    value2: 'grew',
+    value3: 'grown',
+    pronoun: false,
+    qw: ['why'],
+  },
   // hold: { value0: "hold", value1: "holds", value2: "held", value3: "held" },
   forget: {
     value0: 'forget',
@@ -439,12 +454,14 @@ const verbsA = {
   //   value2: "finished",
   //   value3: "finished",
   // },
-  // travel: {
-  //   value0: "travel",
-  //   value1: "travels",
-  //   value2: "traveled",
-  //   value3: "traveled",
-  // },
+  travel: {
+    value0: 'travel',
+    value1: 'travels',
+    value2: 'traveled',
+    value3: 'traveled',
+    pronoun: false,
+    qw: ['where', 'why', 'how', 'when'],
+  },
   bring: {
     value0: 'bring',
     value1: 'brings',
@@ -516,10 +533,11 @@ export const irregularVerbs = [
   'bring',
   'lose',
   'buy',
+  'fall',
+  'grow',
 
   'write',
   'speak',
-  'grow',
   'fly',
   'come',
   'hear',

@@ -21,14 +21,17 @@ import Svg, {
   Pattern,
   Mask,
 } from 'react-native-svg';
-
 import React from 'react';
 import {View, StyleSheet} from 'react-native';
+
 import Colors from '../../../constants/Colors';
 
 import {VerbProps} from './index';
 
-export const Empty = ({positive, stage}: VerbProps) => {
+export const Empty = ({positive, frame}: VerbProps) => {
+  const stages = 8;
+  const stage = frame % stages;
+
   return (
     <View
       style={[
@@ -46,9 +49,7 @@ export const Empty = ({positive, stage}: VerbProps) => {
             ? Colors.amber50
             : Colors.red50
         }>
-        <G opacity="0.5">
-          <Circle id="background" cx="300" cy="300" r="300" />
-        </G>
+        <Circle id="background" opacity="0.5" cx="300" cy="300" r="300" />
         {stage === 8 && <Path id="walk-8" d="" fill="black" />}
         {stage === 7 && <Path id="walk-7" d="" fill="black" />}
         {stage === 6 && <Path id="walk-6" d="" fill="black" />}

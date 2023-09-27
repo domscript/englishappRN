@@ -1,26 +1,4 @@
-import Svg, {
-  Circle,
-  Ellipse,
-  G,
-  Text,
-  TSpan,
-  TextPath,
-  Path,
-  Polygon,
-  Polyline,
-  Line,
-  Rect,
-  Use,
-  Image,
-  Symbol,
-  Defs,
-  LinearGradient,
-  RadialGradient,
-  Stop,
-  ClipPath,
-  Pattern,
-  Mask,
-} from 'react-native-svg';
+import Svg, {Circle, G, Path} from 'react-native-svg';
 
 import React from 'react';
 import {View, StyleSheet} from 'react-native';
@@ -28,7 +6,10 @@ import Colors from '../../../constants/Colors';
 
 import {VerbProps} from './index';
 
-export const Eat = ({positive, stage}: VerbProps) => {
+export const Eat = ({positive, frame}: VerbProps) => {
+  const stages = 8;
+  const stage = frame % stages;
+
   return (
     <View
       style={[
@@ -46,10 +27,8 @@ export const Eat = ({positive, stage}: VerbProps) => {
             ? Colors.amber50
             : Colors.red50
         }>
-        <G opacity="0.5">
-          <Circle id="background" cx="300" cy="300" r="300" />
-        </G>
-        {stage === 8 && (
+        <Circle id="background" opacity="0.5" cx="300" cy="300" r="300" />
+        {stage === 7 && (
           <>
             <Path
               id="Rectangle 8"
@@ -68,7 +47,7 @@ export const Eat = ({positive, stage}: VerbProps) => {
             />
           </>
         )}
-        {stage === 7 && (
+        {stage === 6 && (
           <>
             <Path
               id="Rectangle 7"
@@ -87,7 +66,7 @@ export const Eat = ({positive, stage}: VerbProps) => {
             />
           </>
         )}
-        {stage === 6 && (
+        {stage === 5 && (
           <>
             <Path
               id="Rectangle 6"
@@ -107,7 +86,7 @@ export const Eat = ({positive, stage}: VerbProps) => {
           </>
         )}
 
-        {stage === 5 && (
+        {stage === 4 && (
           <>
             <Path
               id="Rectangle 5"
@@ -126,7 +105,7 @@ export const Eat = ({positive, stage}: VerbProps) => {
             />
           </>
         )}
-        {stage === 4 && (
+        {stage === 3 && (
           <>
             <Path
               id="Rectangle 4"
@@ -145,7 +124,7 @@ export const Eat = ({positive, stage}: VerbProps) => {
             />
           </>
         )}
-        {stage === 3 && (
+        {stage === 2 && (
           <>
             <Path
               id="Rectangle 3"
@@ -164,7 +143,7 @@ export const Eat = ({positive, stage}: VerbProps) => {
             />
           </>
         )}
-        {stage === 2 && (
+        {stage === 1 && (
           <>
             <Path
               id="Rectangle 2"
@@ -183,7 +162,7 @@ export const Eat = ({positive, stage}: VerbProps) => {
             />
           </>
         )}
-        {stage === 1 && (
+        {stage === 0 && (
           <>
             <Path
               id="Rectangle 1"

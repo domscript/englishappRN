@@ -25,11 +25,12 @@ import {Help} from './Help';
 import {Pay} from './Pay';
 import {Lose} from './Lose';
 import {Buy} from './Buy';
-
-export type Stages = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8;
+import {Fall} from './Fall';
+import {Grow} from './Grow';
+import {Travel} from './Travel';
 
 export interface VerbProps {
-  stage: Stages;
+  frame: number;
   positive: number;
 }
 
@@ -64,27 +65,29 @@ const verbComponents: {[key: string]: ComponentType<any>} = {
   pay: Pay,
   lose: Lose,
   buy: Buy,
+  fall: Fall,
+  grow: Grow,
+  travel: Travel,
 };
 
 export const Verb = React.memo(({positive, verb}: VerbMainProps) => {
-  const [stage, setStage] = useState<Stages>(1);
-  // const [stage, setStage] = useState(false);
+  const [frame, setFrame] = useState(0);
 
   const VerbComponent = verbComponents[verb];
 
   useEffect(() => {
     const timeoutId = setTimeout(() => {
-      setStage(prevStage => {
-        if (stage < 8) return (prevStage + 1) as Stages;
-        return 1 as Stages;
+      setFrame(prevFrame => {
+        if (prevFrame > 100_000_000) return 1;
+        return prevFrame + 1;
       });
     }, 125);
     return () => clearTimeout(timeoutId);
-  }, [stage]);
+  }, [frame]);
 
   if (!VerbComponent) {
     return null; // Handle unknown verbs if needed
   }
 
-  return <VerbComponent positive={positive} stage={stage} />;
+  return <VerbComponent positive={positive} frame={frame} />;
 });
