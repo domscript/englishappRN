@@ -28,6 +28,7 @@ import {Buy} from './Buy';
 import {Fall} from './Fall';
 import {Grow} from './Grow';
 import {Travel} from './Travel';
+import {Come} from './Come';
 
 export interface VerbProps {
   frame: number;
@@ -68,6 +69,7 @@ const verbComponents: {[key: string]: ComponentType<any>} = {
   fall: Fall,
   grow: Grow,
   travel: Travel,
+  come: Come,
 };
 
 export const Verb = React.memo(({positive, verb}: VerbMainProps) => {

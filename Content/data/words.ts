@@ -47,15 +47,14 @@ const verbsA = {
     pronoun: true,
     qw: ['what', 'why', 'how'],
   },
-  // come: {
-  //   value0: "come",
-  //   value1: "comes",
-  //   value2: "came",
-  //   value3: "come",
-  //   ving: "coming",
-  // qw: ['why', 'how', 'when']
-
-  // },
+  come: {
+    value0: 'come',
+    value1: 'comes',
+    value2: 'came',
+    value3: 'come',
+    ving: 'coming',
+    qw: ['why', 'how', 'when'],
+  },
   // go: {
   //   value0: "go",
   //   value1: "goes",
@@ -535,11 +534,11 @@ export const irregularVerbs = [
   'buy',
   'fall',
   'grow',
+  'come',
 
   'write',
   'speak',
   'fly',
-  'come',
   'hear',
   'tell',
   'understand',
