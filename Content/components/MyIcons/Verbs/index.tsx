@@ -29,6 +29,12 @@ import {Fall} from './Fall';
 import {Grow} from './Grow';
 import {Travel} from './Travel';
 import {Come} from './Come';
+import {Break} from './Break';
+import {Hear} from './Hear';
+import {Speak} from './Speak';
+import {Tell} from './Tell';
+import {Say} from './Say';
+import {Turn} from './Turn';
 
 export interface VerbProps {
   frame: number;
@@ -70,6 +76,12 @@ const verbComponents: {[key: string]: ComponentType<any>} = {
   grow: Grow,
   travel: Travel,
   come: Come,
+  break: Break,
+  hear: Hear,
+  speak: Speak,
+  tell: Tell,
+  say: Say,
+  turn: Turn,
 };
 
 export const Verb = React.memo(({positive, verb}: VerbMainProps) => {
