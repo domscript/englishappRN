@@ -59,7 +59,6 @@ export const Empty = ({positive, frame}: VerbProps) => {
         <Circle id="background" opacity="0.5" cx="300" cy="300" r="300" />
         <Path d={paths[stage]} fill="black" />
 
-        {stage === 8 && <Path id="8" d="" fill="black" />}
         {stage === 7 && <Path id="7" d="" fill="black" />}
         {stage === 6 && <Path id="6" d="" fill="black" />}
         {stage === 5 && <Path id="5" d="" fill="black" />}
@@ -67,6 +66,7 @@ export const Empty = ({positive, frame}: VerbProps) => {
         {stage === 3 && <Path id="3" d="" fill="black" />}
         {stage === 2 && <Path id="2" d="" fill="black" />}
         {stage === 1 && <Path id="1" d="" fill="black" />}
+        {stage === 0 && <Path id="1" d="" fill="black" />}
       </Svg>
     </View>
   );
