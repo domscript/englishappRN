@@ -28,9 +28,16 @@ import Colors from '../../../constants/Colors';
 
 import {VerbProps} from './index';
 
+const paths = [''];
+
+paths[1] = paths[0];
+
 export const Empty = ({positive, frame}: VerbProps) => {
-  const stages = 8;
-  const stage = frame % stages;
+  // const stages = 8;
+  // const stage = frame % stages;
+  const stage = frame % paths.length;
+
+  const some_extra_color = Colors.red40;
 
   return (
     <View
@@ -50,14 +57,16 @@ export const Empty = ({positive, frame}: VerbProps) => {
             : Colors.red50
         }>
         <Circle id="background" opacity="0.5" cx="300" cy="300" r="300" />
-        {stage === 8 && <Path id="walk-8" d="" fill="black" />}
-        {stage === 7 && <Path id="walk-7" d="" fill="black" />}
-        {stage === 6 && <Path id="walk-6" d="" fill="black" />}
-        {stage === 5 && <Path id="walk-5" d="" fill="black" />}
-        {stage === 4 && <Path id="walk-4" d="" fill="black" />}
-        {stage === 3 && <Path id="walk-3" d="" fill="black" />}
-        {stage === 2 && <Path id="walk-2" d="" fill="black" />}
-        {stage === 1 && <Path id="walk-1" d="" fill="black" />}
+        <Path d={paths[stage]} fill="black" />
+
+        {stage === 8 && <Path id="8" d="" fill="black" />}
+        {stage === 7 && <Path id="7" d="" fill="black" />}
+        {stage === 6 && <Path id="6" d="" fill="black" />}
+        {stage === 5 && <Path id="5" d="" fill="black" />}
+        {stage === 4 && <Path id="4" d="" fill="black" />}
+        {stage === 3 && <Path id="3" d="" fill="black" />}
+        {stage === 2 && <Path id="2" d="" fill="black" />}
+        {stage === 1 && <Path id="1" d="" fill="black" />}
       </Svg>
     </View>
   );
