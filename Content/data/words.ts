@@ -223,14 +223,15 @@ const verbsA = {
   //   value3: "put",
   //   ving: "putting",
   // },
-  // write: {
-  //   value0: "write",
-  //   value1: "writes",
-  //   value2: "wrote",
-  //   value3: "written",
-  //   ving: "writing",
-  // pronoun: true,
-  // },
+  write: {
+    value0: 'write',
+    value1: 'writes',
+    value2: 'wrote',
+    value3: 'written',
+    ving: 'writing',
+    pronoun: true,
+    qw: ['what', 'why', 'when'],
+  },
   stand: {
     value0: 'stand',
     value1: 'stands',
@@ -440,7 +441,14 @@ const verbsA = {
     pronoun: true,
     qw: ['what', 'why', 'when'],
   },
-  // meet: { value0: "meet", value1: "meets", value2: "met", value3: "met",     pronoun: true, },
+  meet: {
+    value0: 'meet',
+    value1: 'meets',
+    value2: 'met',
+    value3: 'met',
+    pronoun: true,
+    qw: ['how', 'when'],
+  },
   // make: { value0: "make", value1: "makes", value2: "made", value3: "made" },
   // get: { value0: "get", value1: "gets", value2: "got", value3: "got" },
   // find: { value0: "find", value1: "finds", value2: "found", value3: "found",   // pronoun: true, },
@@ -491,12 +499,14 @@ const verbsA = {
     pronoun: false,
     qw: ['when', 'what', 'why'],
   },
-  // begin: {
-  //   value0: "begin",
-  //   value1: "begins",
-  //   value2: "began",
-  //   value3: "begun",
-  // },
+  begin: {
+    value0: 'begin',
+    value1: 'begins',
+    value2: 'began',
+    value3: 'begun',
+    pronoun: false,
+    qw: ['where', 'how', 'when'],
+  },
 
   // impress: {
   //   value0: "impress",
@@ -562,8 +572,10 @@ export const irregularVerbs = [
   'speak',
   'tell',
   'say',
-
+  'meet',
   'write',
+  'begin',
+
   'fly',
   'understand',
   'take',
@@ -571,14 +583,12 @@ export const irregularVerbs = [
   'make',
   'see',
   'find',
-  'meet',
 
   'go',
   'know',
   'feel',
   'get',
   'leave',
-  'begin',
 ];
 
 const verbs1Lesson1: {[key: string]: string} = {};
