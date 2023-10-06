@@ -3,8 +3,6 @@
 // For lessons 4 choices min in each verb
 
 // TODO .
-// give;
-
 // love?, hate, need, prefer, want, realise, suppose, mean, believe, remember, belong, contain, consist, seem.
 
 // pronoun: he, she, it, they
@@ -471,12 +469,14 @@ const verbsA = {
     pronoun: true,
     qw: ['what', 'why'],
   },
-  // start: {
-  //   value0: "start",
-  //   value1: "starts",
-  //   value2: "started",
-  //   value3: "started",
-  // },
+  start: {
+    value0: 'start',
+    value1: 'starts',
+    value2: 'started',
+    value3: 'started',
+    pronoun: false,
+    qw: ['what', 'why', 'how', 'when'],
+  },
   // finish: {
   //   value0: "finish",
   //   value1: "finishes",

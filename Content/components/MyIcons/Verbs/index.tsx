@@ -38,6 +38,7 @@ import {Turn} from './Turn';
 import {Meet} from './Meet';
 import {Begin} from './Begin';
 import {Write} from './Write';
+import {Start} from './Start';
 
 export interface VerbProps {
   frame: number;
@@ -88,6 +89,7 @@ const verbComponents: {[key: string]: ComponentType<any>} = {
   meet: Meet,
   begin: Begin,
   write: Write,
+  start: Start,
 };
 
 export const Verb = React.memo(({positive, verb}: VerbMainProps) => {
@@ -101,7 +103,7 @@ export const Verb = React.memo(({positive, verb}: VerbMainProps) => {
         if (prevFrame > 100_000_000) return 1;
         return prevFrame + 1;
       });
-    }, 425);
+    }, 125);
     return () => clearTimeout(timeoutId);
   }, [frame]);
 

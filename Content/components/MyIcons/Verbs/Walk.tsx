@@ -22,7 +22,7 @@ import Svg, {
   Mask,
 } from 'react-native-svg';
 
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import {View, StyleSheet} from 'react-native';
 import Colors from '../../../constants/Colors';
 import {VerbProps} from './index';
