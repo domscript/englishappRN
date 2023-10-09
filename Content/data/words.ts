@@ -377,13 +377,14 @@ const verbsA = {
     qw: ['what', 'why', 'when'],
   },
   /// without '-ing'
-  // understand: {
-  //   value0: "understand",
-  //   value1: "understands",
-  //   value2: "understood",
-  //   value3: "understood",
-  // pronoun: true,
-  // },
+  understand: {
+    value0: 'understand',
+    value1: 'understands',
+    value2: 'understood',
+    value3: 'understood',
+    pronoun: true,
+    qw: ['how', 'what', 'why', 'when'],
+  },
   // know: { value0: "know", value1: "knows", value2: "knew", value3: "known",  pronoun: true,},
 
   /// TODO: -ing
