@@ -293,13 +293,15 @@ const verbsA = {
     pronoun: false,
     qw: ['what', 'why'],
   },
-  // send: {
-  //   value0: "send",
-  //   value1: "sends",
-  //   value2: "sent",
-  //   value3: "sent",
-  //   ving: "sending",
-  // },
+  send: {
+    value0: 'send',
+    value1: 'sends',
+    value2: 'sent',
+    value3: 'sent',
+    ving: 'sending',
+    pronoun: false,
+    qw: ['how', 'what', 'when'],
+  },
   // talk: {
   //   value0: "talk",
   //   value1: "",
@@ -385,13 +387,14 @@ const verbsA = {
   // know: { value0: "know", value1: "knows", value2: "knew", value3: "known",  pronoun: true,},
 
   /// TODO: -ing
-  // see: {
-  //   value0: "see",
-  //   value1: "sees",
-  //   value2: "saw",
-  //   value3: "seen",
-  // pronoun: true,
-  // },
+  see: {
+    value0: 'see',
+    value1: 'sees',
+    value2: 'saw',
+    value3: 'seen',
+    pronoun: true,
+    qw: ['how', 'where', 'what', 'why', 'when'],
+  },
   // watch: {
   //   value0: "watch",
   //   value1: "",
@@ -575,13 +578,14 @@ export const irregularVerbs = [
   'meet',
   'write',
   'begin',
+  'see',
+  'send',
 
   'fly',
   'understand',
   'take',
 
   'make',
-  'see',
   'find',
 
   'go',
