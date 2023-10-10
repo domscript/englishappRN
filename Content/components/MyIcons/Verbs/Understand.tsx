@@ -7,7 +7,7 @@ import Colors from '../../../constants/Colors';
 import {VerbProps} from './index';
 
 export const Understand = ({positive, frame}: VerbProps) => {
-  const stages = 12;
+  const stages = 14;
   const stage = frame % stages;
 
   return (
@@ -34,9 +34,11 @@ export const Understand = ({positive, frame}: VerbProps) => {
           fill="black"
         />
 
-        {[9, 10, 11].includes(stage) && (
+        {[9, 10, 11, 12, 13].includes(stage) && (
           <G id="bulb">
-            <G id="lightbulb-on" translateX={stage === 10 ? -3 : 0}>
+            <G
+              id="lightbulb-on"
+              translateX={stage === 10 || stage === 12 ? -3 : 0}>
               <Path
                 d="M291.836 13.8722C292.195 13.2941 292.961 13.091 293.555 13.4503L306.055 20.9503C306.633 21.3097 306.836 22.091 306.477 22.6691C306.117 23.2472 305.352 23.4503 304.758 23.091L292.258 15.591C291.68 15.2316 291.477 14.4503 291.836 13.8722Z"
                 fill="#FFF38A"
@@ -50,7 +52,9 @@ export const Understand = ({positive, frame}: VerbProps) => {
                 fill="#FFF38A"
               />
             </G>
-            <G id="lightbulb-on_2" translateX={stage === 10 ? 3 : 0}>
+            <G
+              id="lightbulb-on_2"
+              translateX={stage === 10 || stage === 12 ? 3 : 0}>
               <Path
                 d="M370.429 13.8722C370.069 13.2941 369.304 13.091 368.71 13.4503L356.21 20.9503C355.632 21.3097 355.429 22.091 355.788 22.6691C356.148 23.2472 356.913 23.4503 357.507 23.091L370.007 15.591C370.585 15.2316 370.788 14.4503 370.429 13.8722Z"
                 fill="#FFF38A"
@@ -67,7 +71,7 @@ export const Understand = ({positive, frame}: VerbProps) => {
             <Path
               id="lightbulb-on_3"
               d="M345.812 67.3019C344.891 68.9894 343.355 76.7383 343.012 78.6133H319.086C319.086 78.6133 317.125 68.9894 316.203 67.3019C314.656 64.4738 312.734 61.8332 310.813 59.2082C310 58.0988 309.188 56.9894 308.406 55.8644C305.313 51.4269 303.5 46.0207 303.5 40.1925C303.5 25.005 315.812 12.6925 331 12.6925C346.187 12.6925 358.5 25.005 358.516 40.1925C358.516 46.0207 356.703 51.4113 353.609 55.8644C352.828 56.9893 352.016 58.0986 351.203 59.2078L351.203 59.2082C349.281 61.8488 347.359 64.4894 345.812 67.3019Z"
-              fill={stage === 10 ? '#FFEA4E' : '#FFE81E'}
+              fill={stage === 10 || stage === 12 ? '#FFEA4E' : '#FFE81E'}
             />
             <Path
               id="lightbulb-on_4"
@@ -93,7 +97,7 @@ export const Understand = ({positive, frame}: VerbProps) => {
           fill="black"
         />
 
-        {[0, 1, 2, 9, 10, 11].includes(stage) && (
+        {[0, 1, 2, 9, 10, 11, 12, 13].includes(stage) && (
           <G id="red">
             <Path
               id="FF0000"
@@ -139,7 +143,7 @@ export const Understand = ({positive, frame}: VerbProps) => {
           </G>
         )}
 
-        {[3, 4, 5, 9, 10, 11].includes(stage) && (
+        {[3, 4, 5, 9, 10, 11, 12, 13].includes(stage) && (
           <G id="green">
             <Path
               id="00FF00"
@@ -185,7 +189,7 @@ export const Understand = ({positive, frame}: VerbProps) => {
           </G>
         )}
 
-        {[6, 7, 8, 9, 10, 11].includes(stage) && (
+        {[6, 7, 8, 9, 10, 11, 12, 13].includes(stage) && (
           <G id="blue">
             <Path
               id="0000FF"
