@@ -18,7 +18,7 @@
 // determiner: the, a, this, some
 
 // check
-// hide, install, move, repair, sell, wash, swim, let, wait, expect, yell, spend, reply, suggest, listen, fall, decide, join
+// hide, install, move, repair, sell, wash, swim, let, wait, expect, yell, spend, reply, suggest, listen, decide, join
 const verbsA = {
   study: {
     value0: 'study',
@@ -302,13 +302,15 @@ const verbsA = {
     pronoun: false,
     qw: ['how', 'what', 'when'],
   },
-  // talk: {
-  //   value0: "talk",
-  //   value1: "",
-  //   value2: "",
-  //   value3: "",
-  //   ving: "talking",
-  // },
+  talk: {
+    value0: 'talk',
+    value1: 'talks',
+    value2: 'talked',
+    value3: 'talked',
+    ving: 'talking',
+    pronoun: true,
+    qw: ['how', 'what', 'when'],
+  },
   // have: {
   //   value0: "have",
   //   value1: "",
