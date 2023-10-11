@@ -355,13 +355,15 @@ const verbsA = {
   //   value3: "",
   //   ving: "",
   // },
-  // look: {
-  //   value0: "look",
-  //   value1: "looks",
-  //   value2: "looked",
-  //   value3: "looked",
-  //   ving: "looking",
-  // },
+  look: {
+    value0: 'look',
+    value1: 'looks',
+    value2: 'looked',
+    value3: 'looked',
+    ving: 'looking',
+    pronoun: false,
+    qw: ['what', 'why', 'when'],
+  },
   break: {
     value0: 'break',
     value1: 'breaks',
