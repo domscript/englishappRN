@@ -43,6 +43,7 @@ import {See} from './See';
 import {Send} from './Send';
 import {Understand} from './Understand';
 import {Talk} from './Talk';
+import {Fly} from './Fly';
 
 export interface VerbProps {
   frame: number;
@@ -98,6 +99,7 @@ const verbComponents: {[key: string]: ComponentType<any>} = {
   send: Send,
   understand: Understand,
   talk: Talk,
+  fly: Fly,
 };
 
 export const Verb = React.memo(({positive, verb}: VerbMainProps) => {

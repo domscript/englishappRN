@@ -112,13 +112,15 @@ const verbsA = {
   //   value3: "felt",
   //   ving: "feeling",
   // },
-  // fly: {
-  //   value0: "fly",
-  //   value1: "flies",
-  //   value2: "flew",
-  //   value3: "flown",
-  //   ving: "flying",
-  // },
+  fly: {
+    value0: 'fly',
+    value1: 'flies',
+    value2: 'flew',
+    value3: 'flown',
+    ving: 'flying',
+    pronoun: false,
+    qw: ['what', 'why', 'how', 'when'],
+  },
   give: {
     value0: 'give',
     value1: 'gives',
@@ -583,9 +585,9 @@ export const irregularVerbs = [
   'begin',
   'see',
   'send',
-
   'fly',
   'understand',
+
   'take',
 
   'make',
