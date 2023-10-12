@@ -313,13 +313,14 @@ const verbsA = {
     pronoun: true,
     qw: ['how', 'what', 'when'],
   },
-  // have: {
-  //   value0: "have",
-  //   value1: "",
-  //   value2: "",
-  //   value3: "",
-  //   ving: "",
-  // },
+  have: {
+    value0: 'have',
+    value1: 'has',
+    value2: 'had',
+    value3: 'had',
+    pronoun: false,
+    qw: ['what'],
+  },
   // play: {
   //   value0: "play",
   //   value1: "",
@@ -589,6 +590,7 @@ export const irregularVerbs = [
   'send',
   'fly',
   'understand',
+  'have',
 
   'take',
 
@@ -600,6 +602,18 @@ export const irregularVerbs = [
   'feel',
   'get',
   'leave',
+
+  'wear',
+  'choose',
+  'drive',
+  'wear',
+  'ride',
+  'sell',
+  'hold',
+  'keep',
+  'cut',
+  'burst',
+  'build',
 ];
 
 const verbs1Lesson1: {[key: string]: string} = {};
