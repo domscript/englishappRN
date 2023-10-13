@@ -476,7 +476,14 @@ const verbsA = {
     qw: ['what'],
   },
   // get: { value0: "get", value1: "gets", value2: "got", value3: "got" },
-  // find: { value0: "find", value1: "finds", value2: "found", value3: "found",   // pronoun: true, },
+  find: {
+    value0: 'find',
+    value1: 'finds',
+    value2: 'found',
+    value3: 'found',
+    pronoun: false,
+    qw: ['what', 'when'],
+  },
   // show: { value0: "show", value1: "shows", value2: "showed", value3: "shown" ,   pronoun: true,},
   // set: { value0: "set", value1: "sets", value2: "set", value3: "set" },
   grow: {
@@ -563,7 +570,7 @@ const verbsC = {
   },
 };
 
-// check, take, put, find
+// check, take, put
 const verbsD = {
   love: {...verbsA.love, tense: [1, 2]},
   bring: {...verbsA.bring, tense: [0, 2, 6, 8]},
@@ -609,10 +616,9 @@ export const irregularVerbs = [
   'have',
   'know',
   'make',
+  'find',
 
   'take',
-
-  'find',
 
   'go',
   'feel',
