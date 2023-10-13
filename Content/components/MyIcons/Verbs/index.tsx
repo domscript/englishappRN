@@ -50,6 +50,7 @@ import {Know} from './Know';
 import {Work} from './Work';
 import {Make} from './Make';
 import {Find} from './Find';
+import {Play} from './Play';
 
 export interface VerbProps {
   frame: number;
@@ -112,6 +113,7 @@ const verbComponents: {[key: string]: ComponentType<any>} = {
   work: Work,
   make: Make,
   find: Find,
+  play: Play,
 };
 
 export const Verb = React.memo(({positive, verb}: VerbMainProps) => {

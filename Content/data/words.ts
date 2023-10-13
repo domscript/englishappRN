@@ -323,13 +323,15 @@ const verbsA = {
     pronoun: false,
     qw: ['what'],
   },
-  // play: {
-  //   value0: "play",
-  //   value1: "",
-  //   value2: "",
-  //   value3: "",
-  //   ving: "",
-  // },
+  play: {
+    value0: 'play',
+    value1: 'plays',
+    value2: 'played',
+    value3: 'played',
+    ving: 'playing',
+    pronoun: false,
+    qw: ['what'],
+  },
   // cook: {
   //   value0: "cook",
   //   value1: "",
