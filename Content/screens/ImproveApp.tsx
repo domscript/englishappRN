@@ -22,7 +22,7 @@ function InfoScreen() {
           isDarkTheme ? styles.darkTitle : styles.lightTitle,
           {backgroundColor: isDarkTheme ? Colors.gray80 : Colors.green20},
         ]}>
-        Buy Pizza = Improve App
+        Buy Pizza == Improve App
       </Text>
       <MemberLinks
         icon={true}
