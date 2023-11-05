@@ -20,6 +20,7 @@ import {OpenBook} from './OpenBook';
 import {ArrowLeft} from './ArrowLeft';
 import {ArrowRight} from './ArrowRight';
 import {FolderGear} from './FolderGear';
+import {PizzaSlice} from './PizzaSlice';
 import {ListCheck} from './ListCheck';
 import {RocketLaunch} from './RocketLaunch';
 import {LightbulbOn} from './LightbulbOn';
@@ -52,7 +53,8 @@ interface IconMainProps {
     | 'sound'
     | 'sound-off'
     | 'level-2'
-    | 'level-f';
+    | 'level-f'
+    | 'pizza-slice';
   color?: string;
   size: number;
 }
@@ -80,6 +82,7 @@ const iconComponents: {[key: string]: ComponentType<any>} = {
   'level-2': Level2,
   'level-f': LevelF,
   'sound-off': SoundOff,
+  'pizza-slice': PizzaSlice,
 };
 
 export const MyIcon = ({
