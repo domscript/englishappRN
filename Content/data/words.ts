@@ -353,13 +353,15 @@ const verbsA = {
   //   value3: "",
   //   ving: "",
   // },
-  // seek: {
-  //   value0: "seek",
-  //   value1: "",
-  //   value2: "",
-  //   value3: "",
-  //   ving: "",
-  // },
+  seek: {
+    value0: 'seek',
+    value1: 'seeks',
+    value2: 'sought',
+    value3: 'sought',
+    ving: 'seeking',
+    pronoun: false,
+    qw: ['what', 'when'],
+  },
   look: {
     value0: 'look',
     value1: 'looks',
@@ -619,6 +621,7 @@ export const irregularVerbs = [
   'know',
   'make',
   'find',
+  'seek',
 
   'take',
 
