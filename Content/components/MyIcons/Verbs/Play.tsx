@@ -1,26 +1,4 @@
-import Svg, {
-  Circle,
-  Ellipse,
-  G,
-  Text,
-  TSpan,
-  TextPath,
-  Path,
-  Polygon,
-  Polyline,
-  Line,
-  Rect,
-  Use,
-  Image,
-  Symbol,
-  Defs,
-  LinearGradient,
-  RadialGradient,
-  Stop,
-  ClipPath,
-  Pattern,
-  Mask,
-} from 'react-native-svg';
+import Svg, {Circle, G, Path, Rect} from 'react-native-svg';
 import React from 'react';
 import {View, StyleSheet} from 'react-native';
 
@@ -30,11 +8,7 @@ import {VerbProps} from './index';
 
 const paths = ['', '', '', '', '', '', '', '', ''];
 
-paths[1] = paths[0];
-
 export const Play = ({positive, frame}: VerbProps) => {
-  // const stages = 8;
-  // const stage = frame % stages;
   const stage = frame % paths.length;
 
   const some_extra_color = Colors.red40;
@@ -57,7 +31,6 @@ export const Play = ({positive, frame}: VerbProps) => {
             : Colors.red50
         }>
         <Circle id="background" opacity="0.5" cx="300" cy="300" r="300" />
-        {/* <Path d={paths[stage]} fill="black" /> */}
 
         <Path
           id="1"
@@ -106,7 +79,7 @@ export const Play = ({positive, frame}: VerbProps) => {
               fill={stage < 3 ? '#777' : '#FFD66C'}
               stroke="black"
             />
-            {stage > 0 && (
+            {stage > 3 && (
               <Path
                 d="M483 178V178C483 176 483 175 483 174C483 173 484 172 484 171C485 171 486 170 487 170C487 169 488 169 488 169C489 168 489 168 489 167C489 166 490 166 490 165C490 164 489 163 489 163C489 162 488 162 487 161C487 161 486 161 485 161C484 161 484 161 483 161C482 162 482 162 481 163C481 163 480 164 480 165H477C477 164 477 162 478 161C479 160 480 159 481 159C482 158 484 158 485 158C487 158 488 158 489 159C490 160 491 160 492 162C492 163 493 164 493 165C493 166 493 167 492 168C492 169 492 169 491 170C490 171 490 171 489 172C488 172 488 173 487 173C487 174 486 174 486 175C486 176 486 177 486 178V178H483ZM484 186C484 186 483 186 483 185C482 185 482 184 482 184C482 183 482 182 483 182C483 181 484 181 484 181C485 181 485 181 486 182C486 182 487 183 487 184C487 184 487 184 486 185C486 185 486 185 485 186C485 186 485 186 484 186Z"
                 fill="#9F7E29"
