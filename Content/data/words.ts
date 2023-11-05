@@ -1413,20 +1413,19 @@ const MedicalThings = {
   'X-ray': 'X-ray',
 };
 
-export const spWord = [
-  'bananas',
-  'carrots',
-  'hamburgers',
-  'strawberries',
-  'tomatoes',
-  'apples',
-  'corn',
-  'onions',
-  'potatoes',
-  'cookies',
-  'corn',
-  'chairs',
-];
+export const spWordE = {
+  bananas: 'banana',
+  carrots: 'carrot',
+  hamburgers: 'hamburger',
+  strawberries: 'strawberry',
+  tomatoes: 'tomato',
+  apples: 'apple',
+  corn: 'corn',
+  onions: 'onion',
+  potatoes: 'potato',
+  cookies: 'cookie',
+  chairs: 'chair',
+};
 
 const Flags = {
   Argentina: 'Argentina',
@@ -1541,7 +1540,7 @@ const NounsL: NounsLessonsInt = {
   pineapple: ['a pineapple', 0, 'pineapple', ['buy', 'eat', 'have']],
   broccoli: ['broccoli', 0, 'broccoli', ['buy', 'eat', 'have']],
   chair: ['on the chair', 0, 'chair', ['dance', 'sit', 'stand']],
-  chairs: ['on chairs', 0, 'chair', ['sleep']],
+  chairs: ['on chairs', 0, 'chairs', ['sleep']],
   table: ['on the table', 0, 'table', ['dance', 'sit', 'sleep', 'stand']],
   // cabinet: ['cabinet', 0, 'cabinet', ['open', 'close']],
   floor: ['on the floor', 0, 'floor', ['dance', 'sit', 'sleep', 'stand']],

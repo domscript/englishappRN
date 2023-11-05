@@ -10,7 +10,7 @@ import {LessonButton} from '../components/UI/LessonBottomButton';
 import {Verb} from '../components/MyIcons/Verbs/index';
 import Image from '../assets/Image';
 
-import {spWord, verbsList} from '../data/words';
+import {spWordE, verbsList} from '../data/words';
 
 import {getRandomInt, countProgress, roundScore} from '../utils/smallFunctions';
 import {setLessonData, ACTIONS} from '../redux-store/lessons';
@@ -288,7 +288,7 @@ function LessonStudyScreen({route, navigation}) {
                       justifyContent: 'center',
                       width: '16%',
                     }}>
-                    {spWord.includes(el) ? (
+                    {Object.keys(spWordE).includes(el) ? (
                       <>
                         <Image
                           style={{
@@ -296,12 +296,12 @@ function LessonStudyScreen({route, navigation}) {
                             bottom: '-44%',
                             right: '-30%',
                           }}
-                          src={el}
+                          src={spWordE[el as keyof typeof spWordE]}
                           resizeMode="contain"
                         />
                         <Image
                           style={{position: 'relative', bottom: '44%'}}
-                          src={el}
+                          src={spWordE[el as keyof typeof spWordE]}
                           resizeMode="contain"
                         />
                       </>
