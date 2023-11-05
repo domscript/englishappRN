@@ -21,6 +21,10 @@ function SettingsMain() {
     navigation.navigate(Screens.NavigatorScreens.Settings.name);
   }
 
+  function improveHandler() {
+    navigation.navigate(Screens.NavigatorScreens.ImproveApp.name);
+  }
+
   return (
     <View
       style={[
@@ -29,6 +33,11 @@ function SettingsMain() {
       ]}>
       <ScreenButton iconName="info-circle" onPress={infoHandler} text="Info" />
       <ScreenButton iconName="gear" onPress={settingsHandler} text="Settings" />
+      <ScreenButton
+        iconName="pizza-slice"
+        onPress={improveHandler}
+        text="Improve App"
+      />
     </View>
   );
 }
@@ -39,8 +48,8 @@ function ScreenButton({
   text,
 }: {
   onPress: () => void; // Specify the type of onPress function
-  iconName: 'info-circle' | 'gear';
-  text: 'Info' | 'Settings';
+  iconName: 'info-circle' | 'gear' | 'pizza-slice';
+  text: 'Info' | 'Settings' | 'Improve App';
 }) {
   const {isDarkTheme} = useSelector((state: RootState) => state.theme);
 

@@ -21,6 +21,7 @@ import {MyIcon} from './Content/components/MyIcons/app';
 import WordsStudy from './Content/screens/WordsStudyScreen';
 import WordsList from './Content/screens/WordsListScreen';
 import Settings from './Content/screens/SettingsScreen';
+import ImproveApp from './Content/screens/ImproveApp';
 import Colors from './Content/constants/Colors';
 import Tests from './Content/screens/TestsScreen';
 import Help from './Content/screens/HelpScreen';
@@ -116,6 +117,13 @@ export const Screens = {
       component: Info,
       options: {
         title: 'Info',
+      },
+    },
+    ImproveApp: {
+      name: 'ImproveApp',
+      component: ImproveApp,
+      options: {
+        title: 'Improve',
       },
     },
     Help: {
