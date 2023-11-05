@@ -18,7 +18,7 @@ import {
 } from '../utils/calc';
 import {RootState} from '../redux-store/store';
 
-import {Screens} from '../../Navigation';
+import {Screens} from '../Navigation';
 
 interface LessonButtonProps {
   title: string;

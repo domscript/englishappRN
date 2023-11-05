@@ -6,7 +6,7 @@ import {useSelector} from 'react-redux';
 import Colors from '../constants/Colors';
 import {MyIcon} from '../components/MyIcons/app';
 import {RootState} from '../redux-store/store';
-import {Screens} from '../../Navigation';
+import {Screens} from '../Navigation';
 
 function SettingsMain() {
   const {isDarkTheme} = useSelector((state: RootState) => state.theme);

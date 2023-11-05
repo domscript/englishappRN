@@ -13,22 +13,22 @@ import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {useSelector} from 'react-redux';
 
-import LessonOverview from './Content/screens/LessonOverviewScreen';
-import LessonStudy from './Content/screens/LessonStudyScreen';
-import SettingsMain from './Content/screens/SettingsMainScreen';
-import Categories from './Content/screens/CategoriesScreen';
-import {MyIcon} from './Content/components/MyIcons/app';
-import WordsStudy from './Content/screens/WordsStudyScreen';
-import WordsList from './Content/screens/WordsListScreen';
-import Settings from './Content/screens/SettingsScreen';
-import ImproveApp from './Content/screens/ImproveApp';
-import Colors from './Content/constants/Colors';
-import Tests from './Content/screens/TestsScreen';
-import Help from './Content/screens/HelpScreen';
-import Note from './Content/screens/NoteScreen';
-import Info from './Content/screens/InfoScreen';
+import LessonOverview from './screens/LessonOverviewScreen';
+import LessonStudy from './screens/LessonStudyScreen';
+import SettingsMain from './screens/SettingsMainScreen';
+import Categories from './screens/CategoriesScreen';
+import {MyIcon} from './components/MyIcons/app';
+import WordsStudy from './screens/WordsStudyScreen';
+import WordsList from './screens/WordsListScreen';
+import Settings from './screens/SettingsScreen';
+import ImproveApp from './screens/ImproveApp';
+import Colors from './constants/Colors';
+import Tests from './screens/TestsScreen';
+import Help from './screens/HelpScreen';
+import Note from './screens/NoteScreen';
+import Info from './screens/InfoScreen';
 
-import type {RootState} from './Content/redux-store/store';
+import type {RootState} from './redux-store/store';
 
 const Stack = createNativeStackNavigator();
 const TopTabs = createMaterialTopTabNavigator();
