@@ -16,6 +16,7 @@ import {getRandomInt, countProgress, roundScore} from '../utils/smallFunctions';
 import {setLessonData, ACTIONS} from '../redux-store/lessons';
 import {RootState} from '../redux-store/store';
 import Colors from '../constants/Colors';
+import {ModalScreen2} from './ModalScreen2';
 
 import TimeLine from '../components/UI/TimeLine';
 
@@ -245,6 +246,7 @@ function LessonStudyScreen({route, navigation}) {
         styles.listOuterContainer,
         isDarkTheme ? styles.darkBackgroundColor : styles.lightBackgroundColor,
       ]}>
+      <ModalScreen2 />
       <Pressable
         style={styles.listContainer}
         onPress={() => {

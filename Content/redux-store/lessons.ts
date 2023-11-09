@@ -12,6 +12,7 @@ if (!mmkv.contains('lessons')) {
 
 const initialState = {
   user1: mmkv.getString('lessons') || patternString,
+  modal: false,
 };
 
 export const ACTIONS = {
@@ -38,15 +39,20 @@ const lessonsSlice = createSlice({
           ]?.toLowerCase(),
         );
 
-        if (nextLesson > 0)
+        if (nextLesson > 0) {
           progress = `${progress.slice(0, nextLesson)}${progress
             .slice(nextLesson)[0]
             .toUpperCase()}${progress.slice(nextLesson + 1)}`;
+          state['modal'] = true;
+        }
       }
 
       state['user1'] = progress;
 
       mmkv.set('lessons', progress);
+    },
+    hideModal: state => {
+      state['modal'] = false;
     },
   },
 });
@@ -55,7 +61,7 @@ const lessonsSlice = createSlice({
 //   return state.lessons;
 // };
 
-export const {setLessonData} = lessonsSlice.actions;
+export const {setLessonData, hideModal} = lessonsSlice.actions;
 
 export default lessonsSlice.reducer;
 
