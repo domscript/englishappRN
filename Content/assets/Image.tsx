@@ -23,6 +23,9 @@ const NewImage = ({
     case 'waving-hand':
       url = require('./waving-hand.webp');
       break;
+    case 'glowing-star':
+      url = require('./glowing-star.webp');
+      break;
     // Verb be
     case 'be':
     case 'am':
@@ -92,6 +95,9 @@ const NewImage = ({
       break;
     case 'who':
       url = require('./QuestionWords/who.webp');
+      break;
+    case 'whop':
+      url = require('./QuestionWords/whop.png');
       break;
     case 'why':
       url = require('./QuestionWords/why.webp');
@@ -1944,6 +1950,7 @@ const NewImage = ({
       url = require('./Nouns/playground_slide.webp');
       break;
     case 'present':
+    case 'gift':
       url = require('./Nouns/present.webp');
       break;
     case 'pushpin':
