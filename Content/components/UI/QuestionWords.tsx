@@ -4,6 +4,8 @@ import {useSelector} from 'react-redux';
 import Colors from '../../constants/Colors';
 import {RootState} from '../../redux-store/store';
 import Image from '../../assets/Image';
+import Svg from 'react-native-svg';
+import {VerbForms} from '../MyIcons/SVG/VerbForms';
 
 interface ButtonProps {
   children: React.ReactNode;
@@ -75,7 +77,13 @@ function Div({children, active = false, style}: DivProps) {
             fontSize: 16,
             color: isDarkTheme ? Colors.gray5 : Colors.gray95,
           }}>
-          {children}
+          {children === '8' ? (
+            <Svg width="20" height="20">
+              <VerbForms tense={Number(children)} />
+            </Svg>
+          ) : (
+            children
+          )}
         </Text>
       </View>
     </View>
@@ -272,7 +280,7 @@ export function QuestionWords() {
           fontWeight: 'bold',
           color: isDarkTheme ? Colors.gray5 : Colors.gray95,
         }}>
-        Interrogative Words
+        Interrogative Words (wh-words)
       </Text>
       <View style={{flexDirection: 'row', width: '100%'}}>
         <View style={{flex: 1}}>
@@ -285,7 +293,7 @@ export function QuestionWords() {
             <Button
               onClick={contractionF}
               active={contraction}
-              style={{flex: 0.02}}>
+              style={{flex: 0.049}}>
               {/* {contraction ? '<>' : '><'} */}
             </Button>
             <Div active={show[1] === '1'} style={{flex: 0.49}}>
@@ -306,7 +314,7 @@ export function QuestionWords() {
               marginTop: 8,
             }}>
             <Div active={show[0] === '1'} style={{flex: 0.049}}>
-              {''}
+              {'8'}
             </Div>
             <Button
               onClick={() => showExample('11')}
@@ -332,7 +340,7 @@ export function QuestionWords() {
               marginTop: 8,
             }}>
             <Div active={show[0] === '2'} style={{flex: 0.049}}>
-              {''}
+              {'8'}
             </Div>
             <Button
               onClick={() => showExample('21')}
@@ -358,7 +366,7 @@ export function QuestionWords() {
               marginTop: 8,
             }}>
             <Div active={show[0] === '3'} style={{flex: 0.049}}>
-              {''}
+              {'8'}
             </Div>
             <Button
               onClick={() => showExample('31')}
@@ -386,7 +394,7 @@ export function QuestionWords() {
               marginTop: 8,
             }}>
             <Div active={show[0] === '3'} style={{flex: 0.049}}>
-              {''}
+              {'8'}
             </Div>
             <Button
               onClick={() => showExample('31')}
@@ -414,7 +422,7 @@ export function QuestionWords() {
               marginTop: 8,
             }}>
             <Div active={show[0] === '3'} style={{flex: 0.049}}>
-              {''}
+              {'8'}
             </Div>
             <Button
               onClick={() => showExample('31')}
@@ -442,7 +450,7 @@ export function QuestionWords() {
               marginTop: 8,
             }}>
             <Div active={show[0] === '3'} style={{flex: 0.049}}>
-              {''}
+              {'8'}
             </Div>
             <Button
               onClick={() => showExample('31')}
