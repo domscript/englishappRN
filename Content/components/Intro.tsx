@@ -64,8 +64,9 @@ export function Intro({onPress}: IntroProps) {
           style={{
             flex: 1,
             flexDirection: 'row',
+            height: 70,
           }}>
-          <View style={styles.img0}>
+          <View style={styles.img}>
             <Text
               style={[
                 styles.title,
