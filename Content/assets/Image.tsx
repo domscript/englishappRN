@@ -217,7 +217,6 @@ const NewImage = ({
       url = require('./Food/green_salad.webp');
       break;
     case 'hamburger':
-    case 'hamburgers':
       url = require('./Food/hamburger.webp');
       break;
     case 'honey':
@@ -849,7 +848,6 @@ const NewImage = ({
       url = require('./box.webp');
       break;
     case 'chair':
-    case 'chairs':
       url = require('./chair.webp');
       break;
     case 'door':
@@ -891,14 +889,12 @@ const NewImage = ({
 
     // Green Food
     case 'apple':
-    case 'apples':
       url = require('./Green_Food/apple.webp');
       break;
     case 'avocado':
       url = require('./Green_Food/avocado.webp');
       break;
     case 'banana':
-    case 'bananas':
       url = require('./Green_Food/banana.webp');
       break;
     case 'bell pepper':
@@ -911,7 +907,6 @@ const NewImage = ({
       url = require('./Green_Food/broccoli.webp');
       break;
     case 'carrot':
-    case 'carrots':
       url = require('./Green_Food/carrot.webp');
       break;
     case 'cherries':
@@ -954,41 +949,33 @@ const NewImage = ({
       url = require('./Green_Food/olive.webp');
       break;
     case 'onion':
-    case 'onions':
       url = require('./Green_Food/onion.webp');
       break;
     case 'peach':
       url = require('./Green_Food/peach.webp');
       break;
     case 'pear':
-    case 'pears':
       url = require('./Green_Food/pear.webp');
       break;
     case 'pineapple':
-    case 'pineapples':
       url = require('./Green_Food/pineapple.webp');
       break;
     case 'potato':
-    case 'potatoes':
       url = require('./Green_Food/potato.webp');
       break;
     case 'strawberry':
-    case 'strawberries':
       url = require('./Green_Food/strawberry.webp');
       break;
     case 'sweet potato':
       url = require('./Green_Food/sweet_potato.webp');
       break;
     case 'tangerine':
-    case 'tangerines':
       url = require('./Green_Food/tangerine.webp');
       break;
     case 'tomato':
-    case 'tomatoes':
       url = require('./Green_Food/tomato.webp');
       break;
     case 'watermelon':
-    case 'watermelons':
       url = require('./Green_Food/watermelon.webp');
       break;
     //////////////
@@ -1188,7 +1175,6 @@ const NewImage = ({
       url = require('./Pastries/bread.webp');
       break;
     case 'cookie':
-    case 'cookies':
       url = require('./Pastries/cookie.webp');
       break;
     case 'croissant':
