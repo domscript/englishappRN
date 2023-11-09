@@ -287,7 +287,7 @@ export function PronounsTable() {
             <Button
               onClick={contractionF}
               active={contraction}
-              style={{flex: 0.02}}>
+              style={{flex: 0.049}}>
               {/* {contraction ? '<>' : '><'} */}
             </Button>
             <Div active={show[1] === '1'} style={{flex: 0.49}}>
