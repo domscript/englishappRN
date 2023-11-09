@@ -37,7 +37,10 @@ const Title = {
     title: 'Lesson 2',
     text: [
       'Object Pronouns.',
-      "To make our sentences more interesting and a bit more challenging, let's add Object pronouns.",
+      "To make our sentences more interesting and a bit more challenging, let's add Object pronouns:",
+      'ME, YOU, HIM, HER, IT, US, THEM.',
+      'And Interrogative words or Question words or wh-words:',
+      'WHY, WHAT, WHO, WHERE, WHEN, HOW',
     ],
     links: [
       {
