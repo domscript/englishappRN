@@ -28,6 +28,9 @@ const verbsA = {
     ving: 'studying',
     pronoun: false,
     qw: ['what', 'where', 'why', 'how'],
+    value_root: 'stud', // for simple tense table
+    value_end_v1: 'ies', // for simple tense table
+    value_end_v2: 'ied', // for simple tense table
   },
   work: {
     value0: 'work',
@@ -37,6 +40,7 @@ const verbsA = {
     ving: 'working',
     pronoun: false,
     qw: ['where', 'why'],
+    value_end_v2: 'ed',
   },
   love: {
     value0: 'love',
@@ -79,6 +83,7 @@ const verbsA = {
     ving: 'opening',
     pronoun: false,
     qw: ['what', 'why', 'how', 'when'],
+    value_end_v2: 'ed',
   },
   close: {
     value0: 'close',
@@ -122,6 +127,8 @@ const verbsA = {
     ving: 'flying',
     pronoun: false,
     qw: ['what', 'why', 'how', 'when'],
+    value_root: 'fl',
+    value_end_v1: 'ies',
   },
   give: {
     value0: 'give',
@@ -140,6 +147,7 @@ const verbsA = {
     ving: 'asking',
     pronoun: true,
     qw: ['what', 'why', 'how', 'when'],
+    value_end_v2: 'ed',
   },
   jump: {
     value0: 'jump',
@@ -149,6 +157,7 @@ const verbsA = {
     ving: 'jumping',
     pronoun: false,
     qw: ['why', 'how', 'when', 'where'],
+    value_end_v2: 'ed',
   },
   // answer: {
   //   value0: "answer",
@@ -278,6 +287,7 @@ const verbsA = {
     ving: 'walking',
     pronoun: false,
     qw: ['where', 'why'],
+    value_end_v2: 'ed',
   },
   fall: {
     value0: 'fall',
@@ -296,6 +306,7 @@ const verbsA = {
     ving: 'reading',
     pronoun: false,
     qw: ['what', 'why'],
+    value_end_v2: ' ',
   },
   send: {
     value0: 'send',
@@ -314,6 +325,7 @@ const verbsA = {
     ving: 'talking',
     pronoun: true,
     qw: ['how', 'what', 'when'],
+    value_end_v2: 'ed',
   },
   have: {
     value0: 'have',
@@ -331,6 +343,7 @@ const verbsA = {
     ving: 'playing',
     pronoun: false,
     qw: ['what'],
+    value_end_v2: 'ed',
   },
   // cook: {
   //   value0: "cook",
@@ -370,6 +383,7 @@ const verbsA = {
     ving: 'looking',
     pronoun: false,
     qw: ['what', 'why', 'when'],
+    value_end_v2: 'ed',
   },
   break: {
     value0: 'break',
@@ -388,6 +402,7 @@ const verbsA = {
     ving: 'turning',
     pronoun: false,
     qw: ['what', 'why', 'when'],
+    value_end_v2: 'ed',
   },
   /// without '-ing'
   understand: {
@@ -462,6 +477,7 @@ const verbsA = {
     value3: 'helped',
     pronoun: true,
     qw: ['what', 'why', 'when'],
+    value_end_v2: 'ed',
   },
   meet: {
     value0: 'meet',
@@ -514,6 +530,7 @@ const verbsA = {
     value3: 'started',
     pronoun: false,
     qw: ['what', 'why', 'how', 'when'],
+    value_end_v2: 'ed',
   },
   // finish: {
   //   value0: "finish",
@@ -528,6 +545,7 @@ const verbsA = {
     value3: 'traveled',
     pronoun: false,
     qw: ['where', 'why', 'how', 'when'],
+    value_end_v2: 'ed',
   },
   bring: {
     value0: 'bring',
@@ -571,6 +589,7 @@ const verbsC = {
     value3: 'wanted',
     pronoun: true,
     qw: ['what', 'why', 'how'],
+    value_end_v2: 'ed',
   },
 };
 
@@ -585,6 +604,7 @@ const verbsD = {
 };
 
 const verbs = {...verbsA, ...verbsC};
+export const Sverbs = {...verbsA, ...verbsC}; // used for help lesson 1
 
 export const verbsList = Object.keys(verbs);
 

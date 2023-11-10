@@ -9,6 +9,8 @@ import {BoyFace} from '../MyIcons/SVG/BoyFace';
 import {ManFace} from '../MyIcons/SVG/ManFace';
 import {OldFace} from '../MyIcons/SVG/OldFace';
 import {VerbForms} from '../MyIcons/SVG/VerbForms';
+import {VerbPicker} from './VerbPicker';
+import {Sverbs} from '../../data/words';
 
 interface ButtonProps {
   children: React.ReactNode;
@@ -118,6 +120,31 @@ function Div({children, active = false, style}: DivProps) {
   );
 }
 
+interface ExampleTextProps {
+  children?: React.ReactNode;
+}
+
+function ExampleText({children}: ExampleTextProps) {
+  const {isDarkTheme} = useSelector((state: RootState) => state.theme);
+
+  return (
+    <Text
+      style={{fontSize: 12, color: isDarkTheme ? Colors.gray5 : Colors.gray95}}>
+      {children}
+    </Text>
+  );
+}
+
+function DataText({children}: ExampleTextProps) {
+  const {isDarkTheme} = useSelector((state: RootState) => state.theme);
+
+  return (
+    <Text style={{color: isDarkTheme ? Colors.gray5 : Colors.gray95}}>
+      {children}
+    </Text>
+  );
+}
+
 type ShowType =
   | ''
   | '11'
@@ -136,6 +163,16 @@ export function SimpleTenseTable() {
   const [show, setShow] = useState<ShowType>('');
   const [contraction, setContraction] = useState(false);
   const [ex, setEx] = useState(0);
+  const [selectedValue, setSelectedValue] = useState('dance');
+
+  const verbs = {...Sverbs};
+
+  const value0 = verbs[selectedValue].value0;
+  const value1 = verbs[selectedValue].value1;
+  const value2 = verbs[selectedValue].value2;
+  const value_end_v1 = verbs[selectedValue]?.value_end_v1;
+  const value_end_v2 = verbs[selectedValue]?.value_end_v2;
+  const value_root = verbs[selectedValue]?.value_root;
 
   const showExample = (num: ShowType) => {
     setShow(num);
@@ -154,145 +191,69 @@ export function SimpleTenseTable() {
   const data = [
     <View style={{flexDirection: 'row', width: '50%'}}>
       <View style={{flex: 0.5}}>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}>
-          I
-        </Text>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}>
-          You
-        </Text>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}>
-          We
-        </Text>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}>
-          They{' '}
-        </Text>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}>
-          He
-        </Text>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}>
-          She
-        </Text>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}>
-          It
-        </Text>
+        <DataText>I</DataText>
+        <DataText>You</DataText>
+        <DataText>We</DataText>
+        <DataText>They </DataText>
+        <DataText>He</DataText>
+        <DataText>She</DataText>
+        <DataText>It</DataText>
       </View>
       <View style={{flex: 0.5}}>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}></Text>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}></Text>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}></Text>
+        <DataText></DataText>
+        <DataText></DataText>
+        <DataText></DataText>
         <View style={{flexDirection: 'row'}}>
           <View style={{flex: 0.5}}>
-            <Text style={{fontSize: 16}}>dance</Text>
+            <Text style={{fontSize: 16}}>
+              {value_end_v2
+                ? value_root
+                  ? value_root
+                  : value0
+                : value2.includes(value0)
+                ? value0
+                : ''}
+            </Text>
           </View>
           <View style={{flex: 0.5}}>
-            <Text style={{color: 'red', fontSize: 16}}>d</Text>
+            <Text style={{color: 'red', fontSize: 16}}>
+              {value_end_v2
+                ? value_end_v2
+                : value2.includes(value0)
+                ? 'd'
+                : value2}
+            </Text>
           </View>
         </View>
       </View>
     </View>,
     <View style={{flexDirection: 'row', width: '50%'}}>
       <View style={{flex: 0.5}}>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}>
-          I
-        </Text>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}>
-          You
-        </Text>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}>
-          We
-        </Text>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}>
-          They{' '}
-        </Text>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}></Text>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}>
-          He
-        </Text>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}>
-          She
-        </Text>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}>
-          It
-        </Text>
+        <DataText>I</DataText>
+        <DataText>You</DataText>
+        <DataText>We</DataText>
+        <DataText>They </DataText>
+        <DataText></DataText>
+        <DataText>He</DataText>
+        <DataText>She</DataText>
+        <DataText>It</DataText>
       </View>
       <View style={{flex: 0.5}}>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}></Text>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}></Text>
-        <Text style={{fontSize: 16}}>dance</Text>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}></Text>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}></Text>
+        <DataText></DataText>
+        <DataText></DataText>
+        <Text style={{fontSize: 16}}>{value0}</Text>
+        <DataText></DataText>
+        <DataText></DataText>
         <View style={{flexDirection: 'row'}}>
           <View style={{flex: 0.5}}>
-            <Text style={{fontSize: 16}}>dance</Text>
+            <Text style={{fontSize: 16}}>
+              {value_root ? value_root : value0}
+            </Text>
           </View>
           <View style={{flex: 0.5}}>
-            <Text style={{color: 'red', fontSize: 16}}>s</Text>
+            <Text style={{color: 'red', fontSize: 16}}>
+              {value_end_v1 ? value_end_v1 : 's'}
+            </Text>
           </View>
         </View>
       </View>
@@ -301,135 +262,41 @@ export function SimpleTenseTable() {
       {contraction ? (
         <View style={{flexDirection: 'row', width: '50%'}}>
           <View style={{flex: 0.5}}>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}>
-              I
-            </Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}>
-              You
-            </Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}>
-              We
-            </Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}>
-              They
-            </Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}>
-              He
-            </Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}>
-              She
-            </Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}>
-              It
-            </Text>
+            <DataText>I</DataText>
+            <DataText>You</DataText>
+            <DataText>We</DataText>
+            <DataText>They </DataText>
+            <DataText>He</DataText>
+            <DataText>She</DataText>
+            <DataText>It</DataText>
           </View>
           <View style={{flex: 0.5}}>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}></Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}></Text>
+            <DataText></DataText>
+            <DataText></DataText>
             <Text style={{color: 'red', fontSize: 16}}>&apos;ll</Text>
-            <Text style={{fontSize: 16}}>dance</Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}></Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}></Text>
+            <Text style={{fontSize: 16}}>{value0}</Text>
+            <DataText></DataText>
+            <DataText></DataText>
           </View>
         </View>
       ) : (
         <View style={{flexDirection: 'row', width: '50%'}}>
           <View style={{flex: 0.5}}>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}>
-              I
-            </Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}>
-              You
-            </Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}>
-              We
-            </Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}>
-              They{' '}
-            </Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}>
-              He
-            </Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}>
-              She
-            </Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}>
-              It
-            </Text>
+            <DataText>I</DataText>
+            <DataText>You</DataText>
+            <DataText>We</DataText>
+            <DataText>They </DataText>
+            <DataText>He</DataText>
+            <DataText>She</DataText>
+            <DataText>It</DataText>
           </View>
           <View style={{flex: 0.5}}>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}></Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}></Text>
+            <DataText></DataText>
+            <DataText></DataText>
             <Text style={{color: 'red', fontSize: 16}}>will</Text>
-            <Text style={{fontSize: 16}}>dance</Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}></Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}></Text>
+            <Text style={{fontSize: 16}}>{value0}</Text>
+            <DataText></DataText>
+            <DataText></DataText>
           </View>
         </View>
       )}
@@ -438,135 +305,41 @@ export function SimpleTenseTable() {
       {contraction ? (
         <View style={{flexDirection: 'row', width: '50%'}}>
           <View style={{flex: 0.5}}>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}>
-              I
-            </Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}>
-              You
-            </Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}>
-              We
-            </Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}>
-              They{' '}
-            </Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}>
-              He
-            </Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}>
-              She
-            </Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}>
-              It
-            </Text>
+            <DataText>I</DataText>
+            <DataText>You</DataText>
+            <DataText>We</DataText>
+            <DataText>They </DataText>
+            <DataText>He</DataText>
+            <DataText>She</DataText>
+            <DataText>It</DataText>
           </View>
           <View style={{flex: 0.5}}>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}></Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}></Text>
+            <DataText></DataText>
+            <DataText></DataText>
             <Text style={{color: 'red', fontSize: 16}}>didn&apos;t</Text>
-            <Text style={{fontSize: 16}}>dance</Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}></Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}></Text>
+            <Text style={{fontSize: 16}}>{value0}</Text>
+            <DataText></DataText>
+            <DataText></DataText>
           </View>
         </View>
       ) : (
         <View style={{flexDirection: 'row', width: '50%'}}>
           <View style={{flex: 0.5}}>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}>
-              I
-            </Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}>
-              You
-            </Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}>
-              We
-            </Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}>
-              They{' '}
-            </Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}>
-              He
-            </Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}>
-              She
-            </Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}>
-              It
-            </Text>
+            <DataText>I</DataText>
+            <DataText>You</DataText>
+            <DataText>We</DataText>
+            <DataText>They </DataText>
+            <DataText>He</DataText>
+            <DataText>She</DataText>
+            <DataText>It</DataText>
           </View>
           <View style={{flex: 0.5}}>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}></Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}></Text>
+            <DataText></DataText>
+            <DataText></DataText>
             <Text style={{color: 'red', fontSize: 16}}>did not</Text>
-            <Text style={{fontSize: 16}}>dance</Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}></Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}></Text>
+            <Text style={{fontSize: 16}}>{value0}</Text>
+            <DataText></DataText>
+            <DataText></DataText>
           </View>
         </View>
       )}
@@ -575,140 +348,46 @@ export function SimpleTenseTable() {
       {contraction ? (
         <View style={{flexDirection: 'row', width: '50%'}}>
           <View style={{flex: 0.5}}>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}>
-              I
-            </Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}>
-              You
-            </Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}>
-              We
-            </Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}>
-              They{' '}
-            </Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}></Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}>
-              He
-            </Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}>
-              She
-            </Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}>
-              It
-            </Text>
+            <DataText>I</DataText>
+            <DataText>You</DataText>
+            <DataText>We</DataText>
+            <DataText>They </DataText>
+            <DataText></DataText>
+            <DataText>He</DataText>
+            <DataText>She</DataText>
+            <DataText>It</DataText>
           </View>
           <View style={{flex: 0.5}}>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}></Text>
+            <DataText></DataText>
             <Text style={{color: 'red', fontSize: 16}}>don&apos;t</Text>
-            <Text style={{fontSize: 16}}>dance</Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}></Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}></Text>
+            <Text style={{fontSize: 16}}>{value0}</Text>
+            <DataText></DataText>
+            <DataText></DataText>
             <Text style={{color: 'red', fontSize: 16}}>doesn&apos;t</Text>
-            <Text style={{fontSize: 16}}>dance</Text>
+            <Text style={{fontSize: 16}}>{value0}</Text>
           </View>
         </View>
       ) : (
         <View style={{flexDirection: 'row', width: '50%'}}>
           <View style={{flex: 0.5}}>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}>
-              I
-            </Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}>
-              You
-            </Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}>
-              We
-            </Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}>
-              They{' '}
-            </Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}></Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}>
-              He
-            </Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}>
-              She
-            </Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}>
-              It
-            </Text>
+            <DataText>I</DataText>
+            <DataText>You</DataText>
+            <DataText>We</DataText>
+            <DataText>They </DataText>
+            <DataText></DataText>
+            <DataText>He</DataText>
+            <DataText>She</DataText>
+            <DataText>It</DataText>
           </View>
           <View style={{flex: 0.5}}>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}></Text>
+            <DataText></DataText>
             <Text style={{color: 'red', fontSize: 16}}>do not</Text>
-            <Text style={{fontSize: 16}}>dance</Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}></Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}></Text>
+            <Text style={{fontSize: 16}}>{value0}</Text>
+            <DataText></DataText>
+            <DataText></DataText>
 
             <Text style={{color: 'red', fontSize: 16}}>does not</Text>
-            <Text style={{fontSize: 16}}>dance</Text>
+            <Text style={{fontSize: 16}}>{value0}</Text>
           </View>
         </View>
       )}
@@ -717,1008 +396,270 @@ export function SimpleTenseTable() {
       {contraction ? (
         <View style={{flexDirection: 'row', width: '50%'}}>
           <View style={{flex: 0.5}}>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}>
-              I
-            </Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}>
-              You
-            </Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}>
-              We
-            </Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}>
-              They{' '}
-            </Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}>
-              He
-            </Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}>
-              She
-            </Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}>
-              It
-            </Text>
+            <DataText>I</DataText>
+            <DataText>You</DataText>
+            <DataText>We</DataText>
+            <DataText>They </DataText>
+            <DataText>He</DataText>
+            <DataText>She</DataText>
+            <DataText>It</DataText>
           </View>
           <View style={{flex: 0.5}}>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}></Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}></Text>
+            <DataText></DataText>
+            <DataText></DataText>
             <Text style={{color: 'red', fontSize: 16}}>won&apos;t</Text>
-            <Text style={{fontSize: 16}}>dance</Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}></Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}></Text>
+            <Text style={{fontSize: 16}}>{value0}</Text>
+            <DataText></DataText>
+            <DataText></DataText>
           </View>
         </View>
       ) : (
         <View style={{flexDirection: 'row', width: '50%'}}>
           <View style={{flex: 0.5}}>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}>
-              I
-            </Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}>
-              You
-            </Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}>
-              We
-            </Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}>
-              They{' '}
-            </Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}>
-              He
-            </Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}>
-              She
-            </Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}>
-              It
-            </Text>
+            <DataText>I</DataText>
+            <DataText>You</DataText>
+            <DataText>We</DataText>
+            <DataText>They </DataText>
+            <DataText>He</DataText>
+            <DataText>She</DataText>
+            <DataText>It</DataText>
           </View>
           <View style={{flex: 0.5}}>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}></Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}></Text>
+            <DataText></DataText>
+            <DataText></DataText>
             <Text style={{color: 'red', fontSize: 16}}>will not</Text>
-            <Text style={{fontSize: 16}}>dance</Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}></Text>
-            <Text
-              style={{
-                color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-              }}></Text>
+            <Text style={{fontSize: 16}}>{value0}</Text>
+            <DataText></DataText>
+            <DataText></DataText>
           </View>
         </View>
       )}
     </View>,
     <View style={{flexDirection: 'row', width: '50%'}}>
       <View style={{flex: 0.2}}>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}></Text>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}></Text>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}></Text>
+        <DataText></DataText>
+        <DataText></DataText>
+        <DataText></DataText>
         <Text style={{color: 'red', fontSize: 16}}>Did</Text>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}></Text>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}></Text>
+        <DataText></DataText>
+        <DataText></DataText>
       </View>
       <View style={{flex: 0.4}}>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}>
-          I
-        </Text>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}>
-          You
-        </Text>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}>
-          We
-        </Text>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}>
-          They{' '}
-        </Text>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}>
-          He
-        </Text>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}>
-          She
-        </Text>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}>
-          It
-        </Text>
+        <DataText>I</DataText>
+        <DataText>You</DataText>
+        <DataText>We</DataText>
+        <DataText>They </DataText>
+        <DataText>He</DataText>
+        <DataText>She</DataText>
+        <DataText>It</DataText>
       </View>
       <View style={{flex: 0.4}}>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}></Text>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}></Text>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}></Text>
-        <Text style={{fontSize: 16}}>dance?</Text>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}></Text>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}></Text>
+        <DataText></DataText>
+        <DataText></DataText>
+        <DataText></DataText>
+        <Text style={{fontSize: 16}}>{value0}?</Text>
+        <DataText></DataText>
+        <DataText></DataText>
       </View>
     </View>,
     <View style={{flexDirection: 'row', width: '50%'}}>
       <View style={{flex: 0.2}}>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}></Text>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}></Text>
+        <DataText></DataText>
+        <DataText></DataText>
         <Text style={{color: 'red', fontSize: 16}}>Do</Text>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}></Text>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}></Text>
+        <DataText></DataText>
+        <DataText></DataText>
         <Text style={{color: 'red', fontSize: 16}}>Does</Text>
       </View>
       <View style={{flex: 0.4}}>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}>
-          I
-        </Text>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}>
-          You
-        </Text>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}>
-          We
-        </Text>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}>
-          They{' '}
-        </Text>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}></Text>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}>
-          He
-        </Text>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}>
-          She
-        </Text>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}>
-          It
-        </Text>
+        <DataText>I</DataText>
+        <DataText>You</DataText>
+        <DataText>We</DataText>
+        <DataText>They </DataText>
+        <DataText></DataText>
+        <DataText>He</DataText>
+        <DataText>She</DataText>
+        <DataText>It</DataText>
       </View>
       <View style={{flex: 0.4}}>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}></Text>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}></Text>
-        <Text style={{fontSize: 16}}>dance?</Text>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}></Text>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}></Text>
+        <DataText></DataText>
+        <DataText></DataText>
+        <Text style={{fontSize: 16}}>{value0}?</Text>
+        <DataText></DataText>
+        <DataText></DataText>
+        <Text style={{fontSize: 16}}>{value0}?</Text>
       </View>
     </View>,
     <View style={{flexDirection: 'row', width: '50%'}}>
       <View style={{flex: 0.2}}>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}></Text>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}></Text>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}></Text>
+        <DataText></DataText>
+        <DataText></DataText>
+        <DataText></DataText>
         <Text style={{color: 'red', fontSize: 16}}>Will</Text>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}></Text>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}></Text>
+        <DataText></DataText>
+        <DataText></DataText>
       </View>
       <View style={{flex: 0.4}}>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}>
-          I
-        </Text>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}>
-          You
-        </Text>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}>
-          We
-        </Text>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}>
-          They{' '}
-        </Text>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}>
-          He
-        </Text>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}>
-          She
-        </Text>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}>
-          It
-        </Text>
+        <DataText>I</DataText>
+        <DataText>You</DataText>
+        <DataText>We</DataText>
+        <DataText>They </DataText>
+        <DataText>He</DataText>
+        <DataText>She</DataText>
+        <DataText>It</DataText>
       </View>
       <View style={{flex: 0.4}}>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}></Text>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}></Text>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}></Text>
-        <Text style={{fontSize: 16}}>dance?</Text>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}></Text>
-        <Text
-          style={{
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          }}></Text>
+        <DataText></DataText>
+        <DataText></DataText>
+        <DataText></DataText>
+        <Text style={{fontSize: 16}}>{value0}?</Text>
+        <DataText></DataText>
+        <DataText></DataText>
       </View>
     </View>,
   ];
 
   const examples = [
     <View>
-      <Text
-        style={{
-          color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-        }}>
-        I danced
-      </Text>
-      <Text
-        style={{
-          color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-        }}>
-        You danced
-      </Text>
-      <Text
-        style={{
-          color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-        }}>
-        He danced
-      </Text>
-      <Text
-        style={{
-          color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-        }}>
-        She danced
-      </Text>
-      <Text
-        style={{
-          color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-        }}>
-        It danced
-      </Text>
-      <Text
-        style={{
-          color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-        }}>
-        We danced
-      </Text>
-      <Text
-        style={{
-          color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-        }}>
-        They danced
-      </Text>
+      <ExampleText>I {value2}</ExampleText>
+      <ExampleText>You {value2}</ExampleText>
+      <ExampleText>He {value2}</ExampleText>
+      <ExampleText>She {value2}</ExampleText>
+      <ExampleText>It {value2}</ExampleText>
+      <ExampleText>We {value2}</ExampleText>
+      <ExampleText>They {value2}</ExampleText>
     </View>,
     <View>
-      <Text
-        style={{
-          color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-        }}>
-        I dance
-      </Text>
-      <Text
-        style={{
-          color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-        }}>
-        You dance
-      </Text>
-      <Text
-        style={{
-          color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-        }}>
-        He dances
-      </Text>
-      <Text
-        style={{
-          color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-        }}>
-        She dances
-      </Text>
-      <Text
-        style={{
-          color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-        }}>
-        It dances
-      </Text>
-      <Text
-        style={{
-          color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-        }}>
-        We dance
-      </Text>
-      <Text
-        style={{
-          color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-        }}>
-        They dance
-      </Text>
+      <ExampleText>I {value0}</ExampleText>
+      <ExampleText>You {value0}</ExampleText>
+      <ExampleText>He {value1}</ExampleText>
+      <ExampleText>She {value1}</ExampleText>
+      <ExampleText>It {value1}</ExampleText>
+      <ExampleText>We {value0}</ExampleText>
+      <ExampleText>They {value0}</ExampleText>
     </View>,
     <View>
       {contraction ? (
         <View>
-          <Text
-            style={{
-              color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-            }}>
-            I&apos;ll dance
-          </Text>
-          <Text
-            style={{
-              color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-            }}>
-            You&apos;ll dance
-          </Text>
-          <Text
-            style={{
-              color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-            }}>
-            He&apos;ll dance
-          </Text>
-          <Text
-            style={{
-              color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-            }}>
-            She&apos;ll dance
-          </Text>
-          <Text
-            style={{
-              color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-            }}>
-            It&apos;ll dance
-          </Text>
-          <Text
-            style={{
-              color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-            }}>
-            We&apos;ll dance
-          </Text>
-          <Text
-            style={{
-              color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-            }}>
-            They&apos;ll dance
-          </Text>
+          <ExampleText>I&apos;ll {value0}</ExampleText>
+          <ExampleText>You&apos;ll {value0}</ExampleText>
+          <ExampleText>He&apos;ll {value0}</ExampleText>
+          <ExampleText>She&apos;ll {value0}</ExampleText>
+          <ExampleText>It&apos;ll {value0}</ExampleText>
+          <ExampleText>We&apos;ll {value0}</ExampleText>
+          <ExampleText>They&apos;ll {value0}</ExampleText>
         </View>
       ) : (
         <View>
-          <Text
-            style={{
-              color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-            }}>
-            I will dance
-          </Text>
-          <Text
-            style={{
-              color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-            }}>
-            You will dance
-          </Text>
-          <Text
-            style={{
-              color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-            }}>
-            He will dance
-          </Text>
-          <Text
-            style={{
-              color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-            }}>
-            She will dance
-          </Text>
-          <Text
-            style={{
-              color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-            }}>
-            It will dance
-          </Text>
-          <Text
-            style={{
-              color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-            }}>
-            We will dance
-          </Text>
-          <Text
-            style={{
-              color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-            }}>
-            They will dance
-          </Text>
+          <ExampleText>I will {value0}</ExampleText>
+          <ExampleText>You will {value0}</ExampleText>
+          <ExampleText>He will {value0}</ExampleText>
+          <ExampleText>She will {value0}</ExampleText>
+          <ExampleText>It will {value0}</ExampleText>
+          <ExampleText>We will {value0}</ExampleText>
+          <ExampleText>They will {value0}</ExampleText>
         </View>
       )}
     </View>,
     <View>
       {contraction ? (
         <View>
-          <Text
-            style={{
-              color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-            }}>
-            I didn&apos;t dance
-          </Text>
-          <Text
-            style={{
-              color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-            }}>
-            You didn&apos;t dance
-          </Text>
-          <Text
-            style={{
-              color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-            }}>
-            He didn&apos;t dance
-          </Text>
-          <Text
-            style={{
-              color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-            }}>
-            She didn&apos;t dance
-          </Text>
-          <Text
-            style={{
-              color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-            }}>
-            It didn&apos;t dance
-          </Text>
-          <Text
-            style={{
-              color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-            }}>
-            We didn&apos;t dance
-          </Text>
-          <Text
-            style={{
-              color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-            }}>
-            They didn&apos;t dance
-          </Text>
+          <ExampleText>I didn&apos;t {value0}</ExampleText>
+          <ExampleText>You didn&apos;t {value0}</ExampleText>
+          <ExampleText>He didn&apos;t {value0}</ExampleText>
+          <ExampleText>She didn&apos;t {value0}</ExampleText>
+          <ExampleText>It didn&apos;t {value0}</ExampleText>
+          <ExampleText>We didn&apos;t {value0}</ExampleText>
+          <ExampleText>They didn&apos;t {value0}</ExampleText>
         </View>
       ) : (
         <View>
-          <Text
-            style={{
-              color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-            }}>
-            I did not dance
-          </Text>
-          <Text
-            style={{
-              color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-            }}>
-            You did not dance
-          </Text>
-          <Text
-            style={{
-              color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-            }}>
-            He did not dance
-          </Text>
-          <Text
-            style={{
-              color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-            }}>
-            She did not dance
-          </Text>
-          <Text
-            style={{
-              color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-            }}>
-            It did not dance
-          </Text>
-          <Text
-            style={{
-              color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-            }}>
-            We did not dance
-          </Text>
-          <Text
-            style={{
-              color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-            }}>
-            They did not dance
-          </Text>
+          <ExampleText>I did not {value0}</ExampleText>
+          <ExampleText>You did not {value0}</ExampleText>
+          <ExampleText>He did not {value0}</ExampleText>
+          <ExampleText>She did not {value0}</ExampleText>
+          <ExampleText>It did not {value0}</ExampleText>
+          <ExampleText>We did not {value0}</ExampleText>
+          <ExampleText>They did not {value0}</ExampleText>
         </View>
       )}
     </View>,
     <View>
       {contraction ? (
         <View>
-          <Text
-            style={{
-              color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-            }}>
-            I don&apos;t dance
-          </Text>
-          <Text
-            style={{
-              color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-            }}>
-            You don&apos;t dance
-          </Text>
-          <Text
-            style={{
-              color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-            }}>
-            He doesn&apos;t dance
-          </Text>
-          <Text
-            style={{
-              color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-            }}>
-            She doesn&apos;t dance
-          </Text>
-          <Text
-            style={{
-              color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-            }}>
-            It doesn&apos;t dance
-          </Text>
-          <Text
-            style={{
-              color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-            }}>
-            We don&apos;t dance
-          </Text>
-          <Text
-            style={{
-              color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-            }}>
-            They don&apos;t dance
-          </Text>
+          <ExampleText>I don&apos;t {value0}</ExampleText>
+          <ExampleText>You don&apos;t {value0}</ExampleText>
+          <ExampleText>He doesn&apos;t {value0}</ExampleText>
+          <ExampleText>She doesn&apos;t {value0}</ExampleText>
+          <ExampleText>It doesn&apos;t {value0}</ExampleText>
+          <ExampleText>We don&apos;t {value0}</ExampleText>
+          <ExampleText>They don&apos;t {value0}</ExampleText>
         </View>
       ) : (
         <View>
-          <Text
-            style={{
-              color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-            }}>
-            I do not dance
-          </Text>
-          <Text
-            style={{
-              color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-            }}>
-            You do not dance
-          </Text>
-          <Text
-            style={{
-              color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-            }}>
-            He does not dance
-          </Text>
-          <Text
-            style={{
-              color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-            }}>
-            She does not dance
-          </Text>
-          <Text
-            style={{
-              color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-            }}>
-            It does not dance
-          </Text>
-          <Text
-            style={{
-              color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-            }}>
-            We do not dance
-          </Text>
-          <Text
-            style={{
-              color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-            }}>
-            They do not dance
-          </Text>
+          <ExampleText>I do not {value0}</ExampleText>
+          <ExampleText>You do not {value0}</ExampleText>
+          <ExampleText>He does not {value0}</ExampleText>
+          <ExampleText>She does not {value0}</ExampleText>
+          <ExampleText>It does not {value0}</ExampleText>
+          <ExampleText>We do not {value0}</ExampleText>
+          <ExampleText>They do not {value0}</ExampleText>
         </View>
       )}
     </View>,
     <View>
       {contraction ? (
         <View>
-          <Text
-            style={{
-              color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-            }}>
-            I won&apos;t dance
-          </Text>
-          <Text
-            style={{
-              color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-            }}>
-            You won&apos;t dance
-          </Text>
-          <Text
-            style={{
-              color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-            }}>
-            He won&apos;t dance
-          </Text>
-          <Text
-            style={{
-              color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-            }}>
-            She won&apos;t dance
-          </Text>
-          <Text
-            style={{
-              color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-            }}>
-            It won&apos;t dance
-          </Text>
-          <Text
-            style={{
-              color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-            }}>
-            We won&apos;t dance
-          </Text>
-          <Text
-            style={{
-              color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-            }}>
-            They won&apos;t dance
-          </Text>
+          <ExampleText>I won&apos;t {value0}</ExampleText>
+          <ExampleText>You won&apos;t {value0}</ExampleText>
+          <ExampleText>He won&apos;t {value0}</ExampleText>
+          <ExampleText>She won&apos;t {value0}</ExampleText>
+          <ExampleText>It won&apos;t {value0}</ExampleText>
+          <ExampleText>We won&apos;t {value0}</ExampleText>
+          <ExampleText>They won&apos;t {value0}</ExampleText>
         </View>
       ) : (
         <View>
-          <Text
-            style={{
-              color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-            }}>
-            I will not dance
-          </Text>
-          <Text
-            style={{
-              color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-            }}>
-            You will not dance
-          </Text>
-          <Text
-            style={{
-              color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-            }}>
-            He will not dance
-          </Text>
-          <Text
-            style={{
-              color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-            }}>
-            She will not dance
-          </Text>
-          <Text
-            style={{
-              color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-            }}>
-            It will not dance
-          </Text>
-          <Text
-            style={{
-              color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-            }}>
-            We will not dance
-          </Text>
-          <Text
-            style={{
-              color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-            }}>
-            They will not dance
-          </Text>
+          <ExampleText>I will not {value0}</ExampleText>
+          <ExampleText>You will not {value0}</ExampleText>
+          <ExampleText>He will not {value0}</ExampleText>
+          <ExampleText>She will not {value0}</ExampleText>
+          <ExampleText>It will not {value0}</ExampleText>
+          <ExampleText>We will not {value0}</ExampleText>
+          <ExampleText>They will not {value0}</ExampleText>
         </View>
       )}
     </View>,
     <View>
-      <Text
-        style={{
-          color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-        }}>
-        Did I dance
-      </Text>
-      <Text
-        style={{
-          color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-        }}>
-        Did You dance
-      </Text>
-      <Text
-        style={{
-          color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-        }}>
-        Did He dance
-      </Text>
-      <Text
-        style={{
-          color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-        }}>
-        Did She dance
-      </Text>
-      <Text
-        style={{
-          color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-        }}>
-        Did It dance
-      </Text>
-      <Text
-        style={{
-          color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-        }}>
-        Did We dance
-      </Text>
-      <Text
-        style={{
-          color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-        }}>
-        Did They dance
-      </Text>
+      <ExampleText>Did I {value0}</ExampleText>
+      <ExampleText>Did You {value0}</ExampleText>
+      <ExampleText>Did He {value0}</ExampleText>
+      <ExampleText>Did She {value0}</ExampleText>
+      <ExampleText>Did It {value0}</ExampleText>
+      <ExampleText>Did We {value0}</ExampleText>
+      <ExampleText>Did They {value0}</ExampleText>
     </View>,
     <View>
-      <Text
-        style={{
-          color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-        }}>
-        Do I dance
-      </Text>
-      <Text
-        style={{
-          color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-        }}>
-        Do You dance
-      </Text>
-      <Text
-        style={{
-          color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-        }}>
-        Does He dance
-      </Text>
-      <Text
-        style={{
-          color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-        }}>
-        Does She dance
-      </Text>
-      <Text
-        style={{
-          color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-        }}>
-        Does It dance
-      </Text>
-      <Text
-        style={{
-          color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-        }}>
-        Do We dance
-      </Text>
-      <Text
-        style={{
-          color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-        }}>
-        Do They dance
-      </Text>
+      <ExampleText>Do I {value0}</ExampleText>
+      <ExampleText>Do You {value0}</ExampleText>
+      <ExampleText>Does He {value0}</ExampleText>
+      <ExampleText>Does She {value0}</ExampleText>
+      <ExampleText>Does It {value0}</ExampleText>
+      <ExampleText>Do We {value0}</ExampleText>
+      <ExampleText>Do They {value0}</ExampleText>
     </View>,
     <View>
-      <Text
-        style={{
-          color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-        }}>
-        Will I dance
-      </Text>
-      <Text
-        style={{
-          color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-        }}>
-        Will You dance
-      </Text>
-      <Text
-        style={{
-          color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-        }}>
-        Will He dance
-      </Text>
-      <Text
-        style={{
-          color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-        }}>
-        Will She dance
-      </Text>
-      <Text
-        style={{
-          color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-        }}>
-        Will It dance
-      </Text>
-      <Text
-        style={{
-          color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-        }}>
-        Will We dance
-      </Text>
-      <Text
-        style={{
-          color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-        }}>
-        Will They dance
-      </Text>
+      <ExampleText>Will I {value0}</ExampleText>
+      <ExampleText>Will You {value0}</ExampleText>
+      <ExampleText>Will He {value0}</ExampleText>
+      <ExampleText>Will She {value0}</ExampleText>
+      <ExampleText>Will It {value0}</ExampleText>
+      <ExampleText>Will We {value0}</ExampleText>
+      <ExampleText>Will They {value0}</ExampleText>
     </View>,
   ];
+
+  // pay, read, said
 
   return (
     <View
@@ -1727,16 +668,15 @@ export function SimpleTenseTable() {
         backgroundColor: isDarkTheme ? Colors.gray70 : Colors.gray20,
         borderRadius: 8,
         padding: 4,
+        marginTop: 10,
       }}>
-      <Text
-        style={{
-          textAlign: 'center',
-          fontSize: 16,
-          fontWeight: 'bold',
-          color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-        }}>
-        dance
-      </Text>
+      <VerbPicker
+        data={[...Object.keys(verbs)].sort()}
+        // data={['dance']}
+        chooceHandler={setSelectedValue}
+        selectedValue={selectedValue}
+      />
+
       <View style={{flexDirection: 'row', width: '100%'}}>
         <View style={{flex: 1}}>
           <View
