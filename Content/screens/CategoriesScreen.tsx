@@ -9,8 +9,6 @@ import {Lesson} from '../models/Lesson';
 import Tts from 'react-native-tts';
 import {ModalScreen} from './ModalScreen';
 
-import {NativeStackNavigationProp} from '@react-navigation/native-stack';
-
 function CategoriesScreen({navigation}) {
   const {isDarkTheme, isSound} = useSelector((state: RootState) => ({
     isDarkTheme: state.theme.isDarkTheme,
@@ -34,7 +32,7 @@ function CategoriesScreen({navigation}) {
         id={item.id}
         title={item.title}
         text={item.text}
-        onPress={pressHandler}
+        onPress={item.text === 'Coming Soon' ? () => {} : pressHandler}
       />
     );
   };
