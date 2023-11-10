@@ -10,6 +10,7 @@ import {
 import {useSelector} from 'react-redux';
 import Colors from '../../constants/Colors';
 import {RootState} from '../../redux-store/store';
+import {Verb} from '../MyIcons/Verbs';
 
 export const VerbPicker = ({
   data,
@@ -35,15 +36,20 @@ export const VerbPicker = ({
         chooceHandler(item);
         setModalVisible(!modalVisible);
       }}>
-      <Text
-        style={[
-          styles.text,
-          {
-            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-          },
-        ]}>
-        {item}
-      </Text>
+      <View style={[styles.titleBox]}>
+        <Text
+          style={[
+            styles.text,
+            {
+              color: isDarkTheme ? Colors.gray5 : Colors.gray95,
+            },
+          ]}>
+          {item}
+        </Text>
+      </View>
+      <View style={[styles.lessonTitleV]}>
+        <Verb positive={1} verb={item} />
+      </View>
     </TouchableOpacity>
   );
 
@@ -117,6 +123,14 @@ const styles = StyleSheet.create({
     borderBottomColor: '#ccc2',
     alignItems: 'center',
     paddingVertical: 8,
+    flexDirection: 'row',
   },
+  titleBox: {flex: 3},
   text: {textAlign: 'center', fontSize: 17, fontWeight: 'bold'},
+  lessonTitleV: {
+    flex: 1,
+    height: 30,
+    width: 30,
+    alignItems: 'flex-start',
+  },
 });
