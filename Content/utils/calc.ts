@@ -129,17 +129,18 @@ export const SimpleTenseScheme = (words: WordsOneLessonInt) => {
   //   );
 
   return JSON.stringify({
-    tenseNoteIndex,
-    question: [...correctVerb, abc[0]],
-    testData: data,
     subject,
     verb,
+    tenseNoteIndex,
+    question: [...correctVerb, abc[0]],
     qWord: [subject, verb, abc[1]],
+    testData: data,
   });
 };
 
 export const SecondLesson = (words: WordsOneLessonInt) => {
   const {verbs, nouns} = words.words;
+  const tenseNoteIndex = Math.floor(Math.random() * 9);
 
   const allLessonVerbs = Object.keys(verbs);
 
@@ -182,7 +183,10 @@ export const SecondLesson = (words: WordsOneLessonInt) => {
   // we: ['we', 'us', 'our', 'ours', 'ourself'],
   // they: ['they', 'them', 'their', 'theirs', 'themselves'],
 
-  const subjectIndex = getRandomInt(0, subjectPronouns.length - 1);
+  const subjectIndex = getRandomInt(
+    [6, 7, 8].includes(tenseNoteIndex) ? 1 : 0,
+    subjectPronouns.length - 1,
+  );
 
   const subject = subjectPronouns[subjectIndex];
 
@@ -198,8 +202,6 @@ export const SecondLesson = (words: WordsOneLessonInt) => {
   ).splice(0, 4);
 
   const ObjectPronoun = objectExtraWords[getRandomInt(0, 3)];
-
-  // here
 
   let nounsN: [string, string][] = [];
 
@@ -223,11 +225,7 @@ export const SecondLesson = (words: WordsOneLessonInt) => {
     .concat(subject)
     .sort(() => Math.random() - 0.5);
 
-  const tenseNoteIndex = Math.floor(Math.random() * 9);
-
-  const note = aLLscheme(verbs[verb], subject);
-
-  const correctVerb = note[tenseNoteIndex].map(el =>
+  const correctVerb = aLLscheme(verbs[verb], subject)[tenseNoteIndex].map(el =>
     el === '' ? subject : el,
   );
 
@@ -468,12 +466,12 @@ export const ThirdLesson = (
     }
 
     return JSON.stringify({
-      tenseNoteIndex,
-      question,
-      testData: data,
       subject,
       verb: 'be',
+      tenseNoteIndex,
+      question,
       qWord: [`${subject}${'be'}`, hereThere],
+      testData: data,
     });
   }
 
@@ -603,13 +601,12 @@ export const ThirdLesson = (
   // console.log(434, verb, qw, subject, verb, abc[1], objP);
 
   return {
-    tenseNoteIndex,
-    question,
-    testData: data,
     subject,
     verb,
-    note: aLLscheme.map(el => el[subject]),
+    tenseNoteIndex,
+    question,
     qWord,
+    testData: data,
   };
 };
 
@@ -869,11 +866,11 @@ export const FourthLesson = (
   // console.log(434, verb, qw, subject, verb, abc[1], objP);
 
   return JSON.stringify({
-    tenseNoteIndex,
-    question,
-    testData: data,
     subject,
     verb,
+    tenseNoteIndex,
+    question,
     qWord,
+    testData: data,
   });
 };
