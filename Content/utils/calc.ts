@@ -145,6 +145,8 @@ export const SecondLesson = (words: WordsOneLessonInt) => {
   const allLessonVerbs = Object.keys(verbs);
 
   const verb = allLessonVerbs[getRandomInt(0, allLessonVerbs.length - 1)];
+  let {pronoun, qw} = verbs[verb];
+  let Qword = qw[getRandomInt(0, qw.length - 1)];
 
   const subjectPronouns: SubjectPronounsType[] = [
     'i',
@@ -155,6 +157,7 @@ export const SecondLesson = (words: WordsOneLessonInt) => {
     'they',
     'it',
   ];
+  const subjectPronouns2 = [...subjectPronouns];
 
   const ObjectPronouns: ObjectPronounsType[] = [
     'me',
@@ -185,7 +188,7 @@ export const SecondLesson = (words: WordsOneLessonInt) => {
 
   const subjectIndex = getRandomInt(
     [6, 7, 8].includes(tenseNoteIndex) ? 1 : 0,
-    subjectPronouns.length - 1,
+    subjectPronouns2.length - 1,
   );
 
   const subject = subjectPronouns[subjectIndex];
@@ -218,9 +221,9 @@ export const SecondLesson = (words: WordsOneLessonInt) => {
     console.error('Error create nounsN data:', error);
   }
 
-  subjectPronouns.splice(subjectIndex, 1);
+  subjectPronouns2.splice(subjectIndex, 1);
 
-  const subjectExtraWords = subjectPronouns
+  const subjectExtraWords = subjectPronouns2
     .splice(0, 3)
     .concat(subject)
     .sort(() => Math.random() - 0.5);
@@ -267,16 +270,49 @@ export const SecondLesson = (words: WordsOneLessonInt) => {
   ];
 
   const nouns0 = nounsN.map(el => el[0]).sort();
-  const {pronoun, qw} = verbs[verb];
+
+  const isPronoun = [
+    // 'walk',
+    'read',
+    'send',
+    'bring',
+  ].includes(verb);
+  const isCombineWithPronoun = [
+    'give',
+    'ask',
+    'pay',
+    'tell',
+    'write',
+    'buy',
+    // 'walk',
+    'read',
+    'send',
+    'bring',
+  ].includes(verb);
+
+  if (!pronoun && isPronoun) pronoun = true;
 
   let data: string[] = [];
   let objP: string | undefined = undefined;
 
-  if (Math.random() > 0.5 && !pronoun)
+  if (
+    Math.random() > 0.5 &&
+    !pronoun &&
+    (tenseNoteIndex < 6 || Qword !== 'what')
+  )
     data = [...fourDoBe, ...subjectExtraWords, ...threeVerbs, ...nouns0];
-  else if (!pronoun)
+  else if (!pronoun && (tenseNoteIndex < 6 || Qword !== 'what'))
     data = [...subjectExtraWords, ...fourDoBe, ...threeVerbs, ...nouns0];
-  else {
+  else if (isCombineWithPronoun && (tenseNoteIndex < 6 || Qword !== 'what')) {
+    data = [
+      ...subjectExtraWords,
+      ...fourDoBe,
+      ...threeVerbs,
+      ...objectExtraWords,
+      ...nouns0,
+    ];
+    objP = ObjectPronoun;
+  } else if (tenseNoteIndex < 6 || Qword !== 'what') {
     data = [
       ...subjectExtraWords,
       ...fourDoBe,
@@ -284,61 +320,80 @@ export const SecondLesson = (words: WordsOneLessonInt) => {
       ...objectExtraWords,
     ];
     objP = ObjectPronoun;
-  }
-
-  const abc = nounsN.length > 0 ? nounsN[0] : ['', ''];
-
-  let question = !objP ? [...correctVerb, abc[0]] : [...correctVerb, objP];
-
-  let qWord = !objP ? [subject, verb, abc[1]] : [subject, verb, objP, ''];
-
-  if (tenseNoteIndex >= 6) {
-    const Qword = qw[getRandomInt(0, qw.length - 1)];
-
-    QuestionWords.splice(QuestionWords.indexOf(Qword as QuestionWordsType), 1);
-    const extraQ = [
-      ...QuestionWords.sort(() => Math.random() - 0.5).slice(0, 3),
-      Qword,
-    ].sort(() => Math.random() - 0.5);
-
-    if (Qword === 'what') {
+  } else {
+    if (Math.random() > 0.5)
       data = [...subjectExtraWords, ...fourDoBe, ...threeVerbs];
-      question = !objP ? [...correctVerb] : [...correctVerb, objP];
-      qWord = !objP ? [subject, verb] : [subject, verb, objP, ''];
-    }
+    else data = [...fourDoBe, ...subjectExtraWords, ...threeVerbs];
+  }
 
-    question.unshift(Qword);
-    data.unshift(...extraQ);
-    qWord.unshift(Qword);
-  } else if (
-    ['he', 'she', 'it'].includes(question[0]) &&
-    Math.random() > 0.01
-  ) {
-    const Qword = 'who';
+  const [nounQuestion, nounQword] =
+    nounsN.length > 0 ? shuffleArray(nounsN)[0] : ['', ''];
 
+  let question = !objP
+    ? [...correctVerb, nounQuestion]
+    : isCombineWithPronoun
+    ? [...correctVerb, objP, nounQuestion]
+    : [...correctVerb, objP];
+
+  let qWord = !objP
+    ? [subject, verb, nounQword]
+    : isCombineWithPronoun
+    ? [subject, verb, objP, nounQword]
+    : [subject, verb, objP];
+
+  if (tenseNoteIndex >= 6 && Math.random() > 0.4) {
     QuestionWords.splice(QuestionWords.indexOf(Qword as QuestionWordsType), 1);
     const extraQ = [
       ...QuestionWords.sort(() => Math.random() - 0.5).slice(0, 3),
       Qword,
     ].sort(() => Math.random() - 0.5);
-    if (pronoun)
-      data = [...extraQ, ...fourDoBe, ...threeVerbs, ...objectExtraWords];
-    else data = [...extraQ, ...fourDoBe, ...threeVerbs, ...nouns0];
 
-    question.shift();
     question.unshift(Qword);
-    qWord.shift();
     qWord.unshift(Qword);
+    data.unshift(...extraQ);
+  } else if (['he', 'she', 'it'].includes(question[0]) && Math.random() > 0.5) {
+    Qword = 'who';
+
+    QuestionWords.splice(QuestionWords.indexOf(Qword as QuestionWordsType), 1);
+
+    const extraQ = [
+      ...QuestionWords.sort(() => Math.random() - 0.5).slice(0, 3),
+      Qword,
+    ].sort(() => Math.random() - 0.5);
+
+    question[0] = qWord[0] = Qword;
+    const dataStart = data.slice(0, 8);
+    const dataEnd = data.slice(8);
+
+    const newDataStart = dataStart.map(el =>
+      subjectPronouns.includes(el) ? extraQ.pop() : el,
+    ) as string[];
+
+    data = [...newDataStart, ...dataEnd];
   }
-  // console.log(434, verb, qw, subject, verb, abc[1], objP);
+
+  // if (Qword === 'what' && tenseNoteIndex > 6)
+
+  //   console.log(
+  //     // verb, subject, tenseNoteIndex
+  //     Qword,
+  //     '\ncorrectVerb :',
+  //     correctVerb,
+  //     '\nquestion',
+  //     question,
+  //     '\nqWord',
+  //     qWord,
+  //     '\ndata: ',
+  //     data,
+  //   );
 
   return JSON.stringify({
-    tenseNoteIndex,
-    question,
-    testData: data,
     subject,
     verb,
+    tenseNoteIndex,
+    question,
     qWord,
+    testData: data,
   });
 };
 
