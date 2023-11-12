@@ -297,7 +297,7 @@ function LessonStudyScreen({route, navigation}) {
                           style={{
                             position: 'relative',
                             bottom: '-44%',
-                            right: '-30%',
+                            right: '-50%',
                           }}
                           src={spWordE[el as keyof typeof spWordE]}
                           resizeMode="contain"
