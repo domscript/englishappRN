@@ -97,7 +97,7 @@ const NewImage = ({
       url = require('./QuestionWords/who.webp');
       break;
     case 'whop':
-      url = require('./QuestionWords/whop.png');
+      url = require('./QuestionWords/whop.webp');
       break;
     case 'why':
       url = require('./QuestionWords/why.webp');
@@ -861,6 +861,9 @@ const NewImage = ({
       break;
     case 'letter':
       url = require('./letter.webp');
+      break;
+    case 'email':
+      url = require('./email.webp');
       break;
     case 'message':
       url = require('./message.webp');

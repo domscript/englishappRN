@@ -1534,6 +1534,7 @@ const NounsL: NounsLessonsInt = {
   gift: ['a gift', 0, 'gift', ['see', 'send', 'give']],
   text: ['a text', 0, 'text', ['read', 'write', 'see']],
   letter: ['a letter', 0, 'letter', ['read', 'write', 'see', 'send']],
+  email: ['an email', 0, 'email', ['read', 'write', 'see', 'send']],
   newspaper: ['newspaper', 0, 'newspaper', ['open', 'close', 'buy', 'read']],
   umbrella: [
     'an umbrella',
@@ -1605,7 +1606,7 @@ const NounsL: NounsLessonsInt = {
     'on the chair',
     0,
     'chair',
-    ['dance', 'sit', 'stand', 'bring', 'write', 'jump'],
+    ['dance', 'sit', 'stand', 'bring', 'jump'],
   ],
   table: [
     'on the table',
@@ -1895,6 +1896,7 @@ const SomeNouns = {
   message: 'message',
   text: 'text',
   letter: 'letter',
+  email: 'email',
   gift: 'gift',
   newspaper: 'newspaper',
   umbrella: 'umbrella',
