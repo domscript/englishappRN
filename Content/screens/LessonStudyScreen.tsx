@@ -46,10 +46,11 @@ function LessonStudyScreen({route, navigation}) {
     return countProgress(user1.toUpperCase().split(id)[1].slice(0, 100));
   }, [user1, id]);
 
-  const test =
+  const test = JSON.parse(
     lessonData[
       newData.indexOf('4') < 0 ? newData.indexOf('3') : newData.indexOf('4')
-    ];
+    ],
+  );
 
   const {qWord, question, tenseNoteIndex} = test;
 
@@ -188,7 +189,7 @@ function LessonStudyScreen({route, navigation}) {
     }
     navigation.navigate('Note', {
       lessonId: id,
-      note: [test.note, test.tenseNoteIndex, test.verb],
+      note: [test.subject, tenseNoteIndex, test.verb],
     });
   }
   function helpHandler() {

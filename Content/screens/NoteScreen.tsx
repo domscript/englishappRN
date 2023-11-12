@@ -11,16 +11,25 @@ import {BoyFace} from '../components/MyIcons/SVG/BoyFace';
 import {ManFace} from '../components/MyIcons/SVG/ManFace';
 import {OldFace} from '../components/MyIcons/SVG/OldFace';
 import {VerbForms} from '../components/MyIcons/SVG/VerbForms';
+import {aLLscheme, BeScheme} from '../utils/verbSimpleTenceScheme';
+import {Sverbs} from '../data/words';
 
 function NoteScreen({route}) {
-  const [note, tenseNoteIndex, verb] = route.params.note;
+  const [subject, tenseNoteIndex, verb] = route.params.note;
   const {isDarkTheme} = useSelector((state: RootState) => state.theme);
 
   const showArr = ['11', '12', '13', '21', '22', '23', '31', '32', '33'];
 
   const show = showArr[tenseNoteIndex];
 
-  const data = Object.values(note).map(el => el.join(' '));
+  const data =
+    verb === 'be'
+      ? BeScheme.map(el =>
+          Object.values(el[subject as keyof typeof el]).join(' '),
+        )
+      : Object.values(
+          aLLscheme(Sverbs[verb as keyof typeof Sverbs], subject),
+        ).map(el => el.join(' '));
 
   return (
     <View

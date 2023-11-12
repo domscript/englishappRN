@@ -1,22 +1,7 @@
 import {getRandomInt, shuffleArray} from './smallFunctions';
 import {WordsOneLessonInt} from '../data/words';
-
-interface VerbConjugation {
-  value0: string;
-  value1: string;
-  value2: string;
-  value3: string;
-}
-interface BeInterface {
-  i: string[];
-  you: string[];
-  he: string[];
-  she: string[];
-  we: string[];
-  they: string[];
-  it: string[];
-}
-
+import {aLLscheme} from './verbSimpleTenceScheme';
+import {BeScheme, BeInterface} from './verbSimpleTenceScheme';
 /*
   BeScheme, aLLscheme
   👶✅,
@@ -30,187 +15,9 @@ interface BeInterface {
   🧓❓,
 */
 
-const BeScheme: BeInterface[] = [
-  {
-    i: ['i', 'was'],
-    you: ['you', 'were'],
-    he: ['he', 'was'],
-    she: ['she', 'was'],
-    we: ['we', 'were'],
-    they: ['they', 'were'],
-    it: ['it', 'was'],
-  },
-  {
-    i: ['i', 'am'],
-    you: ['you', 'are'],
-    he: ['he', 'is'],
-    she: ['she', 'is'],
-    we: ['we', 'are'],
-    they: ['they', 'are'],
-    it: ['it', 'is'],
-  },
-  {
-    i: ['i', 'will be'],
-    you: ['you', 'will be'],
-    he: ['he', 'will be'],
-    she: ['she', 'will be'],
-    we: ['we', 'will be'],
-    they: ['they', 'will be'],
-    it: ['it', 'will be'],
-  },
-  {
-    i: ['i', "wasn't"],
-    you: ['you', "weren't"],
-    he: ['he', "wasn't"],
-    she: ['she', "wasn't"],
-    we: ['we', "weren't"],
-    they: ['they', "weren't"],
-    it: ['it', "wasn't"],
-  },
-  {
-    i: ['i', 'am not'],
-    you: ['you', "aren't"],
-    he: ['he', "isn't"],
-    she: ['she', "isn't"],
-    we: ['we', "aren't"],
-    they: ['they', "aren't"],
-    it: ['it', "isn't"],
-  },
-  {
-    i: ['i', "won't be"],
-    you: ['you', "won't be"],
-    he: ['he', "won't be"],
-    she: ['she', "won't be"],
-    we: ['we', "won't be"],
-    they: ['they', "won't be"],
-    it: ['it', "won't be"],
-  },
-  {
-    i: ['was', 'i'],
-    you: ['were', 'you'],
-    he: ['was', 'he'],
-    she: ['was', 'she'],
-    we: ['were', 'we'],
-    they: ['were', 'they'],
-    it: ['was', 'it'],
-  },
-  {
-    i: ['am', 'i'],
-    you: ['are', 'you'],
-    he: ['is', 'he'],
-    she: ['is', 'she'],
-    we: ['are', 'we'],
-    they: ['are', 'they'],
-    it: ['is', 'it'],
-  },
-  {
-    i: ['will', 'i', 'be'],
-    you: ['will', 'you', 'be'],
-    he: ['will', 'he', 'be'],
-    she: ['will', 'she', 'be'],
-    we: ['will', 'we', 'be'],
-    they: ['will', 'they', 'be'],
-    it: ['will', 'it', 'be'],
-  },
-];
-
 type SubjectPronounsType = 'i' | 'you' | 'he' | 'she' | 'we' | 'they' | 'it';
-
-const aLLscheme = (verbs: VerbConjugation, subject: SubjectPronounsType) => {
-  const scheme: {
-    i: string[];
-    you: string[];
-    he: string[];
-    she: string[];
-    we: string[];
-    they: string[];
-    it: string[];
-  }[] = [
-    {
-      i: ['i', verbs.value2],
-      you: ['you', verbs.value2],
-      he: ['he', verbs.value2],
-      she: ['she', verbs.value2],
-      we: ['we', verbs.value2],
-      they: ['they', verbs.value2],
-      it: ['it', verbs.value2],
-    },
-    {
-      i: ['i', verbs.value0],
-      you: ['you', verbs.value0],
-      he: ['he', verbs.value1],
-      she: ['she', verbs.value1],
-      we: ['we', verbs.value0],
-      they: ['they', verbs.value0],
-      it: ['it', verbs.value1],
-    },
-    {
-      i: ['i', 'will', verbs.value0],
-      you: ['you', 'will', verbs.value0],
-      he: ['he', 'will', verbs.value0],
-      she: ['she', 'will', verbs.value0],
-      we: ['we', 'will', verbs.value0],
-      they: ['they', 'will', verbs.value0],
-      it: ['it', 'will', verbs.value0],
-    },
-    {
-      i: ['i', "didn't", verbs.value0],
-      you: ['you', "didn't", verbs.value0],
-      he: ['he', "didn't", verbs.value0],
-      she: ['she', "didn't", verbs.value0],
-      we: ['we', "didn't", verbs.value0],
-      they: ['they', "didn't", verbs.value0],
-      it: ['it', "didn't", verbs.value0],
-    },
-    {
-      i: ['i', "don't", verbs.value0],
-      you: ['you', "don't", verbs.value0],
-      he: ['he', "doesn't", verbs.value0],
-      she: ['she', "doesn't", verbs.value0],
-      we: ['we', "don't", verbs.value0],
-      they: ['they', "don't", verbs.value0],
-      it: ['it', "doesn't", verbs.value0],
-    },
-    {
-      i: ['i', "won't", verbs.value0],
-      you: ['you', "won't", verbs.value0],
-      he: ['he', "won't", verbs.value0],
-      she: ['she', "won't", verbs.value0],
-      we: ['we', "won't", verbs.value0],
-      they: ['they', "won't", verbs.value0],
-      it: ['it', "won't", verbs.value0],
-    },
-    {
-      i: ['did', 'i', verbs.value0],
-      you: ['did', 'you', verbs.value0],
-      he: ['did', 'he', verbs.value0],
-      she: ['did', 'she', verbs.value0],
-      we: ['did', 'we', verbs.value0],
-      they: ['did', 'they', verbs.value0],
-      it: ['did', 'it', verbs.value0],
-    },
-    {
-      i: ['do', 'i', verbs.value0],
-      you: ['do', 'you', verbs.value0],
-      he: ['does', 'he', verbs.value0],
-      she: ['does', 'she', verbs.value0],
-      we: ['do', 'we', verbs.value0],
-      they: ['do', 'they', verbs.value0],
-      it: ['does', 'it', verbs.value0],
-    },
-    {
-      i: ['will', 'i', verbs.value0],
-      you: ['will', 'you', verbs.value0],
-      he: ['will', 'he', verbs.value0],
-      she: ['will', 'she', verbs.value0],
-      we: ['will', 'we', verbs.value0],
-      they: ['will', 'they', verbs.value0],
-      it: ['will', 'it', verbs.value0],
-    },
-  ];
-
-  return scheme.map(el => el[subject]);
-};
+type ObjectPronounsType = 'me' | 'you ' | 'him' | 'her' | 'us' | 'them' | 'it ';
+type QuestionWordsType = 'when' | 'what' | 'where' | 'who' | 'how' | 'why';
 
 export const SimpleTenseScheme = (words: WordsOneLessonInt) => {
   const {verbs, nouns} = words.words;
@@ -308,15 +115,27 @@ export const SimpleTenseScheme = (words: WordsOneLessonInt) => {
 
   const abc = nounsN.length > 0 ? nounsN[0] : ['', ''];
 
-  return {
+  // if ([...correctVerb, abc[0]].includes('have'))
+  //   console.log(
+  //     tenseNoteIndex,
+  //     'question: ',
+  //     [...correctVerb, abc[0]],
+  //     'testData: ',
+  //     data,
+  //     subject,
+  //     verb,
+  //     'qWord: ',
+  //     [subject, verb, abc[1]],
+  //   );
+
+  return JSON.stringify({
     tenseNoteIndex,
     question: [...correctVerb, abc[0]],
     testData: data,
     subject,
     verb,
-    note,
     qWord: [subject, verb, abc[1]],
-  };
+  });
 };
 
 export const SecondLesson = (words: WordsOneLessonInt) => {
@@ -325,8 +144,6 @@ export const SecondLesson = (words: WordsOneLessonInt) => {
   const allLessonVerbs = Object.keys(verbs);
 
   const verb = allLessonVerbs[getRandomInt(0, allLessonVerbs.length - 1)];
-
-  type QuestionWordsType = 'when' | 'what' | 'where' | 'who' | 'how' | 'why';
 
   const subjectPronouns: SubjectPronounsType[] = [
     'i',
@@ -337,15 +154,6 @@ export const SecondLesson = (words: WordsOneLessonInt) => {
     'they',
     'it',
   ];
-
-  type ObjectPronounsType =
-    | 'me'
-    | 'you '
-    | 'him'
-    | 'her'
-    | 'us'
-    | 'them'
-    | 'it ';
 
   const ObjectPronouns: ObjectPronounsType[] = [
     'me',
@@ -374,13 +182,24 @@ export const SecondLesson = (words: WordsOneLessonInt) => {
   // we: ['we', 'us', 'our', 'ours', 'ourself'],
   // they: ['they', 'them', 'their', 'theirs', 'themselves'],
 
+  const subjectIndex = getRandomInt(0, subjectPronouns.length - 1);
+
+  const subject = subjectPronouns[subjectIndex];
+
+  if ([0, 4].includes(subjectIndex)) {
+    ObjectPronouns.splice(4, 1);
+    ObjectPronouns.splice(0, 1);
+  } else {
+    ObjectPronouns.splice(subjectIndex, 1);
+  }
+
   const objectExtraWords = ObjectPronouns.sort(
     () => Math.random() - 0.5,
   ).splice(0, 4);
 
   const ObjectPronoun = objectExtraWords[getRandomInt(0, 3)];
 
-  const subject = subjectPronouns[getRandomInt(0, subjectPronouns.length - 1)];
+  // here
 
   let nounsN: [string, string][] = [];
 
@@ -397,8 +216,7 @@ export const SecondLesson = (words: WordsOneLessonInt) => {
     console.error('Error create nounsN data:', error);
   }
 
-  const insexOfSubject = subjectPronouns.indexOf(subject);
-  subjectPronouns.splice(insexOfSubject, 1);
+  subjectPronouns.splice(subjectIndex, 1);
 
   const subjectExtraWords = subjectPronouns
     .splice(0, 3)
@@ -514,18 +332,16 @@ export const SecondLesson = (words: WordsOneLessonInt) => {
     qWord.shift();
     qWord.unshift(Qword);
   }
-
   // console.log(434, verb, qw, subject, verb, abc[1], objP);
 
-  return {
+  return JSON.stringify({
     tenseNoteIndex,
     question,
     testData: data,
     subject,
     verb,
-    note,
     qWord,
-  };
+  });
 };
 
 export const ThirdLesson = (
@@ -651,15 +467,14 @@ export const ThirdLesson = (
       ];
     }
 
-    return {
+    return JSON.stringify({
       tenseNoteIndex,
       question,
       testData: data,
       subject,
       verb: 'be',
-      note: beScheme.map(el => el[subject]),
       qWord: [`${subject}${'be'}`, hereThere],
-    };
+    });
   }
 
   let nounsN: [string, string][] = [];
@@ -1053,13 +868,12 @@ export const FourthLesson = (
 
   // console.log(434, verb, qw, subject, verb, abc[1], objP);
 
-  return {
+  return JSON.stringify({
     tenseNoteIndex,
     question,
     testData: data,
     subject,
     verb,
-    note,
     qWord,
-  };
+  });
 };
