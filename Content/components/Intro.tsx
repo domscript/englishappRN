@@ -139,7 +139,7 @@ export function Intro({onPress}: IntroProps) {
             <Image src="dog_face_active" resizeMode="contain" />
           </View>
           <View style={styles.img0}>
-            <Image src="its" resizeMode="contain" />
+            <Image src="max_id" resizeMode="contain" />
           </View>
         </View>
       </View>

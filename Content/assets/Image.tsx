@@ -1,7 +1,5 @@
 import {Image, View, StyleSheet} from 'react-native';
 
-// TODO . make plural 'chairs' ...
-
 const NewImage = ({
   src,
   resizeMode,
@@ -15,6 +13,9 @@ const NewImage = ({
   switch (src) {
     case 'dog_face_active':
       url = require('./dog_face_active.webp');
+      break;
+    case 'max_id':
+      url = require('./max_id.webp');
       break;
     case 'slightly_smiling-face':
     case 'i':
