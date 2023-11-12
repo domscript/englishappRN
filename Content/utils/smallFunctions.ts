@@ -15,11 +15,12 @@ export const getRandomInt = (min: number, max: number): number => {
 
 // Helper function to shuffle an array randomly
 export const shuffleArray = <T>(array: T[]): T[] => {
-  for (let i = array.length - 1; i > 0; i--) {
-    const j = getRandomInt(0, i);
-    [array[i], array[j]] = [array[j], array[i]];
+  const newArr = [...array];
+  for (let i = newArr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i - 0 + 1)) + 0;
+    [newArr[i], newArr[j]] = [newArr[j], newArr[i]];
   }
-  return array;
+  return newArr;
 };
 
 export const roundScore = (score: number): string => {
