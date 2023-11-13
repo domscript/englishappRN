@@ -609,7 +609,7 @@ const NewImage = ({
     case 'room':
       url = require('./Places/room.webp');
       break;
-    case 'work':
+    case 'work ':
       url = require('./Places/work.webp');
       break;
     //////////////

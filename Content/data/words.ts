@@ -1463,7 +1463,7 @@ export const spWordE = {
   pencils: 'pencil',
 };
 
-const Flags = {
+export const Flags = {
   Argentina: 'Argentina',
   Australia: 'Australia',
   Canada: 'Canada',
@@ -1623,10 +1623,95 @@ const NounsL: NounsLessonsInt = {
   ],
   bed: ['on the bed', 0, 'bed', ['dance', 'sit', 'sleep', 'stand', 'jump']],
   // wall: ['on the wall', 0, 'wall', ['paint', 'lean']],
+
+  'credit card': ['credit card', 0, 'credit card', ['']],
+  money: ['money', 0, 'money', ['']],
+  ticket: ['a ticket', 0, 'ticket', ['buy']],
+
+  // juice: 'juice box',
+
+  // seat: 'seat',
+  // couch: 'couch',
+
+  // man: 'man',
+  // woman: 'woman',
+  // toilet: 'toilet',
 };
 
 ['love', 'bring', 'forget', 'give', 'help', 'lose'];
 // check, see, take, put, find
+
+const NounsLC: NounsLessonsInt = {
+  // Transport
+  car: ['in the car', 0, 'car', ['be']],
+
+  // Buildings
+  home: ['at home', 0, 'home', ['be']],
+  school: ['at school', 0, 'school', ['be']],
+  work: ['at work', 0, 'work ', ['be']],
+  cinema: ['at the cinema', 0, 'cinema', ['be']],
+  room: ['in the room', 0, 'room', ['be']],
+  bedroom: ['in the bedroom', 0, 'bedroom', ['be']],
+  basement: ['in the basement', 0, 'basement', ['be']],
+  kitchen: ['in the kitchen', 0, 'kitchen', ['be']],
+  house: ['in the house', 0, 'house', ['be']],
+  office: ['in the office', 0, 'office', ['be']],
+  bank: ['at the bank', 0, 'bank', ['be']],
+  museum: ['at the museum', 0, 'museum', ['be']],
+  theater: ['at the theater', 0, 'theater', ['be']],
+  castle: ['at the castle', 0, 'castle', ['be']],
+  church: ['at the church', 0, 'church', ['be']],
+  circus: ['at the circus', 0, 'circus', ['be']],
+  'convenience store': [
+    'at the convenience store',
+    0,
+    'convenience store',
+    ['be'],
+  ],
+  'department store': [
+    'at the department store',
+    0,
+    'department store',
+    ['be'],
+  ],
+  factory: ['at the factory', 0, 'factory', ['be']],
+  hospital: ['at the hospital', 0, 'hospital', ['be']],
+  hotel: ['at the hotel', 0, 'hotel', ['be']],
+  mosque: ['at the mosque', 0, 'mosque', ['be']],
+  stadium: ['at the stadium', 0, 'stadium', ['be']],
+  synagogue: ['at the synagogue', 0, 'synagogue', ['be']],
+  'post office': ['at the post office', 0, 'post office', ['be']],
+
+  // Events
+  Carnaval: ['at Carnaval', 0, 'Carnaval', ['be']],
+  Concert: ['at the Concert', 0, 'Concert', ['be']],
+  Exhibition: ['at the Exhibition', 0, 'Exhibition', ['be']],
+  'Fashion Show': ['at the Fashion Show', 0, 'Fashion Show', ['be']],
+  Meeting: ['at the Meeting', 0, 'Meeting', ['be']],
+  Presentation: ['at the Presentation', 0, 'Presentation', ['be']],
+
+  // Countries
+  Argentina: ['in Argentina', 0, 'Argentina', ['be']],
+  Australia: ['in Australia', 0, 'Australia', ['be']],
+  Canada: ['in Canada', 0, 'Canada', ['be']],
+  China: ['in China', 0, 'China', ['be']],
+  France: ['in France', 0, 'France', ['be']],
+  Germany: ['in Germany', 0, 'Germany', ['be']],
+  India: ['in India', 0, 'India', ['be']],
+  Japan: ['in Japan', 0, 'Japan', ['be']],
+  'South Korea': ['in South Korea', 0, 'South Korea', ['be']],
+  Spain: ['in Spain', 0, 'Spain', ['be']],
+  Panama: ['in Panama', 0, 'Panama', ['be']],
+  Thailand: ['in Thailand', 0, 'Thailand', ['be']],
+  'the UK': ['in the UK', 0, 'the UK', ['be']],
+  'the USA': ['in the USA', 0, 'the USA', ['be']],
+
+  // wouldlike
+  apple: ['an apple', 0, 'apple', ['wouldlike', 'want', 'like']],
+  tea: ['a cup of tea', 0, 'tea', ['wouldlike', 'want', 'like']],
+  avocado: ['an avocado', 0, 'avocado', ['wouldlike', 'want', 'like']],
+  milk: ['a glass of milk', 0, 'glass of milk', ['wouldlike', 'want', 'like']],
+};
 
 const NounsLD: NounsLessonsInt = {
   id: ['id', 0, 'id', ['bring', 'lose', 'forget']],
@@ -1641,6 +1726,7 @@ const NounsLD: NounsLessonsInt = {
   dog: ['dog', 0, 'dog', ['love']],
   chair: ['chair', 0, 'chair', ['give']],
   chairs: ['chairs', 0, 'chair', ['give']],
+
   mother: ['mother', 0, 'mother', ['love', 'help']],
   family: ['family', 0, 'family', ['love', 'help']],
   father: ['father', 0, 'father', ['love', 'help']],
@@ -1730,8 +1816,7 @@ const wordsL: {
       'Subject Pronouns': subjectPronouns,
       names: fNames,
       nouns: {
-        ...NounsLs,
-        ...NounsL,
+        ...NounsLC,
       },
       verbs: verbsC,
     },
@@ -1969,10 +2054,10 @@ const Places = {
   kitchen: 'kitchen',
   office: 'office',
   room: 'room',
-  work: 'work',
+  'work ': 'work ',
 };
 
-const Events = {
+export const Events = {
   Carnaval: 'Carnaval',
   Concert: 'Concert',
   Exhibition: 'Exhibition',

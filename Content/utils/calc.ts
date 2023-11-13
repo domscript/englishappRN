@@ -401,8 +401,10 @@ export const ThirdLesson = (
   const tenseNoteIndex = Math.floor(Math.random() * 9);
 
   const allLessonVerbs = [...Object.keys(verbs), 'be'];
-  // const verb = allLessonVerbs[getRandomInt(0, allLessonVerbs.length - 1)];
-  const verb = 'be';
+  let verb = allLessonVerbs[getRandomInt(0, allLessonVerbs.length - 1)];
+
+  if ([2, 8].includes(tenseNoteIndex) && Math.random() > 0.5)
+    verb = 'wouldlike';
 
   const subjectPronouns: SubjectPronounsType[] = [
     'i',
@@ -443,21 +445,18 @@ export const ThirdLesson = (
   // we: ['we', 'us', 'our', 'ours', 'ourself'],
   // they: ['they', 'them', 'their', 'theirs', 'themselves'],
 
+  if ([6, 7, 8].includes(tenseNoteIndex)) {
+    subjectPronouns2.splice(4, 1);
+  }
+
   const subjectIndex = getRandomInt(
     [6, 7, 8].includes(tenseNoteIndex) ? 1 : 0,
     subjectPronouns2.length - 1,
   );
 
-  const subject = subjectPronouns[subjectIndex];
+  const subject = subjectPronouns2[subjectIndex];
   const QStart = beScheme[tenseNoteIndex][subject];
   const verbBe = QStart.filter(el => el !== subject);
-
-  if ([0, 4].includes(subjectIndex)) {
-    ObjectPronouns.splice(4, 1);
-    ObjectPronouns.splice(0, 1);
-  } else {
-    ObjectPronouns.splice(subjectIndex, 1);
-  }
 
   const objectExtraWords = ObjectPronouns.sort(
     () => Math.random() - 0.5,
@@ -494,7 +493,7 @@ export const ThirdLesson = (
 
   let data: string[] = [];
 
-  if (Math.random() > 0.3) {
+  if (Math.random() < 0.2) {
     const hereThere = Math.random() > 0.5 ? 'here' : 'there';
     const bbb = ['here', 'there', 'nowhere', 'anywhere'].sort(
       () => Math.random() - 0.5,
@@ -537,7 +536,7 @@ export const ThirdLesson = (
 
   try {
     let extraW: [string, string][] = Object.values(nouns)
-      .filter(el => el[3]?.includes('be'))
+      .filter(el => el[3]?.includes(verb))
       ?.map(el => [el[0], el[2]]);
 
     // Shuffle the extraW array randomly
@@ -607,6 +606,212 @@ export const ThirdLesson = (
       tenseNoteIndex,
       question,
       qWord: [`${subject}${'be'}`, nounN0[0][1]],
+      testData: data,
+    });
+  }
+
+  const particles = [
+    'will',
+    'does',
+    'do',
+    'did',
+    "won't",
+    "don't",
+    "doesn't",
+    "didn't",
+  ].sort(() => Math.random() - 0.5);
+
+  if (verb === 'wouldlike') {
+    const threeVerbs = [
+      verbs['like'].value0,
+      verbs['like'].value1,
+      verbs['like'].value2,
+      '',
+    ];
+    // ["like", "want"]
+    let question: string[] = [];
+    let qWord: string[] = [subject, 'like', nounN0[0][1]];
+
+    if (tenseNoteIndex === 2) {
+      question = [subject, 'would', 'like', nounN0[0][0]];
+      data = [
+        ...subjectExtraWords,
+        ...[...particles.slice(0, 3), 'would'].sort(() => Math.random() - 0.5),
+        ...threeVerbs,
+        ...nounsNL0.map(el => el[0]),
+      ];
+    }
+    if (tenseNoteIndex === 8) {
+      question = ['would', subject, 'like', nounN0[0][0]];
+      data = [
+        ...[...particles.slice(0, 3), 'would'].sort(() => Math.random() - 0.5),
+        ...subjectExtraWords,
+        ...threeVerbs,
+        ...nounsNL0.map(el => el[0]),
+      ];
+    }
+
+    return JSON.stringify({
+      subject,
+      verb: 'be',
+      tenseNoteIndex,
+      question,
+      qWord,
+      testData: data,
+    });
+  }
+
+  const correctVerb = aLLscheme(verbs[verb], subject)[tenseNoteIndex].map(el =>
+    el === '' ? subject : el,
+  );
+  let correctDoBe: string = '';
+  if (tenseNoteIndex > 1 && tenseNoteIndex < 6) {
+    correctDoBe = correctVerb[1];
+  } else if (tenseNoteIndex >= 6) {
+    correctDoBe = correctVerb[0];
+  }
+  const newParticles = particles.filter(el => {
+    if (correctDoBe) return el !== correctDoBe;
+    return true;
+  });
+
+  let fourDoBe;
+  if (correctDoBe)
+    fourDoBe = [correctDoBe, ...newParticles]
+      .splice(0, 4)
+      .sort(() => Math.random() - 0.5);
+  else
+    fourDoBe = [...newParticles].splice(0, 4).sort(() => Math.random() - 0.5);
+
+  if (verb === 'want' || verb === 'like') {
+    const wantLikeVerbs = [
+      'study',
+      'work',
+      'come',
+      'open',
+      'close',
+      'drink',
+      'eat',
+      'fly',
+      'jump',
+      'understand',
+      'know',
+      'ask',
+      'pay',
+      'sleep',
+      'speak',
+      'think',
+      'tell',
+      'talk',
+      'write',
+      'stand',
+      'run',
+      'sit',
+      'dance',
+      'walk',
+      'read',
+      'play',
+      'look',
+      'break',
+      'turn',
+      'see',
+      'say',
+      'buy',
+      'lose',
+      'help',
+      'meet',
+      'make',
+      'forget',
+      'start',
+      'travel',
+      'bring',
+      'begin',
+
+      // love
+      // give
+      // fall
+      // send
+      // 'have'
+      // seek
+      // hear
+      // find
+      // grow
+
+      // '?answer',
+      // '?shut',
+      // '?live',
+      // '?finish',
+      // '?end',
+      // '?watch',
+      // '?put',
+      // '?go',
+      // '?show',
+
+      // 'get gifts',
+      // 'receive gifts',
+    ];
+
+    const fourVerb = [...wantLikeVerbs]
+      .sort(() => Math.random() - 0.5)
+      .slice(0, 4);
+
+    const infVerb = fourVerb[Math.floor(Math.random() * 4)];
+
+    const threeVerbs = [
+      verbs[verb].value0,
+      verbs[verb].value1,
+      verbs[verb].value2,
+      '',
+    ];
+    let question: string[] = [];
+    let qWord: string[] = [subject, verb, infVerb];
+
+    if (correctDoBe && [6, 7, 8].includes(tenseNoteIndex)) {
+      question = [...correctVerb, `to ${infVerb}`];
+      data = [
+        ...[...fourDoBe].sort(() => Math.random() - 0.5),
+        ...subjectExtraWords,
+        ...threeVerbs,
+        ...fourVerb.map(el => `to ${el}`),
+      ];
+    } else if (correctDoBe) {
+      question = [...correctVerb, `to ${infVerb}`];
+      data = [
+        ...[...fourDoBe].sort(() => Math.random() - 0.5),
+        ...subjectExtraWords,
+        ...threeVerbs,
+        ...fourVerb.map(el => `to ${el}`),
+      ];
+    } else {
+      question = [...correctVerb, `to ${infVerb}`];
+      data = [
+        ...[...particles.slice(0, 4)].sort(() => Math.random() - 0.5),
+        ...subjectExtraWords,
+        ...threeVerbs,
+        ...fourVerb.map(el => `to ${el}`),
+      ];
+    }
+
+    // console.log(
+    //   796,
+    //   '\n',
+    //   verb,
+    //   subject,
+    //   tenseNoteIndex,
+    //   '\nquestion',
+    //   question,
+    //   '\nqWord',
+    //   qWord,
+    //   '\ndata: ',
+    //   data,
+    // );
+
+    return JSON.stringify({
+      subject,
+      verb,
+      tenseNoteIndex,
+      question,
+      qWord,
       testData: data,
     });
   }
