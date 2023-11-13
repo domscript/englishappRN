@@ -4,15 +4,9 @@ import {aLLscheme} from './verbSimpleTenceScheme';
 import {BeScheme, BeInterface} from './verbSimpleTenceScheme';
 /*
   BeScheme, aLLscheme
-  👶✅,
-  🧑✅,
-  🧓✅,
-  👶❌,
-  🧑❌,
-  🧓❌,
-  👶❓,
-  🧑❓,
-  🧓❓,
+  (0)👶✅,  (1)🧑✅,  (2)🧓✅,
+  (3)👶❌,  (4)🧑❌,  (5)🧓❌,
+  (6)👶❓,  (7)🧑❓,  (8)🧓❓,
 */
 
 type SubjectPronounsType = 'i' | 'you' | 'he' | 'she' | 'we' | 'they' | 'it';
@@ -402,9 +396,11 @@ export const ThirdLesson = (
   beScheme: BeInterface[] = BeScheme,
 ) => {
   const {verbs, nouns} = words.words;
+  const tenseNoteIndex = Math.floor(Math.random() * 9);
 
-  type SubjectPronounsType = 'i' | 'you' | 'he' | 'she' | 'we' | 'they' | 'it';
-  type QuestionWordsType = 'when' | 'what' | 'where' | 'who' | 'how' | 'why';
+  const allLessonVerbs = Object.keys(verbs);
+
+  const verb = allLessonVerbs[getRandomInt(0, allLessonVerbs.length - 1)];
 
   const subjectPronouns: SubjectPronounsType[] = [
     'i',
@@ -416,14 +412,7 @@ export const ThirdLesson = (
     'it',
   ];
 
-  type ObjectPronounsType =
-    | 'me'
-    | 'you '
-    | 'him'
-    | 'her'
-    | 'us'
-    | 'them'
-    | 'it ';
+  const subjectPronouns2 = [...subjectPronouns];
 
   const ObjectPronouns: ObjectPronounsType[] = [
     'me',
@@ -452,18 +441,31 @@ export const ThirdLesson = (
   // we: ['we', 'us', 'our', 'ours', 'ourself'],
   // they: ['they', 'them', 'their', 'theirs', 'themselves'],
 
+  const subjectIndex = getRandomInt(
+    [6, 7, 8].includes(tenseNoteIndex) ? 1 : 0,
+    subjectPronouns2.length - 1,
+  );
+
+  const subject = subjectPronouns[subjectIndex];
+  const QStart = beScheme[tenseNoteIndex][subject];
+  const verbBe = QStart.filter(el => el !== subject);
+
+  if ([0, 4].includes(subjectIndex)) {
+    ObjectPronouns.splice(4, 1);
+    ObjectPronouns.splice(0, 1);
+  } else {
+    ObjectPronouns.splice(subjectIndex, 1);
+  }
+
   const objectExtraWords = ObjectPronouns.sort(
     () => Math.random() - 0.5,
   ).splice(0, 4);
 
   const ObjectPronoun = objectExtraWords[getRandomInt(0, 3)];
 
-  const subject = subjectPronouns[getRandomInt(0, subjectPronouns.length - 1)];
+  subjectPronouns2.splice(subjectIndex, 1);
 
-  subjectPronouns.splice(subjectPronouns.indexOf(subject), 1);
-  subjectPronouns.sort(() => Math.random() - 0.5);
-
-  const subjectExtraWords = subjectPronouns
+  const subjectExtraWords = subjectPronouns2
     .splice(0, 3)
     .concat(subject)
     .sort(() => Math.random() - 0.5);
@@ -484,38 +486,35 @@ export const ThirdLesson = (
     'be',
   ];
 
-  const tenseNoteIndex = Math.floor(Math.random() * 9);
-  // const tenseNoteIndex = 8;
-  const bbb = ['here', 'there', 'nowhere', 'anywhere'];
-  bbb.sort(() => Math.random() - 0.5);
+  const newBeVerbs0 = beVerbs0
+    .filter(el => (verbBe.length === 1 ? el !== verbBe[0] : el !== verbBe[1]))
+    .sort(() => Math.random() - 0.5);
+
   let data: string[] = [];
 
   if (true) {
-    // if (Math.random() > 0) {
     const hereThere = Math.random() > 0.5 ? 'here' : 'there';
-    const verbs = beScheme[tenseNoteIndex][subject];
-    const question = [...verbs, hereThere];
+    const bbb = ['here', 'there', 'nowhere', 'anywhere'].sort(
+      () => Math.random() - 0.5,
+    );
 
-    const newVerbs = [...verbs];
-    let qBeVerbs: string[] = [];
-    newVerbs.splice(verbs.indexOf(subject), 1);
-    if (newVerbs.length === 1) {
-      beVerbs0.sort(() => Math.random() - 0.5);
-      beVerbs0.splice(beVerbs0.indexOf(newVerbs[0]), 1);
-      qBeVerbs = [...beVerbs0.slice(0, 3), ...newVerbs];
-      qBeVerbs.sort(() => Math.random() - 0.5);
+    const question = [...QStart, hereThere];
 
-      data = [...subjectExtraWords, ...qBeVerbs, ...bbb];
+    if (verbBe.length === 1) {
+      data = [
+        ...subjectExtraWords,
+        ...[...newBeVerbs0.slice(0, 3), ...verbBe].sort(
+          () => Math.random() - 0.5,
+        ),
+        ...bbb,
+      ];
     } else {
-      beVerbs0.sort(() => Math.random() - 0.5);
-      beVerbs0.splice(beVerbs0.indexOf(newVerbs[1]), 1);
-      qBeVerbs = [...beVerbs0.slice(0, 3), newVerbs[1]];
-      qBeVerbs.sort(() => Math.random() - 0.5);
-
       data = [
         ...['were', 'will', 'was', 'are'].sort(() => Math.random() - 0.5),
         ...subjectExtraWords,
-        ...qBeVerbs,
+        ...[...newBeVerbs0.slice(0, 3), verbBe[1]].sort(
+          () => Math.random() - 0.5,
+        ),
         ...bbb,
       ];
     }
