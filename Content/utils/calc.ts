@@ -2,6 +2,8 @@ import {getRandomInt, shuffleArray} from './smallFunctions';
 import {WordsOneLessonInt} from '../data/words';
 import {aLLscheme} from './verbSimpleTenceScheme';
 import {BeScheme, BeInterface} from './verbSimpleTenceScheme';
+import {Events, Flags} from '../data/words';
+
 /*
   BeScheme, aLLscheme
   (0)👶✅,  (1)🧑✅,  (2)🧓✅,
@@ -398,9 +400,9 @@ export const ThirdLesson = (
   const {verbs, nouns} = words.words;
   const tenseNoteIndex = Math.floor(Math.random() * 9);
 
-  const allLessonVerbs = Object.keys(verbs);
-
-  const verb = allLessonVerbs[getRandomInt(0, allLessonVerbs.length - 1)];
+  const allLessonVerbs = [...Object.keys(verbs), 'be'];
+  // const verb = allLessonVerbs[getRandomInt(0, allLessonVerbs.length - 1)];
+  const verb = 'be';
 
   const subjectPronouns: SubjectPronounsType[] = [
     'i',
@@ -492,7 +494,7 @@ export const ThirdLesson = (
 
   let data: string[] = [];
 
-  if (true) {
+  if (Math.random() > 0.3) {
     const hereThere = Math.random() > 0.5 ? 'here' : 'there';
     const bbb = ['here', 'there', 'nowhere', 'anywhere'].sort(
       () => Math.random() - 0.5,
@@ -529,139 +531,85 @@ export const ThirdLesson = (
     });
   }
 
-  let nounsN: [string, string][] = [];
+  let nounsNL0: [string, string][] = [];
+  let nounsNL1: [string, string][] = [];
+  let nounN0: [string, string][] = [];
 
   try {
     let extraW: [string, string][] = Object.values(nouns)
-      .filter(el => el[3]?.includes(verb))
+      .filter(el => el[3]?.includes('be'))
       ?.map(el => [el[0], el[2]]);
 
     // Shuffle the extraW array randomly
     extraW = shuffleArray(extraW);
 
-    nounsN = extraW.slice(0, 4);
+    nounsNL0 = extraW.slice(0, 4);
+
+    nounN0 = [nounsNL0[Math.floor(Math.random() * 4)]];
+
+    nounsNL0 = [...nounsNL0].sort(() => Math.random() - 0.5);
+
+    nounsNL1 = extraW
+      .filter(el => Object.keys(Flags).includes(el[1]))
+      .slice(0, 4);
   } catch (error) {
     console.error('Error create nounsN data:', error);
   }
 
-  const insexOfSubject = subjectPronouns.indexOf(subject);
-  subjectPronouns.splice(insexOfSubject, 1);
-
-  const correctVerb = aLLscheme[tenseNoteIndex][subject].map(el =>
-    el === '' ? subject : el,
-  );
-
-  const particles = [
-    'will',
-    'does',
-    'do',
-    'did',
-    "won't",
-    "don't",
-    "doesn't",
-    "didn't",
-  ].sort(() => Math.random() - 0.5);
-
-  let correctDoBe: string | null = null;
-  if (tenseNoteIndex > 1 && tenseNoteIndex < 6) {
-    correctDoBe = correctVerb[1];
-  } else if (tenseNoteIndex >= 6) {
-    correctDoBe = correctVerb[0];
-  }
-  const newParticles = particles.filter(el => {
-    if (correctDoBe) return el !== correctDoBe;
-    return true;
-  });
-
-  let fourDoBe;
-  if (correctDoBe)
-    fourDoBe = [correctDoBe, ...newParticles]
-      .splice(0, 4)
-      .sort(() => Math.random() - 0.5);
-  else
-    fourDoBe = [...newParticles].splice(0, 4).sort(() => Math.random() - 0.5);
-
-  const threeVerbs = [
-    verbs[verb].value0,
-    verbs[verb].value1,
-    verbs[verb].value2,
-    '',
-  ];
-
-  const nouns0 = nounsN.map(el => el[0]).sort();
-  const {pronoun, qw} = verbs[verb];
-
-  let objP: string | undefined = undefined;
-
-  if (Math.random() > 0.5 && !pronoun)
-    data = [...fourDoBe, ...subjectExtraWords, ...threeVerbs, ...nouns0];
-  else if (!pronoun)
-    data = [...subjectExtraWords, ...fourDoBe, ...threeVerbs, ...nouns0];
-  else {
+  if (verbBe.length === 1) {
     data = [
       ...subjectExtraWords,
-      ...fourDoBe,
-      ...threeVerbs,
-      ...objectExtraWords,
+      ...[...newBeVerbs0.slice(0, 3), ...verbBe].sort(
+        () => Math.random() - 0.5,
+      ),
     ];
-    objP = ObjectPronoun;
+  } else {
+    data = [
+      ...['were', 'will', 'was', 'are'].sort(() => Math.random() - 0.5),
+      ...subjectExtraWords,
+      ...[...newBeVerbs0.slice(0, 3), verbBe[1]].sort(
+        () => Math.random() - 0.5,
+      ),
+    ];
   }
 
-  const abc = nounsN.length > 0 ? nounsN[0] : ['', ''];
+  if (Object.keys(Events).includes(nounN0[0][1])) {
+    ('he [will be] at the exhibition in Paris.');
+    // Events
 
-  let question = !objP ? [...correctVerb, abc[0]] : [...correctVerb, objP];
+    const city = nounsNL1[Math.floor(Math.random() * 4)];
 
-  let qWord = !objP ? [subject, verb, abc[1]] : [subject, verb, objP, ''];
+    const question = [...QStart, nounN0[0][0], city[0]];
 
-  if (tenseNoteIndex >= 6) {
-    const Qword = qw[getRandomInt(0, qw.length - 1)];
+    data = [
+      ...data,
+      ...nounsNL0.map(el => el[0]),
+      ...nounsNL1.map(el => el[0]),
+    ];
 
-    QuestionWords.splice(QuestionWords.indexOf(Qword as QuestionWordsType), 1);
-    const extraQ = [
-      ...QuestionWords.sort(() => Math.random() - 0.5).slice(0, 3),
-      Qword,
-    ].sort(() => Math.random() - 0.5);
-
-    if (Qword === 'what') {
-      data = [...subjectExtraWords, ...fourDoBe, ...threeVerbs];
-      question = !objP ? [...correctVerb] : [...correctVerb, objP];
-      qWord = !objP ? [subject, verb] : [subject, verb, objP, ''];
-    }
-
-    question.unshift(Qword);
-    data.unshift(...extraQ);
-    qWord.unshift(Qword);
-  } else if (
-    ['he', 'she', 'it'].includes(question[0]) &&
-    Math.random() > 0.01
-  ) {
-    const Qword = 'who';
-
-    QuestionWords.splice(QuestionWords.indexOf(Qword as QuestionWordsType), 1);
-    const extraQ = [
-      ...QuestionWords.sort(() => Math.random() - 0.5).slice(0, 3),
-      Qword,
-    ].sort(() => Math.random() - 0.5);
-    if (pronoun)
-      data = [...extraQ, ...fourDoBe, ...threeVerbs, ...objectExtraWords];
-    else data = [...extraQ, ...fourDoBe, ...threeVerbs, ...nouns0];
-
-    question.shift();
-    question.unshift(Qword);
-    qWord.shift();
-    qWord.unshift(Qword);
+    return JSON.stringify({
+      subject,
+      verb: 'be',
+      tenseNoteIndex,
+      question,
+      qWord: [`${subject}${'be'}`, nounN0[0][1], city[1]],
+      testData: data,
+    });
   }
+  if (verb === 'be') {
+    const question = [...QStart, nounN0[0][0]];
 
-  // console.log(434, verb, qw, subject, verb, abc[1], objP);
+    data = [...data, ...nounsNL0.map(el => el[0])];
 
-  return {
-    subject,
-    verb,
-    tenseNoteIndex,
-    question,
-    qWord,
-    testData: data,
-  };
+    return JSON.stringify({
+      subject,
+      verb: 'be',
+      tenseNoteIndex,
+      question,
+      qWord: [`${subject}${'be'}`, nounN0[0][1]],
+      testData: data,
+    });
+  }
 };
 
 export const FourthLesson = (
