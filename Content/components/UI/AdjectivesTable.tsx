@@ -132,9 +132,9 @@ export function AdjectivesTable() {
     <TextImage name="their" />,
     <TextImage name="book" text={false} />,
     <TextImage name="phone" text={false} />,
-    <TextImage name="pen" text={false} />,
     <TextImage name="student" text={false} />,
-    <TextImage name="bone" text={false} />,
+    <TextImage name="bag" text={false} />,
+    <TextImage name="pen" text={false} />,
     <TextImage name="apple" text={false} />,
     <TextImage name="car" text={false} />,
   ];
