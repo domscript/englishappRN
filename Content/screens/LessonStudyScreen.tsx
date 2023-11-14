@@ -209,9 +209,13 @@ function LessonStudyScreen({route, navigation}) {
           <View style={{flexDirection: 'row'}}>
             <View style={{justifyContent: 'center'}}>
               <MyIcon
-                name={progress === 100 ? 'star' : 'star-o'}
+                name={progress >= 90 ? 'star' : 'star-o'}
                 color={
-                  isDarkTheme
+                  progress >= 90
+                    ? isDarkTheme
+                      ? Colors.amber40
+                      : Colors.amber50
+                    : isDarkTheme
                     ? styles.darkThemeColor.color
                     : styles.lightThemeColor.color
                 }
