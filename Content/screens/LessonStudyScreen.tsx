@@ -253,7 +253,11 @@ function LessonStudyScreen({route, navigation}) {
         onPress={() => {
           if (isEasy) {
             Tts.stop();
-            Tts.speak(question.join(' '));
+            Tts.speak(
+              question
+                .map((el: string) => (el === 'id' ? 'I.D.' : el))
+                .join(' '),
+            );
           }
         }}>
         <View style={styles.question}>
