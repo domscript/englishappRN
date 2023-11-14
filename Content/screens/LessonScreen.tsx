@@ -47,6 +47,7 @@ function LessonItem({id, title}) {
     }
     return qData;
   }, [id]);
+
   let {user1} = useSelector((state: RootState) => state.lessons);
 
   const newData = user1.toUpperCase().split(id)[1].slice(0, 100);
@@ -57,10 +58,20 @@ function LessonItem({id, title}) {
   const {progress} = useSelector((state: RootState) => state.words[id]);
 
   let progress0 = 0;
+  let progress1 = 0;
+  let progress2 = 0;
 
   if (['A', 'N', 'P'].includes(id)) {
     ({progress: progress0} = useSelector(
       (state: RootState) => state.words[id + 'X'],
+    ));
+  }
+  if (['A'].includes(id)) {
+    ({progress: progress1} = useSelector(
+      (state: RootState) => state.words[id + 'XX'],
+    ));
+    ({progress: progress2} = useSelector(
+      (state: RootState) => state.words[id + 'XXX'],
     ));
   }
 
@@ -90,6 +101,24 @@ function LessonItem({id, title}) {
     }
     navigation.navigate(Screens.NavigatorScreens.NewWords.name, {
       lessonId: id + 'X',
+    });
+  }
+  function wordsHandler3() {
+    if (isSound) {
+      Tts.stop();
+      Tts.speak('food');
+    }
+    navigation.navigate(Screens.NavigatorScreens.NewWords.name, {
+      lessonId: id + 'XX',
+    });
+  }
+  function wordsHandler4() {
+    if (isSound) {
+      Tts.stop();
+      Tts.speak('flags');
+    }
+    navigation.navigate(Screens.NavigatorScreens.NewWords.name, {
+      lessonId: id + 'XXX',
     });
   }
   function helpHandler() {
@@ -139,6 +168,26 @@ function LessonItem({id, title}) {
           onPress={wordsHandler2}
           text={'Verbs (v2) 📚'}
         />
+      )}
+      {['A'].includes(id) && (
+        <>
+          <LessonButton
+            title={title}
+            progress={Math.round(progress1) + '%'}
+            done={progress1 === 100}
+            study={true}
+            onPress={wordsHandler3}
+            text={'Food 📚'}
+          />
+          <LessonButton
+            title={title}
+            progress={Math.round(progress2) + '%'}
+            done={progress2 === 100}
+            study={true}
+            onPress={wordsHandler4}
+            text={'Flags 📚'}
+          />
+        </>
       )}
       <LessonButton
         title={title}
