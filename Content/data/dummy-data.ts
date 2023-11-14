@@ -4,11 +4,10 @@ export const CATEGORIES = [
   new Lesson('A', 'Lesson 1', 'Past Simple, Present Simple, Future Simple', 0),
   new Lesson('B', 'Lesson 2', 'Object Pronouns, Interrogatives', 0),
   new Lesson('C', 'Lesson 3', 'to BE', 0),
-  new Lesson('D', 'Lesson 4', 'Coming Soon', 0),
-  // new Lesson('D', 'Lesson 4', 'Possessive Adjectives', 0),
+  new Lesson('D', 'Lesson 4', 'Possessive Adjectives', 0),
 
   ////
-  new Lesson('E', 'Lesson 5', 'Will come', 0),
+  new Lesson('E', 'Lesson 5', 'Coming Soon', 0),
   new Lesson('F', 'Lesson 6', 'Will come', 0),
   new Lesson('G', 'Lesson 7', 'Will come', 0),
   new Lesson('H', 'Lesson 8', 'Will come', 0),

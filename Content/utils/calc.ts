@@ -856,6 +856,7 @@ export const FourthLesson = (
     'they',
     'it',
   ];
+  const subjectPronouns2 = [...subjectPronouns];
 
   const PossessiveAdjectives: PossessiveAdjectivesType[] = [
     'my',
@@ -867,6 +868,7 @@ export const FourthLesson = (
     'its',
   ];
   let PossessiveAdjectives2 = [...PossessiveAdjectives];
+  let PossessiveAdjectives3 = [...PossessiveAdjectives];
 
   const PossessiveA: {[key: string]: PossessiveAdjectivesType} = {
     i: [
@@ -1016,7 +1018,7 @@ export const FourthLesson = (
 
   const nouns0 = nounsN.map(el => el[0]).sort();
   const {pronoun, qw} = verbs[verb];
-  // console.log(nouns0, '\n', nouns);
+
   let data: string[] = [];
   let objP: string | undefined = undefined;
 
@@ -1026,162 +1028,168 @@ export const FourthLesson = (
 
   objP = PossessiveAdg;
 
-  // if (Math.random() > 0.6 && professions) {
-  // tenseNoteIndex = Math.floor(Math.random() * 9);
+  if (Math.random() > 0.6 && professions) {
+    tenseNoteIndex = Math.floor(Math.random() * 9);
 
-  //   const objectExtraWords = ObjectPronouns.sort(
-  //     () => Math.random() - 0.5,
-  //   ).splice(0, 4);
+    if ([6, 7, 8].includes(tenseNoteIndex)) {
+      subjectPronouns2.splice(4, 1);
+    }
 
-  //   const ObjectPronoun = objectExtraWords[getRandomInt(0, 3)];
+    const subjectIndex = getRandomInt(
+      [6, 7, 8].includes(tenseNoteIndex) ? 1 : 0,
+      subjectPronouns2.length - 1,
+    );
 
-  //   subjectPronouns2.splice(subjectIndex, 1);
+    const subject = subjectPronouns2[subjectIndex];
 
-  //   const subjectExtraWords = subjectPronouns2
-  //     .splice(0, 3)
-  //     .concat(subject)
-  //     .sort(() => Math.random() - 0.5);
+    if (['i', 'we'].includes(subject) && tenseNoteIndex >= 6)
+      PossessiveAdjectives3 = PossessiveAdjectives.filter(
+        el => !['my', 'our'].includes(el),
+      );
 
-  //   const QStart = beScheme[tenseNoteIndex][subject];
-  //   const verbBe = QStart.filter(el => el !== subject);
+    const PossessiveAdg = PossessiveA[subject];
 
-  //   const beVerbs0 = [
-  //     'am',
-  //     'is',
-  //     'are',
-  //     'were',
-  //     'was',
-  //     "wasn't",
-  //     'am not',
-  //     "weren't",
-  //     "isn't",
-  //     "aren't",
-  //     'will',
-  //     "won't be",
-  //     'be',
-  //   ];
+    PossessiveAdjectives3.splice(
+      PossessiveAdjectives3.indexOf(PossessiveAdg),
+      1,
+    );
 
-  //   const newBeVerbs0 = beVerbs0
-  //     .filter(el => (verbBe.length === 1 ? el !== verbBe[0] : el !== verbBe[1]))
-  //     .sort(() => Math.random() - 0.5);
+    const PossessiveAdjectivesExtraWords = PossessiveAdjectives3.sort(
+      () => Math.random() - 0.5,
+    ).slice(0, 3);
 
-  //   if (true) {
-  //     const question = [...QStart];
-  //     console.log(question);
-  //     if (verbBe.length === 1) {
-  //       data = [
-  //         ...subjectExtraWords,
-  //         ...[...newBeVerbs0.slice(0, 3), ...verbBe].sort(
-  //           () => Math.random() - 0.5,
-  //         ),
-  //         // ...bbb,
-  //       ];
-  //     } else {
-  //       data = [
-  //         ...['were', 'will', 'was', 'are'].sort(() => Math.random() - 0.5),
-  //         ...subjectExtraWords,
-  //         ...[...newBeVerbs0.slice(0, 3), verbBe[1]].sort(
-  //           () => Math.random() - 0.5,
-  //         ),
-  //         // ...bbb,
-  //       ];
-  //     }
-  //   }
+    PossessiveAdjectivesExtraWords.push(PossessiveAdg);
+    PossessiveAdjectivesExtraWords.sort(() => Math.random() - 0.5);
 
-  //   //   data = [...fourDoBe, ...subjectExtraWords, ...threeVerbs, ...nouns0];
-  //   // else if (!pronoun)
-  //   //   data = [...subjectExtraWords, ...fourDoBe, ...threeVerbs, ...nouns0];
+    subjectPronouns2.splice(subjectIndex, 1);
 
-  //   let prof_4 = Object.values(professions)
-  //     .sort(() => Math.random() - 0.5)
-  //     .slice(0, 4);
+    const subjectExtraWords = subjectPronouns2
+      .splice(0, 3)
+      .concat(subject)
+      .sort(() => Math.random() - 0.5);
 
-  //   [prof, prof_s] = prof_4[0].split(';');
-  //   if (['we', 'they'].includes(subject)) {
-  //     prof = professions[prof].split(';')[1];
-  //     prof_4 = prof_4.map(el => el.split(';')[1]);
-  //   } else {
-  //     prof_4 = prof_4.map(el => el.split(';')[0]);
-  //   }
+    const QStart = beScheme[tenseNoteIndex][subject];
+    const verbBe = QStart.filter(el => el !== subject);
 
-  //   console.log(1068, prof_4, prof);
-
-  //   data = [
-  //     ...subjectExtraWords,
-  //     ...fourDoBe,
-  //     ...threeVerbs, /// be
-
-  //     ...PossessiveAdjectivesExtraWords,
-  //     ...[...prof_4].sort(() => Math.random() - 0.5),
-  //   ];
-
-  //   const verb = beScheme[tenseNoteIndex][subject];
-
-  //   question = [...verb, objP, prof];
-  //   qWord = [`${subject}be`, objP, prof];
-  // }
-
-  if (true) {
-    const abc = nounsN.length > 0 ? nounsN[0] : ['', ''];
-
-    data = [
-      ...subjectExtraWords,
-      ...fourDoBe,
-      ...threeVerbs,
-      ...PossessiveAdjectivesExtraWords,
-      ...nouns0,
+    const beVerbs0 = [
+      'am',
+      'is',
+      'are',
+      'were',
+      'was',
+      "wasn't",
+      'am not',
+      "weren't",
+      "isn't",
+      "aren't",
+      'will',
+      "won't be",
+      'be',
     ];
-    question = [...correctVerb, objP, abc[0]];
-    qWord = [subject, verb, objP, abc[1]];
+
+    const newBeVerbs0 = beVerbs0
+      .filter(el => (verbBe.length === 1 ? el !== verbBe[0] : el !== verbBe[1]))
+      .sort(() => Math.random() - 0.5);
+
+    let prof_4 = Object.values(professions)
+      .sort(() => Math.random() - 0.5)
+      .slice(0, 4);
+
+    [prof, prof_s] = prof_4[0].split(';');
+    if (['we', 'they'].includes(subject)) {
+      prof = professions[prof].split(';')[1];
+      prof_4 = prof_4.map(el => el.split(';')[1]);
+    } else {
+      prof_4 = prof_4.map(el => el.split(';')[0]);
+    }
+
+    if (verbBe.length === 1) {
+      data = [
+        ...subjectExtraWords,
+        ...[...newBeVerbs0.slice(0, 3), ...verbBe].sort(
+          () => Math.random() - 0.5,
+        ),
+        ...PossessiveAdjectivesExtraWords,
+        ...[...prof_4].sort(() => Math.random() - 0.5),
+      ];
+    } else {
+      data = [
+        ...['were', 'will', 'was', 'are'].sort(() => Math.random() - 0.5),
+        ...subjectExtraWords,
+        ...[...newBeVerbs0.slice(0, 3), verbBe[1]].sort(
+          () => Math.random() - 0.5,
+        ),
+        ...PossessiveAdjectivesExtraWords,
+        ...[...prof_4].sort(() => Math.random() - 0.5),
+      ];
+    }
+
+    question = [...QStart, objP, prof];
+
+    qWord = [`${subject}be`, objP, prof];
+
+    // console.log(
+    //   1101,
+    //   '\n',
+    //   subject,
+    //   tenseNoteIndex,
+    //   '\nquestion',
+    //   question,
+    //   '\nqWord',
+    //   qWord,
+    //   '\ndata: ',
+    //   data,
+    // );
+
+    return JSON.stringify({
+      subject,
+      verb: 'be',
+      tenseNoteIndex,
+      question,
+      qWord,
+      testData: data,
+    });
   }
-  console.log(question);
-  // if (tenseNoteIndex >= 6) {
-  //   const Qword = qw[getRandomInt(0, qw.length - 1)];
 
-  //   QuestionWords.splice(QuestionWords.indexOf(Qword as QuestionWordsType), 1);
-  //   const extraQ = [
-  //     ...QuestionWords.sort(() => Math.random() - 0.5).slice(0, 3),
-  //     Qword,
-  //   ].sort(() => Math.random() - 0.5);
+  let i = 0;
 
-  //   if (Qword === 'what') {
-  //     data = [...subjectExtraWords, ...fourDoBe, ...threeVerbs];
-  //     question = !objP ? [...correctVerb] : [...correctVerb, objP];
-  //     qWord = !objP ? [subject, verb] : [subject, verb, objP, ''];
-  //   }
+  while (
+    (verb === 'love' && ['wife', 'husband'].includes(nounsN[0][1])) ||
+    (['our', 'their'].includes(objP) &&
+      ['wife', 'husband'].includes(nounsN[0][1])) ||
+    (['her'].includes(objP) && ['wife'].includes(nounsN[0][1])) ||
+    (['his'].includes(objP) && ['husband'].includes(nounsN[0][1])) ||
+    i < 4
+  ) {
+    nounsN.push(nounsN.shift());
+    i++;
+  }
 
-  //   question.unshift(Qword);
-  //   data.unshift(...extraQ);
-  //   qWord.unshift(Qword);
-  // } else if (
-  //   ['he', 'she', 'it'].includes(question[0]) &&
-  //   Math.random() > 0.01
-  // ) {
-  //   const Qword = 'who';
+  const abc = nounsN.length > 0 ? nounsN[0] : ['', ''];
 
-  //   QuestionWords.splice(QuestionWords.indexOf(Qword as QuestionWordsType), 1);
-  //   const extraQ = [
-  //     ...QuestionWords.sort(() => Math.random() - 0.5).slice(0, 3),
-  //     Qword,
-  //   ].sort(() => Math.random() - 0.5);
-  //   // if (pronoun)
-  //   data = [
-  //     ...extraQ,
-  //     ...fourDoBe,
-  //     ...threeVerbs,
-  //     ...PossessiveAdjectivesExtraWords,
-  //     ...nouns0,
-  //   ];
-  //   // else data = [...extraQ, ...fourDoBe, ...threeVerbs, ...nouns0];
+  data = [
+    ...subjectExtraWords,
+    ...fourDoBe,
+    ...threeVerbs,
+    ...PossessiveAdjectivesExtraWords,
+    ...nouns0,
+  ];
+  question = [...correctVerb, objP, abc[0]];
+  qWord = [subject, verb, objP, abc[1]];
 
-  //   question.shift();
-  //   question.unshift(Qword);
-  //   qWord.shift();
-  //   qWord.unshift(Qword);
-  //   // qWord.push()
-  // }
-
-  // console.log(434, verb, qw, subject, verb, abc[1], objP);
+  // if (['wife', 'husband'].includes(abc[1]))
+  //   console.log(
+  //     1171,
+  //     '\n',
+  //     subject,
+  //     tenseNoteIndex,
+  //     '\nquestion',
+  //     question,
+  //     '\nqWord',
+  //     qWord,
+  //     '\ndata: ',
+  //     data,
+  //   );
 
   return JSON.stringify({
     subject,

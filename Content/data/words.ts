@@ -855,6 +855,21 @@ function removePlurals(professions) {
   return updatedProfessions;
 }
 
+function convertToNewFormat(professions) {
+  const result = {};
+
+  for (const key in professions) {
+    if (Object.hasOwnProperty.call(professions, key)) {
+      const [singular, plural] = professions[key]
+        .split(';')
+        .map(item => item.trim());
+      result[plural] = singular;
+    }
+  }
+
+  return result;
+}
+
 const Professions = {
   D: {
     accountant: 'accountant;accountants',
@@ -1490,6 +1505,8 @@ export const spWordE = {
   pineapples: 'pineapple',
   pens: 'pen',
   pencils: 'pencil',
+  ...convertToNewFormat(Professions.D),
+  ...convertToNewFormat(Professions.E),
 };
 
 export const Flags = {
