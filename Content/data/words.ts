@@ -832,89 +832,118 @@ const Adjectives = {
   },
 };
 
+function removePlurals(professions) {
+  const updatedProfessions = {};
+  for (const letter in professions) {
+    if (Object.hasOwnProperty.call(professions, letter)) {
+      const professionsForLetter = professions[letter];
+      const updatedProfessionsForLetter = {};
+
+      for (const profession in professionsForLetter) {
+        if (Object.hasOwnProperty.call(professionsForLetter, profession)) {
+          // Remove everything after the first semicolon (if any)
+          const singularForm = professionsForLetter[profession]
+            .split(';')[0]
+            .trim();
+          updatedProfessionsForLetter[profession] = singularForm;
+        }
+      }
+
+      updatedProfessions[letter] = updatedProfessionsForLetter;
+    }
+  }
+  return updatedProfessions;
+}
+
 const Professions = {
   D: {
-    accountant: 'accountant',
-    actor: 'actor',
-    artist: 'artist', // // Artist/Painter/Sculptor
+    accountant: 'accountant;accountants',
+    actor: 'actor;actors',
+    artist: 'artist;artists', // // Artist/Painter/Sculptor
     // assistant: 'assistant',
-    astronaut: 'astronaut',
-    baker: 'baker',
-    builder: 'builder', // construction worker,
-    cardiologist: 'cardiologist',
+    astronaut: 'astronaut;astronauts',
+    baker: 'baker;bakers',
+    builder: 'builder;builders', // construction worker,
+    cardiologist: 'cardiologist;cardiologists',
     // cashier: 'cashier',
-    cleaner: 'cleaner',
-    cook: 'cook',
+    cleaner: 'cleaner;cleaners',
+    cook: 'cook;cooks',
     // consultant: 'consultant',
-    dentist: 'dentist',
-    designer: 'designer',
-    detective: 'detective',
-    doctor: 'doctor',
-    driver: 'driver',
-    engineer: 'engineer',
-    farmer: 'farmer',
-    firefighter: 'firefighter',
+    dentist: 'dentist;dentists',
+    designer: 'designer;designers',
+    detective: 'detective;detectives',
+    doctor: 'doctor;doctors',
+    driver: 'driver;drivers',
+    engineer: 'engineer;engineers',
+    farmer: 'farmer;farmers',
+    firefighter: 'firefighter;firefighters',
     // friend: 'friend',
-    guide: 'guide',
-    interpreter: 'interpreter',
-    historian: 'historian',
-    judge: 'judge',
-    lawyer: 'lawyer',
+    guide: 'guide;guides',
+    interpreter: 'interpreter;interpreters',
+    historian: 'historian;historians',
+    judge: 'judge;judges',
+    lawyer: 'lawyer;lawyers',
     // manager: 'manager',
-    mechanic: 'mechanic',
-    musician: 'musician',
-    nurse: 'nurse',
-    nutritionist: 'nutritionist',
-    'office clerk': 'office clerk',
-    orthopedist: 'orthopedist',
-    pilot: 'pilot',
-    'police officer': 'police officer',
+    mechanic: 'mechanic;mechanics',
+    musician: 'musician;musicians',
+    nurse: 'nurse;nurses',
+    nutritionist: 'nutritionist;nutritionists',
+    'office clerk': 'office clerk;office clerks',
+    orthopedist: 'orthopedist;orthopedists',
+    pilot: 'pilot;pilots',
+    'police officer': 'police officer;police officers',
     // partner: 'partner',
-    programmer: 'programmer',
-    receptionist: 'receptionist',
+    programmer: 'programmer;programmers',
+    receptionist: 'receptionist;receptionists',
     // 'retail salesperson': 'retail salesperson',
     // 'sales manager': "sales manager",
-    scientist: 'scientist',
-    singer: 'singer',
-    'social worker': 'social worker',
-    'taxi driver': 'taxi driver',
-    'truck driver': 'truck driver',
-    welder: 'welder',
-    teacher: 'teacher',
-    writer: 'writer',
+    scientist: 'scientist;scientists',
+    singer: 'singer;singers',
+    'social worker': 'social worker;social workers',
+    'taxi driver': 'taxi driver;taxi drivers',
+    'truck driver': 'truck driver;truck drivers',
+    welder: 'welder;welders',
+    teacher: 'teacher;teachers',
+    writer: 'writer;writers',
 
-    // Data Scientist
-    // Artificial Intelligence/Machine Learning Engineer
-    // Sustainability/Environmental Specialist
-    // Cybersecurity Analyst
-    // Content Creator/Influencer
-    // Telehealth/Remote Healthcare Provider
-    // Renewable Energy Technician
-    // E-commerce Specialist
-    // Blockchain Developer
-    // Virtual Reality/Augmented Reality Developer
+    // Journalist: 'Journalist;Journalists', // Reporter
 
-    // 'Administrative Assistant': 'Administrative Assistant',
-    // 'Marketing Manager': 'Marketing Manager',
-    // 'Financial Advisor/Planner': 'Financial Advisor/Planner',
+    ////
 
-    // Knight
-    // Blacksmith
-    //
-    // Journalist/Reporter
-    // Spy/Secret Agent
-    // Soldier/Military Personnel
-    // Businessperson/Entrepreneur
-    // Athlete/Sports Professional
-    // Architect
-    // Politician/Government Official
-    // Psychologist/Psychiatrist
-    // Paramedic/EMT
-    // Fashion Designer
-    // Photographer
-    // Waiter/Waitress
-    // Bartender
-    // Librarian
+    // 'Data Scientist': 'Data Scientist;Data Scientists',
+    // 'Machine Learning Engineer':
+    //   'Machine Learning Engineer;Machine Learning Engineers',
+    // 'Environmental Specialist':
+    //   'Environmental Specialist;Environmental Specialists',
+    // 'Cybersecurity Analyst': 'Cybersecurity Analyst;Cybersecurity Analysts',
+    // 'Content Creator': 'Content Creator;Content Creators', // Influencer
+    // 'Remote Healthcare Provider':
+    //   'Remote Healthcare Provider;Remote Healthcare Providers',
+    // 'Renewable Energy Technician':
+    //   'Renewable Energy Technician;Renewable Energy Technicians',
+    // 'E-commerce Specialist': 'E-commerce Specialist;E-commerce Specialists',
+    // 'Blockchain Developer': 'Blockchain Developer;Blockchain Developers',
+    // 'Augmented Reality Developer':
+    //   'Augmented Reality Developer;Augmented Reality Developers', // Virtual Reality
+    // 'Administrative Assistant':
+    //   'Administrative Assistant;Administrative Assistants',
+    // 'Marketing Manager': 'Marketing Manager;Marketing Managers',
+    // 'Financial Advisor': 'Financial Advisor;Financial Advisors', // Planner
+    // Knight: 'Knight;Knights',
+    // Blacksmith: 'Blacksmith;Blacksmiths',
+    // Spy: 'Spy;Spies', // Secret Agent
+    // Soldier: 'Soldier;Soldiers', // Military Personnel
+    // Businessperson: 'Businessperson;Businesspeople', // Entrepreneur
+    // Athlete: 'Athlete;Athletes', // Sports Professional
+    // Architect: 'Architect;Architects',
+    // Politician: 'Politician;Politicians', // Government Official
+    // Psychologist: 'Psychologist;Psychologists', // Psychiatrist
+    // Paramedic: 'Paramedic;Paramedics', // EMT
+    // 'Fashion Designer': 'Fashion Designer;Fashion Designers',
+    // Photographer: 'Photographer;Photographers',
+    // Waiter: 'Waiter;Waiters', // Waitress
+    // Bartender: 'Bartender;Bartenders',
+    // Librarian: 'Librarian;Librarians',
   },
   E: {
     author: 'author',
@@ -2179,7 +2208,7 @@ const allWords = {
     'Possessive Adjectives': possessiveAdjectivesIcons.D,
     // Nouns: Nouns.D,
     Family: Family.D,
-    Professions: Professions.D,
+    Professions: removePlurals(Professions).D,
   },
   E: {
     Family: Family.D,
