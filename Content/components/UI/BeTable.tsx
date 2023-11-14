@@ -914,8 +914,16 @@ export function BeTable() {
         borderRadius: 8,
         padding: 4,
       }}>
-      <View style={{flexDirection: 'row', width: '100%', height: 70}}>
-        <Image src="be" resizeMode="center" />
+      <View style={{width: '100%'}}>
+        <Text
+          style={{
+            color: isDarkTheme ? Colors.gray5 : Colors.gray95,
+            fontSize: 20,
+            textAlign: 'center',
+            justifyContent: 'center',
+          }}>
+          to be
+        </Text>
       </View>
 
       <View style={{flexDirection: 'row', width: '100%'}}>
