@@ -112,7 +112,7 @@ export const SimpleTenseScheme = (words: WordsOneLessonInt) => {
 
   const nouns0 = nounsN.map(el => el[0]).sort();
 
-  let data = [];
+  let data: string[] = [];
   if (Math.random() > 0.5)
     data = [...fourDoBe, ...subjectExtraWords, ...threeVerbs, ...nouns0];
   else data = [...subjectExtraWords, ...fourDoBe, ...threeVerbs, ...nouns0];
@@ -131,6 +131,23 @@ export const SimpleTenseScheme = (words: WordsOneLessonInt) => {
   //     'qWord: ',
   //     [subject, verb, abc[1]],
   //   );
+
+  [...correctVerb, abc[0]].forEach(el => {
+    if (!data.includes(el))
+      console.log(
+        //   // verb, subject, tenseNoteIndex
+        '\n',
+        subject,
+        '\nquestion',
+        [...correctVerb, abc[0]],
+        '\nqWord',
+        [subject, verb, abc[1]],
+        '\ndata: ',
+        data,
+      );
+  });
+
+  // console.log(question.filter(_ => _).join(' '));
 
   return JSON.stringify({
     subject,
