@@ -22,6 +22,8 @@ export const ModalScreen = () => {
       <View
         style={{
           backgroundColor: isDarkTheme ? Colors.gray80 : Colors.gray10,
+          justifyContent: 'center',
+          alignItems: 'center',
         }}>
         <Intro onPress={closeModal} />
       </View>

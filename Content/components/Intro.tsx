@@ -51,7 +51,11 @@ export function Intro({onPress}: IntroProps) {
   }, [isClicked]);
 
   return (
-    <View style={[styles.container, {height: height}]}>
+    <View
+      style={[
+        styles.container,
+        {height: height, width: width < height * 0.6 ? width : height * 0.6},
+      ]}>
       <View style={styles.img}>
         <Image src="slightly_smiling-face" resizeMode="contain" />
       </View>
@@ -162,6 +166,7 @@ export function Intro({onPress}: IntroProps) {
           color={isDarkTheme ? Colors.green60 : Colors.green5}
         />
       </Pressable>
+      <View style={{flex: 0.5}}></View>
     </View>
   );
 }
