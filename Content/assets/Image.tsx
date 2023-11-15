@@ -17,6 +17,9 @@ const NewImage = ({
     case 'max_id':
       url = require('./max_id.webp');
       break;
+    case 'myid':
+      url = require('./myid.webp');
+      break;
     case 'slightly_smiling-face':
     case 'i':
       url = require('./slightly_smiling-face.webp');

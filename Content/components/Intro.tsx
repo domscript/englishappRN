@@ -116,7 +116,7 @@ export function Intro({onPress}: IntroProps) {
       </View>
       <Pressable style={styles.img} onPress={tellI}>
         <View style={styles.img}>
-          <Image src="my" resizeMode="contain" />
+          <Image src="myid" resizeMode="contain" />
         </View>
       </Pressable>
       <View style={{justifyContent: 'center'}}>
