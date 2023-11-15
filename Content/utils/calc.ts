@@ -316,15 +316,14 @@ export const SecondLesson = (words: WordsOneLessonInt) => {
   let data: string[] = [];
   let objP: string | undefined = undefined;
 
-  if (
-    Math.random() > 0.5 &&
-    !pronoun &&
-    (tenseNoteIndex < 6 || Qword !== 'what')
-  )
+  if (Math.random() > 0.5 && !pronoun && tenseNoteIndex < 6)
     data = [...fourDoBe, ...subjectExtraWords, ...threeVerbs, ...nouns0];
-  else if (!pronoun && (tenseNoteIndex < 6 || Qword !== 'what'))
+  else if (!pronoun)
     data = [...subjectExtraWords, ...fourDoBe, ...threeVerbs, ...nouns0];
-  else if (isCombineWithPronoun && (tenseNoteIndex < 6 || Qword !== 'what')) {
+  else if (
+    (isCombineWithPronoun && tenseNoteIndex < 6) ||
+    (tenseNoteIndex >= 6 && Qword !== 'what')
+  ) {
     data = [
       ...subjectExtraWords,
       ...fourDoBe,
@@ -341,7 +340,7 @@ export const SecondLesson = (words: WordsOneLessonInt) => {
       ...objectExtraWords,
     ];
     objP = ObjectPronoun;
-  } else {
+  } else if (Qword === 'what' && tenseNoteIndex >= 6) {
     if (Math.random() > 0.5)
       data = [...subjectExtraWords, ...fourDoBe, ...threeVerbs];
     else data = [...fourDoBe, ...subjectExtraWords, ...threeVerbs];
@@ -350,17 +349,30 @@ export const SecondLesson = (words: WordsOneLessonInt) => {
   const [nounQuestion, nounQword] =
     nounsN.length > 0 ? shuffleArray(nounsN)[0] : ['', ''];
 
-  let question = !objP
-    ? [...correctVerb, nounQuestion]
-    : isCombineWithPronoun
-    ? [...correctVerb, objP, nounQuestion]
-    : [...correctVerb, objP];
+  let question = [''];
+  let qWord = [''];
 
-  let qWord = !objP
-    ? [subject, verb, nounQword]
-    : isCombineWithPronoun
-    ? [subject, verb, objP, nounQword]
-    : [subject, verb, objP];
+  if (Qword === 'what' && tenseNoteIndex >= 6) {
+    question = !objP ? [...correctVerb] : [...correctVerb, objP];
+
+    qWord = !objP ? [subject, verb] : [subject, verb, objP];
+  } else if (pronoun) {
+    question = !objP
+      ? [...correctVerb, nounQuestion]
+      : isCombineWithPronoun
+      ? [...correctVerb, objP, nounQuestion]
+      : [...correctVerb, objP];
+
+    qWord = !objP
+      ? [subject, verb, nounQword]
+      : isCombineWithPronoun
+      ? [subject, verb, objP, nounQword]
+      : [subject, verb, objP];
+  } else {
+    question = [...correctVerb, nounQuestion];
+
+    qWord = [subject, verb, nounQword];
+  }
 
   if (tenseNoteIndex >= 6 && Math.random() > 0.4) {
     QuestionWords.splice(QuestionWords.indexOf(Qword as QuestionWordsType), 1);
@@ -387,26 +399,31 @@ export const SecondLesson = (words: WordsOneLessonInt) => {
     const dataEnd = data.slice(8);
 
     const newDataStart = dataStart.map(el =>
-      subjectPronouns.includes(el) ? extraQ.pop() : el,
+      subjectPronouns.includes(el as SubjectPronounsType) ? extraQ.pop() : el,
     ) as string[];
 
     data = [...newDataStart, ...dataEnd];
   }
 
-  // if (Qword === 'what' && tenseNoteIndex > 6)
+  question.forEach(el => {
+    if (!data.includes(el))
+      console.log(
+        //   // verb, subject, tenseNoteIndex
+        '\ncorrectVerb :',
+        correctVerb,
+        '\n',
+        Qword,
+        '\n',
+        '\nquestion',
+        question,
+        '\nqWord',
+        qWord,
+        '\ndata: ',
+        data,
+      );
+  });
 
-  //   console.log(
-  //     // verb, subject, tenseNoteIndex
-  //     Qword,
-  //     '\ncorrectVerb :',
-  //     correctVerb,
-  //     '\nquestion',
-  //     question,
-  //     '\nqWord',
-  //     qWord,
-  //     '\ndata: ',
-  //     data,
-  //   );
+  // console.log(question.filter(_ => _).join(' '));
 
   return JSON.stringify({
     subject,
