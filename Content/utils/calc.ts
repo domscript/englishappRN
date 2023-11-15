@@ -562,6 +562,23 @@ export const ThirdLesson = (
       ];
     }
 
+    question.forEach(el => {
+      if (!data.includes(el))
+        console.log(
+          //   // verb, subject, tenseNoteIndex
+          '\n',
+          subject,
+          '\nquestion',
+          question,
+          '\nqWord',
+          [`${subject}${'be'}`, hereThere],
+          '\ndata: ',
+          data,
+        );
+    });
+
+    // console.log(question.filter(_ => _).join(' '));
+
     return JSON.stringify({
       subject,
       verb: 'be',
@@ -628,6 +645,23 @@ export const ThirdLesson = (
       ...nounsNL1.map(el => el[0]),
     ];
 
+    question.forEach(el => {
+      if (!data.includes(el))
+        console.log(
+          //   // verb, subject, tenseNoteIndex
+          '\n',
+          subject,
+          '\nquestion',
+          question,
+          '\nqWord',
+          [`${subject}${'be'}`, nounN0[0][1], city[1]],
+          '\ndata: ',
+          data,
+        );
+    });
+
+    // console.log(question.filter(_ => _).join(' '));
+
     return JSON.stringify({
       subject,
       verb: 'be',
@@ -641,6 +675,23 @@ export const ThirdLesson = (
     const question = [...QStart, nounN0[0][0]];
 
     data = [...data, ...nounsNL0.map(el => el[0])];
+
+    question.forEach(el => {
+      if (!data.includes(el))
+        console.log(
+          //   // verb, subject, tenseNoteIndex
+          '\n',
+          subject,
+          '\nquestion',
+          question,
+          '\nqWord',
+          [`${subject}${'be'}`, nounN0[0][1]],
+          '\ndata: ',
+          data,
+        );
+    });
+
+    // console.log(question.filter(_ => _).join(' '));
 
     return JSON.stringify({
       subject,
@@ -700,6 +751,23 @@ export const ThirdLesson = (
         ...nounsNL0.map(el => el[0]),
       ];
     }
+
+    question.forEach(el => {
+      if (!data.includes(el))
+        console.log(
+          //   // verb, subject, tenseNoteIndex
+          '\n',
+          subject,
+          '\nquestion',
+          question,
+          '\nqWord',
+          qWord,
+          '\ndata: ',
+          data,
+        );
+    });
+
+    // console.log(question.filter(_ => _).join(' '));
 
     return JSON.stringify({
       subject,
@@ -842,19 +910,22 @@ export const ThirdLesson = (
       ];
     }
 
-    // console.log(
-    //   796,
-    //   '\n',
-    //   verb,
-    //   subject,
-    //   tenseNoteIndex,
-    //   '\nquestion',
-    //   question,
-    //   '\nqWord',
-    //   qWord,
-    //   '\ndata: ',
-    //   data,
-    // );
+    question.forEach(el => {
+      if (!data.includes(el))
+        console.log(
+          //   // verb, subject, tenseNoteIndex
+          '\n',
+          subject,
+          '\nquestion',
+          question,
+          '\nqWord',
+          qWord,
+          '\ndata: ',
+          data,
+        );
+    });
+
+    // console.log(question.filter(_ => _).join(' '));
 
     return JSON.stringify({
       subject,
@@ -865,6 +936,8 @@ export const ThirdLesson = (
       testData: data,
     });
   }
+
+  console.log('bad');
 };
 
 export const FourthLesson = (
