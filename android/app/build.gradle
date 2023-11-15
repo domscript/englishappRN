@@ -73,13 +73,13 @@ android {
 
     compileSdkVersion rootProject.ext.compileSdkVersion
 
-    namespace "com.okenglish"
+    namespace "com.englishapp"
     defaultConfig {
-        applicationId "com.okenglish"
+        applicationId "com.englishapp"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 4
-        versionName "0.0.4"
+        versionCode 5
+        versionName "0.0.5"
     }
     signingConfigs {
         debug {
@@ -89,11 +89,11 @@ android {
             keyPassword 'android'
         }
         release {
-            if (project.hasProperty('OKENGLISH_DEMO_UPLOAD_STORE_FILE')) {
-                storeFile file(OKENGLISH_DEMO_UPLOAD_STORE_FILE)
-                storePassword OKENGLISH_DEMO_UPLOAD_STORE_PASSWORD
-                keyAlias OKENGLISH_DEMO_UPLOAD_KEY_ALIAS
-                keyPassword OKENGLISH_DEMO_UPLOAD_KEY_PASSWORD
+            if (project.hasProperty('ENGLISH_APP_STORE_FILE')) {
+                storeFile file(ENGLISH_APP_STORE_FILE)
+                storePassword ENGLISH_APP_STORE_PASSWORD
+                keyAlias ENGLISH_APP_KEY_ALIAS
+                keyPassword ENGLISH_APP_KEY_PASSWORD
             }
         }
         

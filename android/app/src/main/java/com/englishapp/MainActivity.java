@@ -1,4 +1,4 @@
-package com.okenglish;
+package com.englishapp;
 
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;
@@ -13,7 +13,7 @@ public class MainActivity extends ReactActivity {
    */
   @Override
   protected String getMainComponentName() {
-    return "okenglish";
+    return "englishapp";
   }
 
   /**
