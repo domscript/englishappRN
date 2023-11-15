@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {View, Text, TouchableOpacity} from 'react-native';
 import {useSelector} from 'react-redux';
+import Tts from 'react-native-tts';
 import Colors from '../../constants/Colors';
 import {RootState} from '../../redux-store/store';
 import Image from '../../assets/Image';
@@ -82,31 +83,37 @@ function Div({children, active = false, style}: DivProps) {
   );
 }
 
-type ShowType =
-  | ''
-  | '11'
-  | '12'
-  | '13'
-  | '21'
-  | '22'
-  | '23'
-  | '31'
-  | '32'
-  | '33';
-
 export function AdjectivesTable() {
   const {isDarkTheme} = useSelector((state: RootState) => state.theme);
 
-  const [show, setShow] = useState<ShowType>('');
   const [contraction, setContraction] = useState(false);
-  const [ex, setEx] = useState(0);
 
-  const showExample = (num: ShowType) => {
-    // setShow(num);
-    // setEx(prev => {
-    //   if (prev < 1) return prev + 1;
-    //   return 0;
-    // });
+  const showExample = (num: number) => {
+    const data = [
+      'i',
+      'my',
+      'you',
+      'your',
+      'he',
+      'his',
+      'she',
+      'her ',
+      'it',
+      'its',
+      'we',
+      'our',
+      'they',
+      'their',
+      'my book',
+      'your phone',
+      'his student',
+      'her bag',
+      'its pen',
+      'our apple',
+      'their car',
+    ];
+    Tts.stop();
+    Tts.speak(data[num]);
   };
 
   const contractionF = () => {
@@ -137,133 +144,6 @@ export function AdjectivesTable() {
     <TextImage name="pen" text={false} />,
     <TextImage name="apple" text={false} />,
     <TextImage name="car" text={false} />,
-  ];
-
-  const examples = [
-    <View>
-      <Text
-        style={{
-          color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-        }}>
-        I danced
-      </Text>
-    </View>,
-    <View>
-      <Text
-        style={{
-          color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-        }}>
-        I dance
-      </Text>
-    </View>,
-    <View>
-      {contraction ? (
-        <View>
-          <Text
-            style={{
-              color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-            }}>
-            I&apos;ll dance
-          </Text>
-        </View>
-      ) : (
-        <View>
-          <Text
-            style={{
-              color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-            }}>
-            I will dance
-          </Text>
-        </View>
-      )}
-    </View>,
-    <View>
-      {contraction ? (
-        <View>
-          <Text
-            style={{
-              color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-            }}>
-            I didn&apos;t dance
-          </Text>
-        </View>
-      ) : (
-        <View>
-          <Text
-            style={{
-              color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-            }}>
-            I did not dance
-          </Text>
-        </View>
-      )}
-    </View>,
-    <View>
-      {contraction ? (
-        <View>
-          <Text
-            style={{
-              color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-            }}>
-            I don&apos;t dance
-          </Text>
-        </View>
-      ) : (
-        <View>
-          <Text
-            style={{
-              color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-            }}>
-            I do not dance
-          </Text>
-        </View>
-      )}
-    </View>,
-    <View>
-      {contraction ? (
-        <View>
-          <Text
-            style={{
-              color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-            }}>
-            I won&apos;t dance
-          </Text>
-        </View>
-      ) : (
-        <View>
-          <Text
-            style={{
-              color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-            }}>
-            I will not dance
-          </Text>
-        </View>
-      )}
-    </View>,
-    <View>
-      <Text
-        style={{
-          color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-        }}>
-        Did I dance
-      </Text>
-    </View>,
-    <View>
-      <Text
-        style={{
-          color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-        }}>
-        Do I dance
-      </Text>
-    </View>,
-    <View>
-      <Text
-        style={{
-          color: isDarkTheme ? Colors.gray5 : Colors.gray95,
-        }}>
-        Will I dance
-      </Text>
-    </View>,
   ];
 
   return (
@@ -297,10 +177,10 @@ export function AdjectivesTable() {
               style={{flex: 0.049}}>
               {/* {contraction ? '<>' : '><'} */}
             </Button>
-            <Div active={show[1] === '1'} style={{flex: 0.48}}>
+            <Div active={false} style={{flex: 0.48}}>
               {'who?'}
             </Div>
-            <Div active={show[1] === '2'} style={{flex: 0.69}}>
+            <Div active={false} style={{flex: 0.69}}>
               {'whose?'}
             </Div>
           </View>
@@ -314,24 +194,24 @@ export function AdjectivesTable() {
               borderRadius: 8,
               marginTop: 8,
             }}>
-            <Div active={show[0] === '1'} style={{flex: 0.049}}>
+            <Div active={false} style={{flex: 0.049}}>
               {'1️⃣⚈'}
             </Div>
             <Button
-              onClick={() => showExample('11')}
-              active={show === '11'}
+              onClick={() => showExample(0)}
+              active={false}
               style={{flex: 0.49}}>
-              {ex === 1 ? (show === '11' ? examples[0] : '-') : data[0]}
+              {data[0]}
             </Button>
             <Button
-              onClick={() => showExample('12')}
-              active={show === '12'}
+              onClick={() => showExample(1)}
+              active={false}
               style={{flex: 0.49}}>
-              {ex === 1 ? (show === '12' ? examples[1] : '-') : data[1]}
+              {data[1]}
             </Button>
             <Button
-              onClick={() => showExample('12')}
-              active={show === '12'}
+              onClick={() => showExample(14)}
+              active={false}
               style={{flex: 0.2}}>
               {data[14]}
             </Button>
@@ -346,24 +226,24 @@ export function AdjectivesTable() {
               borderRadius: 8,
               marginTop: 8,
             }}>
-            <Div active={show[0] === '2'} style={{flex: 0.049}}>
+            <Div active={false} style={{flex: 0.049}}>
               {'2️⃣⚈⚉'}
             </Div>
             <Button
-              onClick={() => showExample('21')}
-              active={show === '21'}
+              onClick={() => showExample(2)}
+              active={false}
               style={{flex: 0.49}}>
-              {ex === 1 ? (show === '21' ? examples[2] : '-') : data[2]}
+              {data[2]}
             </Button>
             <Button
-              onClick={() => showExample('22')}
-              active={show === '22'}
+              onClick={() => showExample(3)}
+              active={false}
               style={{flex: 0.49}}>
-              {ex === 1 ? (show === '22' ? examples[3] : '-') : data[3]}
+              {data[3]}
             </Button>
             <Button
-              onClick={() => showExample('12')}
-              active={show === '12'}
+              onClick={() => showExample(15)}
+              active={false}
               style={{flex: 0.2}}>
               {data[15]}
             </Button>
@@ -378,25 +258,25 @@ export function AdjectivesTable() {
               borderRadius: 8,
               marginTop: 8,
             }}>
-            <Div active={show[0] === '3'} style={{flex: 0.049}}>
+            <Div active={false} style={{flex: 0.049}}>
               {'3️⃣⚈'}
             </Div>
             <Button
-              onClick={() => showExample('31')}
-              active={show === '31'}
+              onClick={() => showExample(4)}
+              active={false}
               style={{flex: 0.49}}>
-              {ex === 1 ? (show === '31' ? examples[4] : '-') : data[4]}
+              {data[4]}
             </Button>
 
             <Button
-              onClick={() => showExample('32')}
-              active={show === '32'}
+              onClick={() => showExample(5)}
+              active={false}
               style={{flex: 0.49}}>
-              {ex === 1 ? (show === '32' ? examples[5] : '-') : data[5]}
+              {data[5]}
             </Button>
             <Button
-              onClick={() => showExample('12')}
-              active={show === '12'}
+              onClick={() => showExample(16)}
+              active={false}
               style={{flex: 0.2}}>
               {data[16]}
             </Button>
@@ -412,25 +292,25 @@ export function AdjectivesTable() {
               borderRadius: 8,
               marginTop: 8,
             }}>
-            <Div active={show[0] === '3'} style={{flex: 0.049}}>
+            <Div active={false} style={{flex: 0.049}}>
               {'3️⃣⚈'}
             </Div>
             <Button
-              onClick={() => showExample('31')}
-              active={show === '31'}
+              onClick={() => showExample(6)}
+              active={false}
               style={{flex: 0.49}}>
-              {ex === 1 ? (show === '31' ? examples[6] : '-') : data[6]}
+              {data[6]}
             </Button>
 
             <Button
-              onClick={() => showExample('32')}
-              active={show === '32'}
+              onClick={() => showExample(7)}
+              active={false}
               style={{flex: 0.49}}>
-              {ex === 1 ? (show === '32' ? examples[7] : '-') : data[7]}
+              {data[7]}
             </Button>
             <Button
-              onClick={() => showExample('12')}
-              active={show === '12'}
+              onClick={() => showExample(17)}
+              active={false}
               style={{flex: 0.2}}>
               {data[17]}
             </Button>
@@ -446,25 +326,25 @@ export function AdjectivesTable() {
               borderRadius: 8,
               marginTop: 8,
             }}>
-            <Div active={show[0] === '3'} style={{flex: 0.049}}>
+            <Div active={false} style={{flex: 0.049}}>
               {'3️⃣⚈'}
             </Div>
             <Button
-              onClick={() => showExample('31')}
-              active={show === '31'}
+              onClick={() => showExample(8)}
+              active={false}
               style={{flex: 0.49}}>
-              {ex === 1 ? (show === '31' ? examples[8] : '-') : data[8]}
+              {data[8]}
             </Button>
 
             <Button
-              onClick={() => showExample('32')}
-              active={show === '32'}
+              onClick={() => showExample(9)}
+              active={false}
               style={{flex: 0.49}}>
-              {ex === 1 ? (show === '32' ? examples[9] : '-') : data[9]}
+              {data[9]}
             </Button>
             <Button
-              onClick={() => showExample('12')}
-              active={show === '12'}
+              onClick={() => showExample(18)}
+              active={false}
               style={{flex: 0.2}}>
               {data[18]}
             </Button>
@@ -480,24 +360,24 @@ export function AdjectivesTable() {
               borderRadius: 8,
               marginTop: 8,
             }}>
-            <Div active={show[0] === '3'} style={{flex: 0.049}}>
+            <Div active={false} style={{flex: 0.049}}>
               {'1️⃣⚉'}
             </Div>
             <Button
-              onClick={() => showExample('31')}
-              active={show === '31'}
+              onClick={() => showExample(10)}
+              active={false}
               style={{flex: 0.49}}>
-              {ex === 1 ? (show === '31' ? examples[10] : '-') : data[10]}
+              {data[10]}
             </Button>
             <Button
-              onClick={() => showExample('32')}
-              active={show === '32'}
+              onClick={() => showExample(11)}
+              active={false}
               style={{flex: 0.49}}>
-              {ex === 1 ? (show === '32' ? examples[11] : '-') : data[11]}
+              {data[11]}
             </Button>
             <Button
-              onClick={() => showExample('12')}
-              active={show === '12'}
+              onClick={() => showExample(19)}
+              active={false}
               style={{flex: 0.2}}>
               {data[19]}
             </Button>
@@ -513,24 +393,24 @@ export function AdjectivesTable() {
               borderRadius: 8,
               marginTop: 8,
             }}>
-            <Div active={show[0] === '3'} style={{flex: 0.049}}>
+            <Div active={false} style={{flex: 0.049}}>
               {'3️⃣⚉'}
             </Div>
             <Button
-              onClick={() => showExample('31')}
-              active={show === '31'}
+              onClick={() => showExample(12)}
+              active={false}
               style={{flex: 0.49}}>
-              {ex === 1 ? (show === '31' ? examples[12] : '-') : data[12]}
+              {data[12]}
             </Button>
             <Button
-              onClick={() => showExample('32')}
-              active={show === '32'}
+              onClick={() => showExample(13)}
+              active={false}
               style={{flex: 0.49}}>
-              {ex === 1 ? (show === '32' ? examples[13] : '-') : data[13]}
+              {data[13]}
             </Button>
             <Button
-              onClick={() => showExample('12')}
-              active={show === '12'}
+              onClick={() => showExample(20)}
+              active={false}
               style={{flex: 0.2}}>
               {data[20]}
             </Button>
