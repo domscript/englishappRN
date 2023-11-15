@@ -6,6 +6,7 @@ import {
   FlatList,
   Modal,
   StyleSheet,
+  Pressable,
 } from 'react-native';
 import {useSelector} from 'react-redux';
 import Colors from '../../constants/Colors';
@@ -77,6 +78,11 @@ export const VerbPicker = ({
         onRequestClose={() => {
           setModalVisible(!modalVisible);
         }}>
+        <Pressable
+          onPress={() => {
+            setModalVisible(!modalVisible);
+          }}
+          style={{flex: 1}}></Pressable>
         <View
           style={[
             styles.modalContainer,
@@ -89,6 +95,11 @@ export const VerbPicker = ({
             style={{width: '100%'}}
           />
         </View>
+        <Pressable
+          onPress={() => {
+            setModalVisible(!modalVisible);
+          }}
+          style={{flex: 1}}></Pressable>
       </Modal>
     </View>
   );
@@ -109,14 +120,12 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   modalContainer: {
-    flex: 1,
+    flex: 3,
     justifyContent: 'center',
     alignSelf: 'center',
-    alignItems: 'center',
     width: '60%',
-    marginTop: '25%',
     marginHorizontal: 'auto',
-    marginBottom: '20%',
+    marginVertical: 'auto',
   },
   item: {
     borderBottomWidth: 1,
