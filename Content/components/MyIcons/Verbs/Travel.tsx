@@ -19,8 +19,6 @@ export const Travel = ({positive, frame}: VerbProps) => {
         {
           alignItems: 'center',
           justifyContent: 'center',
-          // backgroundColor: 'red',
-          maxWidth: 600,
         },
       ]}>
       <Svg

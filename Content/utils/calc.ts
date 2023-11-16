@@ -147,7 +147,7 @@ export const SimpleTenseScheme = (words: WordsOneLessonInt) => {
       );
   });
 
-  // console.log(question.filter(_ => _).join(' '));
+  // console.log([...correctVerb, abc[0]].filter(_ => _).join(' '));
 
   return JSON.stringify({
     subject,
