@@ -60,6 +60,7 @@ export const LinkList = ({links, icon}: {links: LinksInt[]; icon: boolean}) => {
 const styles = StyleSheet.create({
   container: {
     // marginTop: 32,
+    paddingVertical: 5,
     paddingHorizontal: 24,
   },
   linkContainer: {
