@@ -320,7 +320,7 @@ function StudyWordsTabBar({state, descriptors, navigation}) {
                     ? 'list-check'
                     : 'list'
                 }
-                size={35}
+                size={40}
                 color={
                   isFocused
                     ? isDarkTheme
