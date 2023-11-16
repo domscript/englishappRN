@@ -352,7 +352,7 @@ const styles = StyleSheet.create({
     // gap: 1,
   },
   flexRow: {
-    flex: 0.8,
+    flex: 0.77,
     flexDirection: 'row',
     // gap: 1,
   },
@@ -367,7 +367,7 @@ const styles = StyleSheet.create({
   },
   icon: {flex: 0.08, width: '100%', marginVertical: '1%'},
   iconBottom: {
-    flex: 0.08,
+    flex: 0.11,
     textAlign: 'center',
     justifyContent: 'flex-end',
     width: '100%',
