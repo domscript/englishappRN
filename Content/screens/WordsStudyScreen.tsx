@@ -25,9 +25,10 @@ import Tts from 'react-native-tts';
 function WordsStudy({route}) {
   const {id} = route.params;
 
-  const {isDarkTheme, isSound} = useSelector((state: RootState) => ({
+  const {isDarkTheme, isSound, isEasy} = useSelector((state: RootState) => ({
     isDarkTheme: state.theme.isDarkTheme,
     isSound: state.sounds.isSound,
+    isEasy: state.help.isEasy,
   }));
   const [isModalVisible, setIsModalVisible] = useState(false);
   const dispatch = useDispatch();
@@ -268,7 +269,7 @@ function WordsStudy({route}) {
       <Pressable
         style={styles.listContainer}
         onPress={() => {
-          if (isSound) {
+          if (isSound && isEasy) {
             Tts.stop();
             Tts.speak(word === 'read ' ? 'red' : word === 'id' ? 'I D' : word);
           }
