@@ -660,7 +660,7 @@ const styles = StyleSheet.create({
   },
 
   buttomsBottom: {
-    flex: 0.06,
+    flex: 0.07,
     flexDirection: 'row',
   },
   buttonBottom: {
